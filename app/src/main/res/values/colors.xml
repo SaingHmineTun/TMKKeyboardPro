@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="blue_key_normal">#1E3A5F</color>
+    <color name="blue_key_pressed">#3A5F8F</color>
+    <color name="blue_background">#0F172A</color>
+
+    <color name="gold_key_normal">#B8860B</color>
+    <color name="gold_key_pressed">#DAA520</color>
+    <color name="gold_background">#1C1917</color>
+
+</resources>
