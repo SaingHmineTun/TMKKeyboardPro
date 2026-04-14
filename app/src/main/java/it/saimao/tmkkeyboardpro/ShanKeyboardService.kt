@@ -1,5 +1,6 @@
 package it.saimao.tmkkeyboardpro
 
+import android.annotation.SuppressLint
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.Rect
@@ -21,6 +22,7 @@ import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
+import it.saimao.tmkkeyboardpro.logic.ShanReorderingEngine
 import kotlin.properties.Delegates
 
 
@@ -29,8 +31,12 @@ class ShanKeyboardService : InputMethodService() {
 
     private var lastShiftClickTime: Long = 0
     private val CAPS_LOCK_THRESHOLD = 500 // 500 milliseconds (0.5 sec)
+    private val languages = listOf("EN", "SHN", "MY")
+    private var currentLanguageIndex = 0
 
-    private var currentLanguage = "EN" // MM, SHN
+    // ဢဝ်ပဵၼ် Property တႃႇႁွင်ႉၸႂ်ႉငၢႆႈ
+    val currentLanguage: String
+        get() = languages[currentLanguageIndex]
 
     enum class ShiftState {
         OFF, ON, CAPS_LOCK
@@ -59,7 +65,7 @@ class ShanKeyboardService : InputMethodService() {
         }
 
         keysContainer = currentInputView.findViewById(R.id.keys_container)
-        loadLayout(R.layout.layout_en_normal)
+        updateKeyboardLayout()
 
         return currentInputView
     }
@@ -165,6 +171,7 @@ class ShanKeyboardService : InputMethodService() {
     private var initialX = 0f
     private val SWIPE_THRESHOLD = 30 // တၢင်းၵႆ (Pixels) ဢၼ်တေၼပ်ႉပဵၼ် 1 တူဝ်လိၵ်ႈ
 
+    @SuppressLint("ClickableViewAccessibility")
     private fun setupSpaceBarSwipeLogic(spaceButton: Button) {
         spaceButton.setOnTouchListener { v, event ->
             when (event.action) {
@@ -265,6 +272,7 @@ class ShanKeyboardService : InputMethodService() {
         when (val viewId = view.id) {
             R.id.key_del -> sendDelete() // ဢၼ်ႁဝ်းတႅမ်ႈဝႆႉၼႂ်း Lesson 14
             R.id.key_space -> sendText(" ")
+            R.id.key_lang -> toggleLanguage()
             R.id.key_enter -> sendKeyAction(KeyEvent.KEYCODE_ENTER)
             else -> {
                 if (viewId == R.id.key_unshift || viewId == R.id.key_my_unshift || viewId == R.id.key_shn_unshift) {
@@ -273,7 +281,23 @@ class ShanKeyboardService : InputMethodService() {
                     handleShift()
 
                 } else {
-                    sendText(text)
+
+                    // 1. ဢဝ် Text ဢၼ်လုၵ်ႉတီႈ Button မႃးလႅၵ်ႈပဵၼ် Unicode Code
+                    val primaryCode = if (text.isNotEmpty()) text.first().code else -1
+
+                    if (currentLanguage == "SHN" && primaryCode != -1) {
+
+                        // 2. သူင်ႇ Code ၶဝ်ႈၵႂႃႇၼႂ်း Engine
+                        val engine = ShanReorderingEngine(currentInputConnection!!)
+                        val resultText = engine.handleInput(primaryCode)
+                        if (resultText != null) {
+                            sendText(resultText)
+                        }
+
+                    } else {
+                        // ပဵၼ် English ဢမ်ႇၼၼ် တူဝ်လိၵ်ႈယူႇယူႇ
+                        sendText(text)
+                    }
 
                     // သင်ပဵၼ် Shift ON (ဢမ်ႇၸႂ်ႉ Caps Lock) ႁႂ်ႈပိၵ်ႉၶိုၼ်း မိူဝ်ႈတႅမ်ႈယဝ်ႉ 1 တူဝ်
                     if (currentShiftState == ShiftState.ON) {
@@ -492,6 +516,17 @@ class ShanKeyboardService : InputMethodService() {
             val soundType = AudioManager.FX_KEYPRESS_STANDARD
             am.playSoundEffect(soundType)
         }
+    }
+
+    fun toggleLanguage() {
+        // ပၼ်ႇ Index (EN 0 -> SHN 1 -> MY 2 -> EN 0)
+        currentLanguageIndex = (currentLanguageIndex + 1) % languages.size
+
+        // Reset Shift State မိူဝ်ႈလႅၵ်ႈၽႃႇသႃႇ ၼင်ႇႁိုဝ်တေဢမ်ႇယုင်ႈ
+        currentShiftState = ShiftState.OFF
+
+        // Update Layout ၸွမ်းၼင်ႇၽႃႇသႃႇမႂ်ႇ
+        updateKeyboardLayout()
     }
 
 }
