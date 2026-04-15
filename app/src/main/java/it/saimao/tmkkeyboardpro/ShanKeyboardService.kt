@@ -45,13 +45,38 @@ class ShanKeyboardService : InputMethodService() {
     private var currentShiftState = ShiftState.OFF
 
     private lateinit var keysContainer: FrameLayout
+    private lateinit var suggestionBarContainer: FrameLayout
+
     private lateinit var candidateContainer: LinearLayout
     private lateinit var currentInputView: View
 
     private var backgroundColor by Delegates.notNull<Int>()
 
+    // --- တွၼ်ႈတႃႇ Suggestion Logic ---
+
+    private lateinit var shanDictionary: DictionaryManager
+
+    private lateinit var myanmarDictionary: DictionaryManager
+    private lateinit var englishDictionary: DictionaryManager
+
+    override fun onCreate() {
+        super.onCreate()
+        shanDictionary = ShanDictionaryManager(this)
+        myanmarDictionary = MyanmarDictionaryManager(this)
+        englishDictionary = EnglishDictionaryManager(this)
+    }
+
     override fun onCreateInputView(): View {
         currentInputView = layoutInflater.inflate(R.layout.keyboard_root, null)
+
+        keysContainer = currentInputView.findViewById(R.id.keys_container)
+        suggestionBarContainer = currentInputView.findViewById(R.id.suggestion_bar_container)
+
+        val candidateView =
+            layoutInflater.inflate(R.layout.candidate_view, suggestionBarContainer, false)
+        suggestionBarContainer.addView(candidateView)
+        candidateContainer = candidateView.findViewById(R.id.candidate_container)
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             currentInputView.setOnApplyWindowInsetsListener { view, insets ->
@@ -64,7 +89,6 @@ class ShanKeyboardService : InputMethodService() {
             }
         }
 
-        keysContainer = currentInputView.findViewById(R.id.keys_container)
         updateKeyboardLayout()
 
         return currentInputView
@@ -87,37 +111,72 @@ class ShanKeyboardService : InputMethodService() {
     }
 
 
-    override fun onCreateCandidatesView(): View {
-        // 1. Inflate Layout
-        val view = layoutInflater.inflate(R.layout.candidate_view, null)
+    fun updateSuggestions() {
 
-        // 2. ၵွင်ႉၸူး Container တွၼ်ႈတႃႇထႅမ်တူဝ်လိၵ်ႈ
-        candidateContainer = view.findViewById(R.id.candidate_container)
+        if (!::candidateContainer.isInitialized) return
+        // 1. ဢဝ်ၶေႃႈၵႂၢမ်းဢၼ်တိုၵ်ႉတႅမ်ႈဝႆႉ (Current Word)
+        val currentWord = getCurrentWordBeforeCursor()
 
-        // 3. ၸႂ်ႉတႃႇပိုတ်ႇ Suggestion Bar ႁႂ်ႈမၼ်းၼႄဢွၵ်ႇမႃး
-        setCandidatesViewShown(true)
 
-        return view
+        // 2. ႁႃၶေႃႈၵႂၢမ်းလႅတ်း လုၵ်ႉၼႂ်း Dictionary
+        val suggestions = when (currentLanguage) {
+            "SHN" -> shanDictionary.getSuggestions(currentWord)
+            "MY" -> myanmarDictionary.getSuggestions(currentWord)
+            "EN" -> englishDictionary.getSuggestions(currentWord)
+            else -> englishDictionary.getSuggestions(currentWord)
+        }
+
+
+        // 3. ၼႄဢွၵ်ႇၼိူဝ် Candidate Bar
+        candidateContainer.removeAllViews()
+
+        if (suggestions.isNotEmpty()) {
+            for (word in suggestions) {
+                val tv = TextView(this).apply {
+                    text = word
+                    textSize = 18f
+                    setTextColor(Color.WHITE)
+                    setPadding(30, 0, 30, 0)
+                    gravity = android.view.Gravity.CENTER
+                    // *** တူဝ်ယႂ်ႇ: လူဝ်ႇသႂ်ႇ LayoutParams တႅတ်ႈတေႃး ***
+                    layoutParams = LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.MATCH_PARENT
+                    )
+
+                    setOnClickListener {
+                        // မိူဝ်ႈၼိပ်ႉလိၵ်ႈလႅတ်း ႁႂ်ႈတႅၼ်းတီႈၶေႃႈၵဝ်ႇ
+                        replaceCurrentWordWith(word)
+                        candidateContainer.removeAllViews()
+                    }
+                }
+                candidateContainer.addView(tv)
+            }
+        }
     }
 
+    // Function တႃႇဢဝ် Word တူဝ်သုတ်းၽၢႆႇၼႃႈ Cursor
+    private fun getCurrentWordBeforeCursor(): String {
+        val ic = currentInputConnection ?: return ""
+        // ဢဝ် Text မႃး 15 တူဝ် (ဢမ်ႇၼၼ် ၸွမ်းၼင်ႇၶေႃႈၵႂၢမ်းယၢဝ်းသုတ်း)
+        val extractedText = ic.getTextBeforeCursor(15, 0) ?: return ""
 
-    // Function တွၼ်ႈတႃႇထႅမ်တူဝ်လိၵ်ႈလႅတ်း (Helper Method)
-    fun setSuggestions(suggestions: List<String>) {
-        candidateContainer.removeAllViews() // လၢင်ႉဢၼ်ၵဝ်ႇပႅတ်ႈၵွၼ်ႇ
+        // တႅၵ်ႇဢဝ် Word သုတ်းထၢႆး (Split by Space or New Line)
+        val words = extractedText.split(Regex("\\s+"))
+        return if (words.isNotEmpty()) words.last() else ""
+    }
 
-        for (word in suggestions) {
-            val tv = TextView(this).apply {
-                text = word
-                textSize = 18f
-                setTextColor(Color.WHITE)
-                setPadding(30, 0, 30, 0)
-                setOnClickListener {
-                    // မိူဝ်ႈၼိပ်ႉလိၵ်ႈလႅတ်း ႁႂ်ႈသူင်ႇၶဝ်ႈ App ၵမ်းသိုဝ်ႈ
-                    currentInputConnection?.commitText(word + " ", 1)
-                    candidateContainer.removeAllViews()
-                }
-            }
-            candidateContainer.addView(tv)
+    // Function တႃႇတႅၼ်း Word ဢၼ်တႅမ်ႈၽိတ်း/တႅမ်ႈပႆႇယဝ်ႉ လူၺ်ႈ Suggestion
+    private fun replaceCurrentWordWith(word: String) {
+        val ic = currentInputConnection ?: return
+        val currentWord = getCurrentWordBeforeCursor()
+
+        if (currentWord.isNotEmpty()) {
+            // 1. လူတ်း Word ဢၼ်တိုၵ်ႉတႅမ်ႈဝႆႉၼၼ်ႉပႅတ်ႈ
+            ic.deleteSurroundingText(currentWord.length, 0)
+
+            // 2. သႂ်ႇ Word မႂ်ႇ ဢၼ်လိူၵ်ႈဝႆႉၶဝ်ႈၵႂႃႇ
+            ic.commitText(word + " ", 1)
         }
     }
 
@@ -278,8 +337,16 @@ class ShanKeyboardService : InputMethodService() {
         playClickSound()
 
         when (val viewId = view.id) {
-            R.id.key_del -> sendDelete() // ဢၼ်ႁဝ်းတႅမ်ႈဝႆႉၼႂ်း Lesson 14
-            R.id.key_space -> sendText(" ")
+            R.id.key_del -> {
+                sendDelete() // ဢၼ်ႁဝ်းတႅမ်ႈဝႆႉၼႂ်း Lesson 14
+                updateSuggestions() // ႁွင်ႉၵူႈပွၵ်ႈမိူဝ်ႈ Delete
+            }
+
+            R.id.key_space -> {
+                sendText(" ")
+                candidateContainer.removeAllViews() // လၢင်ႉ Bar မိူဝ်ႈၼိပ်ႉ Space
+            }
+
             R.id.key_lang -> toggleLanguage()
             R.id.key_enter -> sendKeyAction(KeyEvent.KEYCODE_ENTER)
             else -> {
@@ -313,6 +380,9 @@ class ShanKeyboardService : InputMethodService() {
                         updateKeyboardLayout()
                     }
                 }
+
+                // သႂ်ႇဝႆႉၽၢႆႇတႂ်ႈသုတ်း မိူဝ်ႈတႅမ်ႈတူဝ်လိၵ်ႈ
+                updateSuggestions()
             }
         }
     }
@@ -536,5 +606,6 @@ class ShanKeyboardService : InputMethodService() {
         // Update Layout ၸွမ်းၼင်ႇၽႃႇသႃႇမႂ်ႇ
         updateKeyboardLayout()
     }
+
 
 }

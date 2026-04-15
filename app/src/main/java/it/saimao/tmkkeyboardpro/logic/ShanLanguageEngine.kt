@@ -18,6 +18,7 @@ class ShanLanguageEngine(private val ic: InputConnection) {
     }
 
     object ShanScript {
+
         // ဝၼ်ၵျုၵ်ႉၽၢႆႇလင် (Tone Marks: ႇ း ႉ ၾ ြ)
         val TONES = setOf('\u1087', '\u1088', '\u1089', '\u108A', '\u1037', '\u1038')
 
@@ -31,6 +32,8 @@ class ShanLanguageEngine(private val ic: InputConnection) {
     // Flags တႃႇတွတ်းၸႂ်ဝႃႈ တိုၵ်ႉမီးလွင်ႈလႅၵ်ႈတီႈ (Swap) ဝႆႉယူႇႁႃႉ
     private var isConsonantSwapped = false
     private var isMedialSwapped = false
+
+    private val ZWSP = "\u200B" // Zero Width Space
 
     fun handleInput(primaryCode: Int): String? {
         val charBefore = ic.getTextBeforeCursor(1, 0)?.toString() ?: ""
@@ -173,7 +176,7 @@ class ShanLanguageEngine(private val ic: InputConnection) {
         }
     }
 
-    public fun convertZawgyi() {
+    fun convertZawgyi() {
 
         ic.performContextMenuAction(android.R.id.selectAll)
         val charSequence = ic.getSelectedText(0)
@@ -189,6 +192,44 @@ class ShanLanguageEngine(private val ic: InputConnection) {
             }
 
             ic.commitText(convertedText, 1)
+        }
+    }
+
+    fun insertWithZWSP(text: String) {
+        val charBefore = ic.getTextBeforeCursor(1, 0)?.toString() ?: ""
+        val asat = "\u103A" // ်
+
+        // 1. သင်ၼိပ်ႉ ASAT (်) -> လူဝ်ႇၵႂႃႇလၢင်ႉ ZWSP ဢၼ်ၸၢင်ႈမီးၽၢႆႇၼႃႈ Consonant
+        if (text == asat) {
+            handleAsat(ic)
+            return
+        }
+
+        // 2. Logic သႂ်ႇ ZWSP တွၼ်ႈတႃႇ Consonant ယူႇယူႇ
+        if (ShanLanguageDetector.isShanUnicode(charBefore) && isShanConsonant(text[0].code)) {
+            ic.commitText("\u200B$text", 1)
+        } else {
+            ic.commitText(text, 1)
+        }
+    }
+
+    private fun handleAsat(ic: InputConnection) {
+        val asat = "\u103A"
+        // ထတ်းတူၺ်း 2 တူဝ်ၽၢႆႇၼႃႈ (မိူၼ်ၼင်ႇ \u200B + ၵ)
+        val before = ic.getTextBeforeCursor(2, 0)?.toString() ?: ""
+
+        if (before.length == 2 && before[0] == '\u200B') {
+            // သင်မီး ZWSP ဝႆႉၽၢႆႇၼႃႈ Consonant တႄႉတႄႉ
+            val consonant = before[1].toString()
+
+            // လူတ်းပႅတ်ႈတင်းသွင်တူဝ် (ZWSP + Consonant)
+            ic.deleteSurroundingText(2, 0)
+
+            // သူင်ႇ Consonant ၶိုၼ်း (ဢမ်ႇပႃး ZWSP) သေၸင်ႇသႂ်ႇ ASAT
+            ic.commitText(consonant + asat, 1)
+        } else {
+            // သင်ဢမ်ႇမီး ZWSP ဝႆႉၵေႃႈ သူင်ႇ ASAT ၵႂႃႇယူႇယူႇ
+            ic.commitText(asat, 1)
         }
     }
 
