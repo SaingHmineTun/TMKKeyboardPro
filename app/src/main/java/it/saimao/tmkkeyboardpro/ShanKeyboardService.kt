@@ -41,6 +41,7 @@ import androidx.core.view.WindowInsetsCompat
 import it.saimao.tmkkeyboardpro.logic.ShanLanguageEngine
 import kotlin.properties.Delegates
 import androidx.core.content.edit
+import it.saimao.tmkkeyboardpro.utils.FontManager
 import java.util.Locale
 
 
@@ -240,6 +241,10 @@ class ShanKeyboardService : InputMethodService() {
             view.setBackgroundColor(backgroundColor)
         }
 
+
+        val typeface = FontManager.getActiveTypeface(this)
+        Log.d("TAGY", if (typeface == null) "null" else "not null")
+
         // 2. ၸႂ်ႉ Recursion တႃႇႁႃ Buttons ၼႂ်းၵူႈ Container
         if (view is ViewGroup) {
             for (i in 0 until view.childCount) {
@@ -259,6 +264,9 @@ class ShanKeyboardService : InputMethodService() {
 
                     // လွင်ႈယႂ်ႇ: ႁႂ်ႈ Tint Mode မၼ်းပဵၼ် SRC_IN ၼင်ႇႁိုဝ်တေႁၼ်သီမႂ်ႇ
                     child.backgroundTintMode = android.graphics.PorterDuff.Mode.SRC_IN
+                    if (typeface != null) {
+                        child.typeface = typeface
+                    }
                 } else if (child is ViewGroup) {
                     // သင်ၺႃး FrameLayout ဢမ်ႇၼၼ် LinearLayout တၢင်ႇဢၼ် ႁႂ်ႈၶဝ်ႈၵႂႃႇႁႃထႅင်ႈ
                     applyTheme(child, themeType)

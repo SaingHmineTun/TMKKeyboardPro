@@ -8,6 +8,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import it.saimao.tmkkeyboardpro.databinding.ActivityMainBinding
+import it.saimao.tmkkeyboardpro.fragments.SettingsFragment
+import it.saimao.tmkkeyboardpro.fragments.SetupFragment
 import it.saimao.tmkkeyboardpro.utils.KeyboardUtils
 
 class MainActivity : AppCompatActivity() {
@@ -55,13 +57,29 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showFragment(fragment: Fragment) {
+    fun showFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(
                 R.id.main_container,
                 fragment
             ) // ႁႂ်ႈလႅၵ်ႈ id @+id/main ပဵၼ် FrameLayout ဢၼ်ၼိုင်ႈၶႃႈ
             .commit()
+    }
+
+    fun replaceFragment(fragment: Fragment, addToBackStack: Boolean = true) {
+        val transaction = supportFragmentManager.beginTransaction()
+            .setCustomAnimations(
+                R.anim.slide_in_right,  // သႂ်ႇ Animation ဢိတ်းၼိုင်ႈ ႁႂ်ႈမၼ်း Slide မႃး
+                R.anim.slide_out_left,
+                R.anim.slide_in_left,
+                R.anim.slide_out_right
+            )
+            .replace(R.id.main_container, fragment)
+
+        if (addToBackStack) {
+            transaction.addToBackStack(null) // တွၼ်ႈတႃႇႁႂ်ႈၼိပ်ႉ Back သေပွၵ်ႈမႃး Settings ၶိုၼ်းလႆႈ
+        }
+        transaction.commit()
     }
 
 }

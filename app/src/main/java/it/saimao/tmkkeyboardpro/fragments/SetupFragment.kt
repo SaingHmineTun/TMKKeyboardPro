@@ -1,4 +1,4 @@
-package it.saimao.tmkkeyboardpro
+package it.saimao.tmkkeyboardpro.fragments
 
 import android.content.Context
 import android.content.Intent
