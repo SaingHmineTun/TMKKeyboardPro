@@ -52,15 +52,18 @@ class ShanKeyboardService : InputMethodService() {
 
     private var backgroundColor by Delegates.notNull<Int>()
 
+    private lateinit var shanLanguageEngine: ShanLanguageEngine
+
+
     // --- တွၼ်ႈတႃႇ Suggestion Logic ---
 
     private lateinit var shanDictionary: DictionaryManager
-
     private lateinit var myanmarDictionary: DictionaryManager
     private lateinit var englishDictionary: DictionaryManager
 
     override fun onCreate() {
         super.onCreate()
+        shanLanguageEngine = ShanLanguageEngine(currentInputConnection)
         shanDictionary = ShanDictionaryManager(this)
         myanmarDictionary = MyanmarDictionaryManager(this)
         englishDictionary = EnglishDictionaryManager(this)
@@ -363,8 +366,7 @@ class ShanKeyboardService : InputMethodService() {
                     if (currentLanguage == "SHN" && primaryCode != -1) {
 
                         // 2. သူင်ႇ Code ၶဝ်ႈၵႂႃႇၼႂ်း Engine
-                        val engine = ShanLanguageEngine(currentInputConnection!!)
-                        val resultText = engine.handleInput(primaryCode)
+                        val resultText = shanLanguageEngine.handleInput(primaryCode)
                         if (resultText != null) {
                             sendText(resultText)
                         }
