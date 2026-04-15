@@ -250,10 +250,10 @@
     <Button android:id="@+id/key_lang" style="@style/TmkKeyStyle" android:text="🌐"
         app:layout_constraintHorizontal_weight="1.5"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/key_my_emoji"
+        app:layout_constraintRight_toLeftOf="@+id/key_emoji"
         app:layout_constraintTop_toBottomOf="@+id/key_my_shift" />
 
-    <Button android:id="@+id/key_my_emoji" style="@style/TmkKeyStyle" android:text="😊"
+    <Button android:id="@+id/key_emoji" style="@style/TmkKeyStyle" android:text="😊"
         app:layout_constraintHorizontal_weight="1.25"
         app:layout_constraintLeft_toRightOf="@+id/key_lang"
         app:layout_constraintRight_toLeftOf="@+id/key_my_123"
@@ -261,7 +261,7 @@
 
     <Button android:id="@+id/key_my_123" style="@style/TmkKeyStyle" android:text="123"
         app:layout_constraintHorizontal_weight="1.25"
-        app:layout_constraintLeft_toRightOf="@+id/key_my_emoji"
+        app:layout_constraintLeft_toRightOf="@+id/key_emoji"
         app:layout_constraintRight_toLeftOf="@+id/key_space"
         app:layout_constraintTop_toTopOf="@+id/key_lang" />
 

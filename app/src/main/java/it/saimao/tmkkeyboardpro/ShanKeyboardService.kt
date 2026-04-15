@@ -17,6 +17,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.Button
 import android.widget.FrameLayout
+import android.widget.GridView
 import android.widget.LinearLayout
 import android.widget.PopupWindow
 import android.widget.TextView
@@ -52,7 +53,14 @@ class ShanKeyboardService : InputMethodService() {
 
     private var backgroundColor by Delegates.notNull<Int>()
 
-    private lateinit var shanLanguageEngine: ShanLanguageEngine
+    private var _shanLanguageEngine: ShanLanguageEngine? = null
+    private val shanLanguageEngine: ShanLanguageEngine
+        get() {
+            if (_shanLanguageEngine == null) {
+                _shanLanguageEngine = ShanLanguageEngine(currentInputConnection)
+            }
+            return _shanLanguageEngine!!
+        }
 
 
     // --- တွၼ်ႈတႃႇ Suggestion Logic ---
@@ -63,7 +71,6 @@ class ShanKeyboardService : InputMethodService() {
 
     override fun onCreate() {
         super.onCreate()
-        shanLanguageEngine = ShanLanguageEngine(currentInputConnection)
         shanDictionary = ShanDictionaryManager(this)
         myanmarDictionary = MyanmarDictionaryManager(this)
         englishDictionary = EnglishDictionaryManager(this)
@@ -294,7 +301,7 @@ class ShanKeyboardService : InputMethodService() {
                             true // တွၼ်ႈတႃႇလၢတ်ႈၼႄဝႃႈ ႁဝ်းၸတ်းၵၢၼ်ယဝ်ႉ
                         } else if (child.id == R.id.key_enter) {
                             if (currentLanguage == "SHN") {
-                                ShanLanguageEngine(ic = currentInputConnection).convertZawgyi()
+                                shanLanguageEngine.convertZawgyi()
                                 true
                             } else {
                                 false
@@ -349,6 +356,8 @@ class ShanKeyboardService : InputMethodService() {
                 sendText(" ")
                 candidateContainer.removeAllViews() // လၢင်ႉ Bar မိူဝ်ႈၼိပ်ႉ Space
             }
+
+            R.id.key_emoji -> showEmojiPicker()
 
             R.id.key_lang -> toggleLanguage()
             R.id.key_enter -> sendKeyAction(KeyEvent.KEYCODE_ENTER)
@@ -607,6 +616,56 @@ class ShanKeyboardService : InputMethodService() {
 
         // Update Layout ၸွမ်းၼင်ႇၽႃႇသႃႇမႂ်ႇ
         updateKeyboardLayout()
+    }
+
+    fun showEmojiPicker() {
+        keysContainer.removeAllViews()
+        val emojiView = layoutInflater.inflate(R.layout.emoji_picker, null)
+        keysContainer.addView(emojiView)
+
+        val grid: GridView = emojiView.findViewById(R.id.emoji_grid)
+
+        // 1. သဵၼ်ႈမၢႆ Emoji ၸွမ်းမူႇၸိူဝ်း
+        val smileyList = listOf(
+            "😀", "😃", "😄", "😁", "😆", "😅", "😂", "🤣", "😊", "😇",
+            "🙂", "🙃", "😉", "😍", "🥰", "😘", "😗", "😙", "😚", "😋",
+            "😛", "😝", "😜", "🤪", "🤨", "🧐", "🤓", "😎", "🤩", "🥳",
+            "😏", "😒", "😞", "😔", "😟", "😕", "🙁", "☹️", "😣", "😖",
+            "😫", "😩", "🥺", "😢", "😭", "😤", "😠", "😡", "🤬", "🤯",
+            "😳", "🥵", "🥶", "😱", "😨", "😰", "😥", "😓", "🤗", "🤔"
+        )
+        val natureList = listOf(
+            "🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐻‍❄️", "🐨",
+            "🐯", "🦁", "🐮", "🐷", "🐽", "🐸", "🐵", "🙊", "🙉", "🙈",
+            "🐒", "🐔", "🐧", "🐦", "🐤", "🐣", "🐥", "🦆", "🦅", "🦉",
+            "🦇", "🐺", "🐗", "🐴", "🦄", "🐝", "🐛", "🦋", "🐌", "🐞",
+            "🐜", "🦟", "🦗", "🕷", "🕸", "🦂", "🐢", "🐍", "🦎", "🦖",
+            "🦕", "🐙", "🦑", "🦐", "🦞", "🦀", "🐡", "🐠", "🐟", "🐬"
+        )
+
+        // Helper function တႃႇလႅၵ်ႈ Emoji ၼႂ်း Grid
+        fun updateGrid(list: List<String>) {
+            grid.adapter = EmojiAdapter(this, list) { emoji ->
+                currentInputConnection?.commitText(emoji, 1)
+            }
+        }
+
+        // 2. Default: ၼႄ Smileys မိူဝ်ႈတႄႇပိုတ်ႇ
+        updateGrid(smileyList)
+
+        // 3. ၵွင်ႉ Click Listener တွၼ်ႈတႃႇ Tabs ၽၢႆႇတႂ်ႈ
+        emojiView.findViewById<Button>(R.id.btn_emoji_smiley).setOnClickListener {
+            updateGrid(smileyList)
+        }
+
+        emojiView.findViewById<Button>(R.id.btn_emoji_nature).setOnClickListener {
+            updateGrid(natureList)
+        }
+
+        // တုမ်ႇပွၵ်ႈၶိုၼ်းၼႃႈ Keyboard ယူႇယူႇ
+        emojiView.findViewById<Button>(R.id.btn_emoji_back).setOnClickListener {
+            updateKeyboardLayout()
+        }
     }
 
 

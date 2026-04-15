@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TMK Keyboard Pro</string>
+    <string name="smiley">😊</string>
+    <string name="nature">🐶</string>
 </resources>
