@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">TMK Keyboard Pro</string>
-    <string name="smiley">😊</string>
-    <string name="nature">🐶</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="settings_title">Keyboard Settings</string>
+    <string name="pref_appearance">Appearance</string>
+    <string name="pref_theme">Keyboard Theme</string>
+    <string name="pref_app_language">App Language</string>
+    <string name="pref_vibration">Vibration</string>
+    <string name="pref_font_mgmt">Shan Font Management</string>
+    <string name="test_keyboard">Test Your Keyboard</string>
+    <string name="select_language">Select App Language</string>
+    <string name="version">1.0.0</string>
 </resources>

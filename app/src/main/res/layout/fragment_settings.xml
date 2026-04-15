@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="TMK Keyboard Settings"
+            android:text="@string/settings_title"
             android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
             android:textStyle="bold" />
 
@@ -38,7 +38,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Test Your Keyboard"
+                    android:text="@string/test_keyboard"
                     android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
                     android:textColor="?attr/colorPrimary" />
 
@@ -101,7 +101,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Keyboard Theme"
+                        android:text="@string/pref_theme"
                         android:textAppearance="@style/TextAppearance.Material3.BodyLarge" />
 
                     <TextView
@@ -128,7 +128,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Default Language"
+                        android:text="@string/pref_app_language"
                         android:textAppearance="@style/TextAppearance.Material3.BodyLarge" />
 
                     <TextView
@@ -155,7 +155,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Shan Font Settings"
+                        android:text="@string/pref_font_mgmt"
                         android:textAppearance="@style/TextAppearance.Material3.BodyLarge" />
 
                     <ImageView
@@ -202,7 +202,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Vibration"
+                            android:text="@string/pref_vibration"
                             android:textAppearance="@style/TextAppearance.Material3.BodyLarge" />
 
                         <TextView
@@ -252,6 +252,25 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView android:id="@+id/btn_feedback"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" app:cardCornerRadius="16dp" app:cardElevation="2dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:gravity="center_vertical" android:padding="16dp">
+
+                <ImageView android:layout_width="24dp" android:layout_height="24dp"
+                    android:src="@drawable/ic_feedback" app:tint="?attr/colorPrimary" />
+
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp" android:layout_weight="1"
+                    android:text="Send Feedback / Report Bug"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyLarge" />
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TMK ကီးဘုတ်</string>
+    <string name="settings_title">ကီးဘုတ် ဆက်တင်များ</string>
+    <string name="pref_appearance">အသွင်အပြင်</string>
+    <string name="pref_theme">ကီးဘုတ် သီမ် (Theme)</string>
+    <string name="pref_app_language">အက်ပ် ဘာသာစကား</string>
+    <string name="pref_vibration">တုန်ခါမှု</string>
+    <string name="pref_font_mgmt">ရှမ်းဖောင့် စီမံရန်</string>
+    <string name="test_keyboard">စာရေးစမ်းသပ်ရန်</string>
+    <string name="select_language">ဘာသာစကား ရွေးချယ်ရန်</string>
+</resources>

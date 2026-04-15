@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ၶီးပော့တ် တႆးမေႃၶမ်း</string>
+    <string name="settings_title">ၵၢၼ်တင်ႈၵႃႈ ၶီးပော့တ်</string>
+    <string name="pref_appearance">ႁၢင်ႈၽၢင်</string>
+    <string name="pref_theme">သီၶီးပော့တ်</string>
+    <string name="pref_app_language">ၽႃႇသႃႇၼႂ်း App</string>
+    <string name="pref_vibration">လွင်ႈသၼ်ႇ</string>
+    <string name="pref_font_mgmt">ၸတ်းၵၢၼ် ၾွၼ်ႉတႆး</string>
+    <string name="test_keyboard">ၸၢမ်းတႅမ်ႈလိၵ်ႈတူၺ်း</string>
+    <string name="select_language">လိူၵ်ႈၽႃႇသႃႇၼႂ်း App</string>
+</resources>

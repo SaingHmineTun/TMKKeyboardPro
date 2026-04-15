@@ -1,14 +1,20 @@
 package it.saimao.tmkkeyboardpro.fragments
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.edit
+import androidx.core.os.LocaleListCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import it.saimao.tmkkeyboardpro.MainActivity
+import it.saimao.tmkkeyboardpro.R
 import it.saimao.tmkkeyboardpro.databinding.FragmentSettingsBinding
 import it.saimao.tmkkeyboardpro.utils.FontManager
 
@@ -53,6 +59,10 @@ class SettingsFragment : Fragment() {
 
         binding.btnManageFonts.setOnClickListener {
             (requireActivity() as MainActivity).replaceFragment(FontFragment())
+        }
+
+        binding.btnFeedback.setOnClickListener {
+            sendFeedback()
         }
 
         setupPreviewArea()
@@ -110,26 +120,68 @@ class SettingsFragment : Fragment() {
             .show()
     }
 
-    private fun showLanguageSelector() {
-        val langs = arrayOf("Shan (တႆး)", "Myanmar (ဗမာ)", "English")
-        val langValues = arrayOf("SHN", "MY", "EN")
+    override fun onResume() {
+        super.onResume()
+        // ၵူႈပွၵ်ႈဢၼ်ပွၵ်ႈမႃးၼႃႈၼႆႉ ႁႂ်ႈ Update Font ထႅင်ႈပွၵ်ႈၼိုင်ႈ
+        setupPreviewArea()
+        updateLanguageUI()
+    }
 
-        val currentLang = prefs.getString("default_language", "SHN")
-        val checkedItem = langValues.indexOf(currentLang)
+    private fun showLanguageSelector() {
+        val langs = arrayOf("English", "Shan (တႆး)", "Myanmar (ဗမာ)")
+        val langTags = arrayOf("en", "shn", "my")
+
+        // ဢၢၼ်ႇတူၺ်း Locale ယၢမ်းလဵဝ်
+        val currentTag = AppCompatDelegate.getApplicationLocales()[0]?.language ?: "en"
+        val checkedItem = langTags.indexOf(currentTag)
 
         MaterialAlertDialogBuilder(requireContext())
-            .setTitle("Default Language")
+            .setTitle(getString(R.string.select_language))
             .setSingleChoiceItems(langs, checkedItem) { dialog, which ->
-                prefs.edit { putString("default_language", langValues[which]) }
-                binding.tvCurrentLang.text = langs[which]
+                val selectedTag = langTags[which]
+
+                // 1. Save သႂ်ႇ SharedPreferences (Optional)
+                prefs.edit { putString("app_language", selectedTag) }
+
+                // 2. *** Force Change App Language ***
+                val appLocales: LocaleListCompat = LocaleListCompat.forLanguageTags(selectedTag)
+                AppCompatDelegate.setApplicationLocales(appLocales)
+
                 dialog.dismiss()
             }
             .show()
     }
 
-    override fun onResume() {
-        super.onResume()
-        // ၵူႈပွၵ်ႈဢၼ်ပွၵ်ႈမႃးၼႃႈၼႆႉ ႁႂ်ႈ Update Font ထႅင်ႈပွၵ်ႈၼိုင်ႈ
-        setupPreviewArea()
+    private fun updateLanguageUI() {
+        val currentTag = AppCompatDelegate.getApplicationLocales()[0]?.language ?: "en"
+        binding.tvCurrentLang.text = when (currentTag) {
+            "shn" -> "Shan (တႆး)"
+            "my" -> "Myanmar (ဗမာ)"
+            else -> "English"
+        }
     }
+
+    private fun sendFeedback() {
+        val deviceName = android.os.Build.MODEL
+        val androidVersion = android.os.Build.VERSION.RELEASE
+        val appVersion = getString(R.string.version)
+
+        val info = "\n\n--- Device Info ---\n" +
+                "Model: $deviceName\n" +
+                "Android: $androidVersion\n" +
+                "App: $appVersion"
+
+        val intent = Intent(Intent.ACTION_SENDTO).apply {
+            data = Uri.parse("mailto:tmk.muse@gmail.com") // ဢီးမေးလ်ၸဝ်ႈၵဝ်ႇ
+            putExtra(Intent.EXTRA_SUBJECT, "TMK Keyboard Feedback")
+            putExtra(Intent.EXTRA_TEXT, "$info")
+        }
+
+        try {
+            startActivity(intent)
+        } catch (e: Exception) {
+            Toast.makeText(context, "No Email app found!", Toast.LENGTH_SHORT).show()
+        }
+    }
+
 }
