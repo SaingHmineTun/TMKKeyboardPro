@@ -381,11 +381,11 @@
         android:text="😊"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_lang"
-        app:layout_constraintRight_toLeftOf="@+id/key_my_123"
+        app:layout_constraintRight_toLeftOf="@+id/key_123"
         app:layout_constraintTop_toTopOf="@+id/key_lang" />
 
     <Button
-        android:id="@+id/key_my_123"
+        android:id="@+id/key_123"
         style="@style/TmkKeyStyle"
         android:text="123"
         app:layout_constraintHorizontal_weight="1.25"
@@ -398,7 +398,7 @@
         style="@style/TmkKeyStyle"
         android:text="ဗမာ"
         app:layout_constraintHorizontal_weight="3"
-        app:layout_constraintLeft_toRightOf="@+id/key_my_123"
+        app:layout_constraintLeft_toRightOf="@+id/key_123"
         app:layout_constraintRight_toLeftOf="@+id/key_my_punct"
         app:layout_constraintTop_toTopOf="@+id/key_lang" />
 

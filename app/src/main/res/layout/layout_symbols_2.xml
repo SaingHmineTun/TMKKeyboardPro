@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#1A1A1A"
+    android:orientation="vertical"
+    android:paddingBottom="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/key_1"
+            style="@style/TmkKeyStyle"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/key_2"
+            style="@style/TmkKeyStyle"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/key_3"
+            style="@style/TmkKeyStyle"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/key_4"
+            style="@style/TmkKeyStyle"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/key_5"
+            style="@style/TmkKeyStyle"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/key_6"
+            style="@style/TmkKeyStyle"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/key_7"
+            style="@style/TmkKeyStyle"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/key_8"
+            style="@style/TmkKeyStyle"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/key_9"
+            style="@style/TmkKeyStyle"
+            android:text="9" />
+
+        <Button
+            android:id="@+id/key_0"
+            style="@style/TmkKeyStyle"
+            android:text="0" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/key_tilde"
+            style="@style/TmkKeyStyle"
+            android:text="~" />
+
+        <Button
+            android:id="@+id/key_grave"
+            style="@style/TmkKeyStyle"
+            android:text="`" />
+
+        <Button
+            android:id="@+id/key_pipe"
+            style="@style/TmkKeyStyle"
+            android:text="|" />
+
+        <Button
+            android:id="@+id/key_bullet"
+            style="@style/TmkKeyStyle"
+            android:text="•" />
+
+        <Button
+            android:id="@+id/key_sqrt"
+            style="@style/TmkKeyStyle"
+            android:text="√" />
+
+        <Button
+            android:id="@+id/key_pi"
+            style="@style/TmkKeyStyle"
+            android:text="π" />
+
+        <Button
+            android:id="@+id/key_divide"
+            style="@style/TmkKeyStyle"
+            android:text="÷" />
+
+        <Button
+            android:id="@+id/key_multiply"
+            style="@style/TmkKeyStyle"
+            android:text="×" />
+
+        <Button
+            android:id="@+id/key_paragraph"
+            style="@style/TmkKeyStyle"
+            android:text="¶" />
+
+        <Button
+            android:id="@+id/key_delta"
+            style="@style/TmkKeyStyle"
+            android:text="∆" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/key_curly_open"
+            style="@style/TmkKeyStyle"
+            android:text="{" />
+
+        <Button
+            android:id="@+id/key_curly_close"
+            style="@style/TmkKeyStyle"
+            android:text="}" />
+
+        <Button
+            android:id="@+id/key_sq_bracket_open"
+            style="@style/TmkKeyStyle"
+            android:text="[" />
+
+        <Button
+            android:id="@+id/key_sq_bracket_close"
+            style="@style/TmkKeyStyle"
+            android:text="]" />
+
+        <Button
+            android:id="@+id/key_angle_open"
+            style="@style/TmkKeyStyle"
+            android:text="&lt;" />
+
+        <Button
+            android:id="@+id/key_angle_close"
+            style="@style/TmkKeyStyle"
+            android:text="&gt;" />
+
+        <Button
+            android:id="@+id/key_euro"
+            style="@style/TmkKeyStyle"
+            android:text="€" />
+
+        <Button
+            android:id="@+id/key_pound"
+            style="@style/TmkKeyStyle"
+            android:text="£" />
+
+        <Button
+            android:id="@+id/key_yen"
+            style="@style/TmkKeyStyle"
+            android:text="¥" />
+
+        <Button
+            android:id="@+id/key_won"
+            style="@style/TmkKeyStyle"
+            android:text="₩" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/key_copyright"
+            style="@style/TmkKeyStyle"
+            android:text="©" />
+
+        <Button
+            android:id="@+id/key_registered"
+            style="@style/TmkKeyStyle"
+            android:text="®" />
+
+        <Button
+            android:id="@+id/key_trademark"
+            style="@style/TmkKeyStyle"
+            android:text="™" />
+
+        <Button
+            android:id="@+id/key_degree"
+            style="@style/TmkKeyStyle"
+            android:text="°" />
+
+        <Button
+            android:id="@+id/key_backslash"
+            style="@style/TmkKeyStyle"
+            android:text="\\" />
+
+        <Button
+            android:id="@+id/key_degree_cel"
+            style="@style/TmkKeyStyle"
+            android:text="℃" />
+
+        <Button
+            android:id="@+id/key_infinity"
+            style="@style/TmkKeyStyle"
+            android:text="∞" />
+
+        <Button
+            android:id="@+id/key_approx"
+            style="@style/TmkKeyStyle"
+            android:text="≈" />
+
+        <Button
+            android:id="@+id/key_not_equal"
+            style="@style/TmkKeyStyle"
+            android:text="≠" />
+
+        <Button
+            android:id="@+id/key_backspace"
+            style="@style/ActionTmkKeyStyle"
+            android:text="⌫" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/key_switch_abc"
+            style="@style/ActionTmkKeyStyle"
+            android:layout_weight="1.5"
+            android:text="ABC" />
+
+        <Button
+            android:id="@+id/key_2_1"
+            style="@style/ActionTmkKeyStyle"
+            android:layout_weight="1.5"
+            android:text="\?123" />
+
+        <Button
+            android:id="@+id/key_comma"
+            style="@style/TmkKeyStyle"
+            android:text="," />
+
+        <Button
+            android:id="@+id/key_space"
+            style="@style/TmkKeyStyle"
+            android:layout_weight="4"
+            android:text="Space" />
+
+        <Button
+            android:id="@+id/key_period"
+            style="@style/TmkKeyStyle"
+            android:text="." />
+
+        <Button
+            android:id="@+id/key_enter"
+            style="@style/ActionTmkKeyStyle"
+            android:layout_weight="1.5"
+            android:text="Enter" />
+    </LinearLayout>
+
+</LinearLayout>

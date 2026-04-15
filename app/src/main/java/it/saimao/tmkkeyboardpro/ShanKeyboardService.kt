@@ -52,6 +52,12 @@ class ShanKeyboardService : InputMethodService() {
     private val languages = listOf("EN", "SHN", "MY")
     private var currentLanguageIndex = 0
 
+    enum class SymbolState {
+        OFF, LAYER_1, LAYER_2
+    }
+
+    private var currentSymbolState = SymbolState.OFF
+
     // ဢဝ်ပဵၼ် Property တႃႇႁွင်ႉၸႂ်ႉငၢႆႈ
     val currentLanguage: String
         get() = languages[currentLanguageIndex]
@@ -333,9 +339,7 @@ class ShanKeyboardService : InputMethodService() {
                         } else if (child.id == R.id.key_emoji) {
                             showClipboardHistory()
                             true
-                        }
-
-                        else {
+                        } else {
                             false
                         }
                     }
@@ -387,6 +391,26 @@ class ShanKeyboardService : InputMethodService() {
             }
 
             R.id.key_emoji -> showEmojiPicker()
+
+            // lang => sym1
+            // sym2 => sym1
+            R.id.key_123, R.id.key_2_1 -> {
+                currentSymbolState = SymbolState.LAYER_1
+                updateKeyboardLayout()
+            }
+
+            // sym1 => sym2
+            R.id.key_1_2 -> {
+                currentSymbolState = SymbolState.LAYER_2
+                updateKeyboardLayout()
+            }
+
+            // sym1, sym2 => lang
+            R.id.key_switch_abc -> {
+                currentSymbolState = SymbolState.OFF
+                updateKeyboardLayout()
+            }
+
             R.id.key_speech -> {
                 handleVoiceKey()
             }
@@ -558,17 +582,19 @@ class ShanKeyboardService : InputMethodService() {
     }
 
     private fun updateKeyboardLayout() {
-        val layoutToLoad = when (currentLanguage) {
-            "EN" ->
-                if (currentShiftState == ShiftState.OFF) R.layout.layout_en_normal else R.layout.layout_en_shifted
 
-            "MY" ->
-                if (currentShiftState == ShiftState.OFF) R.layout.layout_my_normal else R.layout.layout_my_shifted
 
-            "SHN" ->
-                if (currentShiftState == ShiftState.OFF) R.layout.layout_shn_normal else R.layout.layout_shn_shifted
-
-            else -> R.layout.layout_en_normal
+        val layoutToLoad = when (currentSymbolState) {
+            SymbolState.LAYER_1 -> R.layout.layout_symbols
+            SymbolState.LAYER_2 -> R.layout.layout_symbols_2
+            SymbolState.OFF -> {
+                when (currentLanguage) {
+                    "EN" -> if (currentShiftState == ShiftState.OFF) R.layout.layout_en_normal else R.layout.layout_en_shifted
+                    "MY" -> if (currentShiftState == ShiftState.OFF) R.layout.layout_my_normal else R.layout.layout_my_shifted
+                    "SHN" -> if (currentShiftState == ShiftState.OFF) R.layout.layout_shn_normal else R.layout.layout_shn_shifted
+                    else -> R.layout.layout_en_normal
+                }
+            }
         }
 
         loadLayout(layoutToLoad) // Function ဢၼ်ႁဝ်းတႅမ်ႈဝႆႉၼႂ်း Lesson 15
