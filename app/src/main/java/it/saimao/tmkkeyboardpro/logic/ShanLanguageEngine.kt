@@ -1,8 +1,12 @@
 package it.saimao.tmkkeyboardpro.logic
 
+import android.text.TextUtils
 import android.view.inputmethod.InputConnection
+import it.saimao.shan_language_tools.converters.ShanZawgyiConverter
+import it.saimao.shan_language_tools.dectector.ShanLanguageDetector
 
-class ShanReorderingEngine(private val ic: InputConnection) {
+
+class ShanLanguageEngine(private val ic: InputConnection) {
 
     companion object {
         const val MY_E = 0x1031      // ေ (Myanmar E)
@@ -62,6 +66,7 @@ class ShanReorderingEngine(private val ic: InputConnection) {
                 ic.deleteSurroundingText(1, 0)
                 "${0x102D.toChar()}${0x1030.toChar()}"
             }
+
             else -> null
         }
     }
@@ -86,6 +91,7 @@ class ShanReorderingEngine(private val ic: InputConnection) {
                         return "$currentChar${prev.toChar()}"
                     }
                 }
+
                 isShanMedial(current) -> {
                     if (isConsonantSwapped && !isMedialSwapped) {
                         ic.deleteSurroundingText(1, 0) // Delete E
@@ -132,6 +138,7 @@ class ShanReorderingEngine(private val ic: InputConnection) {
                     ic.commitText("\u200B\u1031", 1)
                     resetReorderFlags()
                 }
+
                 else -> {
                     ic.deleteSurroundingText(1, 0)
                 }
@@ -163,6 +170,25 @@ class ShanReorderingEngine(private val ic: InputConnection) {
             ShanScript.UPPER_VOWELS.contains(prevChar) && ShanScript.UPPER_VOWELS.contains(currChar) -> true
 
             else -> false
+        }
+    }
+
+    public fun convertZawgyi() {
+
+        ic.performContextMenuAction(android.R.id.selectAll)
+        val charSequence = ic.getSelectedText(0)
+        val convertedText: String?
+        val selectedText: String?
+        if (!TextUtils.isEmpty(charSequence)) {
+            selectedText = charSequence.toString()
+            // FOR SHAN CONVERTER
+            if (ShanLanguageDetector.isShanZawgyi(selectedText)) {
+                convertedText = ShanZawgyiConverter.zg2uni(selectedText)
+            } else {
+                convertedText = ShanZawgyiConverter.uni2zg(selectedText)
+            }
+
+            ic.commitText(convertedText, 1)
         }
     }
 

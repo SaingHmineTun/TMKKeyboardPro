@@ -22,7 +22,7 @@ import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
-import it.saimao.tmkkeyboardpro.logic.ShanReorderingEngine
+import it.saimao.tmkkeyboardpro.logic.ShanLanguageEngine
 import kotlin.properties.Delegates
 
 
@@ -210,6 +210,7 @@ class ShanKeyboardService : InputMethodService() {
         ic?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_DPAD_RIGHT))
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     fun registerKeys(view: View) {
         if (view is ViewGroup) {
             for (i in 0 until view.childCount) {
@@ -229,6 +230,13 @@ class ShanKeyboardService : InputMethodService() {
                         if (popupChars.isNotEmpty()) {
                             showPopup(child, popupChars)
                             true // တွၼ်ႈတႃႇလၢတ်ႈၼႄဝႃႈ ႁဝ်းၸတ်းၵၢၼ်ယဝ်ႉ
+                        } else if (child.id == R.id.key_enter) {
+                            if (currentLanguage == "SHN") {
+                                ShanLanguageEngine(ic = currentInputConnection).convertZawgyi()
+                                true
+                            } else {
+                                false
+                            }
                         } else {
                             false
                         }
@@ -288,7 +296,7 @@ class ShanKeyboardService : InputMethodService() {
                     if (currentLanguage == "SHN" && primaryCode != -1) {
 
                         // 2. သူင်ႇ Code ၶဝ်ႈၵႂႃႇၼႂ်း Engine
-                        val engine = ShanReorderingEngine(currentInputConnection!!)
+                        val engine = ShanLanguageEngine(currentInputConnection!!)
                         val resultText = engine.handleInput(primaryCode)
                         if (resultText != null) {
                             sendText(resultText)
