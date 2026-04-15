@@ -1,14 +1,23 @@
 package it.saimao.tmkkeyboardpro
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.Rect
 import android.inputmethodservice.InputMethodService
 import android.media.AudioManager
+import android.net.Uri
 import android.os.Build
+import android.os.Bundle
 import android.preference.PreferenceManager
+import android.provider.Settings
+import android.speech.RecognitionListener
+import android.speech.RecognizerIntent
+import android.speech.SpeechRecognizer
 import android.util.Log
 import android.view.HapticFeedbackConstants
 import android.view.KeyEvent
@@ -22,11 +31,14 @@ import android.widget.GridView
 import android.widget.LinearLayout
 import android.widget.PopupWindow
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import it.saimao.tmkkeyboardpro.logic.ShanLanguageEngine
 import kotlin.properties.Delegates
 import androidx.core.content.edit
+import java.util.Locale
 
 
 class ShanKeyboardService : InputMethodService() {
@@ -76,6 +88,7 @@ class ShanKeyboardService : InputMethodService() {
         shanDictionary = ShanDictionaryManager(this)
         myanmarDictionary = MyanmarDictionaryManager(this)
         englishDictionary = EnglishDictionaryManager(this)
+        setupVoiceInput()
     }
 
     override fun onCreateInputView(): View {
@@ -122,22 +135,10 @@ class ShanKeyboardService : InputMethodService() {
 
     }
 
+    private fun setSuggestions(suggestions: List<String>) {
 
-    fun updateSuggestions() {
 
         if (!::candidateContainer.isInitialized) return
-        // 1. ဢဝ်ၶေႃႈၵႂၢမ်းဢၼ်တိုၵ်ႉတႅမ်ႈဝႆႉ (Current Word)
-        val currentWord = getCurrentWordBeforeCursor()
-
-
-        // 2. ႁႃၶေႃႈၵႂၢမ်းလႅတ်း လုၵ်ႉၼႂ်း Dictionary
-        val suggestions = when (currentLanguage) {
-            "SHN" -> shanDictionary.getSuggestions(currentWord)
-            "MY" -> myanmarDictionary.getSuggestions(currentWord)
-            "EN" -> englishDictionary.getSuggestions(currentWord)
-            else -> englishDictionary.getSuggestions(currentWord)
-        }
-
 
         // 3. ၼႄဢွၵ်ႇၼိူဝ် Candidate Bar
         candidateContainer.removeAllViews()
@@ -164,6 +165,21 @@ class ShanKeyboardService : InputMethodService() {
                 }
                 candidateContainer.addView(tv)
             }
+        }
+    }
+
+    fun updateSuggestions() {
+
+        // 1. ဢဝ်ၶေႃႈၵႂၢမ်းဢၼ်တိုၵ်ႉတႅမ်ႈဝႆႉ (Current Word)
+        val currentWord = getCurrentWordBeforeCursor()
+
+
+        // 2. ႁႃၶေႃႈၵႂၢမ်းလႅတ်း လုၵ်ႉၼႂ်း Dictionary
+        val suggestions = when (currentLanguage) {
+            "SHN" -> shanDictionary.getSuggestions(currentWord)
+            "MY" -> myanmarDictionary.getSuggestions(currentWord)
+            "EN" -> englishDictionary.getSuggestions(currentWord)
+            else -> englishDictionary.getSuggestions(currentWord)
         }
     }
 
@@ -360,6 +376,9 @@ class ShanKeyboardService : InputMethodService() {
             }
 
             R.id.key_emoji -> showEmojiPicker()
+            R.id.key_speech -> {
+                handleVoiceKey()
+            }
 
             R.id.key_lang -> toggleLanguage()
             R.id.key_enter -> sendKeyAction(KeyEvent.KEYCODE_ENTER)
@@ -529,9 +548,15 @@ class ShanKeyboardService : InputMethodService() {
 
     private fun updateKeyboardLayout() {
         val layoutToLoad = when (currentLanguage) {
-            "EN" -> if (currentShiftState == ShiftState.OFF) R.layout.layout_en_normal else R.layout.layout_en_shifted
-            "MY" -> if (currentShiftState == ShiftState.OFF) R.layout.layout_my_normal else R.layout.layout_my_shifted
-            "SHN" -> if (currentShiftState == ShiftState.OFF) R.layout.layout_shn_normal else R.layout.layout_shn_shifted
+            "EN" ->
+                if (currentShiftState == ShiftState.OFF) R.layout.layout_en_normal else R.layout.layout_en_shifted
+
+            "MY" ->
+                if (currentShiftState == ShiftState.OFF) R.layout.layout_my_normal else R.layout.layout_my_shifted
+
+            "SHN" ->
+                if (currentShiftState == ShiftState.OFF) R.layout.layout_shn_normal else R.layout.layout_shn_shifted
+
             else -> R.layout.layout_en_normal
         }
 
@@ -701,6 +726,138 @@ class ShanKeyboardService : InputMethodService() {
         val prefs = getSharedPreferences("EmojiPrefs", Context.MODE_PRIVATE)
         val recentString = prefs.getString("recent_emojis", "") ?: ""
         return recentString.split(",").filter { it.isNotEmpty() }
+    }
+
+    private lateinit var speechRecognizer: SpeechRecognizer
+
+    // ၵၢၼ်ပိၵ်ႉ SpeechRecognizer မိူဝ်ႈဢမ်ႇၸႂ်ႉ (Memory Management)
+    override fun onDestroy() {
+        if (::speechRecognizer.isInitialized) {
+            speechRecognizer.destroy()
+        }
+        super.onDestroy()
+    }
+
+    private fun setupVoiceInput() {
+        if (!SpeechRecognizer.isRecognitionAvailable(this)) {
+            Log.e("VoiceInput", "Speech recognition is not available on this device")
+            return
+        }
+
+        speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this)
+
+        speechRecognizer.setRecognitionListener(object : RecognitionListener {
+
+            override fun onReadyForSpeech(params: Bundle?) {
+                // တီႈၼႆႈ ၸဝ်ႈၵဝ်ႇၸၢင်ႈလႅၵ်ႈသီ Mic Button ပဵၼ်သီလႅင် တွၼ်ႈတႃႇၼႄဝႃႈ "တိုၵ်ႉထွမ်ႇယူႇ"
+                Log.d("VoiceInput", "Ready for speech")
+            }
+
+            override fun onBeginningOfSpeech() {
+                Log.d("VoiceInput", "Speech started")
+            }
+
+            override fun onRmsChanged(rmsdB: Float) {
+                // တီႈၼႆႈ ၸဝ်ႈၵဝ်ႇၸၢင်ႈႁဵတ်း Animation ႁႂ်ႈ Mic တူင်ႉၸွမ်း သဵင်ၼၵ်း/မဝ်
+            }
+
+            override fun onBufferReceived(buffer: ByteArray?) {}
+
+            override fun onEndOfSpeech() {
+                // မိူဝ်ႈၵူၼ်းၸႂ်ႉၵတ်းၵႂႃႇ ႁႂ်ႈလႅၵ်ႈသီ Mic ပွၵ်ႈပဵၼ်သီၵဝ်ႇ
+                Log.d("VoiceInput", "End of speech")
+            }
+
+            override fun onError(error: Int) {
+                val errorMessage = when (error) {
+                    SpeechRecognizer.ERROR_AUDIO -> "Audio recording error"
+                    SpeechRecognizer.ERROR_INSUFFICIENT_PERMISSIONS -> "Insufficient permissions"
+                    SpeechRecognizer.ERROR_NETWORK -> "Network error"
+                    SpeechRecognizer.ERROR_NO_MATCH -> "No match found"
+                    SpeechRecognizer.ERROR_RECOGNIZER_BUSY -> "Recognition service busy"
+                    else -> "Unknown error"
+                }
+                Log.e("VoiceInput", errorMessage)
+            }
+
+            override fun onResults(results: Bundle?) {
+                val matches = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
+                if (!matches.isNullOrEmpty()) {
+                    // တွၼ်ႈတႃႇ Final Result: သႂ်ႇ Space ၽၢႆႇလင်ဢိတ်းၼိုင်ႈ
+                    currentInputConnection?.commitText(matches[0] + " ", 1)
+                }
+            }
+
+            override fun onPartialResults(partialResults: Bundle?) {
+                val matches =
+                    partialResults?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
+                if (!matches.isNullOrEmpty()) {
+                    // ၼႄလိၵ်ႈလႅတ်း (Suggestion Bar) ၸွမ်းၼင်ႇသဵင်ဢၼ်ထွမ်ႇလႆႈၵမ်းလဵဝ်
+                    val partialText = matches[0]
+                    setSuggestions(listOf(partialText))
+                }
+            }
+
+            override fun onEvent(eventType: Int, params: Bundle?) {}
+        })
+    }
+
+
+    private fun handleVoiceKey() {
+        // 1. ၸႅတ်ႈတူၺ်း Permission
+        if (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.RECORD_AUDIO
+            ) == PackageManager.PERMISSION_GRANTED
+        ) {
+
+            // တမ်း Locale ၸွမ်းၼင်ႇ Language ဢၼ်ၸႂ်ႉယူႇယၢမ်းလဵဝ်
+            val langTag = when (currentLanguage) {
+                "MY" -> "my-MM"
+                "EN" -> "en-US"
+                else -> "en-US" // Shan ပႆႇမီး Speech Engine ႁင်းၵူၺ်း
+            }
+
+            val voiceIntent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+                putExtra(
+                    RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                    RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
+                )
+                putExtra(RecognizerIntent.EXTRA_LANGUAGE, langTag)
+                putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true)
+            }
+
+            startVoiceRecognition(voiceIntent)
+        } else {
+            // ပႆႇပၼ် Permission -> လၢတ်ႈၼႄၵူၼ်းၸႂ်ႉ သေပိုတ်ႇ Settings
+            showPermissionToast()
+            openAppSettings()
+        }
+    }
+
+    private fun startVoiceRecognition(voiceIntent: Intent) {
+        try {
+            speechRecognizer.startListening(voiceIntent)
+            triggerVibration(currentInputView) // Feedback ႁႂ်ႈႁူႉဝႃႈတႄႇယဝ်ႉ
+        } catch (e: Exception) {
+            Log.e("VoiceInput", "Failed to start: ${e.message}")
+        }
+    }
+
+    private fun showPermissionToast() {
+        Toast.makeText(
+            this,
+            "ၶႅၼ်းတေႃႈ ပၼ်ၶေႃႈၶႂၢင်ႉ Microphone တွၼ်ႈတႃႇၸႂ်ႉ Voice Typing ၶႃႈ",
+            Toast.LENGTH_LONG
+        ).show()
+    }
+
+    private fun openAppSettings() {
+        val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
+            data = Uri.fromParts("package", packageName, null)
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        }
+        startActivity(intent)
     }
 
 
