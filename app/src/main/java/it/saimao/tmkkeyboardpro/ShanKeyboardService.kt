@@ -1,6 +1,7 @@
 package it.saimao.tmkkeyboardpro
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.Rect
@@ -25,6 +26,7 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import it.saimao.tmkkeyboardpro.logic.ShanLanguageEngine
 import kotlin.properties.Delegates
+import androidx.core.content.edit
 
 
 class ShanKeyboardService : InputMethodService() {
@@ -625,6 +627,7 @@ class ShanKeyboardService : InputMethodService() {
 
         val grid: GridView = emojiView.findViewById(R.id.emoji_grid)
 
+
         // 1. သဵၼ်ႈမၢႆ Emoji ၸွမ်းမူႇၸိူဝ်း
         val smileyList = listOf(
             "😀", "😃", "😄", "😁", "😆", "😅", "😂", "🤣", "😊", "😇",
@@ -647,6 +650,8 @@ class ShanKeyboardService : InputMethodService() {
         fun updateGrid(list: List<String>) {
             grid.adapter = EmojiAdapter(this, list) { emoji ->
                 currentInputConnection?.commitText(emoji, 1)
+                saveToRecentEmojis(emoji) // <--- Save ၵူႈပွၵ်ႈမိူဝ်ႈၼိပ်ႉ
+
             }
         }
 
@@ -662,10 +667,40 @@ class ShanKeyboardService : InputMethodService() {
             updateGrid(natureList)
         }
 
+        // ၵွင်ႉ Click Listener တွၼ်ႈတႃႇတုမ်ႇ Recent
+        emojiView.findViewById<Button>(R.id.btn_emoji_recent).setOnClickListener {
+            updateGrid(getRecentEmojis()) // လူတ်ႇ Data မႂ်ႇတႃႇသေႇ
+        }
+
         // တုမ်ႇပွၵ်ႈၶိုၼ်းၼႃႈ Keyboard ယူႇယူႇ
         emojiView.findViewById<Button>(R.id.btn_emoji_back).setOnClickListener {
             updateKeyboardLayout()
         }
+
+    }
+
+    private fun saveToRecentEmojis(emoji: String) {
+        val prefs = getSharedPreferences("EmojiPrefs", Context.MODE_PRIVATE)
+        val recentString = prefs.getString("recent_emojis", "") ?: ""
+
+        // 1. တႅၵ်ႇဢဝ် List ၵဝ်ႇမႃး
+        val recentList = recentString.split(",").filter { it.isNotEmpty() }.toMutableList()
+
+        // 2. သင်မီးဝႆႉယဝ်ႉ ႁႂ်ႈထွၼ်ဢွၵ်ႇၵွၼ်ႇ (တႃႇဢဝ်မႃးတမ်းၽၢႆႇၼႃႈသုတ်း)
+        recentList.remove(emoji)
+        recentList.add(0, emoji)
+
+        // 3. ၵဵပ်းဝႆႉၵွၺ်း 20 တူဝ် (ဢမ်ႇၼၼ် ၸွမ်းၼင်ႇမၵ်ႉမၼ်ႈဝႆႉ)
+        val updatedList = recentList.take(20)
+
+        // 4. Save ၶိုၼ်းၼႂ်း SharedPreferences
+        prefs.edit { putString("recent_emojis", updatedList.joinToString(",")) }
+    }
+
+    private fun getRecentEmojis(): List<String> {
+        val prefs = getSharedPreferences("EmojiPrefs", Context.MODE_PRIVATE)
+        val recentString = prefs.getString("recent_emojis", "") ?: ""
+        return recentString.split(",").filter { it.isNotEmpty() }
     }
 
 

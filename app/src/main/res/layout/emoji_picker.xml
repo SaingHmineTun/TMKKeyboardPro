@@ -22,6 +22,14 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/btn_emoji_recent"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:text="🕑" />
+
+        <Button
             android:id="@+id/btn_emoji_smiley"
             android:layout_width="0dp"
             android:layout_height="match_parent"
