@@ -2,6 +2,7 @@ package it.saimao.tmkkeyboardpro
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -18,7 +19,9 @@ import android.provider.Settings
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
+import android.text.TextUtils
 import android.util.Log
+import android.view.Gravity
 import android.view.HapticFeedbackConstants
 import android.view.KeyEvent
 import android.view.MotionEvent
@@ -89,6 +92,7 @@ class ShanKeyboardService : InputMethodService() {
         myanmarDictionary = MyanmarDictionaryManager(this)
         englishDictionary = EnglishDictionaryManager(this)
         setupVoiceInput()
+        setupClipboard()
     }
 
     override fun onCreateInputView(): View {
@@ -181,6 +185,8 @@ class ShanKeyboardService : InputMethodService() {
             "EN" -> englishDictionary.getSuggestions(currentWord)
             else -> englishDictionary.getSuggestions(currentWord)
         }
+
+        setSuggestions(suggestions)
     }
 
     // Function တႃႇဢဝ် Word တူဝ်သုတ်းၽၢႆႇၼႃႈ Cursor
@@ -324,7 +330,12 @@ class ShanKeyboardService : InputMethodService() {
                             } else {
                                 false
                             }
-                        } else {
+                        } else if (child.id == R.id.key_emoji) {
+                            showClipboardHistory()
+                            true
+                        }
+
+                        else {
                             false
                         }
                     }
@@ -858,6 +869,56 @@ class ShanKeyboardService : InputMethodService() {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }
         startActivity(intent)
+    }
+
+    private lateinit var clipboard: ClipboardManager
+    private val clipHistory = mutableListOf<String>()
+
+    private fun setupClipboard() {
+        clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+
+        // ထတ်းတူၺ်းမိူဝ်ႈၵူၼ်းၸႂ်ႉ Copy လိၵ်ႈ
+        clipboard.addPrimaryClipChangedListener {
+            val clipData = clipboard.primaryClip
+            if (clipData != null && clipData.itemCount > 0) {
+                val text = clipData.getItemAt(0).text.toString()
+                if (text.isNotEmpty() && !clipHistory.contains(text)) {
+                    // ထႅမ်သႂ်ႇၼႂ်း History (ဢဝ်တမ်းဝႆႉၽၢႆႇၼႃႈသုတ်း)
+                    clipHistory.add(0, text)
+                    // ၵဵပ်းဝႆႉၵွၺ်း 10-20 ထႅဝ် ၼင်ႇႁိုဝ် Memory တေဢမ်ႇတဵမ်
+                    if (clipHistory.size > 20) clipHistory.removeAt(20)
+                }
+            }
+        }
+    }
+
+    private fun showClipboardHistory() {
+        // ၵွင်ႉၸူး Container ဢၼ်မီးၼႂ်း Suggestion Bar (ဢၼ်ႁဝ်းသၢင်ႈဝႆႉၼႂ်း Lesson 27)
+        val container = currentInputView.findViewById<LinearLayout>(R.id.candidate_container)
+        container.removeAllViews()
+
+        if (clipHistory.isEmpty()) {
+            val tv = TextView(this).apply { text = "Clipboard Empty" }
+            container.addView(tv)
+            return
+        }
+
+        clipHistory.forEach { text ->
+            val item = TextView(this).apply {
+                this.text = text
+                maxLines = 1
+                ellipsize = TextUtils.TruncateAt.END
+                setPadding(30, 0, 30, 0)
+                gravity = Gravity.CENTER
+                setTextColor(Color.WHITE)
+                setBackgroundResource(R.drawable.key_background) // ၸႂ်ႉ Background ဢၼ်မီးဝႆႉ
+
+                setOnClickListener {
+                    currentInputConnection?.commitText(text, 1)
+                }
+            }
+            container.addView(item)
+        }
     }
 
 
