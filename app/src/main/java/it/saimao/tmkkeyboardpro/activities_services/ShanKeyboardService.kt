@@ -177,6 +177,7 @@ class ShanKeyboardService : InputMethodService() {
                         ViewGroup.LayoutParams.WRAP_CONTENT,
                         ViewGroup.LayoutParams.MATCH_PARENT
                     )
+                    typeface = FontManager.getActiveTypeface(this@ShanKeyboardService)
 
                     setOnClickListener {
                         // မိူဝ်ႈၼိပ်ႉလိၵ်ႈလႅတ်း ႁႂ်ႈတႅၼ်းတီႈၶေႃႈၵဝ်ႇ
