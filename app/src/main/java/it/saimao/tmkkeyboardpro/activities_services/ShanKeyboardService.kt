@@ -5,9 +5,7 @@ import android.annotation.SuppressLint
 import android.content.ClipboardManager
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.content.res.ColorStateList
 import android.graphics.Color
-import android.graphics.PorterDuff
 import android.graphics.Rect
 import android.inputmethodservice.InputMethodService
 import android.media.AudioManager
@@ -46,8 +44,8 @@ import it.saimao.tmkkeyboardpro.logic.FontManager
 import it.saimao.tmkkeyboardpro.logic.MyanmarDictionaryManager
 import it.saimao.tmkkeyboardpro.logic.ShanDictionaryManager
 import it.saimao.tmkkeyboardpro.logic.ShanLanguageEngine
+import it.saimao.tmkkeyboardpro.logic.ThemeManager.applyTheme
 import it.saimao.tmkkeyboardpro.utils.getHandWritingSystem
-import it.saimao.tmkkeyboardpro.utils.getKeyboardTheme
 import it.saimao.tmkkeyboardpro.utils.getPopupCharsFor
 import it.saimao.tmkkeyboardpro.utils.getSoundOnKeyPress
 import it.saimao.tmkkeyboardpro.utils.getVibrateOnKeyPress
@@ -104,7 +102,8 @@ class ShanKeyboardService : InputMethodService() {
     override fun onCreate() {
         super.onCreate()
         // Pre-cache layouts ၼင်ႇႁိုဝ်မိူဝ်ႈ User ၼိပ်ႉလႅၵ်ႈၽႃႇသႃႇ တေဢမ်ႇ Lag သေဢိတ်း
-        layoutCache[R.layout.layout_en_normal] = layoutInflater.inflate(R.layout.layout_en_normal, null).also { registerKeys(it) }
+        layoutCache[R.layout.layout_en_normal] =
+            layoutInflater.inflate(R.layout.layout_en_normal, null).also { registerKeys(it) }
         shanDictionary = ShanDictionaryManager(this)
         myanmarDictionary = MyanmarDictionaryManager(this)
         englishDictionary = EnglishDictionaryManager(this)
@@ -224,59 +223,6 @@ class ShanKeyboardService : InputMethodService() {
     }
 
 
-    @SuppressLint("RestrictedApi")
-    fun applyTheme(view: View, themeType: String) {
-        val keyNormalColor: Int
-        val keyPressedColor: Int
-
-        if (themeType == "GOLD") {
-            keyNormalColor = getColor(R.color.gold_key_normal)
-            keyPressedColor = getColor(R.color.gold_key_pressed)
-            backgroundColor = getColor(R.color.gold_background)
-        } else {
-            keyNormalColor = getColor(R.color.blue_key_normal)
-            keyPressedColor = getColor(R.color.blue_key_pressed)
-            backgroundColor = getColor(R.color.blue_background)
-        }
-
-        // 1. သင်ပဵၼ် Root View ႁႂ်ႈလႅၵ်ႈသီ Background
-        if (view.id == R.id.keyboard_root || view is FlowLayout) {
-            view.setBackgroundColor(backgroundColor)
-        }
-
-
-        val typeface = FontManager.getActiveTypeface(this)
-
-        // 2. ၸႂ်ႉ Recursion တႃႇႁႃ Buttons ၼႂ်းၵူႈ Container
-        if (view is ViewGroup) {
-            for (i in 0 until view.childCount) {
-                val child = view.getChildAt(i)
-
-                if (child is Button) {
-                    if (child.id == R.id.key_space) {
-                        setupSpaceBarSwipeLogic(child);
-                    }
-                    // လႅၵ်ႈသီတုမ်ႇၼဵၵ်ႉ
-                    val states = arrayOf(
-                        intArrayOf(android.R.attr.state_pressed),
-                        intArrayOf()
-                    )
-                    val colors = intArrayOf(keyPressedColor, keyNormalColor)
-                    child.backgroundTintList = ColorStateList(states, colors)
-
-                    // လွင်ႈယႂ်ႇ: ႁႂ်ႈ Tint Mode မၼ်းပဵၼ် SRC_IN ၼင်ႇႁိုဝ်တေႁၼ်သီမႂ်ႇ
-                    child.backgroundTintMode = PorterDuff.Mode.SRC_IN
-                    if (typeface != null) {
-                        child.typeface = typeface
-                    }
-                } else if (child is ViewGroup) {
-                    // သင်ၺႃး FrameLayout ဢမ်ႇၼၼ် LinearLayout တၢင်ႇဢၼ် ႁႂ်ႈၶဝ်ႈၵႂႃႇႁႃထႅင်ႈ
-                    applyTheme(child, themeType)
-                }
-            }
-        }
-    }
-
     private var initialX = 0f
     private val SWIPE_THRESHOLD = 30 // တၢင်းၵႆ (Pixels) ဢၼ်တေၼပ်ႉပဵၼ် 1 တူဝ်လိၵ်ႈ
 
@@ -327,6 +273,9 @@ class ShanKeyboardService : InputMethodService() {
 
                 if (child is Button) {
 
+                    if (child.id == R.id.key_space) {
+                        setupSpaceBarSwipeLogic(child)
+                    }
 
                     child.setOnClickListener {
                         val text = child.text.toString()
@@ -428,9 +377,9 @@ class ShanKeyboardService : InputMethodService() {
             R.id.key_lang -> toggleLanguage()
             R.id.key_enter -> sendKeyAction(KeyEvent.KEYCODE_ENTER)
             else -> {
-                if (viewId == R.id.key_unshift || viewId == R.id.key_my_unshift || viewId == R.id.key_shn_unshift) {
+                if (viewId == R.id.key_unshift) {
                     handleShift()
-                } else if (viewId == R.id.key_shift || viewId == R.id.key_my_shift || viewId == R.id.key_shn_shift) {
+                } else if (viewId == R.id.key_shift) {
                     handleShift()
 
                 } else {
@@ -475,7 +424,7 @@ class ShanKeyboardService : InputMethodService() {
 
     override fun onStartInputView(info: EditorInfo?, restarting: Boolean) {
         super.onStartInputView(info, restarting)
-        applyTheme(currentInputView, getKeyboardTheme(this))
+        applyTheme(this, currentInputView)
     }
 
     override fun onWindowShown() {
@@ -616,7 +565,7 @@ class ShanKeyboardService : InputMethodService() {
             yOffset = -keyY + 50 // Force ႁႂ်ႈမၼ်းယူႇတႅမ်ႇ Status Bar ဢိတ်းၼိုင်ႈ
         }
 
-        applyTheme(cardView, getKeyboardTheme(this))
+        applyTheme(this, cardView)
 
         popupWindow?.showAsDropDown(anchorView, xOffset, yOffset)
     }
@@ -686,7 +635,7 @@ class ShanKeyboardService : InputMethodService() {
         keysContainer.addView(cachedView)
 
         // 4. မႄးသီ Theme (ဢၼ်ၼႆႉလူဝ်ႇမႄးတႃႇသေႇ ယွၼ်ႉ User ၸၢင်ႈလႅၵ်ႈ Theme)
-        applyTheme(cachedView, getKeyboardTheme(this))
+        applyTheme(this, cachedView)
     }
 
 

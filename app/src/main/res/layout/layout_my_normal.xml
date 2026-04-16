@@ -277,7 +277,7 @@
         app:layout_constraintTop_toTopOf="@+id/key_my_e" />
 
     <Button
-        android:id="@+id/key_my_shift"
+        android:id="@+id/key_shift"
         style="@style/TmkKeyStyle"
         android:text="⇧"
         app:layout_constraintHorizontal_weight="1.2"
@@ -290,9 +290,9 @@
         style="@style/TmkKeyStyle"
         android:text="ဖ"
         app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintLeft_toRightOf="@+id/key_my_shift"
+        app:layout_constraintLeft_toRightOf="@+id/key_shift"
         app:layout_constraintRight_toLeftOf="@+id/key_my_hta"
-        app:layout_constraintTop_toTopOf="@+id/key_my_shift" />
+        app:layout_constraintTop_toTopOf="@+id/key_shift" />
 
     <Button
         android:id="@+id/key_my_hta"
@@ -301,7 +301,7 @@
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_my_pha"
         app:layout_constraintRight_toLeftOf="@+id/key_my_kha"
-        app:layout_constraintTop_toTopOf="@+id/key_my_shift" />
+        app:layout_constraintTop_toTopOf="@+id/key_shift" />
 
     <Button
         android:id="@+id/key_my_kha"
@@ -310,7 +310,7 @@
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_my_hta"
         app:layout_constraintRight_toLeftOf="@+id/key_my_la"
-        app:layout_constraintTop_toTopOf="@+id/key_my_shift" />
+        app:layout_constraintTop_toTopOf="@+id/key_shift" />
 
     <Button
         android:id="@+id/key_my_la"
@@ -319,7 +319,7 @@
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_my_kha"
         app:layout_constraintRight_toLeftOf="@+id/key_my_ba"
-        app:layout_constraintTop_toTopOf="@+id/key_my_shift" />
+        app:layout_constraintTop_toTopOf="@+id/key_shift" />
 
     <Button
         android:id="@+id/key_my_ba"
@@ -328,7 +328,7 @@
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_my_la"
         app:layout_constraintRight_toLeftOf="@+id/key_my_nya"
-        app:layout_constraintTop_toTopOf="@+id/key_my_shift" />
+        app:layout_constraintTop_toTopOf="@+id/key_shift" />
 
     <Button
         android:id="@+id/key_my_nya"
@@ -337,7 +337,7 @@
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_my_ba"
         app:layout_constraintRight_toLeftOf="@+id/key_my_aa"
-        app:layout_constraintTop_toTopOf="@+id/key_my_shift" />
+        app:layout_constraintTop_toTopOf="@+id/key_shift" />
 
     <Button
         android:id="@+id/key_my_aa"
@@ -346,7 +346,7 @@
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_my_nya"
         app:layout_constraintRight_toLeftOf="@+id/key_my_ya"
-        app:layout_constraintTop_toTopOf="@+id/key_my_shift" />
+        app:layout_constraintTop_toTopOf="@+id/key_shift" />
 
     <Button
         android:id="@+id/key_my_ya"
@@ -355,7 +355,7 @@
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_my_aa"
         app:layout_constraintRight_toLeftOf="@+id/key_del"
-        app:layout_constraintTop_toTopOf="@+id/key_my_shift" />
+        app:layout_constraintTop_toTopOf="@+id/key_shift" />
 
     <Button
         android:id="@+id/key_del"
@@ -364,7 +364,7 @@
         app:layout_constraintHorizontal_weight="1.2"
         app:layout_constraintLeft_toRightOf="@+id/key_my_ya"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/key_my_shift" />
+        app:layout_constraintTop_toTopOf="@+id/key_shift" />
 
     <Button
         android:id="@+id/key_lang"
@@ -373,7 +373,7 @@
         app:layout_constraintHorizontal_weight="1.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/key_emoji"
-        app:layout_constraintTop_toBottomOf="@+id/key_my_shift" />
+        app:layout_constraintTop_toBottomOf="@+id/key_shift" />
 
     <Button
         android:id="@+id/key_emoji"
@@ -399,11 +399,11 @@
         android:text="ဗမာ"
         app:layout_constraintHorizontal_weight="3"
         app:layout_constraintLeft_toRightOf="@+id/key_123"
-        app:layout_constraintRight_toLeftOf="@+id/key_my_punct"
+        app:layout_constraintRight_toLeftOf="@+id/key_dot"
         app:layout_constraintTop_toTopOf="@+id/key_lang" />
 
     <Button
-        android:id="@+id/key_my_punct"
+        android:id="@+id/key_dot"
         style="@style/TmkKeyStyle"
         android:text="။"
         app:layout_constraintHorizontal_weight="1"
@@ -416,7 +416,7 @@
         style="@style/TmkKeyStyle"
         android:text="🎙️"
         app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintLeft_toRightOf="@+id/key_my_punct"
+        app:layout_constraintLeft_toRightOf="@+id/key_dot"
         app:layout_constraintRight_toLeftOf="@+id/key_enter"
         app:layout_constraintTop_toTopOf="@+id/key_lang" />
 

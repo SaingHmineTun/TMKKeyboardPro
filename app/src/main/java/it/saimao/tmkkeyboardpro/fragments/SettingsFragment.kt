@@ -20,6 +20,7 @@ import it.saimao.tmkkeyboardpro.logic.ThemeManager.themes
 
 import it.saimao.tmkkeyboardpro.utils.getAppLanguage
 import it.saimao.tmkkeyboardpro.utils.getHandWritingSystem
+import it.saimao.tmkkeyboardpro.utils.getKeyboardTheme
 import it.saimao.tmkkeyboardpro.utils.getSoundOnKeyPress
 import it.saimao.tmkkeyboardpro.utils.getVibrateOnKeyPress
 
@@ -27,6 +28,7 @@ import it.saimao.tmkkeyboardpro.utils.saveAppLanguage
 import it.saimao.tmkkeyboardpro.utils.saveHandWritingSystem
 import it.saimao.tmkkeyboardpro.utils.saveSoundOnKeyPress
 import it.saimao.tmkkeyboardpro.utils.saveVibrateOnKeyPress
+import java.util.Locale
 
 class SettingsFragment : Fragment() {
 
@@ -92,13 +94,8 @@ class SettingsFragment : Fragment() {
 
     private fun updateUI() {
         // လူတ်ႇသီ Theme ယၢမ်းလဵဝ်
-        val currentTheme = ThemeManager.getTheme(requireContext())
-        binding.tvCurrentTheme.text = when (currentTheme) {
-            "DARK" -> "Dark Knight"
-            "BLUE" -> "Ocean Blue"
-            "WHITE" -> "Pure White"
-            else -> "Gold"
-        }
+        val currentTheme = getKeyboardTheme(requireContext())
+        binding.tvCurrentTheme.text = currentTheme
 
         // လူတ်ႇၽႃႇသႃႇယၢမ်းလဵဝ်
         val currentLang = getAppLanguage(requireContext())

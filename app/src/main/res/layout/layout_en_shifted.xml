@@ -390,7 +390,7 @@
     <Button
         android:id="@+id/key_dot"
         style="@style/TmkKeyStyle"
-        android:text=". ,"
+        android:text=","
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_space"
         app:layout_constraintRight_toLeftOf="@+id/key_speech"
