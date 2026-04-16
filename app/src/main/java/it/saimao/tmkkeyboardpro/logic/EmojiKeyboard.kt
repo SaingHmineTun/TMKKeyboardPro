@@ -43,6 +43,7 @@ class EmojiKeyboard(
         if (emojiView == null) {
             emojiView = layoutInflater.inflate(R.layout.emoji_picker, null)
 
+
             // ႁႃတၢင်းသုင် key_height လုၵ်ႉတီႈ dimens.xml
             val keyHeight = context.resources.getDimensionPixelSize(R.dimen.key_height)
             val padding = context.resources.getDimensionPixelSize(R.dimen.keyboard_padding)
@@ -68,6 +69,7 @@ class EmojiKeyboard(
         }
         // ၵူႈပွၵ်ႈဢၼ်ပိုတ်ႇ ႁႂ်ႈမၼ်းၼႄ Smileys ဢွၼ်တၢင်း
         updateGrid(smileyList)
+        ThemeManager.applyTheme(context, emojiView!!)
         return emojiView!!
     }
 

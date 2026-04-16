@@ -8,8 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
+import it.saimao.tmkkeyboardpro.logic.ThemeManager
 
-class EmojiAdapter(context: Context, private val emojis: List<String>, val onClick: (String) -> Unit) : BaseAdapter() {
+class EmojiAdapter(private val context: Context, private val emojis: List<String>, val onClick: (String) -> Unit) : BaseAdapter() {
     private val inflater = LayoutInflater.from(context)
 
     override fun getCount(): Int = emojis.size
@@ -19,6 +20,7 @@ class EmojiAdapter(context: Context, private val emojis: List<String>, val onCli
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view = convertView ?: inflater.inflate(R.layout.simple_list_item_1, parent, false)
         val textView = view.findViewById<TextView>(R.id.text1)
+
         textView.text = emojis[position]
         textView.textSize = 16f
         textView.gravity = Gravity.CENTER

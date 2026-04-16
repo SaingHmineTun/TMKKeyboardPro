@@ -8,6 +8,7 @@ import android.graphics.PorterDuff
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import com.google.android.material.internal.FlowLayout
 import it.saimao.tmkkeyboardpro.R
 import it.saimao.tmkkeyboardpro.utils.getKeyboardTheme
@@ -79,31 +80,40 @@ object ThemeManager {
         val textColor = Color.parseColor(theme.txt)
         val specialColor = Color.parseColor(theme.special)
 
-        // 1. Set Background for Root/Container
-        if (view.id == R.id.keyboard_root || view is FlowLayout) {
+        // 1. Set Background for Root/Container for Keyboard, Emoji Keyboard and Candidates
+        if (view.id == R.id.keyboard_root || view.id == R.id.emoji_keyboard || view is FlowLayout) {
             view.setBackgroundColor(bgColor)
         }
 
         val typeface = FontManager.getActiveTypeface(context)
+
+        fun applyThemeStyle(child: View) {
+            if (child is Button || child is TextView) {
+                val isSpecial = isSpecialKey(child.id)
+                val normalColor = if (isSpecial) specialColor else keyColor
+
+                // ColorStateList for Normal/Pressed states
+                val states = arrayOf(intArrayOf(android.R.attr.state_pressed), intArrayOf())
+                val colors = intArrayOf(pressedColor, normalColor)
+
+                child.backgroundTintList = ColorStateList(states, colors)
+                child.backgroundTintMode = PorterDuff.Mode.SRC_IN
+                child.setTextColor(textColor)
+
+                if (child is Button) {
+                    if (typeface != null) child.typeface = typeface
+                }
+            }
+        }
+
 
         // 2. Recursive Loop to apply to Buttons
         if (view is ViewGroup) {
             for (i in 0 until view.childCount) {
                 val child = view.getChildAt(i)
 
-                if (child is Button) {
-                    val isSpecial = isSpecialKey(child.id)
-                    val normalColor = if (isSpecial) specialColor else keyColor
-
-                    // ColorStateList for Normal/Pressed states
-                    val states = arrayOf(intArrayOf(android.R.attr.state_pressed), intArrayOf())
-                    val colors = intArrayOf(pressedColor, normalColor)
-
-                    child.backgroundTintList = ColorStateList(states, colors)
-                    child.backgroundTintMode = PorterDuff.Mode.SRC_IN
-                    child.setTextColor(textColor)
-
-                    if (typeface != null) child.typeface = typeface
+                if (child is Button || child is TextView) {
+                    applyThemeStyle(child)
 
                 } else if (child is ViewGroup) {
                     applyTheme(context, child)
