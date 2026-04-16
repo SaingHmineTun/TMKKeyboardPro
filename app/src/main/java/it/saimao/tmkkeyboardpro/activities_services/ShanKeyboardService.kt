@@ -1,13 +1,13 @@
-package it.saimao.tmkkeyboardpro
+package it.saimao.tmkkeyboardpro.activities_services
 
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.ClipboardManager
-import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.graphics.PorterDuff
 import android.graphics.Rect
 import android.inputmethodservice.InputMethodService
 import android.media.AudioManager
@@ -21,10 +21,12 @@ import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
 import android.text.TextUtils
 import android.util.Log
+import android.view.ContextThemeWrapper
 import android.view.Gravity
 import android.view.HapticFeedbackConstants
 import android.view.KeyEvent
 import android.view.MotionEvent
+import android.view.RoundedCorner
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
@@ -35,15 +37,25 @@ import android.widget.LinearLayout
 import android.widget.PopupWindow
 import android.widget.TextView
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import androidx.core.content.edit
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.card.MaterialCardView
+import com.google.android.material.internal.FlowLayout
+import it.saimao.tmkkeyboardpro.R
+import it.saimao.tmkkeyboardpro.adapters.EmojiAdapter
+import it.saimao.tmkkeyboardpro.logic.DictionaryManager
+import it.saimao.tmkkeyboardpro.logic.EnglishDictionaryManager
+import it.saimao.tmkkeyboardpro.logic.FontManager
+import it.saimao.tmkkeyboardpro.logic.MyanmarDictionaryManager
+import it.saimao.tmkkeyboardpro.logic.ShanDictionaryManager
 import it.saimao.tmkkeyboardpro.logic.ShanLanguageEngine
+import it.saimao.tmkkeyboardpro.utils.getPopupCharsFor
+import it.saimao.tmkkeyboardpro.utils.getSavedTheme
 import kotlin.properties.Delegates
-import androidx.core.content.edit
-import it.saimao.tmkkeyboardpro.utils.FontManager
-import java.util.Locale
-
+import androidx.core.graphics.toColorInt
 
 class ShanKeyboardService : InputMethodService() {
 
@@ -140,9 +152,7 @@ class ShanKeyboardService : InputMethodService() {
         registerKeys(newKeysView)
 
         // မႄးသီ Theme ပႃးၵမ်းလဵဝ်
-        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
-        val currentTheme = prefs.getString("keyboard_theme", "BLUE") ?: "BLUE"
-        applyTheme(newKeysView, currentTheme)
+        applyTheme(newKeysView, getSavedTheme(this))
 
     }
 
@@ -161,7 +171,7 @@ class ShanKeyboardService : InputMethodService() {
                     textSize = 18f
                     setTextColor(Color.WHITE)
                     setPadding(30, 0, 30, 0)
-                    gravity = android.view.Gravity.CENTER
+                    gravity = Gravity.CENTER
                     // *** တူဝ်ယႂ်ႇ: လူဝ်ႇသႂ်ႇ LayoutParams တႅတ်ႈတေႃး ***
                     layoutParams = LinearLayout.LayoutParams(
                         ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -222,6 +232,7 @@ class ShanKeyboardService : InputMethodService() {
     }
 
 
+    @SuppressLint("RestrictedApi")
     fun applyTheme(view: View, themeType: String) {
         val keyNormalColor: Int
         val keyPressedColor: Int
@@ -237,13 +248,12 @@ class ShanKeyboardService : InputMethodService() {
         }
 
         // 1. သင်ပဵၼ် Root View ႁႂ်ႈလႅၵ်ႈသီ Background
-        if (view.id == R.id.keyboard_root) {
+        if (view.id == R.id.keyboard_root || view is FlowLayout) {
             view.setBackgroundColor(backgroundColor)
         }
 
 
         val typeface = FontManager.getActiveTypeface(this)
-        Log.d("TAGY", if (typeface == null) "null" else "not null")
 
         // 2. ၸႂ်ႉ Recursion တႃႇႁႃ Buttons ၼႂ်းၵူႈ Container
         if (view is ViewGroup) {
@@ -263,7 +273,7 @@ class ShanKeyboardService : InputMethodService() {
                     child.backgroundTintList = ColorStateList(states, colors)
 
                     // လွင်ႈယႂ်ႇ: ႁႂ်ႈ Tint Mode မၼ်းပဵၼ် SRC_IN ၼင်ႇႁိုဝ်တေႁၼ်သီမႂ်ႇ
-                    child.backgroundTintMode = android.graphics.PorterDuff.Mode.SRC_IN
+                    child.backgroundTintMode = PorterDuff.Mode.SRC_IN
                     if (typeface != null) {
                         child.typeface = typeface
                     }
@@ -333,7 +343,7 @@ class ShanKeyboardService : InputMethodService() {
 
                     // Long Click ပိုတ်ႇ Pop-up
                     child.setOnLongClickListener {
-                        val popupChars = getPopupCharsFor(child.text.toString())
+                        val popupChars = getPopupCharsFor(currentLanguage, child.text.toString())
                         if (popupChars.isNotEmpty()) {
                             showPopup(child, popupChars)
                             true // တွၼ်ႈတႃႇလၢတ်ႈၼႄဝႃႈ ႁဝ်းၸတ်းၵၢၼ်ယဝ်ႉ
@@ -464,13 +474,7 @@ class ShanKeyboardService : InputMethodService() {
 
     override fun onStartInputView(info: EditorInfo?, restarting: Boolean) {
         super.onStartInputView(info, restarting)
-
-        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
-        val currentTheme = prefs.getString("keyboard_theme", "GOLD") ?: "GOLD"
-
-        Log.d("TAGY", currentTheme)
-        // Apply theme ၵူႈပွၵ်ႈဢၼ် Keyboard ပိုတ်ႇဢွၵ်ႇမႃး
-        applyTheme(currentInputView, currentTheme)
+        applyTheme(currentInputView, getSavedTheme(this))
     }
 
     override fun onWindowShown() {
@@ -538,32 +542,82 @@ class ShanKeyboardService : InputMethodService() {
     private var popupWindow: PopupWindow? = null
     private val popupButtons = mutableListOf<Button>()
 
+    @SuppressLint("RestrictedApi")
     private fun showPopup(anchorView: View, popupCharacters: List<String>) {
-        val layout = LinearLayout(this).apply {
-            orientation = LinearLayout.HORIZONTAL
-            backgroundColor = Color.DKGRAY
-            elevation = 10f
+        val cardView = CardView(this).apply {
+            cardElevation = 20f
+            radius = 24f
+        }
+
+        val layout = FlowLayout(this).apply {
+            setPadding(10, 10, 10, 10)
         }
 
         popupButtons.clear()
+
+        // တွၼ်ႈတႃႇႁႂ်ႈ ၼိုင်ႈ Row မီး 6 တူဝ်:
+        // ႁဝ်းတေၸႂ်ႉ Width ဢၼ်ၵပ်းၸွမ်း Screen Width / 6
+        val screenWidth = resources.displayMetrics.widthPixels
+        val btnWidth = (screenWidth / 6.5).toInt() // ၵပ်းႁႂ်ႈမၼ်းၵႅပ်ႈ တွၼ်ႈတႃႇ 6 Buttons
+
         for (char in popupCharacters) {
             val btn = Button(this).apply {
                 text = char
-                background = null // ႁႂ်ႈမၼ်းတူၺ်းငၢႆႈ
+                textSize = 18f
                 setTextColor(Color.WHITE)
+                background = null
+                setPadding(0, 0, 0, 0)
+
+                // *** FORCE WIDTH & HEIGHT ***
+                layoutParams = LinearLayout.LayoutParams(btnWidth, 140) // Width, Height
+
+                // Remove Android Default Constraints
+                minWidth = 0
+                minimumWidth = 0
+                minHeight = 0
+                minimumHeight = 0
             }
             layout.addView(btn)
             popupButtons.add(btn)
         }
+        cardView.addView(layout)
 
         popupWindow = PopupWindow(
-            layout,
+            cardView,
             ViewGroup.LayoutParams.WRAP_CONTENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT
-        )
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            false
+        ).apply {
+            elevation = 30f
+            isClippingEnabled = true
+        }
 
-        // ၼႄ Popup တီႈၼိူဝ် Anchor View
-        popupWindow?.showAsDropDown(anchorView, 0, -anchorView.height * 2)
+        // --- POSITIONING WITH OVERFLOW CHECK ---
+        cardView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
+        val pWidth = cardView.measuredWidth
+        val pHeight = cardView.measuredHeight
+
+        val location = IntArray(2)
+        anchorView.getLocationOnScreen(location)
+        val keyX = location[0]
+        val keyY = location[1]
+
+        // ၵပ်း X Offset
+        var xOffset = (anchorView.width - pWidth) / 2
+        if (keyX + xOffset + pWidth > screenWidth) xOffset = screenWidth - keyX - pWidth - 10
+        if (keyX + xOffset < 0) xOffset = -keyX + 10
+
+        // *** THE Y-AXIS FIX (Check if it goes above screen) ***
+        var yOffset = -(anchorView.height + pHeight + 20)
+
+        // သင် (KeyY + yOffset) တႅမ်ႇလိူဝ် 0 ပွင်ႇဝႃႈမၼ်းပူၼ်ႉၸေႃးၽၢႆႇၼိူဝ်
+        if (keyY + yOffset < 50) {
+            yOffset = -keyY + 50 // Force ႁႂ်ႈမၼ်းယူႇတႅမ်ႇ Status Bar ဢိတ်းၼိုင်ႈ
+        }
+
+        applyTheme(cardView, getSavedTheme(this))
+
+        popupWindow?.showAsDropDown(anchorView, xOffset, yOffset)
     }
 
     private fun checkPopupSelection(x: Float, y: Float) {
@@ -750,7 +804,7 @@ class ShanKeyboardService : InputMethodService() {
     }
 
     private fun saveToRecentEmojis(emoji: String) {
-        val prefs = getSharedPreferences("EmojiPrefs", Context.MODE_PRIVATE)
+        val prefs = getSharedPreferences("EmojiPrefs", MODE_PRIVATE)
         val recentString = prefs.getString("recent_emojis", "") ?: ""
 
         // 1. တႅၵ်ႇဢဝ် List ၵဝ်ႇမႃး
@@ -768,7 +822,7 @@ class ShanKeyboardService : InputMethodService() {
     }
 
     private fun getRecentEmojis(): List<String> {
-        val prefs = getSharedPreferences("EmojiPrefs", Context.MODE_PRIVATE)
+        val prefs = getSharedPreferences("EmojiPrefs", MODE_PRIVATE)
         val recentString = prefs.getString("recent_emojis", "") ?: ""
         return recentString.split(",").filter { it.isNotEmpty() }
     }
@@ -909,7 +963,7 @@ class ShanKeyboardService : InputMethodService() {
     private val clipHistory = mutableListOf<String>()
 
     private fun setupClipboard() {
-        clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        clipboard = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
 
         // ထတ်းတူၺ်းမိူဝ်ႈၵူၼ်းၸႂ်ႉ Copy လိၵ်ႈ
         clipboard.addPrimaryClipChangedListener {

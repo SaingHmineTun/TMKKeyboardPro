@@ -1,5 +1,6 @@
-package it.saimao.tmkkeyboardpro
+package it.saimao.tmkkeyboardpro.adapters
 
+import android.R
 import android.content.Context
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -16,8 +17,8 @@ class EmojiAdapter(context: Context, private val emojis: List<String>, val onCli
     override fun getItemId(position: Int) = position.toLong()
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val view = convertView ?: inflater.inflate(android.R.layout.simple_list_item_1, parent, false)
-        val textView = view.findViewById<TextView>(android.R.id.text1)
+        val view = convertView ?: inflater.inflate(R.layout.simple_list_item_1, parent, false)
+        val textView = view.findViewById<TextView>(R.id.text1)
         textView.text = emojis[position]
         textView.textSize = 24f
         textView.gravity = Gravity.CENTER

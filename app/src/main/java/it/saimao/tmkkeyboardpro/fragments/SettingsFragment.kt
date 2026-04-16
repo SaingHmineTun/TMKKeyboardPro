@@ -13,10 +13,10 @@ import androidx.core.content.edit
 import androidx.core.os.LocaleListCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import it.saimao.tmkkeyboardpro.MainActivity
+import it.saimao.tmkkeyboardpro.activities_services.MainActivity
 import it.saimao.tmkkeyboardpro.R
 import it.saimao.tmkkeyboardpro.databinding.FragmentSettingsBinding
-import it.saimao.tmkkeyboardpro.utils.FontManager
+import it.saimao.tmkkeyboardpro.logic.FontManager
 
 class SettingsFragment : Fragment() {
 

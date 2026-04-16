@@ -20,7 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TMKKeyboardPro">
         <activity
-            android:name=".MainActivity"
+            android:name=".activities_services.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,7 +31,7 @@
 
 
         <service
-            android:name=".ShanKeyboardService"
+            android:name=".activities_services.ShanKeyboardService"
             android:exported="true"
             android:label="TMK Keyboard Pro"
             android:permission="android.permission.BIND_INPUT_METHOD">

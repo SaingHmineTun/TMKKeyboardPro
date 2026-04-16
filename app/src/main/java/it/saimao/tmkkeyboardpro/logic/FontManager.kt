@@ -1,4 +1,4 @@
-package it.saimao.tmkkeyboardpro.utils
+package it.saimao.tmkkeyboardpro.logic
 
 import android.app.DownloadManager
 import android.content.Context

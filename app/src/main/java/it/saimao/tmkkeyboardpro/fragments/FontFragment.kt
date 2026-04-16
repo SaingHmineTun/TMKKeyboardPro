@@ -15,7 +15,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import it.saimao.tmkkeyboardpro.R
 import it.saimao.tmkkeyboardpro.databinding.FragmentFontBinding
-import it.saimao.tmkkeyboardpro.utils.FontManager
+import it.saimao.tmkkeyboardpro.logic.FontManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
