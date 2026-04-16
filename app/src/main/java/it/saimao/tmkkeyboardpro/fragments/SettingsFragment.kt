@@ -19,10 +19,12 @@ import it.saimao.tmkkeyboardpro.logic.ThemeManager
 import it.saimao.tmkkeyboardpro.logic.ThemeManager.themes
 
 import it.saimao.tmkkeyboardpro.utils.getAppLanguage
+import it.saimao.tmkkeyboardpro.utils.getHandWritingSystem
 import it.saimao.tmkkeyboardpro.utils.getSoundOnKeyPress
 import it.saimao.tmkkeyboardpro.utils.getVibrateOnKeyPress
 
 import it.saimao.tmkkeyboardpro.utils.saveAppLanguage
+import it.saimao.tmkkeyboardpro.utils.saveHandWritingSystem
 import it.saimao.tmkkeyboardpro.utils.saveSoundOnKeyPress
 import it.saimao.tmkkeyboardpro.utils.saveVibrateOnKeyPress
 
@@ -51,6 +53,10 @@ class SettingsFragment : Fragment() {
 
         binding.switchSound.setOnCheckedChangeListener { _, isChecked ->
             saveSoundOnKeyPress(requireContext(), isChecked)
+        }
+
+        binding.switchHandWriting.setOnCheckedChangeListener { _, isChecked ->
+            saveHandWritingSystem(requireContext(), isChecked)
         }
 
         binding.btnSelectTheme.setOnClickListener {
@@ -105,6 +111,7 @@ class SettingsFragment : Fragment() {
         // လူတ်ႇ State ၶွင် Switch
         binding.switchVibration.isChecked = getVibrateOnKeyPress(requireContext())
         binding.switchSound.isChecked = getSoundOnKeyPress(requireContext())
+        binding.switchHandWriting.isChecked = getHandWritingSystem(requireContext())
     }
 
     private fun showThemeSelector() {

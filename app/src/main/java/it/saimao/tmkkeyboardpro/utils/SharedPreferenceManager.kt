@@ -66,6 +66,14 @@ fun getSoundOnKeyPress(context: Context): Boolean {
     return retrieve(context, "sound_on_keypress", false)
 }
 
+fun saveHandWritingSystem(context: Context, handWritingSystem: Boolean) {
+    save(context, "hand_writing_system", handWritingSystem)
+}
+
+fun getHandWritingSystem(context: Context): Boolean {
+    return retrieve(context, "hand_writing_system", false)
+}
+
 fun saveAppLanguage(context: Context, language: String) {
     save(context, "app_language", language)
 }

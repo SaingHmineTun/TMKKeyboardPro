@@ -46,6 +46,7 @@ import it.saimao.tmkkeyboardpro.logic.FontManager
 import it.saimao.tmkkeyboardpro.logic.MyanmarDictionaryManager
 import it.saimao.tmkkeyboardpro.logic.ShanDictionaryManager
 import it.saimao.tmkkeyboardpro.logic.ShanLanguageEngine
+import it.saimao.tmkkeyboardpro.utils.getHandWritingSystem
 import it.saimao.tmkkeyboardpro.utils.getKeyboardTheme
 import it.saimao.tmkkeyboardpro.utils.getPopupCharsFor
 import it.saimao.tmkkeyboardpro.utils.getSoundOnKeyPress
@@ -102,6 +103,8 @@ class ShanKeyboardService : InputMethodService() {
 
     override fun onCreate() {
         super.onCreate()
+        // Pre-cache layouts ၼင်ႇႁိုဝ်မိူဝ်ႈ User ၼိပ်ႉလႅၵ်ႈၽႃႇသႃႇ တေဢမ်ႇ Lag သေဢိတ်း
+        layoutCache[R.layout.layout_en_normal] = layoutInflater.inflate(R.layout.layout_en_normal, null).also { registerKeys(it) }
         shanDictionary = ShanDictionaryManager(this)
         myanmarDictionary = MyanmarDictionaryManager(this)
         englishDictionary = EnglishDictionaryManager(this)
@@ -138,18 +141,11 @@ class ShanKeyboardService : InputMethodService() {
     }
 
     // Helper Function တႃႇလႅၵ်ႈ Keyboard (EN, MM, SHN)
-    fun loadLayout(layoutId: Int) {
-        keysContainer.removeAllViews() // လၢင်ႉ View ဢၼ်ၵဝ်ႇပႅတ်ႈ
-        val newKeysView = layoutInflater.inflate(layoutId, null)
-        keysContainer.addView(newKeysView)
 
-        // *** ၵွင်ႉ Click Listener ႁႂ်ႈ Buttons တင်းသဵင်ႈ မႃးႁဵတ်းၵၢၼ်တီႈၼႆႈ ***
-        registerKeys(newKeysView)
+    private lateinit var shanKeyboardView: View
+    private lateinit var englishKeyboardView: View
+    private lateinit var myanmarKeyboardView: View
 
-        // မႄးသီ Theme ပႃးၵမ်းလဵဝ်
-        applyTheme(newKeysView, getKeyboardTheme(this))
-
-    }
 
     private fun setSuggestions(suggestions: List<String>) {
 
@@ -439,18 +435,27 @@ class ShanKeyboardService : InputMethodService() {
 
                 } else {
 
-                    // 1. ဢဝ် Text ဢၼ်လုၵ်ႉတီႈ Button မႃးလႅၵ်ႈပဵၼ် Unicode Code
-                    val primaryCode = if (text.isNotEmpty()) text.first().code else -1
+                    if (getHandWritingSystem(this)) {
 
-                    if (currentLanguage == "SHN" && primaryCode != -1) {
 
-                        // 2. သူင်ႇ Code ၶဝ်ႈၵႂႃႇၼႂ်း Engine
-                        val resultText = shanLanguageEngine.handleInput(primaryCode)
-                        if (resultText != null) {
-                            sendText(resultText)
+                        // 1. ဢဝ် Text ဢၼ်လုၵ်ႉတီႈ Button မႃးလႅၵ်ႈပဵၼ် Unicode Code
+                        val primaryCode = if (text.isNotEmpty()) text.first().code else -1
+
+                        if (currentLanguage == "SHN" && primaryCode != -1) {
+
+                            // 2. သူင်ႇ Code ၶဝ်ႈၵႂႃႇၼႂ်း Engine
+                            val resultText = shanLanguageEngine.handleInput(primaryCode)
+                            if (resultText != null) {
+                                sendText(resultText)
+                            }
+
+                        } else {
+                            // ပဵၼ် English ဢမ်ႇၼၼ် တူဝ်လိၵ်ႈယူႇယူႇ
+                            sendText(text)
                         }
 
                     } else {
+
                         // ပဵၼ် English ဢမ်ႇၼၼ် တူဝ်လိၵ်ႈယူႇယူႇ
                         sendText(text)
                     }
@@ -639,6 +644,8 @@ class ShanKeyboardService : InputMethodService() {
         return popupButtons.find { it.tag == "selected" }?.text?.toString()
     }
 
+    // သိမ်း View ၸိူဝ်း Inflate ယဝ်ႉဝႆႉၼႂ်းၼႆႉ
+    private val layoutCache = HashMap<Int, View>()
     private fun updateKeyboardLayout() {
 
 
@@ -657,6 +664,31 @@ class ShanKeyboardService : InputMethodService() {
 
         loadLayout(layoutToLoad) // Function ဢၼ်ႁဝ်းတႅမ်ႈဝႆႉၼႂ်း Lesson 15
     }
+
+    fun loadLayout(layoutId: Int) {
+        keysContainer.removeAllViews()
+
+        // 1. ၸႅတ်ႈတူၺ်းဝႃႈ ၼႂ်း Cache မီးယဝ်ႉႁႃႉ?
+        var cachedView = layoutCache[layoutId]
+
+        if (cachedView == null) {
+            // 2. သင်ပႆႇမီး ၸင်ႇ Inflate (ပွၵ်ႈလဵဝ်ၵွၺ်း)
+            cachedView = layoutInflater.inflate(layoutId, null)
+
+            // ၵွင်ႉ Click Listener ဝႆႉၵမ်းလဵဝ်
+            registerKeys(cachedView)
+
+            // သိမ်းဝႆႉၼႂ်း Cache
+            layoutCache[layoutId] = cachedView
+        }
+
+        // 3. ဢဝ် View ဢၼ်မီးဝႆႉယဝ်ႉ ထႅမ်သႂ်ႇ (AddView တေဝႆးလိူဝ် Inflate ၼမ်ၶႃႈ)
+        keysContainer.addView(cachedView)
+
+        // 4. မႄးသီ Theme (ဢၼ်ၼႆႉလူဝ်ႇမႄးတႃႇသေႇ ယွၼ်ႉ User ၸၢင်ႈလႅၵ်ႈ Theme)
+        applyTheme(cachedView, getKeyboardTheme(this))
+    }
+
 
     fun triggerVibration(view: View) {
         // ၸႅတ်ႈတူၺ်းဝႃႈ ၵူၼ်းၸႂ်ႉပိုတ်ႇ Vibration ဝႆႉၼႂ်း Settings ႁႃႉ?
