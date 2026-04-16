@@ -19,82 +19,93 @@
         android:id="@+id/key_2"
         style="@style/TmkKeyStyle"
         android:text="2"
+        app:layout_constraintBottom_toBottomOf="@id/key_1"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_1"
         app:layout_constraintRight_toLeftOf="@+id/key_3"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/key_1"
+
+        />
 
     <Button
         android:id="@+id/key_3"
         style="@style/TmkKeyStyle"
         android:text="3"
+        app:layout_constraintBottom_toBottomOf="@id/key_1"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_2"
         app:layout_constraintRight_toLeftOf="@+id/key_4"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/key_1" />
 
     <Button
         android:id="@+id/key_4"
         style="@style/TmkKeyStyle"
         android:text="4"
+        app:layout_constraintBottom_toBottomOf="@id/key_1"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_3"
         app:layout_constraintRight_toLeftOf="@+id/key_5"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/key_1" />
 
     <Button
         android:id="@+id/key_5"
         style="@style/TmkKeyStyle"
         android:text="5"
+        app:layout_constraintBottom_toBottomOf="@id/key_1"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_4"
         app:layout_constraintRight_toLeftOf="@+id/key_6"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/key_1" />
 
     <Button
         android:id="@+id/key_6"
         style="@style/TmkKeyStyle"
         android:text="6"
+        app:layout_constraintBottom_toBottomOf="@id/key_1"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_5"
         app:layout_constraintRight_toLeftOf="@+id/key_7"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/key_1" />
 
     <Button
         android:id="@+id/key_7"
         style="@style/TmkKeyStyle"
         android:text="7"
+        app:layout_constraintBottom_toBottomOf="@id/key_1"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_6"
         app:layout_constraintRight_toLeftOf="@+id/key_8"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/key_1" />
 
     <Button
         android:id="@+id/key_8"
         style="@style/TmkKeyStyle"
         android:text="8"
+        app:layout_constraintBottom_toBottomOf="@id/key_1"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_7"
         app:layout_constraintRight_toLeftOf="@+id/key_9"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/key_1" />
 
     <Button
         android:id="@+id/key_9"
         style="@style/TmkKeyStyle"
         android:text="9"
+        app:layout_constraintBottom_toBottomOf="@id/key_1"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_8"
         app:layout_constraintRight_toLeftOf="@+id/key_0"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/key_1" />
 
     <Button
         android:id="@+id/key_0"
         style="@style/TmkKeyStyle"
         android:text="0"
+        app:layout_constraintBottom_toBottomOf="@id/key_1"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_9"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/key_1" />
 
     <Button
         android:id="@+id/key_q"
@@ -109,6 +120,7 @@
         android:id="@+id/key_w"
         style="@style/TmkKeyStyle"
         android:text="w"
+        app:layout_constraintBottom_toBottomOf="@id/key_q"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_q"
         app:layout_constraintRight_toLeftOf="@+id/key_e"
@@ -118,6 +130,7 @@
         android:id="@+id/key_e"
         style="@style/TmkKeyStyle"
         android:text="e"
+        app:layout_constraintBottom_toBottomOf="@id/key_q"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_w"
         app:layout_constraintRight_toLeftOf="@+id/key_r"
@@ -127,6 +140,7 @@
         android:id="@+id/key_r"
         style="@style/TmkKeyStyle"
         android:text="r"
+        app:layout_constraintBottom_toBottomOf="@id/key_q"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_e"
         app:layout_constraintRight_toLeftOf="@+id/key_t"
@@ -136,6 +150,7 @@
         android:id="@+id/key_t"
         style="@style/TmkKeyStyle"
         android:text="t"
+        app:layout_constraintBottom_toBottomOf="@id/key_q"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_r"
         app:layout_constraintRight_toLeftOf="@+id/key_y"
@@ -145,6 +160,7 @@
         android:id="@+id/key_y"
         style="@style/TmkKeyStyle"
         android:text="y"
+        app:layout_constraintBottom_toBottomOf="@id/key_q"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_t"
         app:layout_constraintRight_toLeftOf="@+id/key_u"
@@ -154,6 +170,7 @@
         android:id="@+id/key_u"
         style="@style/TmkKeyStyle"
         android:text="u"
+        app:layout_constraintBottom_toBottomOf="@id/key_q"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_y"
         app:layout_constraintRight_toLeftOf="@+id/key_i"
@@ -163,6 +180,7 @@
         android:id="@+id/key_i"
         style="@style/TmkKeyStyle"
         android:text="i"
+        app:layout_constraintBottom_toBottomOf="@id/key_q"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_u"
         app:layout_constraintRight_toLeftOf="@+id/key_o"
@@ -172,6 +190,7 @@
         android:id="@+id/key_o"
         style="@style/TmkKeyStyle"
         android:text="o"
+        app:layout_constraintBottom_toBottomOf="@id/key_q"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_i"
         app:layout_constraintRight_toLeftOf="@+id/key_p"
@@ -181,6 +200,7 @@
         android:id="@+id/key_p"
         style="@style/TmkKeyStyle"
         android:text="p"
+        app:layout_constraintBottom_toBottomOf="@id/key_q"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_o"
         app:layout_constraintRight_toRightOf="parent"
@@ -200,6 +220,7 @@
         android:id="@+id/key_s"
         style="@style/TmkKeyStyle"
         android:text="s"
+        app:layout_constraintBottom_toBottomOf="@id/key_a"
         app:layout_constraintHorizontal_weight="1.1"
         app:layout_constraintLeft_toRightOf="@+id/key_a"
         app:layout_constraintRight_toLeftOf="@+id/key_d"
@@ -209,6 +230,7 @@
         android:id="@+id/key_d"
         style="@style/TmkKeyStyle"
         android:text="d"
+        app:layout_constraintBottom_toBottomOf="@id/key_a"
         app:layout_constraintHorizontal_weight="1.1"
         app:layout_constraintLeft_toRightOf="@+id/key_s"
         app:layout_constraintRight_toLeftOf="@+id/key_f"
@@ -218,6 +240,7 @@
         android:id="@+id/key_f"
         style="@style/TmkKeyStyle"
         android:text="f"
+        app:layout_constraintBottom_toBottomOf="@id/key_a"
         app:layout_constraintHorizontal_weight="1.1"
         app:layout_constraintLeft_toRightOf="@+id/key_d"
         app:layout_constraintRight_toLeftOf="@+id/key_g"
@@ -227,6 +250,7 @@
         android:id="@+id/key_g"
         style="@style/TmkKeyStyle"
         android:text="g"
+        app:layout_constraintBottom_toBottomOf="@id/key_a"
         app:layout_constraintHorizontal_weight="1.1"
         app:layout_constraintLeft_toRightOf="@+id/key_f"
         app:layout_constraintRight_toLeftOf="@+id/key_h"
@@ -236,6 +260,7 @@
         android:id="@+id/key_h"
         style="@style/TmkKeyStyle"
         android:text="h"
+        app:layout_constraintBottom_toBottomOf="@id/key_a"
         app:layout_constraintHorizontal_weight="1.1"
         app:layout_constraintLeft_toRightOf="@+id/key_g"
         app:layout_constraintRight_toLeftOf="@+id/key_j"
@@ -245,6 +270,7 @@
         android:id="@+id/key_j"
         style="@style/TmkKeyStyle"
         android:text="j"
+        app:layout_constraintBottom_toBottomOf="@id/key_a"
         app:layout_constraintHorizontal_weight="1.1"
         app:layout_constraintLeft_toRightOf="@+id/key_h"
         app:layout_constraintRight_toLeftOf="@+id/key_k"
@@ -254,6 +280,7 @@
         android:id="@+id/key_k"
         style="@style/TmkKeyStyle"
         android:text="k"
+        app:layout_constraintBottom_toBottomOf="@id/key_a"
         app:layout_constraintHorizontal_weight="1.1"
         app:layout_constraintLeft_toRightOf="@+id/key_j"
         app:layout_constraintRight_toLeftOf="@+id/key_l"
@@ -264,6 +291,7 @@
         style="@style/TmkKeyStyle"
         android:layout_marginEnd="4dp"
         android:text="l"
+        app:layout_constraintBottom_toBottomOf="@id/key_a"
         app:layout_constraintHorizontal_weight="1.1"
         app:layout_constraintLeft_toRightOf="@+id/key_k"
         app:layout_constraintRight_toRightOf="parent"
@@ -282,6 +310,7 @@
         android:id="@+id/key_z"
         style="@style/TmkKeyStyle"
         android:text="z"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_shift"
         app:layout_constraintRight_toLeftOf="@+id/key_x"
@@ -291,6 +320,7 @@
         android:id="@+id/key_x"
         style="@style/TmkKeyStyle"
         android:text="x"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_z"
         app:layout_constraintRight_toLeftOf="@+id/key_c"
@@ -300,6 +330,7 @@
         android:id="@+id/key_c"
         style="@style/TmkKeyStyle"
         android:text="c"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_x"
         app:layout_constraintRight_toLeftOf="@+id/key_v"
@@ -309,6 +340,7 @@
         android:id="@+id/key_v"
         style="@style/TmkKeyStyle"
         android:text="v"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_c"
         app:layout_constraintRight_toLeftOf="@+id/key_b"
@@ -318,6 +350,7 @@
         android:id="@+id/key_b"
         style="@style/TmkKeyStyle"
         android:text="b"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_v"
         app:layout_constraintRight_toLeftOf="@+id/key_n"
@@ -327,6 +360,7 @@
         android:id="@+id/key_n"
         style="@style/TmkKeyStyle"
         android:text="n"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_b"
         app:layout_constraintRight_toLeftOf="@+id/key_m"
@@ -336,6 +370,7 @@
         android:id="@+id/key_m"
         style="@style/TmkKeyStyle"
         android:text="m"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_n"
         app:layout_constraintRight_toLeftOf="@+id/key_del"
@@ -345,6 +380,7 @@
         android:id="@+id/key_del"
         style="@style/TmkKeyStyle"
         android:text="⌫"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
         app:layout_constraintHorizontal_weight="1.5"
         app:layout_constraintLeft_toRightOf="@+id/key_m"
         app:layout_constraintRight_toRightOf="parent"
@@ -363,6 +399,7 @@
         android:id="@+id/key_emoji"
         style="@style/TmkKeyStyle"
         android:text="😊"
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_lang"
         app:layout_constraintRight_toLeftOf="@+id/key_123"
@@ -372,6 +409,7 @@
         android:id="@+id/key_123"
         style="@style/TmkKeyStyle"
         android:text="123"
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
         app:layout_constraintHorizontal_weight="1.25"
         app:layout_constraintLeft_toRightOf="@+id/key_emoji"
         app:layout_constraintRight_toLeftOf="@+id/key_space"
@@ -382,6 +420,7 @@
         android:id="@+id/key_space"
         style="@style/TmkKeyStyle"
         android:text="Eng"
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
         app:layout_constraintHorizontal_weight="2.5"
         app:layout_constraintLeft_toRightOf="@+id/key_123"
         app:layout_constraintRight_toLeftOf="@+id/key_dot"
@@ -391,6 +430,7 @@
         android:id="@+id/key_dot"
         style="@style/TmkKeyStyle"
         android:text="."
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_space"
         app:layout_constraintRight_toLeftOf="@+id/key_speech"
@@ -400,6 +440,7 @@
         android:id="@+id/key_speech"
         style="@style/TmkKeyStyle"
         android:text="🎙️"
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_dot"
         app:layout_constraintRight_toLeftOf="@+id/key_enter"
@@ -409,7 +450,8 @@
         android:id="@+id/key_enter"
         style="@style/TmkKeyStyle"
         android:text="⏎"
-        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
+        app:layout_constraintHorizontal_weight="1.25"
         app:layout_constraintLeft_toRightOf="@+id/key_speech"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/key_lang" />
