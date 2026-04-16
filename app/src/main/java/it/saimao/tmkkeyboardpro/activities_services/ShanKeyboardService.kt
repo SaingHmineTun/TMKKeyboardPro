@@ -404,7 +404,7 @@ class ShanKeyboardService : InputMethodService() {
                 candidateContainer.removeAllViews() // လၢင်ႉ Bar မိူဝ်ႈၼိပ်ႉ Space
             }
 
-            R.id.key_emoji -> showEmojiPicker()
+            R.id.key_emoji -> switchToEmoji()
 
             // lang => sym1
             // sym2 => sym1
@@ -692,21 +692,20 @@ class ShanKeyboardService : InputMethodService() {
         updateKeyboardLayout()
     }
 
-    fun showEmojiPicker() {
-
+    // 1. Declare ဝႆႉၼင်ႇ Lazy ႁႂ်ႈမၼ်းသၢင်ႈမိူဝ်ႈတေၸႂ်ႉတႄႉတႄႉၵွၺ်း
+    private val emojiKeyboard by lazy {
         EmojiKeyboard(
             context = this,
-            keysContainer = keysContainer,
             layoutInflater = layoutInflater,
-            onPressed = { emoji ->
-                currentInputConnection?.commitText(emoji, 1)
-            },
-            onGoback = {
-                updateKeyboardLayout()
-
-            }
+            onPressed = { emoji -> currentInputConnection?.commitText(emoji, 1) },
+            onGoback = { updateKeyboardLayout() }
         )
+    }
 
+    // 2. မိူဝ်ႈတေလႅၵ်ႈၸႂ်ႉ Emoji
+    private fun switchToEmoji() {
+        // ၵွၺ်းႁွင်ႉ showIn() မၼ်းတေဢမ်ႇ Inflate XML မႂ်ႇယဝ်ႉ
+        emojiKeyboard.showIn(keysContainer)
     }
 
 

@@ -3,6 +3,7 @@ package it.saimao.tmkkeyboardpro.logic
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.GridView
@@ -12,14 +13,14 @@ import it.saimao.tmkkeyboardpro.adapters.EmojiAdapter
 
 class EmojiKeyboard(
     val context: Context,
-    keysContainer: FrameLayout,
-    layoutInflater: LayoutInflater,
-    onPressed: (String) -> Unit,
-    onGoback: () -> Unit
+    private val layoutInflater: LayoutInflater,
+    private val onPressed: (String) -> Unit,
+    private val onGoback: () -> Unit
 ) {
 
-
-    // 1. သဵၼ်ႈမၢႆ Emoji ၸွမ်းမူႇၸိူဝ်း
+    // သိမ်း View ဝႆႉၼင်ႇႁိုဝ်တေဢမ်ႇလႆႈ Inflate သွၼ်ႉၵၼ်
+    private var emojiView: View? = null
+    private lateinit var grid: GridView
     private val smileyList = listOf(
         "😀", "😃", "😄", "😁", "😆", "😅", "😂", "🤣", "😊", "😇",
         "🙂", "🙃", "😉", "😍", "🥰", "😘", "😗", "😙", "😚", "😋",
@@ -37,47 +38,78 @@ class EmojiKeyboard(
         "🦕", "🐙", "🦑", "🦐", "🦞", "🦀", "🐡", "🐠", "🐟", "🐬"
     )
 
-    init {
-        keysContainer.removeAllViews()
-        val emojiView = layoutInflater.inflate(R.layout.emoji_picker, null)
-        keysContainer.addView(emojiView)
+    private fun initView(): View {
+        if (emojiView == null) {
+            emojiView = layoutInflater.inflate(R.layout.emoji_picker, null)
+            grid = emojiView!!.findViewById(R.id.emoji_grid)
 
-
-        val grid: GridView = emojiView.findViewById(R.id.emoji_grid)
-
-
-
-        // Helper function တႃႇလႅၵ်ႈ Emoji ၼႂ်း Grid
-        fun updateGrid(list: List<String>) {
-            grid.adapter = EmojiAdapter(context, list) { emoji ->
-                onPressed(emoji)
-                saveToRecentEmojis(emoji)
+            // Setup Listeners ၵွၺ်းပွၵ်ႈလဵဝ်
+            emojiView!!.apply {
+                findViewById<Button>(R.id.btn_emoji_smiley).setOnClickListener { updateGrid(smileyList) }
+                findViewById<Button>(R.id.btn_emoji_nature).setOnClickListener { updateGrid(natureList) }
+                findViewById<Button>(R.id.btn_emoji_recent).setOnClickListener { updateGrid(getRecentEmojis()) }
+                findViewById<Button>(R.id.btn_emoji_back).setOnClickListener { onGoback() }
             }
         }
-
-        // 2. Default: ၼႄ Smileys မိူဝ်ႈတႄႇပိုတ်ႇ
+        // ၵူႈပွၵ်ႈဢၼ်ပိုတ်ႇ ႁႂ်ႈမၼ်းၼႄ Smileys ဢွၼ်တၢင်း
         updateGrid(smileyList)
-
-        // 3. ၵွင်ႉ Click Listener တွၼ်ႈတႃႇ Tabs ၽၢႆႇတႂ်ႈ
-        emojiView.findViewById<Button>(R.id.btn_emoji_smiley).setOnClickListener {
-            updateGrid(smileyList)
-        }
-
-        emojiView.findViewById<Button>(R.id.btn_emoji_nature).setOnClickListener {
-            updateGrid(natureList)
-        }
-
-        // ၵွင်ႉ Click Listener တွၼ်ႈတႃႇတုမ်ႇ Recent
-        emojiView.findViewById<Button>(R.id.btn_emoji_recent).setOnClickListener {
-            updateGrid(getRecentEmojis()) // လူတ်ႇ Data မႂ်ႇတႃႇသေႇ
-        }
-
-        // တုမ်ႇပွၵ်ႈၶိုၼ်းၼႃႈ Keyboard ယူႇယူႇ
-        emojiView.findViewById<Button>(R.id.btn_emoji_back).setOnClickListener {
-            onGoback()
-        }
-
+        return emojiView!!
     }
+
+    private fun updateGrid(list: List<String>) {
+        grid.adapter = EmojiAdapter(context, list) { emoji ->
+            onPressed(emoji)
+            saveToRecentEmojis(emoji)
+        }
+    }
+
+    // Function မႂ်ႇတွၼ်ႈတႃႇသူင်ႇ View ၵႂႃႇၼႄ
+    fun showIn(container: FrameLayout) {
+        container.removeAllViews()
+        container.addView(initView())
+    }
+
+//    init {
+//        keysContainer.removeAllViews()
+//        val emojiView = layoutInflater.inflate(R.layout.emoji_picker, null)
+//        keysContainer.addView(emojiView)
+//
+//
+//        val grid: GridView = emojiView.findViewById(R.id.emoji_grid)
+//
+//
+//
+//        // Helper function တႃႇလႅၵ်ႈ Emoji ၼႂ်း Grid
+//        fun updateGrid(list: List<String>) {
+//            grid.adapter = EmojiAdapter(context, list) { emoji ->
+//                onPressed(emoji)
+//                saveToRecentEmojis(emoji)
+//            }
+//        }
+//
+//        // 2. Default: ၼႄ Smileys မိူဝ်ႈတႄႇပိုတ်ႇ
+//        updateGrid(smileyList)
+//
+//        // 3. ၵွင်ႉ Click Listener တွၼ်ႈတႃႇ Tabs ၽၢႆႇတႂ်ႈ
+//        emojiView.findViewById<Button>(R.id.btn_emoji_smiley).setOnClickListener {
+//            updateGrid(smileyList)
+//        }
+//
+//        emojiView.findViewById<Button>(R.id.btn_emoji_nature).setOnClickListener {
+//            updateGrid(natureList)
+//        }
+//
+//        // ၵွင်ႉ Click Listener တွၼ်ႈတႃႇတုမ်ႇ Recent
+//        emojiView.findViewById<Button>(R.id.btn_emoji_recent).setOnClickListener {
+//            updateGrid(getRecentEmojis()) // လူတ်ႇ Data မႂ်ႇတႃႇသေႇ
+//        }
+//
+//        // တုမ်ႇပွၵ်ႈၶိုၼ်းၼႃႈ Keyboard ယူႇယူႇ
+//        emojiView.findViewById<Button>(R.id.btn_emoji_back).setOnClickListener {
+//            onGoback()
+//        }
+//
+//    }
 
     private fun saveToRecentEmojis(emoji: String) {
         val prefs = context.getSharedPreferences("EmojiPrefs", MODE_PRIVATE)
