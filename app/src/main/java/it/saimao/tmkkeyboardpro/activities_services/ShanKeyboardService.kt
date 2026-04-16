@@ -12,6 +12,8 @@ import android.media.AudioManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.provider.Settings
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
@@ -49,6 +51,7 @@ import it.saimao.tmkkeyboardpro.utils.getHandWritingSystem
 import it.saimao.tmkkeyboardpro.utils.getPopupCharsFor
 import it.saimao.tmkkeyboardpro.utils.getSoundOnKeyPress
 import it.saimao.tmkkeyboardpro.utils.getVibrateOnKeyPress
+import kotlin.math.abs
 import kotlin.properties.Delegates
 
 class ShanKeyboardService : InputMethodService() {
@@ -226,32 +229,6 @@ class ShanKeyboardService : InputMethodService() {
     private var initialX = 0f
     private val SWIPE_THRESHOLD = 30 // တၢင်းၵႆ (Pixels) ဢၼ်တေၼပ်ႉပဵၼ် 1 တူဝ်လိၵ်ႈ
 
-    @SuppressLint("ClickableViewAccessibility")
-    private fun setupSpaceBarSwipeLogic(spaceButton: Button) {
-        spaceButton.setOnTouchListener { v, event ->
-            when (event.action) {
-                MotionEvent.ACTION_DOWN -> {
-                    initialX = event.x
-                }
-
-                MotionEvent.ACTION_MOVE -> {
-                    val deltaX = event.x - initialX
-
-                    // သင်ထူၺ်းၵႂႃႇၵႆလိူဝ် Threshold
-                    if (Math.abs(deltaX) > SWIPE_THRESHOLD) {
-                        if (deltaX > 0) {
-                            moveCursorRight()
-                        } else {
-                            moveCursorLeft()
-                        }
-                        // Reset initialX ၼင်ႇႁိုဝ်တေၼပ်ႉတူဝ်ၼႃႈထႅင်ႈ
-                        initialX = event.x
-                    }
-                }
-            }
-            false // ႁႂ်ႈ OnClickListener တိုၵ်ႉႁဵတ်းၵၢၼ်လႆႈယူႇ
-        }
-    }
 
     private fun moveCursorLeft() {
         val ic = currentInputConnection
@@ -265,6 +242,29 @@ class ShanKeyboardService : InputMethodService() {
         ic?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_DPAD_RIGHT))
     }
 
+    private val deleteHandler = Handler(Looper.getMainLooper())
+    private var deleteRunnable: Runnable? = null
+    private val INITIAL_DELAY = 500L // ပႂ်ႉ 0.5 Sec ၵွၼ်ႇတေတႄႇ Repeat
+    private val REPEAT_DELAY = 50L   // ဝႆး 0.05 Sec ၵူႈပွၵ်ႈဢၼ် Delete
+
+    private fun startContinuousDelete() {
+        deleteRunnable = object : Runnable {
+            override fun run() {
+                sendDelete()
+                updateSuggestions()
+                // ႁွင်ႉတူဝ်မၼ်းၶိုၼ်း ႁႂ်ႈပဵၼ် Loop
+                deleteHandler.postDelayed(this, REPEAT_DELAY)
+            }
+        }
+        // တႄႇႁဵတ်းၵၢၼ် ဝၢႆးလင် INITIAL_DELAY
+        deleteHandler.postDelayed(deleteRunnable!!, INITIAL_DELAY)
+    }
+
+    private fun stopContinuousDelete() {
+        deleteRunnable?.let { deleteHandler.removeCallbacks(it) }
+        deleteRunnable = null
+    }
+
     @SuppressLint("ClickableViewAccessibility")
     fun registerKeys(view: View) {
         if (view is ViewGroup) {
@@ -272,10 +272,6 @@ class ShanKeyboardService : InputMethodService() {
                 val child = view.getChildAt(i)
 
                 if (child is Button) {
-
-                    if (child.id == R.id.key_space) {
-                        setupSpaceBarSwipeLogic(child)
-                    }
 
                     child.setOnClickListener {
                         val text = child.text.toString()
@@ -304,26 +300,55 @@ class ShanKeyboardService : InputMethodService() {
                         }
                     }
 
+
+                    // 3. Setup ONE Combined Touch Listener (လွင်ႈယႂ်ႇသုတ်း)
                     child.setOnTouchListener { v, event ->
                         when (event.action) {
+                            MotionEvent.ACTION_DOWN -> {
+                                if (child.id == R.id.key_del) {
+                                    sendDelete()
+                                    updateSuggestions()
+                                    playClickSound()
+                                    startContinuousDelete()
+                                    return@setOnTouchListener true // Handle Delete ၵမ်းလဵဝ်
+                                }
+
+
+                                // --- တွၼ်ႈတႃႇ Space Swipe ---
+                                if (child.id == R.id.key_space) {
+                                    initialX = event.x // သိမ်းတီႈတႄႇၼိပ်ႉ
+                                }
+                            }
+
                             MotionEvent.ACTION_MOVE -> {
                                 if (popupWindow?.isShowing == true) {
-                                    // ထတ်းတူၺ်းဝႃႈ မိုဝ်းတိုၵ်ႉၺႃး Button လႂ်ၼႂ်း Popup
                                     checkPopupSelection(event.rawX, event.rawY)
+                                }
+                                if (child.id == R.id.key_space) {
+                                    val deltaX = event.x - initialX
+                                    if (abs(deltaX) > SWIPE_THRESHOLD) {
+                                        if (deltaX > 0) moveCursorRight() else moveCursorLeft()
+                                        initialX = event.x // Reset တီႈၼပ်ႉမႂ်ႇ
+                                        return@setOnTouchListener true // ႁႂ်ႈမၼ်း Handle Swipe ၵမ်းလဵဝ်
+                                    }
                                 }
                             }
 
                             MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
+                                // ယႅတ်း Repeat Delete သင်ပဵၼ်တုမ်ႇ Delete
+                                if (child.id == R.id.key_del) {
+                                    stopContinuousDelete()
+                                }
+
+                                // ၸတ်းၵၢၼ် Popup သင်မၼ်းပိုတ်ႇဝႆႉ
                                 if (popupWindow?.isShowing == true) {
                                     val selectedChar = getSelectedPopupChar()
-                                    if (selectedChar != null) {
-                                        sendText(selectedChar)
-                                    }
+                                    if (selectedChar != null) sendText(selectedChar)
                                     popupWindow?.dismiss()
                                 }
                             }
                         }
-                        false // ႁႂ်ႈ LongClickListener တိုၵ်ႉႁဵတ်းၵၢၼ်လႆႈယူႇ
+                        false // ႁႂ်ႈ LongClickListener/ClickListener တိုၵ်ႉႁဵတ်းၵၢၼ်လႆႈ
                     }
 
                 } else if (child is ViewGroup) {

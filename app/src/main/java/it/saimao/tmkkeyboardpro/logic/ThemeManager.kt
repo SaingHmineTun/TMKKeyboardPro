@@ -127,7 +127,7 @@ object ThemeManager {
         return id == R.id.key_del || id == R.id.key_shift || id == R.id.key_unshift || id == R.id.key_enter ||
                 id == R.id.key_lang || id == R.id.key_123 || id == R.id.key_emoji || id == R.id.key_speech ||
                 id == R.id.key_dot || id == R.id.key_switch_abc || id == R.id.key_1_2 || id == R.id.key_2_1 ||
-                id == R.id.key_comma || id == R.id.key_period
+                id == R.id.key_comma || id == R.id.key_period || id == R.id.key_convert
     }
 
 
