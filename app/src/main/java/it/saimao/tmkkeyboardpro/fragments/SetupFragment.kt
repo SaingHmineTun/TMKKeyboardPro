@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 import it.saimao.tmkkeyboardpro.databinding.FragmentSetupBinding
+import it.saimao.tmkkeyboardpro.logic.KeyboardUtils
 
 class SetupFragment: Fragment() {
 
@@ -26,8 +27,14 @@ class SetupFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnSelect.setOnClickListener {
 
+        if (KeyboardUtils.isKeyboardEnabled(requireContext())) {
+            binding.btnEnable.visibility = View.GONE
+        } else {
+            binding.btnSelect.visibility = View.GONE
+        }
+
+        binding.btnSelect.setOnClickListener {
             val imm = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.showInputMethodPicker()
         }

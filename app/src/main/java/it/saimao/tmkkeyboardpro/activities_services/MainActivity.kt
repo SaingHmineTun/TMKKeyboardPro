@@ -44,11 +44,6 @@ class MainActivity : AppCompatActivity() {
         val isSelected = KeyboardUtils.isKeyboardSelected(this)
 
 
-        Log.d(
-            "TAGY",
-            "Check Keyboard States \n${if (isEnabled) "Enabled" else "Not yet enabled"}\n${if (isSelected) "Selected" else "Not yet selected"}"
-        )
-
         if (isEnabled && isSelected) {
             // သင်ယဝ်ႉမူတ်းယဝ်ႉ -> ၼႄ Settings
             showFragment(SettingsFragment())
