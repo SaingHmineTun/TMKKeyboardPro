@@ -14,19 +14,16 @@ import android.media.AudioManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.provider.Settings
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
 import android.text.TextUtils
 import android.util.Log
-import android.view.ContextThemeWrapper
 import android.view.Gravity
 import android.view.HapticFeedbackConstants
 import android.view.KeyEvent
 import android.view.MotionEvent
-import android.view.RoundedCorner
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
@@ -42,7 +39,6 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.edit
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
-import com.google.android.material.card.MaterialCardView
 import com.google.android.material.internal.FlowLayout
 import it.saimao.tmkkeyboardpro.R
 import it.saimao.tmkkeyboardpro.adapters.EmojiAdapter
@@ -52,12 +48,11 @@ import it.saimao.tmkkeyboardpro.logic.FontManager
 import it.saimao.tmkkeyboardpro.logic.MyanmarDictionaryManager
 import it.saimao.tmkkeyboardpro.logic.ShanDictionaryManager
 import it.saimao.tmkkeyboardpro.logic.ShanLanguageEngine
+import it.saimao.tmkkeyboardpro.utils.getKeyboardTheme
 import it.saimao.tmkkeyboardpro.utils.getPopupCharsFor
-import it.saimao.tmkkeyboardpro.utils.getSavedTheme
-import kotlin.properties.Delegates
-import androidx.core.graphics.toColorInt
 import it.saimao.tmkkeyboardpro.utils.getSoundOnKeyPress
 import it.saimao.tmkkeyboardpro.utils.getVibrateOnKeyPress
+import kotlin.properties.Delegates
 
 class ShanKeyboardService : InputMethodService() {
 
@@ -154,7 +149,7 @@ class ShanKeyboardService : InputMethodService() {
         registerKeys(newKeysView)
 
         // မႄးသီ Theme ပႃးၵမ်းလဵဝ်
-        applyTheme(newKeysView, getSavedTheme(this))
+        applyTheme(newKeysView, getKeyboardTheme(this))
 
     }
 
@@ -477,7 +472,7 @@ class ShanKeyboardService : InputMethodService() {
 
     override fun onStartInputView(info: EditorInfo?, restarting: Boolean) {
         super.onStartInputView(info, restarting)
-        applyTheme(currentInputView, getSavedTheme(this))
+        applyTheme(currentInputView, getKeyboardTheme(this))
     }
 
     override fun onWindowShown() {
@@ -618,7 +613,7 @@ class ShanKeyboardService : InputMethodService() {
             yOffset = -keyY + 50 // Force ႁႂ်ႈမၼ်းယူႇတႅမ်ႇ Status Bar ဢိတ်းၼိုင်ႈ
         }
 
-        applyTheme(cardView, getSavedTheme(this))
+        applyTheme(cardView, getKeyboardTheme(this))
 
         popupWindow?.showAsDropDown(anchorView, xOffset, yOffset)
     }

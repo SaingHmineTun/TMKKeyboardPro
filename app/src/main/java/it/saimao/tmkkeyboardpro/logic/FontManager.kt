@@ -69,9 +69,8 @@ object FontManager {
 
     fun getActiveTypeface(context: Context): Typeface? {
         val fileName = getSavedFont(context)
-        if (fileName == null || fileName.isEmpty()) return null
+        if (fileName.isEmpty()) return null
 
-//        val file = File(context.getExternalFilesDir(null), fileName)
         val file = File(context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS), fileName)
         return if (file.exists()) Typeface.createFromFile(file) else null
     }

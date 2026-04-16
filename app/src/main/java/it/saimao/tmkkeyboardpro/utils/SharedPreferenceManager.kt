@@ -41,11 +41,6 @@ fun <T> retrieve(context: Context, key: String, defaultValue: T): T {
     } as T
 }
 
-fun getSavedTheme(context: Context): String {
-
-    val prefs = getSharedPrefs(context)
-    return prefs.getString("keyboard_theme", "BLUE") ?: "BLUE"
-}
 
 fun saveFont(context: Context, fontName: String) {
     save(context, "active_font", fontName)
@@ -84,5 +79,5 @@ fun saveKeyboardTheme(context: Context, theme: String) {
 }
 
 fun getKeyboardTheme(context: Context): String {
-    return retrieve<String>(context, "keyboard_theme", "GOLD")
+    return retrieve(context, "keyboard_theme", "GOLD")
 }

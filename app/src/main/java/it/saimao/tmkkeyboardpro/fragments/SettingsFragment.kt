@@ -1,6 +1,5 @@
 package it.saimao.tmkkeyboardpro.fragments
 
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -9,20 +8,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.content.edit
 import androidx.core.os.LocaleListCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import it.saimao.tmkkeyboardpro.activities_services.MainActivity
 import it.saimao.tmkkeyboardpro.R
+import it.saimao.tmkkeyboardpro.activities_services.MainActivity
 import it.saimao.tmkkeyboardpro.databinding.FragmentSettingsBinding
 import it.saimao.tmkkeyboardpro.logic.FontManager
+import it.saimao.tmkkeyboardpro.logic.ThemeManager
+import it.saimao.tmkkeyboardpro.logic.ThemeManager.themes
+
 import it.saimao.tmkkeyboardpro.utils.getAppLanguage
-import it.saimao.tmkkeyboardpro.utils.getSavedTheme
 import it.saimao.tmkkeyboardpro.utils.getSoundOnKeyPress
 import it.saimao.tmkkeyboardpro.utils.getVibrateOnKeyPress
+
 import it.saimao.tmkkeyboardpro.utils.saveAppLanguage
-import it.saimao.tmkkeyboardpro.utils.saveKeyboardTheme
 import it.saimao.tmkkeyboardpro.utils.saveSoundOnKeyPress
 import it.saimao.tmkkeyboardpro.utils.saveVibrateOnKeyPress
 
@@ -46,16 +46,13 @@ class SettingsFragment : Fragment() {
 
         // 2. Setup Listeners တွၼ်ႈတႃႇ Switches
         binding.switchVibration.setOnCheckedChangeListener { _, isChecked ->
-//            prefs.edit { putBoolean("vibrate_on_keypress", isChecked) }
             saveVibrateOnKeyPress(requireContext(), isChecked)
         }
 
         binding.switchSound.setOnCheckedChangeListener { _, isChecked ->
-//            prefs.edit { putBoolean("sound_on_keypress", isChecked) }
             saveSoundOnKeyPress(requireContext(), isChecked)
         }
 
-        // 3. Setup Click Listeners တွၼ်ႈတႃႇ Dialogs
         binding.btnSelectTheme.setOnClickListener {
             showThemeSelector()
         }
@@ -89,7 +86,7 @@ class SettingsFragment : Fragment() {
 
     private fun updateUI() {
         // လူတ်ႇသီ Theme ယၢမ်းလဵဝ်
-        val currentTheme = getSavedTheme(requireContext())
+        val currentTheme = ThemeManager.getTheme(requireContext())
         binding.tvCurrentTheme.text = when (currentTheme) {
             "DARK" -> "Dark Knight"
             "BLUE" -> "Ocean Blue"
@@ -111,25 +108,32 @@ class SettingsFragment : Fragment() {
     }
 
     private fun showThemeSelector() {
-        val themes = arrayOf("Gold (TMK)", "Dark Knight", "Ocean Blue", "Pure White")
-        val themeValues = arrayOf("GOLD", "DARK", "BLUE", "WHITE")
-
-        val currentTheme = getSavedTheme(requireContext())
-        val checkedItem = themeValues.indexOf(currentTheme)
+        // 1. ႁူတ်းဢဝ် Keys (Theme Names) မႃးပဵၼ် Array
+        val themes = themes.keys.toList()
+        val themesArray = themes.toTypedArray() // လႅၵ်ႈပဵၼ် Array<String>
 
         MaterialAlertDialogBuilder(requireContext())
             .setTitle("Select Keyboard Theme")
-            .setSingleChoiceItems(themes, checkedItem) { dialog, which ->
-                saveKeyboardTheme(requireContext(), themes[which])
-                binding.tvCurrentTheme.text = themes[which]
+            // 2. သူင်ႇ themesArray ၶဝ်ႈၵႂႃႇ (မၼ်းတေႁပ်ႉ CharSequenceArray)
+            .setSingleChoiceItems(
+                themesArray,
+                ThemeManager.getCheckedThemeIndex(requireContext())
+            ) { dialog, which ->
+                // 3. ဢဝ် Theme Name ဢၼ်လိူၵ်ႈၼၼ်ႉၵႂႃႇ Save
+                val selectedTheme = themes[which]
+                ThemeManager.saveTheme(requireContext(), selectedTheme)
+
+                // Update UI
+                binding.tvCurrentTheme.text = selectedTheme
+
                 dialog.dismiss()
             }
+            .setNegativeButton("Cancel", null)
             .show()
     }
 
     override fun onResume() {
         super.onResume()
-        // ၵူႈပွၵ်ႈဢၼ်ပွၵ်ႈမႃးၼႃႈၼႆႉ ႁႂ်ႈ Update Font ထႅင်ႈပွၵ်ႈၼိုင်ႈ
         setupPreviewArea()
         updateLanguageUI()
     }
