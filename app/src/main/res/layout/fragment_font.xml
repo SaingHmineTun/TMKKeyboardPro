@@ -27,11 +27,7 @@
                 android:id="@+id/rg_fonts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
-                <RadioButton android:id="@+id/rb_namkhone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="NamKhone Regular" android:checked="true"/>
-                <RadioButton android:id="@+id/rb_panglong" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PangLong" />
-                <RadioButton android:id="@+id/rb_kunheing" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="A J Kunheing 05" />
-            </RadioGroup>
+                android:layout_marginTop="8dp" />
 
             <Button
                 android:id="@+id/btn_download"
