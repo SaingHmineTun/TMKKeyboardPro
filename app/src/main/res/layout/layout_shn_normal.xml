@@ -1,280 +1,467 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="1dp"
-    android:background="#1A1A1A">
+    android:background="#1A1A1A"
+    android:padding="1dp">
 
-    <Button android:id="@+id/key_shn_1" style="@style/TmkKeyStyle" android:text="႑"
+    <Button
+        android:id="@+id/key_shn_1"
+        style="@style/TmkKeyStyle"
+        android:text="႑"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_2"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button android:id="@+id/key_shn_2" style="@style/TmkKeyStyle" android:text="႒"
+    <Button
+        android:id="@+id/key_shn_2"
+        style="@style/TmkKeyStyle"
+        android:text="႒"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_1"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_3"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/key_shn_1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_1"
+        />
 
-    <Button android:id="@+id/key_shn_3" style="@style/TmkKeyStyle" android:text="႓"
+    <Button
+        android:id="@+id/key_shn_3"
+        style="@style/TmkKeyStyle"
+        android:text="႓"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_2"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_4"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/key_shn_1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_1" />
 
-    <Button android:id="@+id/key_shn_4" style="@style/TmkKeyStyle" android:text="႔"
+    <Button
+        android:id="@+id/key_shn_4"
+        style="@style/TmkKeyStyle"
+        android:text="႔"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_3"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_5"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/key_shn_1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_1" />
 
-    <Button android:id="@+id/key_shn_5" style="@style/TmkKeyStyle" android:text="႕"
+    <Button
+        android:id="@+id/key_shn_5"
+        style="@style/TmkKeyStyle"
+        android:text="႕"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_4"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_6"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/key_shn_1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_1" />
 
-    <Button android:id="@+id/key_shn_6" style="@style/TmkKeyStyle" android:text="႖"
+    <Button
+        android:id="@+id/key_shn_6"
+        style="@style/TmkKeyStyle"
+        android:text="႖"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_5"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_7"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/key_shn_1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_1" />
 
-    <Button android:id="@+id/key_shn_7" style="@style/TmkKeyStyle" android:text="႗"
+    <Button
+        android:id="@+id/key_shn_7"
+        style="@style/TmkKeyStyle"
+        android:text="႗"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_6"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_8"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/key_shn_1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_1" />
 
-    <Button android:id="@+id/key_shn_8" style="@style/TmkKeyStyle" android:text="႘"
+    <Button
+        android:id="@+id/key_shn_8"
+        style="@style/TmkKeyStyle"
+        android:text="႘"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_7"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_9"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/key_shn_1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_1" />
 
-    <Button android:id="@+id/key_shn_9" style="@style/TmkKeyStyle" android:text="႙"
+    <Button
+        android:id="@+id/key_shn_9"
+        style="@style/TmkKeyStyle"
+        android:text="႙"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_8"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_0"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/key_shn_1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_1" />
 
-    <Button android:id="@+id/key_shn_0" style="@style/TmkKeyStyle" android:text="႐"
+    <Button
+        android:id="@+id/key_shn_0"
+        style="@style/TmkKeyStyle"
+        android:text="႐"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_9"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/key_shn_1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_1" />
 
-    <Button android:id="@+id/key_shn_ca" style="@style/TmkKeyStyle" android:text="ၸ"
+    <Button
+        android:id="@+id/key_shn_ca"
+        style="@style/TmkKeyStyle"
+        android:text="ၸ"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_ta"
         app:layout_constraintTop_toBottomOf="@+id/key_shn_1" />
 
-    <Button android:id="@+id/key_shn_ta" style="@style/TmkKeyStyle" android:text="တ"
+    <Button
+        android:id="@+id/key_shn_ta"
+        style="@style/TmkKeyStyle"
+        android:text="တ"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_ca"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_na"
-        app:layout_constraintTop_toTopOf="@+id/key_shn_ca" />
+        app:layout_constraintTop_toTopOf="@+id/key_shn_ca"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_ca"
+        />
 
-    <Button android:id="@+id/key_shn_na" style="@style/TmkKeyStyle" android:text="ၼ"
+    <Button
+        android:id="@+id/key_shn_na"
+        style="@style/TmkKeyStyle"
+        android:text="ၼ"
         app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_ca"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_ta"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_ma"
         app:layout_constraintTop_toTopOf="@+id/key_shn_ca" />
 
-    <Button android:id="@+id/key_shn_ma" style="@style/TmkKeyStyle" android:text="မ"
+    <Button
+        android:id="@+id/key_shn_ma"
+        style="@style/TmkKeyStyle"
+        android:text="မ"
         app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_ca"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_na"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_aa"
         app:layout_constraintTop_toTopOf="@+id/key_shn_ca" />
 
-    <Button android:id="@+id/key_shn_aa" style="@style/TmkKeyStyle" android:text="ဢ"
+    <Button
+        android:id="@+id/key_shn_aa"
+        style="@style/TmkKeyStyle"
+        android:text="ဢ"
         app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_ca"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_ma"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_pa"
         app:layout_constraintTop_toTopOf="@+id/key_shn_ca" />
 
-    <Button android:id="@+id/key_shn_pa" style="@style/TmkKeyStyle" android:text="ပ"
+    <Button
+        android:id="@+id/key_shn_pa"
+        style="@style/TmkKeyStyle"
+        android:text="ပ"
         app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_ca"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_aa"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_ka"
         app:layout_constraintTop_toTopOf="@+id/key_shn_ca" />
 
-    <Button android:id="@+id/key_shn_ka" style="@style/TmkKeyStyle" android:text="ၵ"
+    <Button
+        android:id="@+id/key_shn_ka"
+        style="@style/TmkKeyStyle"
+        android:text="ၵ"
         app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_ca"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_pa"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_nga"
         app:layout_constraintTop_toTopOf="@+id/key_shn_ca" />
 
-    <Button android:id="@+id/key_shn_nga" style="@style/TmkKeyStyle" android:text="င"
+    <Button
+        android:id="@+id/key_shn_nga"
+        style="@style/TmkKeyStyle"
+        android:text="င"
         app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_ca"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_ka"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_wa"
         app:layout_constraintTop_toTopOf="@+id/key_shn_ca" />
 
-    <Button android:id="@+id/key_shn_wa" style="@style/TmkKeyStyle" android:text="ဝ"
+    <Button
+        android:id="@+id/key_shn_wa"
+        style="@style/TmkKeyStyle"
+        android:text="ဝ"
         app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_ca"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_nga"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_ha"
         app:layout_constraintTop_toTopOf="@+id/key_shn_ca" />
 
-    <Button android:id="@+id/key_shn_ha" style="@style/TmkKeyStyle" android:text="ႁ"
+    <Button
+        android:id="@+id/key_shn_ha"
+        style="@style/TmkKeyStyle"
+        android:text="ႁ"
         app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_ca"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_wa"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/key_shn_ca" />
 
-    <Button android:id="@+id/key_shn_e" style="@style/TmkKeyStyle" android:text="ေ"
+    <Button
+        android:id="@+id/key_shn_e"
+        style="@style/TmkKeyStyle"
+        android:text="ေ"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_ae"
         app:layout_constraintTop_toBottomOf="@+id/key_shn_ca" />
 
-    <Button android:id="@+id/key_shn_ae" style="@style/TmkKeyStyle" android:text="ႄ"
+    <Button
+        android:id="@+id/key_shn_ae"
+        style="@style/TmkKeyStyle"
+        android:text="ႄ"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_e"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_i"
-        app:layout_constraintTop_toTopOf="@+id/key_shn_e" />
+        app:layout_constraintTop_toTopOf="@+id/key_shn_e"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_e"
+        />
 
-    <Button android:id="@+id/key_shn_i" style="@style/TmkKeyStyle" android:text="ိ"
+    <Button
+        android:id="@+id/key_shn_i"
+        style="@style/TmkKeyStyle"
+        android:text="ိ"
         app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_e"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_ae"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_asat"
         app:layout_constraintTop_toTopOf="@+id/key_shn_e" />
 
-    <Button android:id="@+id/key_shn_asat" style="@style/TmkKeyStyle" android:text="်"
+    <Button
+        android:id="@+id/key_shn_asat"
+        style="@style/TmkKeyStyle"
+        android:text="်"
         app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_e"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_i"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_medial_wa"
         app:layout_constraintTop_toTopOf="@+id/key_shn_e" />
 
-    <Button android:id="@+id/key_shn_medial_wa" style="@style/TmkKeyStyle" android:text="ွ"
+    <Button
+        android:id="@+id/key_shn_medial_wa"
+        style="@style/TmkKeyStyle"
+        android:text="ွ"
         app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_e"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_asat"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_tone3"
         app:layout_constraintTop_toTopOf="@+id/key_shn_e" />
 
-    <Button android:id="@+id/key_shn_tone3" style="@style/TmkKeyStyle" android:text="ႉ"
+    <Button
+        android:id="@+id/key_shn_tone3"
+        style="@style/TmkKeyStyle"
+        android:text="ႉ"
         app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_e"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_medial_wa"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_tone1"
         app:layout_constraintTop_toTopOf="@+id/key_shn_e" />
 
-    <Button android:id="@+id/key_shn_tone1" style="@style/TmkKeyStyle" android:text="ႇ"
+    <Button
+        android:id="@+id/key_shn_tone1"
+        style="@style/TmkKeyStyle"
+        android:text="ႇ"
         app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_e"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_tone3"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_u"
         app:layout_constraintTop_toTopOf="@+id/key_shn_e" />
 
-    <Button android:id="@+id/key_shn_u" style="@style/TmkKeyStyle" android:text="ု"
+    <Button
+        android:id="@+id/key_shn_u"
+        style="@style/TmkKeyStyle"
+        android:text="ု"
         app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_e"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_tone1"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_uu"
         app:layout_constraintTop_toTopOf="@+id/key_shn_e" />
 
-    <Button android:id="@+id/key_shn_uu" style="@style/TmkKeyStyle" android:text="ူ"
+    <Button
+        android:id="@+id/key_shn_uu"
+        style="@style/TmkKeyStyle"
+        android:text="ူ"
         app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_e"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_u"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_tone2"
         app:layout_constraintTop_toTopOf="@+id/key_shn_e" />
 
-    <Button android:id="@+id/key_shn_tone2" style="@style/TmkKeyStyle" android:text="ႈ"
+    <Button
+        android:id="@+id/key_shn_tone2"
+        style="@style/TmkKeyStyle"
+        android:text="ႈ"
         app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shn_e"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_uu"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/key_shn_e" />
 
-    <Button android:id="@+id/key_shift" style="@style/TmkKeyStyle" android:text="⇧"
+    <Button
+        android:id="@+id/key_shift"
+        style="@style/TmkKeyStyle"
+        android:text="⇧"
         app:layout_constraintHorizontal_weight="1.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_pha"
         app:layout_constraintTop_toBottomOf="@+id/key_shn_e" />
 
-    <Button android:id="@+id/key_shn_pha" style="@style/TmkKeyStyle" android:text="ၽ"
+    <Button
+        android:id="@+id/key_shn_pha"
+        style="@style/TmkKeyStyle"
+        android:text="ၽ"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_shift"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_tha"
-        app:layout_constraintTop_toTopOf="@+id/key_shift" />
+        app:layout_constraintTop_toTopOf="@+id/key_shift"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
+        />
 
-    <Button android:id="@+id/key_shn_tha" style="@style/TmkKeyStyle" android:text="ထ"
+    <Button
+        android:id="@+id/key_shn_tha"
+        style="@style/TmkKeyStyle"
+        android:text="ထ"
         app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_pha"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_kha"
         app:layout_constraintTop_toTopOf="@+id/key_shift" />
 
-    <Button android:id="@+id/key_shn_kha" style="@style/TmkKeyStyle" android:text="ၶ"
+    <Button
+        android:id="@+id/key_shn_kha"
+        style="@style/TmkKeyStyle"
+        android:text="ၶ"
         app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_tha"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_la"
         app:layout_constraintTop_toTopOf="@+id/key_shift" />
 
-    <Button android:id="@+id/key_shn_la" style="@style/TmkKeyStyle" android:text="လ"
+    <Button
+        android:id="@+id/key_shn_la"
+        style="@style/TmkKeyStyle"
+        android:text="လ"
         app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_kha"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_ya"
         app:layout_constraintTop_toTopOf="@+id/key_shift" />
 
-    <Button android:id="@+id/key_shn_ya" style="@style/TmkKeyStyle" android:text="ယ"
+    <Button
+        android:id="@+id/key_shn_ya"
+        style="@style/TmkKeyStyle"
+        android:text="ယ"
         app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_la"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_nya"
         app:layout_constraintTop_toTopOf="@+id/key_shift" />
 
-    <Button android:id="@+id/key_shn_nya" style="@style/TmkKeyStyle" android:text="ၺ"
+    <Button
+        android:id="@+id/key_shn_nya"
+        style="@style/TmkKeyStyle"
+        android:text="ၺ"
         app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_ya"
         app:layout_constraintRight_toLeftOf="@+id/key_shn_aa_large"
         app:layout_constraintTop_toTopOf="@+id/key_shift" />
 
-    <Button android:id="@+id/key_shn_aa_large" style="@style/TmkKeyStyle" android:text="ၢ"
+    <Button
+        android:id="@+id/key_shn_aa_large"
+        style="@style/TmkKeyStyle"
+        android:text="ၢ"
         app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_nya"
         app:layout_constraintRight_toLeftOf="@+id/key_del"
         app:layout_constraintTop_toTopOf="@+id/key_shift" />
 
-    <Button android:id="@+id/key_del" style="@style/TmkKeyStyle" android:text="⌫"
+    <Button
+        android:id="@+id/key_del"
+        style="@style/TmkKeyStyle"
+        android:text="⌫"
         app:layout_constraintHorizontal_weight="1.5"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
         app:layout_constraintLeft_toRightOf="@+id/key_shn_aa_large"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/key_shift" />
 
-    <Button android:id="@+id/key_lang" style="@style/TmkKeyStyle" android:text="🌐"
-        app:layout_constraintHorizontal_weight="1.5"
+    <Button
+        android:id="@+id/key_lang"
+        style="@style/TmkKeyStyle"
+        android:text="🌐"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/key_emoji"
         app:layout_constraintTop_toBottomOf="@+id/key_shift" />
 
-    <Button android:id="@+id/key_emoji" style="@style/TmkKeyStyle" android:text="😊"
-        app:layout_constraintHorizontal_weight="1.25"
+    <Button
+        android:id="@+id/key_emoji"
+        style="@style/TmkKeyStyle"
+        android:text="😊"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_lang"
         app:layout_constraintRight_toLeftOf="@+id/key_123"
-        app:layout_constraintTop_toTopOf="@+id/key_lang" />
+        app:layout_constraintTop_toTopOf="@+id/key_lang"
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
+        />
 
-    <Button android:id="@+id/key_123" style="@style/TmkKeyStyle" android:text="123"
+    <Button
+        android:id="@+id/key_123"
+        style="@style/TmkKeyStyle"
+        android:text="123"
         app:layout_constraintHorizontal_weight="1.25"
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
         app:layout_constraintLeft_toRightOf="@+id/key_emoji"
         app:layout_constraintRight_toLeftOf="@+id/key_space"
         app:layout_constraintTop_toTopOf="@+id/key_lang" />
 
-    <Button android:id="@+id/key_space" style="@style/TmkKeyStyle" android:text="တႆး"
-        app:layout_constraintHorizontal_weight="3"
+    <Button
+        android:id="@+id/key_space"
+        style="@style/TmkKeyStyle"
+        android:text="တႆး"
+        app:layout_constraintHorizontal_weight="2.5"
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
         app:layout_constraintLeft_toRightOf="@+id/key_123"
         app:layout_constraintRight_toLeftOf="@+id/key_dot"
         app:layout_constraintTop_toTopOf="@+id/key_lang" />
 
-    <Button android:id="@+id/key_dot" style="@style/TmkKeyStyle"
+    <Button
+        android:id="@+id/key_dot"
+        style="@style/TmkKeyStyle"
         android:text="။"
-        app:layout_constraintHorizontal_weight="1.5"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
         app:layout_constraintLeft_toRightOf="@+id/key_space"
+        app:layout_constraintRight_toLeftOf="@+id/key_convert"
+        app:layout_constraintTop_toTopOf="@+id/key_lang" />
+    <Button
+        android:id="@+id/key_convert"
+        style="@style/TmkKeyStyle"
+        android:text="↳↰"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
+        app:layout_constraintLeft_toRightOf="@+id/key_dot"
         app:layout_constraintRight_toLeftOf="@+id/key_enter"
         app:layout_constraintTop_toTopOf="@+id/key_lang" />
 
-    <Button android:id="@+id/key_enter" style="@style/TmkKeyStyle" android:text="⏎"
-        app:layout_constraintHorizontal_weight="2"
-        app:layout_constraintLeft_toRightOf="@+id/key_dot"
+    <Button
+        android:id="@+id/key_enter"
+        style="@style/TmkKeyStyle"
+        android:text="⏎"
+        app:layout_constraintHorizontal_weight="1.25"
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
+        app:layout_constraintLeft_toRightOf="@+id/key_convert"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/key_lang" />
 
