@@ -29,20 +29,18 @@ import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.Button
 import android.widget.FrameLayout
-import android.widget.GridView
 import android.widget.LinearLayout
 import android.widget.PopupWindow
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
-import androidx.core.content.edit
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.internal.FlowLayout
 import it.saimao.tmkkeyboardpro.R
-import it.saimao.tmkkeyboardpro.adapters.EmojiAdapter
 import it.saimao.tmkkeyboardpro.logic.DictionaryManager
+import it.saimao.tmkkeyboardpro.logic.EmojiKeyboard
 import it.saimao.tmkkeyboardpro.logic.EnglishDictionaryManager
 import it.saimao.tmkkeyboardpro.logic.FontManager
 import it.saimao.tmkkeyboardpro.logic.MyanmarDictionaryManager
@@ -672,51 +670,6 @@ class ShanKeyboardService : InputMethodService() {
         }
     }
 
-    private fun updateShiftIcon(shiftButton: Button) {
-        if (shiftButton.id in intArrayOf(
-                R.id.key_shift,
-                R.id.key_unshift,
-                R.id.key_my_shift,
-                R.id.key_my_unshift,
-                R.id.key_shn_shift,
-                R.id.key_shn_unshift
-            )
-        ) {
-
-            when (currentShiftState) {
-                ShiftState.OFF -> {
-                    shiftButton.setCompoundDrawablesWithIntrinsicBounds(
-                        R.drawable.ic_shift_off,
-                        0,
-                        0,
-                        0
-                    )
-                    shiftButton.backgroundTintList = null // သီယူႇယူႇ
-                }
-
-                ShiftState.ON -> {
-                    shiftButton.setCompoundDrawablesWithIntrinsicBounds(
-                        R.drawable.ic_shift_on,
-                        0,
-                        0,
-                        0
-                    )
-                }
-
-                ShiftState.CAPS_LOCK -> {
-                    shiftButton.setCompoundDrawablesWithIntrinsicBounds(
-                        R.drawable.ic_shift_caps,
-                        0,
-                        0,
-                        0
-                    )
-                    // သႂ်ႇသီပၼ် ၼင်ႇႁိုဝ်တေႁူႉဝႃႈမၼ်း "ၶမ်" (Locked) ဝႆႉ
-                    shiftButton.backgroundTintList =
-                        ColorStateList.valueOf(Color.parseColor("#FFD700")) // Gold for Pro!
-                }
-            }
-        }
-    }
 
     fun playClickSound() {
         val am = getSystemService(AUDIO_SERVICE) as AudioManager
@@ -740,87 +693,22 @@ class ShanKeyboardService : InputMethodService() {
     }
 
     fun showEmojiPicker() {
-        keysContainer.removeAllViews()
-        val emojiView = layoutInflater.inflate(R.layout.emoji_picker, null)
-        keysContainer.addView(emojiView)
 
-        val grid: GridView = emojiView.findViewById(R.id.emoji_grid)
-
-
-        // 1. သဵၼ်ႈမၢႆ Emoji ၸွမ်းမူႇၸိူဝ်း
-        val smileyList = listOf(
-            "😀", "😃", "😄", "😁", "😆", "😅", "😂", "🤣", "😊", "😇",
-            "🙂", "🙃", "😉", "😍", "🥰", "😘", "😗", "😙", "😚", "😋",
-            "😛", "😝", "😜", "🤪", "🤨", "🧐", "🤓", "😎", "🤩", "🥳",
-            "😏", "😒", "😞", "😔", "😟", "😕", "🙁", "☹️", "😣", "😖",
-            "😫", "😩", "🥺", "😢", "😭", "😤", "😠", "😡", "🤬", "🤯",
-            "😳", "🥵", "🥶", "😱", "😨", "😰", "😥", "😓", "🤗", "🤔"
-        )
-        val natureList = listOf(
-            "🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐻‍❄️", "🐨",
-            "🐯", "🦁", "🐮", "🐷", "🐽", "🐸", "🐵", "🙊", "🙉", "🙈",
-            "🐒", "🐔", "🐧", "🐦", "🐤", "🐣", "🐥", "🦆", "🦅", "🦉",
-            "🦇", "🐺", "🐗", "🐴", "🦄", "🐝", "🐛", "🦋", "🐌", "🐞",
-            "🐜", "🦟", "🦗", "🕷", "🕸", "🦂", "🐢", "🐍", "🦎", "🦖",
-            "🦕", "🐙", "🦑", "🦐", "🦞", "🦀", "🐡", "🐠", "🐟", "🐬"
-        )
-
-        // Helper function တႃႇလႅၵ်ႈ Emoji ၼႂ်း Grid
-        fun updateGrid(list: List<String>) {
-            grid.adapter = EmojiAdapter(this, list) { emoji ->
+        EmojiKeyboard(
+            context = this,
+            keysContainer = keysContainer,
+            layoutInflater = layoutInflater,
+            onPressed = { emoji ->
                 currentInputConnection?.commitText(emoji, 1)
-                saveToRecentEmojis(emoji) // <--- Save ၵူႈပွၵ်ႈမိူဝ်ႈၼိပ်ႉ
+            },
+            onGoback = {
+                updateKeyboardLayout()
 
             }
-        }
-
-        // 2. Default: ၼႄ Smileys မိူဝ်ႈတႄႇပိုတ်ႇ
-        updateGrid(smileyList)
-
-        // 3. ၵွင်ႉ Click Listener တွၼ်ႈတႃႇ Tabs ၽၢႆႇတႂ်ႈ
-        emojiView.findViewById<Button>(R.id.btn_emoji_smiley).setOnClickListener {
-            updateGrid(smileyList)
-        }
-
-        emojiView.findViewById<Button>(R.id.btn_emoji_nature).setOnClickListener {
-            updateGrid(natureList)
-        }
-
-        // ၵွင်ႉ Click Listener တွၼ်ႈတႃႇတုမ်ႇ Recent
-        emojiView.findViewById<Button>(R.id.btn_emoji_recent).setOnClickListener {
-            updateGrid(getRecentEmojis()) // လူတ်ႇ Data မႂ်ႇတႃႇသေႇ
-        }
-
-        // တုမ်ႇပွၵ်ႈၶိုၼ်းၼႃႈ Keyboard ယူႇယူႇ
-        emojiView.findViewById<Button>(R.id.btn_emoji_back).setOnClickListener {
-            updateKeyboardLayout()
-        }
+        )
 
     }
 
-    private fun saveToRecentEmojis(emoji: String) {
-        val prefs = getSharedPreferences("EmojiPrefs", MODE_PRIVATE)
-        val recentString = prefs.getString("recent_emojis", "") ?: ""
-
-        // 1. တႅၵ်ႇဢဝ် List ၵဝ်ႇမႃး
-        val recentList = recentString.split(",").filter { it.isNotEmpty() }.toMutableList()
-
-        // 2. သင်မီးဝႆႉယဝ်ႉ ႁႂ်ႈထွၼ်ဢွၵ်ႇၵွၼ်ႇ (တႃႇဢဝ်မႃးတမ်းၽၢႆႇၼႃႈသုတ်း)
-        recentList.remove(emoji)
-        recentList.add(0, emoji)
-
-        // 3. ၵဵပ်းဝႆႉၵွၺ်း 20 တူဝ် (ဢမ်ႇၼၼ် ၸွမ်းၼင်ႇမၵ်ႉမၼ်ႈဝႆႉ)
-        val updatedList = recentList.take(20)
-
-        // 4. Save ၶိုၼ်းၼႂ်း SharedPreferences
-        prefs.edit { putString("recent_emojis", updatedList.joinToString(",")) }
-    }
-
-    private fun getRecentEmojis(): List<String> {
-        val prefs = getSharedPreferences("EmojiPrefs", MODE_PRIVATE)
-        val recentString = prefs.getString("recent_emojis", "") ?: ""
-        return recentString.split(",").filter { it.isNotEmpty() }
-    }
 
     private lateinit var speechRecognizer: SpeechRecognizer
 
