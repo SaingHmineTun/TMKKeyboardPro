@@ -56,6 +56,8 @@ import it.saimao.tmkkeyboardpro.utils.getPopupCharsFor
 import it.saimao.tmkkeyboardpro.utils.getSavedTheme
 import kotlin.properties.Delegates
 import androidx.core.graphics.toColorInt
+import it.saimao.tmkkeyboardpro.utils.getSoundOnKeyPress
+import it.saimao.tmkkeyboardpro.utils.getVibrateOnKeyPress
 
 class ShanKeyboardService : InputMethodService() {
 
@@ -665,8 +667,7 @@ class ShanKeyboardService : InputMethodService() {
 
     fun triggerVibration(view: View) {
         // ၸႅတ်ႈတူၺ်းဝႃႈ ၵူၼ်းၸႂ်ႉပိုတ်ႇ Vibration ဝႆႉၼႂ်း Settings ႁႃႉ?
-        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
-        val isVibrateEnabled = prefs.getBoolean("vibrate_on_keypress", true)
+        val isVibrateEnabled = getVibrateOnKeyPress(this)
 
         if (isVibrateEnabled) {
             view.performHapticFeedback(
@@ -724,13 +725,11 @@ class ShanKeyboardService : InputMethodService() {
 
     fun playClickSound() {
         val am = getSystemService(AUDIO_SERVICE) as AudioManager
-        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
-        val isSoundEnabled = prefs.getBoolean("sound_on_keypress", true)
+        val isSoundEnabled = getSoundOnKeyPress(this)
 
         if (isSoundEnabled) {
-            // လိူၵ်ႈသဵင်ၸွမ်းၼင်ႇ Keyboard Standard
-            val soundType = AudioManager.FX_KEYPRESS_STANDARD
-            am.playSoundEffect(soundType)
+            // ၸႂ်ႉ .1f တွၼ်ႈတႃႇ Volume (မၢင် Version လူဝ်ႇပၼ် Volume Parameter)
+            am.playSoundEffect(AudioManager.FX_KEYPRESS_STANDARD, 1f)
         }
     }
 

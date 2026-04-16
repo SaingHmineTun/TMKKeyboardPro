@@ -17,13 +17,18 @@ import it.saimao.tmkkeyboardpro.activities_services.MainActivity
 import it.saimao.tmkkeyboardpro.R
 import it.saimao.tmkkeyboardpro.databinding.FragmentSettingsBinding
 import it.saimao.tmkkeyboardpro.logic.FontManager
+import it.saimao.tmkkeyboardpro.utils.getAppLanguage
+import it.saimao.tmkkeyboardpro.utils.getSavedTheme
+import it.saimao.tmkkeyboardpro.utils.getSoundOnKeyPress
+import it.saimao.tmkkeyboardpro.utils.getVibrateOnKeyPress
+import it.saimao.tmkkeyboardpro.utils.saveAppLanguage
+import it.saimao.tmkkeyboardpro.utils.saveKeyboardTheme
+import it.saimao.tmkkeyboardpro.utils.saveSoundOnKeyPress
+import it.saimao.tmkkeyboardpro.utils.saveVibrateOnKeyPress
 
 class SettingsFragment : Fragment() {
 
     private lateinit var binding: FragmentSettingsBinding
-    private val prefs by lazy {
-        requireContext().getSharedPreferences("TMK_PREFS", Context.MODE_PRIVATE)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,11 +46,13 @@ class SettingsFragment : Fragment() {
 
         // 2. Setup Listeners တွၼ်ႈတႃႇ Switches
         binding.switchVibration.setOnCheckedChangeListener { _, isChecked ->
-            prefs.edit { putBoolean("vibrate_on_keypress", isChecked) }
+//            prefs.edit { putBoolean("vibrate_on_keypress", isChecked) }
+            saveVibrateOnKeyPress(requireContext(), isChecked)
         }
 
         binding.switchSound.setOnCheckedChangeListener { _, isChecked ->
-            prefs.edit { putBoolean("sound_on_keypress", isChecked) }
+//            prefs.edit { putBoolean("sound_on_keypress", isChecked) }
+            saveSoundOnKeyPress(requireContext(), isChecked)
         }
 
         // 3. Setup Click Listeners တွၼ်ႈတႃႇ Dialogs
@@ -82,16 +89,16 @@ class SettingsFragment : Fragment() {
 
     private fun updateUI() {
         // လူတ်ႇသီ Theme ယၢမ်းလဵဝ်
-        val currentTheme = prefs.getString("keyboard_theme", "GOLD")
+        val currentTheme = getSavedTheme(requireContext())
         binding.tvCurrentTheme.text = when (currentTheme) {
             "DARK" -> "Dark Knight"
             "BLUE" -> "Ocean Blue"
             "WHITE" -> "Pure White"
-            else -> "Gold (TMK)"
+            else -> "Gold"
         }
 
         // လူတ်ႇၽႃႇသႃႇယၢမ်းလဵဝ်
-        val currentLang = prefs.getString("default_language", "SHN")
+        val currentLang = getAppLanguage(requireContext())
         binding.tvCurrentLang.text = when (currentLang) {
             "MY" -> "Myanmar (ဗမာ)"
             "EN" -> "English"
@@ -99,21 +106,21 @@ class SettingsFragment : Fragment() {
         }
 
         // လူတ်ႇ State ၶွင် Switch
-        binding.switchVibration.isChecked = prefs.getBoolean("vibrate_on_keypress", true)
-        binding.switchSound.isChecked = prefs.getBoolean("sound_on_keypress", false)
+        binding.switchVibration.isChecked = getVibrateOnKeyPress(requireContext())
+        binding.switchSound.isChecked = getSoundOnKeyPress(requireContext())
     }
 
     private fun showThemeSelector() {
         val themes = arrayOf("Gold (TMK)", "Dark Knight", "Ocean Blue", "Pure White")
         val themeValues = arrayOf("GOLD", "DARK", "BLUE", "WHITE")
 
-        val currentTheme = prefs.getString("keyboard_theme", "GOLD")
+        val currentTheme = getSavedTheme(requireContext())
         val checkedItem = themeValues.indexOf(currentTheme)
 
         MaterialAlertDialogBuilder(requireContext())
             .setTitle("Select Keyboard Theme")
             .setSingleChoiceItems(themes, checkedItem) { dialog, which ->
-                prefs.edit { putString("keyboard_theme", themeValues[which]) }
+                saveKeyboardTheme(requireContext(), themes[which])
                 binding.tvCurrentTheme.text = themes[which]
                 dialog.dismiss()
             }
@@ -141,7 +148,8 @@ class SettingsFragment : Fragment() {
                 val selectedTag = langTags[which]
 
                 // 1. Save သႂ်ႇ SharedPreferences (Optional)
-                prefs.edit { putString("app_language", selectedTag) }
+//                prefs.edit { putString("app_language", selectedTag) }
+                saveAppLanguage(requireContext(), selectedTag)
 
                 // 2. *** Force Change App Language ***
                 val appLocales: LocaleListCompat = LocaleListCompat.forLanguageTags(selectedTag)
