@@ -282,6 +282,7 @@ class ShanKeyboardService : InputMethodService() {
                         handleKeyPress(child, text)
                     }
 
+
                     // Long Click ပိုတ်ႇ Pop-up
                     child.setOnLongClickListener {
                         val popupChars = getPopupCharsFor(currentLanguage, child.text.toString())
