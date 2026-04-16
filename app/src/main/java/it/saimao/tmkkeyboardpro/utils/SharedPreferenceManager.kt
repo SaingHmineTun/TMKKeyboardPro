@@ -87,5 +87,5 @@ fun saveKeyboardTheme(context: Context, theme: String) {
 }
 
 fun getKeyboardTheme(context: Context): String {
-    return retrieve(context, "keyboard_theme", "GOLD")
+    return retrieve(context, "keyboard_theme", "DARK")
 }

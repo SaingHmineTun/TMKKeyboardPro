@@ -23,16 +23,35 @@ data class KeyboardTheme(
 
 object ThemeManager {
     val themes = mapOf(
-        "GOLD" to KeyboardTheme("#1A1A1A", "#D4AF37", "#B8860B", "#FFFFFF", "#333333"),
-        "DARK" to KeyboardTheme("#000000", "#1E1E1E", "#333333", "#FFFFFF", "#121212"),
-        "BLUE" to KeyboardTheme("#0D1B2A", "#1B263B", "#415A77", "#E0E1DD", "#003566"),
-        "PURPLE" to KeyboardTheme("#240046", "#3C096C", "#5A189A", "#FFFFFF", "#10002B"),
-        "GREEN" to KeyboardTheme("#081C15", "#1B4332", "#2D6A4F", "#D8F3DC", "#000000"),
-        "ROSE" to KeyboardTheme("#250902", "#4B1208", "#801100", "#FAD2E1", "#000000"),
-        "OCEAN" to KeyboardTheme("#0077B6", "#0096C7", "#48CAE4", "#FFFFFF", "#023E8A"),
-        "GUM" to KeyboardTheme("#FF85A1", "#FF91AF", "#FFAFCC", "#FFFFFF", "#FF5C8A"),
-        "SILVER" to KeyboardTheme("#E5E5E5", "#FFFFFF", "#CCCCCC", "#000000", "#D4D4D4"),
-        "MODERN" to KeyboardTheme("#212529", "#343A40", "#495057", "#F8F9FA", "#000000")
+        // 1. DARK (OLED Deep Black) - Special Keys ၸႂ်ႉသီလမ်ဢွၼ်ႇ
+        "DARK" to KeyboardTheme("#000000", "#1A1A1A", "#333333", "#E0E0E0", "#0D0D0D"),
+
+        // 2. GOLD (Luxury Black & Metallic Gold) - Special Keys ၸႂ်ႉသီထဝ်ႇလႅတ်း
+        "GOLD" to KeyboardTheme("#121212", "#D4AF37", "#AA8831", "#FFFFFF", "#2A2A2A"),
+
+        // 3. BLUE (Deep Navy & Cyan Accent) - Special Keys ၸႂ်ႉသီၵမ်ႇ
+        "BLUE" to KeyboardTheme("#0B132B", "#1C2541", "#3A506B", "#FFFFFF", "#080E1E"),
+
+        // 4. PURPLE (Cyberpunk Neon) - Special Keys ၸႂ်ႉသီၵေႃႉၵႄႈ
+        "PURPLE" to KeyboardTheme("#10002B", "#3C096C", "#5A189A", "#FFFFFF", "#240046"),
+
+        // 5. GREEN (Forest Emerald) - Special Keys ၸႂ်ႉသီၶဵဝ်ၵမ်ႇ
+        "GREEN" to KeyboardTheme("#081C15", "#1B4332", "#2D6A4F", "#D8F3DC", "#040E0B"),
+
+        // 6. ROSE (Midnight Wine) - Special Keys ၸႂ်ႉသီလႅင်ၵမ်ႇ
+        "ROSE" to KeyboardTheme("#1A0501", "#4B1208", "#801100", "#FAD2E1", "#0F0301"),
+
+        // 7. OCEAN (Sea Blue & White) - Special Keys ၸႂ်ႉသီသွမ်ႇလႅတ်း
+        "OCEAN" to KeyboardTheme("#CAF0F8", "#90E0EF", "#00B4D8", "#03045E", "#ADE8F4"),
+
+        // 8. GUM (Sweet Strawberry) - Special Keys ၸႂ်ႉသီပူဝ်ႇလႅတ်း
+        "GUM" to KeyboardTheme("#FFF0F3", "#FFB7C5", "#FF85A1", "#590D22", "#FFCCD5"),
+
+        // 9. SILVER (Minimalist Apple Style) - Special Keys ၸႂ်ႉသီထဝ်ႇလႅင်း
+        "SILVER" to KeyboardTheme("#F8F9FA", "#FFFFFF", "#E9ECEF", "#212529", "#DEE2E6"),
+
+        // 10. MODERN (Material You - Slate) - Special Keys ၸႂ်ႉသီထဝ်ႇၵမ်ႇ
+        "MODERN" to KeyboardTheme("#212529", "#343A40", "#495057", "#F8F9FA", "#1A1D20")
     )
 
 
