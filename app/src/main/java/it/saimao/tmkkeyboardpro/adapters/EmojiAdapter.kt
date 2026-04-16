@@ -20,7 +20,7 @@ class EmojiAdapter(context: Context, private val emojis: List<String>, val onCli
         val view = convertView ?: inflater.inflate(R.layout.simple_list_item_1, parent, false)
         val textView = view.findViewById<TextView>(R.id.text1)
         textView.text = emojis[position]
-        textView.textSize = 24f
+        textView.textSize = 16f
         textView.gravity = Gravity.CENTER
         textView.setOnClickListener { onClick(emojis[position]) }
         return view
