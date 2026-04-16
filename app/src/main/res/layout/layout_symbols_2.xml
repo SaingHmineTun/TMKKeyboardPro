@@ -391,11 +391,11 @@
         app:layout_constraintBottom_toBottomOf="@id/key_copyright"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toRightOf="@+id/key_approx"
-        app:layout_constraintRight_toLeftOf="@+id/key_backspace"
+        app:layout_constraintRight_toLeftOf="@+id/key_del"
         app:layout_constraintTop_toTopOf="@+id/key_copyright" />
 
     <Button
-        android:id="@+id/key_backspace"
+        android:id="@+id/key_del"
         style="@style/ActionTmkKeyStyle"
         android:text="⌫"
         app:layout_constraintBottom_toBottomOf="@id/key_copyright"
@@ -425,7 +425,7 @@
 
     <Button
         android:id="@+id/key_comma"
-        style="@style/TmkKeyStyle"
+        style="@style/ActionTmkKeyStyle"
         android:text=","
         app:layout_constraintBottom_toBottomOf="@id/key_switch_abc"
         app:layout_constraintHorizontal_weight="1"
@@ -445,7 +445,7 @@
 
     <Button
         android:id="@+id/key_period"
-        style="@style/TmkKeyStyle"
+        style="@style/ActionTmkKeyStyle"
         android:text="."
         app:layout_constraintBottom_toBottomOf="@id/key_switch_abc"
         app:layout_constraintHorizontal_weight="1"
@@ -456,7 +456,7 @@
     <Button
         android:id="@+id/key_enter"
         style="@style/ActionTmkKeyStyle"
-        android:text="Enter"
+        android:text="⏎"
         app:layout_constraintBottom_toBottomOf="@id/key_switch_abc"
         app:layout_constraintHorizontal_weight="1.5"
         app:layout_constraintLeft_toRightOf="@+id/key_period"

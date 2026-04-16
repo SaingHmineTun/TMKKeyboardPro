@@ -68,58 +68,6 @@ object ThemeManager {
         return getKeyboardTheme(context)
     }
 
-
-    //    @SuppressLint("RestrictedApi")
-//    fun applyTheme(context: Context, view: View) {
-//        val keyNormalColor: Int
-//        val keyPressedColor: Int
-//        val backgroundColor: Int
-//        val themeType = getTheme(context)
-//
-//        if (themeType == "GOLD") {
-//            keyNormalColor = context.getColor(R.color.gold_key_normal)
-//            keyPressedColor = context.getColor(R.color.gold_key_pressed)
-//            backgroundColor = context.getColor(R.color.gold_background)
-//        } else {
-//            keyNormalColor = context.getColor(R.color.blue_key_normal)
-//            keyPressedColor = context.getColor(R.color.blue_key_pressed)
-//            backgroundColor = context.getColor(R.color.blue_background)
-//        }
-//
-//        // 1. သင်ပဵၼ် Root View ႁႂ်ႈလႅၵ်ႈသီ Background
-//        if (view.id == R.id.keyboard_root || view is FlowLayout) {
-//            view.setBackgroundColor(backgroundColor)
-//        }
-//
-//
-//        val typeface = FontManager.getActiveTypeface(context)
-//
-//        // 2. ၸႂ်ႉ Recursion တႃႇႁႃ Buttons ၼႂ်းၵူႈ Container
-//        if (view is ViewGroup) {
-//            for (i in 0 until view.childCount) {
-//                val child = view.getChildAt(i)
-//
-//                if (child is Button) {
-//                    // လႅၵ်ႈသီတုမ်ႇၼဵၵ်ႉ
-//                    val states = arrayOf(
-//                        intArrayOf(android.R.attr.state_pressed),
-//                        intArrayOf()
-//                    )
-//                    val colors = intArrayOf(keyPressedColor, keyNormalColor)
-//                    child.backgroundTintList = ColorStateList(states, colors)
-//
-//                    // လွင်ႈယႂ်ႇ: ႁႂ်ႈ Tint Mode မၼ်းပဵၼ် SRC_IN ၼင်ႇႁိုဝ်တေႁၼ်သီမႂ်ႇ
-//                    child.backgroundTintMode = PorterDuff.Mode.SRC_IN
-//                    if (typeface != null) {
-//                        child.typeface = typeface
-//                    }
-//                } else if (child is ViewGroup) {
-//                    // သင်ၺႃး FrameLayout ဢမ်ႇၼၼ် LinearLayout တၢင်ႇဢၼ် ႁႂ်ႈၶဝ်ႈၵႂႃႇႁႃထႅင်ႈ
-//                    applyTheme(context,child)
-//                }
-//            }
-//        }
-//    }
     @SuppressLint("RestrictedApi")
     fun applyTheme(context: Context, view: View) {
         val themeName = getTheme(context)
@@ -168,7 +116,8 @@ object ThemeManager {
     private fun isSpecialKey(id: Int): Boolean {
         return id == R.id.key_del || id == R.id.key_shift || id == R.id.key_unshift || id == R.id.key_enter ||
                 id == R.id.key_lang || id == R.id.key_123 || id == R.id.key_emoji || id == R.id.key_speech ||
-                id == R.id.key_dot
+                id == R.id.key_dot || id == R.id.key_switch_abc || id == R.id.key_1_2 || id == R.id.key_2_1 ||
+                id == R.id.key_comma || id == R.id.key_period
     }
 
 
