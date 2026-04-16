@@ -31,28 +31,5 @@
 * **Interactions:** `TouchListeners`, `GestureDetectors`, and `PopupWindow`
 * **Persistence:** `SharedPreferences` for user settings and themes.
 
-## 📂 Project Structure
-```text
-it.saimao.tmkkeyboardpro
-├── services
-│   └── ShanKeyboardService.kt  # The heart of the IME
-├── logic
-│   ├── ShiftStateManager.kt   # Managing OFF/ON/CAPS_LOCK
-│   └── ThemeEngine.kt        # Programmatic UI tinting
-├── drawables
-│   ├── key_selector.xml      # State-based visuals
-│   └── ic_shift_*.xml        # Custom vector icons
-└── layouts
-    ├── keyboard_root.xml     # Suggestion bar + Keys container
-    └── layout_shn_*.xml      # Shan script XML definitions
-```
-
-## 📖 Module-Based Development
-This project was developed through a structured learning curriculum:
-* **Module 1:** Foundation & Root Architecture.
-* **Module 2:** Pro UI Design (ConstraintLayout, Theming, Responsive Scaling).
-* **Module 3:** Core Input & Event Handling (InputConnection, Swipe Logic, Popups).
-* **Module 4:** Shan Language Intelligence (Unicode Encoding & Conversion).
-
 ---
 **Developed by Sai Mao (TMK Group)** *Empowering the Shan Community through Digital Innovation.*
