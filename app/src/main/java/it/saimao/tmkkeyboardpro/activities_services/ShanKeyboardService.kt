@@ -46,7 +46,6 @@ import it.saimao.tmkkeyboardpro.logic.FontManager
 import it.saimao.tmkkeyboardpro.logic.MyanmarDictionaryManager
 import it.saimao.tmkkeyboardpro.logic.ShanDictionaryManager
 import it.saimao.tmkkeyboardpro.logic.ShanKeyboard
-import it.saimao.tmkkeyboardpro.logic.ShanLanguageEngine
 import it.saimao.tmkkeyboardpro.logic.ThemeManager.applyTheme
 import it.saimao.tmkkeyboardpro.utils.getHandWritingSystem
 import it.saimao.tmkkeyboardpro.utils.getPopupCharsFor
@@ -84,17 +83,6 @@ class ShanKeyboardService : InputMethodService() {
 
     private lateinit var candidateContainer: LinearLayout
     private lateinit var currentInputView: View
-
-    private var backgroundColor by Delegates.notNull<Int>()
-
-    private var _shanLanguageEngine: ShanLanguageEngine? = null
-    private val shanLanguageEngine: ShanLanguageEngine
-        get() {
-            if (_shanLanguageEngine == null) {
-                _shanLanguageEngine = ShanLanguageEngine(currentInputConnection)
-            }
-            return _shanLanguageEngine!!
-        }
 
 
     // --- တွၼ်ႈတႃႇ Suggestion Logic ---
@@ -287,7 +275,7 @@ class ShanKeyboardService : InputMethodService() {
                             true // တွၼ်ႈတႃႇလၢတ်ႈၼႄဝႃႈ ႁဝ်းၸတ်းၵၢၼ်ယဝ်ႉ
                         } else if (child.id == R.id.key_enter) {
                             if (currentLanguage == "SHN") {
-                                shanLanguageEngine.convertZawgyi()
+                                ShanKeyboard.getInstance(this).convertZawgyi(currentInputConnection)
                                 true
                             } else {
                                 false

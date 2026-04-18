@@ -1,7 +1,10 @@
 package it.saimao.tmkkeyboardpro.logic;
 
+import android.text.TextUtils;
 import android.view.inputmethod.InputConnection;
 
+import it.saimao.shan_language_tools.converters.ShanZawgyiConverter;
+import it.saimao.shan_language_tools.dectector.ShanLanguageDetector;
 import it.saimao.tmkkeyboardpro.activities_services.ShanKeyboardService;
 import it.saimao.tmkkeyboardpro.utils.SharedPreferenceManagerKt;
 
@@ -241,6 +244,19 @@ public class ShanKeyboard {
     public void handleShanMoneySym(InputConnection ic) {
         char[] temp = {4117, 0x103B, 4227, 4152};
         ic.commitText(String.valueOf(temp), 1);
+    }
+
+    public void convertZawgyi(InputConnection ic) {
+        ic.performContextMenuAction(android.R.id.selectAll);
+        var charSequence = ic.getSelectedText(0);
+        if (!TextUtils.isEmpty(charSequence)) {
+            var selectedText = charSequence.toString();
+            var convertedText = ShanLanguageDetector.isShanZawgyi(selectedText) ?
+                    ShanZawgyiConverter.zg2uni(selectedText)
+                    :
+                    ShanZawgyiConverter.uni2zg(selectedText);
+            ic.commitText(convertedText, 1);
+        }
     }
 
 }
