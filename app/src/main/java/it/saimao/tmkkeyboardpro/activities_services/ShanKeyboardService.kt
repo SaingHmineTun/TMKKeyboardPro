@@ -162,7 +162,6 @@ class ShanKeyboardService : InputMethodService() {
                 val tv = TextView(this).apply {
                     text = word
                     textSize = 18f
-                    setTextColor(Color.WHITE)
                     setPadding(30, 0, 30, 0)
                     gravity = Gravity.CENTER
                     // *** တူဝ်ယႂ်ႇ: လူဝ်ႇသႂ်ႇ LayoutParams တႅတ်ႈတေႃး ***
@@ -704,8 +703,18 @@ class ShanKeyboardService : InputMethodService() {
         EmojiKeyboard(
             context = this,
             layoutInflater = layoutInflater,
-            onPressed = { emoji -> currentInputConnection?.commitText(emoji, 1) },
-            onGoback = { updateKeyboardLayout() }
+            onEmojiPressed = { emoji -> currentInputConnection?.commitText(emoji, 1) },
+            onGoback = { updateKeyboardLayout() },
+            onDelete = { currentInputConnection?.deleteSurroundingText(1, 0) },
+            onEnter = {
+                currentInputConnection?.sendKeyEvent(
+                    KeyEvent(
+                        KeyEvent.ACTION_DOWN,
+                        KeyEvent.KEYCODE_ENTER
+                    )
+                )
+            },
+            onSpace = { currentInputConnection?.commitText(" ", 1) },
         )
     }
 

@@ -1,61 +1,68 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/emoji_keyboard"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#1A1A1A"
-    android:orientation="vertical"
-    android:padding="@dimen/keyboard_padding">
+    android:id="@+id/emoji_keyboard"
+    android:orientation="vertical">
 
-    <GridView
-        android:id="@+id/emoji_grid"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/emoji_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/key_height"
+        app:tabMode="scrollable" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/emoji_viewpager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:columnWidth="50dp"
-        android:gravity="center"
-        android:numColumns="7"
-        android:padding="5dp"
-        android:stretchMode="columnWidth" />
-
+        android:layout_weight="1" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/key_height"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-
         <Button
-            android:id="@+id/btn_emoji_back"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:id="@+id/key_back_to_kb"
+            android:text="ABC"
             android:layout_marginEnd="4dp"
+            android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="⌨"
-            android:textColor="#FFFFFF" />
+            android:layout_height="@dimen/key_height"
+            />
 
         <Button
-            android:id="@+id/btn_emoji_recent"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+
             android:layout_marginEnd="4dp"
-            android:layout_weight="1"
-            android:text="🕑" />
+            android:id="@+id/key_emoji_space"
+
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="@dimen/key_height"
+            android:text="Space"
+            />
 
         <Button
-            android:id="@+id/btn_emoji_smiley"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+
             android:layout_marginEnd="4dp"
+            android:id="@+id/key_del"
+            android:text="⌫"
+
+            android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="😊" />
+            android:layout_height="@dimen/key_height"
+
+            />
 
         <Button
-            android:id="@+id/btn_emoji_nature"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="🐶" />
+            android:id="@+id/key_enter"
+            android:text="⏎"
 
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="@dimen/key_height"
+
+            />
     </LinearLayout>
+
 </LinearLayout>

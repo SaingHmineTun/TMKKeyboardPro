@@ -2,7 +2,6 @@
 <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/key_height"
-    android:background="#2C2C2C"
     android:padding="4dp"
     android:scrollbars="none">
 

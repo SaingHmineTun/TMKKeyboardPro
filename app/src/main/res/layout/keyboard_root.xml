@@ -3,17 +3,15 @@
     android:id="@+id/keyboard_root"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#1A1A1A"
+    android:orientation="vertical"
     android:paddingLeft="@dimen/keyboard_padding"
     android:paddingRight="@dimen/keyboard_padding"
-    android:paddingBottom="5dp"
-    android:orientation="vertical">
+    android:paddingBottom="5dp">
 
     <FrameLayout
         android:id="@+id/suggestion_bar_container"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/key_height"
-        android:background="#2C2C2C" />
+        android:layout_height="@dimen/key_height" />
 
     <FrameLayout
         android:id="@+id/keys_container"
