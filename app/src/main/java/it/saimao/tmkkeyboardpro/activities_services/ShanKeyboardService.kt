@@ -27,6 +27,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputConnection
 import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.LinearLayout
@@ -44,15 +45,14 @@ import it.saimao.tmkkeyboardpro.logic.EmojiKeyboard
 import it.saimao.tmkkeyboardpro.logic.EnglishDictionaryManager
 import it.saimao.tmkkeyboardpro.logic.FontManager
 import it.saimao.tmkkeyboardpro.logic.MyanmarDictionaryManager
+import it.saimao.tmkkeyboardpro.logic.MyanmarKeyboard
 import it.saimao.tmkkeyboardpro.logic.ShanDictionaryManager
 import it.saimao.tmkkeyboardpro.logic.ShanKeyboard
 import it.saimao.tmkkeyboardpro.logic.ThemeManager.applyTheme
-import it.saimao.tmkkeyboardpro.utils.getHandWritingSystem
 import it.saimao.tmkkeyboardpro.utils.getPopupCharsFor
 import it.saimao.tmkkeyboardpro.utils.getSoundOnKeyPress
 import it.saimao.tmkkeyboardpro.utils.getVibrateOnKeyPress
 import kotlin.math.abs
-import kotlin.properties.Delegates
 
 class ShanKeyboardService : InputMethodService() {
 
@@ -297,6 +297,9 @@ class ShanKeyboardService : InputMethodService() {
                                     if (currentLanguage == "SHN") {
                                         ShanKeyboard.getInstance(this)
                                             .handleShanDelete(currentInputConnection)
+                                    } else if (currentLanguage == "MY") {
+                                        MyanmarKeyboard.getInstance(this)
+                                            .handleMyanmarDelete(currentInputConnection)
                                     } else {
                                         sendDelete()
                                     }
@@ -405,6 +408,10 @@ class ShanKeyboardService : InputMethodService() {
                         val primaryCode = if (cText.isNotEmpty()) cText.first().code else -1
                         cText = ShanKeyboard.getInstance(this)
                             .handleShanInputText(primaryCode, currentInputConnection)
+                    } else if (currentLanguage == "MY") {
+                        val primaryCode = if (cText.isNotEmpty()) cText.first().code else -1
+                        cText = MyanmarKeyboard.getInstance(this)
+                            .handelMyanmarInputText(primaryCode, currentInputConnection)
                     }
                     sendText(cText)
 
@@ -468,7 +475,22 @@ class ShanKeyboardService : InputMethodService() {
 
     // ၵၢၼ်လူတ်းလိၵ်ႈ (Backspace)
     fun sendDelete() {
-        currentInputConnection?.deleteSurroundingText(1, 0)
+        val ic = currentInputConnection
+        val charBeforeCursor = ic.getTextBeforeCursor(1, 0)
+
+        if ((charBeforeCursor == null) || charBeforeCursor.isEmpty()) {
+            return  //fixed on issue of version 1.2, cause=(getText is null)
+        }
+
+
+        // for Emotion & Ahom delete
+        if (Character.isLowSurrogate(charBeforeCursor[0])
+            || Character.isHighSurrogate(charBeforeCursor[0])
+        ) {
+            ic.deleteSurroundingText(2, 0)
+        } else {
+            ic.deleteSurroundingText(1, 0)
+        }
     }
 
     // သူင်ႇ Key Event (တႃႇ Enter, Tab)
