@@ -91,7 +91,7 @@ class EmojiKeyboard(
 
 
     // Categorized Emojis
-    private val categories = listOf(
+    private val categories = mutableListOf(
         "Recent" to getRecentEmojis(),
         "Smiley" to smileyList,
         "Nature" to natureList,
@@ -131,7 +131,7 @@ class EmojiKeyboard(
             )
 
             // Setup ViewPager Adapter
-            viewPager.adapter = object : RecyclerView.Adapter<EmojiPageViewHolder>() {
+            val emojiAdapter = object : RecyclerView.Adapter<EmojiPageViewHolder>() {
                 override fun onCreateViewHolder(
                     parent: ViewGroup,
                     viewType: Int
@@ -144,6 +144,10 @@ class EmojiKeyboard(
                 }
 
                 override fun onBindViewHolder(holder: EmojiPageViewHolder, position: Int) {
+                    // 2. လူဝ်ႇ Update Data ၼႂ်း Categories ၵွၼ်ႇတေ Bind
+                    if (categories[position].first == "Recent") {
+                        categories[position] = "Recent" to getRecentEmojis()
+                    }
                     val list = categories[position].second
                     holder.grid.adapter = EmojiAdapter(context, list) { emoji ->
                         onEmojiPressed(emoji)
@@ -153,6 +157,24 @@ class EmojiKeyboard(
 
                 override fun getItemCount(): Int = categories.size
             }
+            viewPager.adapter = emojiAdapter
+
+            viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+                override fun onPageSelected(position: Int) {
+                    super.onPageSelected(position)
+
+                    // သင်ပဵၼ် Recent Tab (Index 0) ႁႂ်ႈ Refresh Data
+                    if (categories[position].first == "Recent") {
+                        // Update List ၼႂ်း Memory ၵွၼ်ႇ
+                        categories[position] = "Recent" to getRecentEmojis()
+                        // ႁွင်ႉ Adapter ႁႂ်ႈ Draw မႂ်ႇ
+                        emojiAdapter.notifyItemChanged(position)
+                    }
+
+                    // --- လွင်ႈတၢင်းဢၼ်ၸဝ်ႈၵဝ်ႇၺႃးသီ Dark ၼၼ်ႉၵေႃႈ ၵႄႈလႆႈတီႈၼႆႉၸွမ်းၶႃႈ ---
+                    ThemeManager.applyTheme(context.applicationContext, emojiView!!)
+                }
+            })
 
             // Connect TabLayout with ViewPager2
             TabLayoutMediator(tabLayout, viewPager) { tab, position ->
