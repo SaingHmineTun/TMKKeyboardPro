@@ -94,7 +94,7 @@ object ThemeManager {
                         child.tabIconTint = ColorStateList.valueOf(textColor)
                     }
 
-                    is Button, is TextView -> {
+                    is Button -> {
                         val isSpecial = isSpecialKey(child.id)
                         val normalColor = if (isSpecial) specialColor else keyColor
 
@@ -115,6 +115,39 @@ object ThemeManager {
                 }
             }
         }
+    }
+
+    // The optimized method without looping!!!
+    fun applySingleViewTheme(context: Context, view: View) {
+
+
+        val themeName = getTheme(context)
+        val theme = themes[themeName] ?: themes["DARK"]!! // Default to GOLD
+
+        val bgColor = Color.parseColor(theme.bg)
+        val keyColor = Color.parseColor(theme.key)
+        val pressedColor = Color.parseColor(theme.pressed)
+        val textColor = Color.parseColor(theme.txt)
+        val specialColor = Color.parseColor(theme.special)
+
+        val typeface = FontManager.getActiveTypeface(context)
+
+        if (view is Button) {
+
+            val isSpecial = isSpecialKey(view.id)
+            val normalColor = if (isSpecial) specialColor else keyColor
+
+            val states = arrayOf(intArrayOf(android.R.attr.state_pressed), intArrayOf())
+            val colors = intArrayOf(pressedColor, normalColor)
+
+            view.backgroundTintList = ColorStateList(states, colors)
+            view.backgroundTintMode = PorterDuff.Mode.SRC_IN
+            view.foregroundTintList = ColorStateList.valueOf(textColor) // For Icons
+
+            view.setTextColor(textColor)
+            if (typeface != null) view.typeface = typeface
+        }
+
     }
 
     private fun isSpecialKey(id: Int): Boolean {

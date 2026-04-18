@@ -14,6 +14,7 @@ import android.widget.FrameLayout
 import android.widget.GridView
 import android.widget.TextView
 import androidx.core.content.edit
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
@@ -132,24 +133,23 @@ class EmojiKeyboard(
 
             // Setup ViewPager Adapter
             val emojiAdapter = object : RecyclerView.Adapter<EmojiPageViewHolder>() {
+                // ၼႂ်း ViewPager Adapter:
                 override fun onCreateViewHolder(
                     parent: ViewGroup,
                     viewType: Int
                 ): EmojiPageViewHolder {
-                    val grid = GridView(context).apply {
-                        numColumns = 8
+                    val recyclerView = RecyclerView(context).apply {
                         layoutParams = ViewGroup.LayoutParams(MATCH_PARENT, MATCH_PARENT)
+                        // ၸတ်းႁႂ်ႈမီး 8 Columns (ၸွမ်းၼင်ႇသႅၼ်း Keyboard)
+                        layoutManager = GridLayoutManager(context, 8)
                     }
-                    return EmojiPageViewHolder(grid)
+                    return EmojiPageViewHolder(recyclerView)
                 }
 
                 override fun onBindViewHolder(holder: EmojiPageViewHolder, position: Int) {
-                    // 2. လူဝ်ႇ Update Data ၼႂ်း Categories ၵွၼ်ႇတေ Bind
-                    if (categories[position].first == "Recent") {
-                        categories[position] = "Recent" to getRecentEmojis()
-                    }
                     val list = categories[position].second
-                    holder.grid.adapter = EmojiAdapter(context, list) { emoji ->
+                    // ၸႂ်ႉ EmojiAdapter တူဝ်မႂ်ႇ ဢၼ်ပဵၼ် RecyclerView.Adapter
+                    holder.recyclerView.adapter = EmojiAdapter(context, list) { emoji ->
                         onEmojiPressed(emoji)
                         saveToRecentEmojis(emoji)
                     }
@@ -232,33 +232,40 @@ class EmojiKeyboard(
         return recentString.split(",").filter { it.isNotEmpty() }
     }
 
-    class EmojiPageViewHolder(val grid: GridView) : RecyclerView.ViewHolder(grid)
+    class EmojiPageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val recyclerView: RecyclerView = itemView as RecyclerView
+    }
 
 
     class EmojiAdapter(
         private val context: Context,
         private val emojis: List<String>,
-        val onClick: (String) -> Unit
-    ) : BaseAdapter() {
+        private val onClick: (String) -> Unit
+    ) : RecyclerView.Adapter<EmojiAdapter.EmojiViewHolder>() {
+
         private val inflater = LayoutInflater.from(context)
 
-        override fun getCount(): Int = emojis.size
-        override fun getItem(position: Int) = emojis[position]
-        override fun getItemId(position: Int) = position.toLong()
-
-        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-            val view = convertView ?: inflater.inflate(R.layout.item_emoji, parent, false)
-            val button = view.findViewById<Button>(R.id.emoji_button)
-
-            button.text = emojis[position]
-
-            // --- Apply Theme ၸူး Button ၵမ်းလဵဝ် ---
-            ThemeManager.applyTheme(context, view)
-
-            button.setOnClickListener { onClick(emojis[position]) }
-
-            return view
+        // ViewHolder Pattern တွၼ်ႈတႃႇလူတ်ႇယွၼ်ႇၵၢၼ် findViewById()
+        class EmojiViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+            val button: Button = view.findViewById(R.id.emoji_button)
         }
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EmojiViewHolder {
+            val view = inflater.inflate(R.layout.item_emoji, parent, false)
+            return EmojiViewHolder(view)
+        }
+
+        override fun onBindViewHolder(holder: EmojiViewHolder, position: Int) {
+            val emoji = emojis[position]
+            holder.button.text = emoji
+
+            // --- Apply Theme ၵမ်းလဵဝ် (RecyclerView တေ Handle Recycling ပၼ်ႁင်းၵူၺ်း) ---
+            ThemeManager.applySingleViewTheme(context, holder.button)
+
+            holder.button.setOnClickListener { onClick(emoji) }
+        }
+
+        override fun getItemCount(): Int = emojis.size
     }
 
 
