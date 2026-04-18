@@ -45,6 +45,7 @@ import it.saimao.tmkkeyboardpro.logic.EnglishDictionaryManager
 import it.saimao.tmkkeyboardpro.logic.FontManager
 import it.saimao.tmkkeyboardpro.logic.MyanmarDictionaryManager
 import it.saimao.tmkkeyboardpro.logic.ShanDictionaryManager
+import it.saimao.tmkkeyboardpro.logic.ShanKeyboard
 import it.saimao.tmkkeyboardpro.logic.ShanLanguageEngine
 import it.saimao.tmkkeyboardpro.logic.ThemeManager.applyTheme
 import it.saimao.tmkkeyboardpro.utils.getHandWritingSystem
@@ -305,7 +306,12 @@ class ShanKeyboardService : InputMethodService() {
                         when (event.action) {
                             MotionEvent.ACTION_DOWN -> {
                                 if (child.id == R.id.key_del) {
-                                    sendDelete()
+                                    if (currentLanguage == "SHN") {
+                                        ShanKeyboard.getInstance(this)
+                                            .handleShanDelete(currentInputConnection)
+                                    } else {
+                                        sendDelete()
+                                    }
                                     updateSuggestions()
                                     playClickSound()
                                     startContinuousDelete()
@@ -360,14 +366,11 @@ class ShanKeyboardService : InputMethodService() {
 
     private fun handleKeyPress(view: Button, text: String) {
         // 1. Trigger Feedback
+        var cText = text;
         triggerVibration(view)
         playClickSound()
 
         when (val viewId = view.id) {
-            R.id.key_del -> {
-                sendDelete() // ဢၼ်ႁဝ်းတႅမ်ႈဝႆႉၼႂ်း Lesson 14
-                updateSuggestions() // ႁွင်ႉၵူႈပွၵ်ႈမိူဝ်ႈ Delete
-            }
 
             R.id.key_space -> {
                 sendText(" ")
@@ -409,30 +412,14 @@ class ShanKeyboardService : InputMethodService() {
 
                 } else {
 
-                    if (getHandWritingSystem(this)) {
+                    if (currentLanguage == "SHN") {
 
-
-                        // 1. ဢဝ် Text ဢၼ်လုၵ်ႉတီႈ Button မႃးလႅၵ်ႈပဵၼ် Unicode Code
-                        val primaryCode = if (text.isNotEmpty()) text.first().code else -1
-
-                        if (currentLanguage == "SHN" && primaryCode != -1) {
-
-                            // 2. သူင်ႇ Code ၶဝ်ႈၵႂႃႇၼႂ်း Engine
-                            val resultText = shanLanguageEngine.handleInput(primaryCode)
-                            if (resultText != null) {
-                                sendText(resultText)
-                            }
-
-                        } else {
-                            // ပဵၼ် English ဢမ်ႇၼၼ် တူဝ်လိၵ်ႈယူႇယူႇ
-                            sendText(text)
-                        }
-
-                    } else {
-
-                        // ပဵၼ် English ဢမ်ႇၼၼ် တူဝ်လိၵ်ႈယူႇယူႇ
-                        sendText(text)
+                        val primaryCode = if (cText.isNotEmpty()) cText.first().code else -1
+                        cText = ShanKeyboard.getInstance(this)
+                            .handleShanInputText(primaryCode, currentInputConnection)
                     }
+                    sendText(cText)
+
 
                     // သင်ပဵၼ် Shift ON (ဢမ်ႇၸႂ်ႉ Caps Lock) ႁႂ်ႈပိၵ်ႉၶိုၼ်း မိူဝ်ႈတႅမ်ႈယဝ်ႉ 1 တူဝ်
                     if (currentShiftState == ShiftState.ON) {

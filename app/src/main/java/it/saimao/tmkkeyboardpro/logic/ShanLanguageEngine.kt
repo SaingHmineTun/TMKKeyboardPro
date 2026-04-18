@@ -5,232 +5,164 @@ import android.view.inputmethod.InputConnection
 import it.saimao.shan_language_tools.converters.ShanZawgyiConverter
 import it.saimao.shan_language_tools.dectector.ShanLanguageDetector
 
-
 class ShanLanguageEngine(private val ic: InputConnection) {
 
     companion object {
-        const val MY_E = 0x1031      // ေ (Myanmar E)
-        const val SH_E = 0x1084      // ႄ (Shan AE - note: double check your hex)
-        const val ASAT = 0x103A      // ် (Asat)
+        const val MY_E = 0x1031      // ေ
+        const val SH_E = 0x1084      // ႄ (Shan AE)
+        const val ASAT = 0x103A      // ်
         const val ZWSP = '\u200B'    // Zero Width Space
-
-
     }
 
     object ShanScript {
-
-        // ဝၼ်ၵျုၵ်ႉၽၢႆႇလင် (Tone Marks: ႇ း ႉ ၾ ြ)
+        // ဝၼ်ၵျုၵ်ႉ (Tone Marks)
         val TONES = setOf('\u1087', '\u1088', '\u1089', '\u108A', '\u1037', '\u1038')
 
-        // တၢင်ႇလၢႆ/တိုတ်း (Upper Vowels: ိ ီ ု ူ ေ ႄ)
+        // တၢင်ႇလၢႆ/တိုတ်း (Upper Vowels)
         val UPPER_VOWELS = setOf('\u102D', '\u102E', '\u102F', '\u1030')
 
-        // ဢႃ (AA: ႃ ၢ)
+        // ဢႃ (AA Vowels)
         val AA_VOWELS = setOf('\u1062', '\u1083')
+
+        // တူဝ်မႄႈလိၵ်ႈ (Consonants)
+        val CONSONANTS = ('\u1000'..'\u1021').toSet() + ('\uAA60'..'\uAA7A').toSet()
+
+        // ႁွပ်ႇ/လဵပ်ႈ (Medials)
+        val MEDIALS = setOf('\u103B', '\u103C')
     }
 
-    // Flags တႃႇတွတ်းၸႂ်ဝႃႈ တိုၵ်ႉမီးလွင်ႈလႅၵ်ႈတီႈ (Swap) ဝႆႉယူႇႁႃႉ
-    private var isConsonantSwapped = false
-    private var isMedialSwapped = false
-
-    private val ZWSP = "\u200B" // Zero Width Space
-
+    /**
+     * Main handle function for all Shan input
+     */
     fun handleInput(primaryCode: Int): String? {
-        val charBefore = ic.getTextBeforeCursor(1, 0)?.toString() ?: ""
-        val charCodeBefore = if (charBefore.isNotEmpty()) charBefore[0].code else -1
+        val currentChar = primaryCode.toChar()
 
-        // *** ထတ်းတူၺ်းဝႃႈ လိၵ်ႈတေလူႉႁႃႉ? ***
-        if (isInvalidSequence(charCodeBefore, primaryCode)) {
-            // တူင်ႉၼိုင် (Vibrate) ဢိတ်းၼိုင်ႈ ၼင်ႇႁိုဝ်ၵူၼ်းၸႂ်ႉတေႁူႉဝႃႈ ၼိပ်ႉၽိတ်းယဝ်ႉ
+        // 1. Get Context (Ignore ZWSP to look at real characters)
+        val context = getRealContext(2)
+        val charBefore = if (context.isNotEmpty()) context.last() else null
+        val secondBefore = if (context.length > 1) context[context.length - 2] else null
+
+        // 2. Rule: Prevent Invalid Sequences (Double tones, etc.)
+        if (charBefore != null && isInvalidSequence(charBefore, currentChar)) {
             return null
         }
 
-        // 1. Common Reordering Rules (Always Apply)
-        checkReorderingRules(charCodeBefore, primaryCode)?.let { return it }
+        // 3. Rule: Special Reordering (ို, ိူ, ႆၢ, ေႂ)
+        checkReorderingRules(charBefore, currentChar)?.let {
+            ic.deleteSurroundingText(1, 0)
+            return it
+        }
 
-        // 2. Handwriting / Visual Typing Mode Logic (ေ + ၵ -> ၵေ)
-        return handleVisualOrdering(charCodeBefore, primaryCode)
+        // 4. Rule: Visual Ordering (Handwriting Mode for ေ and ႄ)
+        return handleVisualOrdering(charBefore, secondBefore, currentChar)
     }
 
-    private fun checkReorderingRules(prev: Int, current: Int): String? {
-        return when {
-            // Reorder ေႂ (Asat + Medial Wa -> Wa + Asat)
-            prev == ASAT && current == 0x1082 -> {
-                ic.deleteSurroundingText(1, 0)
-                "${0x1082.toChar()}${ASAT.toChar()}"
-            }
-            // Reorder ႆၢ (Tone-5 + AA -> AA + Tone-5)
-            prev == 0x1086 && current == 0x1062 -> {
-                ic.deleteSurroundingText(1, 0)
-                "${0x1062.toChar()}${0x1086.toChar()}"
-            }
-            // Reorder ိူ (U + II -> II + U)
-            prev == 0x1030 && current == 0x102D -> {
-                ic.deleteSurroundingText(1, 0)
-                "${0x102D.toChar()}${0x1030.toChar()}"
-            }
+    private fun handleVisualOrdering(
+        charBefore: Char?,
+        secondBefore: Char?,
+        current: Char
+    ): String {
+        // A. If user types ေ or ႄ -> Always add ZWSP first for proper rendering
+        if (current.code == MY_E || current.code == SH_E) {
+            return "$ZWSP$current"
+        }
 
+        // B. If the character before cursor is ေ or ႄ
+        if (charBefore?.code == MY_E || charBefore?.code == SH_E) {
+            when {
+                // [ေ] + [ၵ] -> [ၵေ] (Consonant Swap)
+                isShanConsonant(current) -> {
+                    // Check if there's a ZWSP before ေ
+                    val rawBefore = ic.getTextBeforeCursor(2, 0) ?: ""
+                    if (rawBefore.length == 2 && rawBefore[0] == ZWSP) {
+                        ic.deleteSurroundingText(2, 0)
+                    } else {
+                        ic.deleteSurroundingText(1, 0)
+                    }
+                    return "$current$charBefore"
+                }
+
+                // [ၵေ] + [ြ] -> [ၵြေ] (Medial Swap)
+                isShanMedial(current) && isShanConsonant(secondBefore ?: ' ') -> {
+                    ic.deleteSurroundingText(1, 0) // Delete only ေ
+                    return "$current$charBefore" // Medial + ေ
+                }
+            }
+        }
+        return current.toString()
+    }
+
+    private fun getRealContext(len: Int): String {
+        val raw = ic.getTextBeforeCursor(len + 2, 0)?.toString() ?: ""
+        return raw.replace(ZWSP.toString(), "")
+    }
+
+    private fun checkReorderingRules(prev: Char?, current: Char): String? {
+        if (prev == null) return null
+        return when {
+            prev.code == ASAT && current.code == 0x1082 -> "${0x1082.toChar()}$ASAT"
+            prev.code == 0x1086 && current.code == 0x1062 -> "${0x1062.toChar()}${0x1086.toChar()}"
+            prev.code == 0x1030 && current.code == 0x102D -> "${0x102D.toChar()}${0x1030.toChar()}"
+            prev.code == 0x102F && current.code == 0x102D -> "${0x102D.toChar()}${0x102F.toChar()}"
             else -> null
         }
     }
 
-    private fun handleVisualOrdering(prev: Int, current: Int): String {
-        val currentChar = current.toChar()
-
-        // သင်ၼိပ်ႉ "ေ" ဢွၼ်တၢင်း (Start of leading vowel logic)
-        if (current == MY_E || current == SH_E) {
-            isConsonantSwapped = false
-            isMedialSwapped = false
-            return "$ZWSP$currentChar"
-        }
-
-        // သင်တူဝ်ၽၢႆႇၼႃႈပဵၼ် "ေ"
-        if (prev == MY_E || prev == SH_E) {
-            when {
-                isShanConsonant(current) -> {
-                    if (!isConsonantSwapped) {
-                        ic.deleteSurroundingText(2, 0) // Delete ZWSP + E
-                        isConsonantSwapped = true
-                        return "$currentChar${prev.toChar()}"
-                    }
-                }
-
-                isShanMedial(current) -> {
-                    if (isConsonantSwapped && !isMedialSwapped) {
-                        ic.deleteSurroundingText(1, 0) // Delete E
-                        isMedialSwapped = true
-                        return "$currentChar${prev.toChar()}"
-                    }
-                }
-            }
-        }
-
-        // Default state reset
-        if (isOthers(current)) {
-            isConsonantSwapped = false
-            isMedialSwapped = false
-        }
-
-        return currentChar.toString()
-    }
-
-    private fun isShanConsonant(code: Int) = code in 0x1000..0x1021 || code in 0xAA60..0xAA7A
-    private fun isShanMedial(code: Int) = code == 0x103B || code == 0x103C
-    private fun isOthers(code: Int) = code in listOf(0x1086, 0x1087, 0x1088, 0x1089, 0x108A, 0x1062)
-
+    /**
+     * Smart Delete handling for ZWSP and Reordered characters
+     */
     fun handleShanDelete() {
+        val rawBefore = ic.getTextBeforeCursor(2, 0) ?: ""
 
-        // 1. ထတ်းတူၺ်းတူဝ်လိၵ်ႈ 2 တူဝ် ၽၢႆႇၼႃႈ Cursor
-        val before = ic.getTextBeforeCursor(2, 0) ?: ""
-
-        if (before.length >= 2) {
-            val firstChar = before[0] // တူဝ်ထႅၼ်ႈ 2 (secPrev)
-            val secondChar = before[1] // တူဝ်ထႅၼ်ႈ 1 (charBeforeCursor)
+        if (rawBefore.length == 2) {
+            val charBefore = rawBefore[1]
+            val secondBefore = rawBefore[0]
 
             when {
-                // Case A: သင်ပဵၼ် [ZWSP + ေ] -> လူတ်းပႅတ်ႈတင်းသွင်တူဝ်
-                secondChar.code == 0x1031 && firstChar.code == 8203 -> {
+                // Case 1: [ZWSP + ေ] -> Delete both
+                charBefore.code == MY_E && secondBefore == ZWSP -> {
                     ic.deleteSurroundingText(2, 0)
-                    resetReorderFlags()
                 }
-                // Case B: သင်ပဵၼ် [ၵ + ေ] (Swap ယဝ်ႉ) -> လူတ်းပႅတ်ႈတင်းသွင်တူဝ်
-                // ၼင်ႇႁိုဝ်ၵူၼ်းၸႂ်ႉတေလႅၵ်ႈတူဝ် Consonant မႂ်ႇလႆႈငၢႆႈ
-                (secondChar.code == 0x1031) && isShanConsonant(firstChar.code) -> {
+                // Case 2: [ၵ + ေ] -> Delete both and re-insert [ZWSP + ေ]
+                // This allows user to easily change the consonant
+                charBefore.code == MY_E && isShanConsonant(secondBefore) -> {
                     ic.deleteSurroundingText(2, 0)
-                    // လူတ်းယဝ်ႉ ၸၢင်ႈထႅမ်သႂ်ႇ ZWSP + ေ ၶိုၼ်း ၼင်ႇႁိုဝ်တေတႅမ်ႈ Consonant မႂ်ႇလႆႈၵမ်းလဵဝ်
-                    ic.commitText("\u200B\u1031", 1)
-                    resetReorderFlags()
+                    ic.commitText("$ZWSP${charBefore}", 1)
                 }
 
-                else -> {
-                    ic.deleteSurroundingText(1, 0)
-                }
+                else -> ic.deleteSurroundingText(1, 0)
             }
         } else {
-            // Default Delete
             ic.deleteSurroundingText(1, 0)
         }
     }
 
-    private fun resetReorderFlags() {
-        isConsonantSwapped = false
-        isMedialSwapped = false
-    }
+    private fun isShanConsonant(c: Char) = ShanScript.CONSONANTS.contains(c)
+    private fun isShanMedial(c: Char) = ShanScript.MEDIALS.contains(c)
 
-
-    fun isInvalidSequence(prev: Int, current: Int): Boolean {
-        val prevChar = prev.toChar()
-        val currChar = current.toChar()
-
+    private fun isInvalidSequence(prev: Char, current: Char): Boolean {
         return when {
-            // Rule 1: ယႃႇႁႂ်ႈၼိပ်ႉ ဝၼ်ၵျုၵ်ႉ မိူၼ်ၵၼ် သွင်ပွၵ်ႈ (No double tones)
-            prevChar == currChar && (ShanScript.TONES.contains(currChar)) -> true
-
-            // Rule 2: သင်မီး ဝၼ်ၵျုၵ်ႉဝႆႉယဝ်ႉ ယႃႇႁႂ်ႈသႂ်ႇ ဝၼ်ၵျုၵ်ႉထႅင်ႈ (No stacking tones)
-            ShanScript.TONES.contains(prevChar) && ShanScript.TONES.contains(currChar) -> true
-
-            // Rule 3: သင်မီး တၢင်ႇလၢႆ/တိုတ်း ဝႆႉယဝ်ႉ ယႃႇႁႂ်ႈသႂ်ႇ တၢင်ႇလၢႆ/တိုတ်း ထႅင်ႈ
-            ShanScript.UPPER_VOWELS.contains(prevChar) && ShanScript.UPPER_VOWELS.contains(currChar) -> true
-
+            prev == current && ShanScript.TONES.contains(current) -> true
+            ShanScript.TONES.contains(prev) && ShanScript.TONES.contains(current) -> true
+            ShanScript.UPPER_VOWELS.contains(prev) && ShanScript.UPPER_VOWELS.contains(current) -> true
             else -> false
         }
     }
 
+    /**
+     * Converter Logic
+     */
     fun convertZawgyi() {
-
         ic.performContextMenuAction(android.R.id.selectAll)
         val charSequence = ic.getSelectedText(0)
-        val convertedText: String?
-        val selectedText: String?
         if (!TextUtils.isEmpty(charSequence)) {
-            selectedText = charSequence.toString()
-            // FOR SHAN CONVERTER
-            if (ShanLanguageDetector.isShanZawgyi(selectedText)) {
-                convertedText = ShanZawgyiConverter.zg2uni(selectedText)
+            val selectedText = charSequence.toString()
+            val convertedText = if (ShanLanguageDetector.isShanZawgyi(selectedText)) {
+                ShanZawgyiConverter.zg2uni(selectedText)
             } else {
-                convertedText = ShanZawgyiConverter.uni2zg(selectedText)
+                ShanZawgyiConverter.uni2zg(selectedText)
             }
-
             ic.commitText(convertedText, 1)
         }
     }
-
-    fun insertWithZWSP(text: String) {
-        val charBefore = ic.getTextBeforeCursor(1, 0)?.toString() ?: ""
-        val asat = "\u103A" // ်
-
-        // 1. သင်ၼိပ်ႉ ASAT (်) -> လူဝ်ႇၵႂႃႇလၢင်ႉ ZWSP ဢၼ်ၸၢင်ႈမီးၽၢႆႇၼႃႈ Consonant
-        if (text == asat) {
-            handleAsat(ic)
-            return
-        }
-
-        // 2. Logic သႂ်ႇ ZWSP တွၼ်ႈတႃႇ Consonant ယူႇယူႇ
-        if (ShanLanguageDetector.isShanUnicode(charBefore) && isShanConsonant(text[0].code)) {
-            ic.commitText("\u200B$text", 1)
-        } else {
-            ic.commitText(text, 1)
-        }
-    }
-
-    private fun handleAsat(ic: InputConnection) {
-        val asat = "\u103A"
-        // ထတ်းတူၺ်း 2 တူဝ်ၽၢႆႇၼႃႈ (မိူၼ်ၼင်ႇ \u200B + ၵ)
-        val before = ic.getTextBeforeCursor(2, 0)?.toString() ?: ""
-
-        if (before.length == 2 && before[0] == '\u200B') {
-            // သင်မီး ZWSP ဝႆႉၽၢႆႇၼႃႈ Consonant တႄႉတႄႉ
-            val consonant = before[1].toString()
-
-            // လူတ်းပႅတ်ႈတင်းသွင်တူဝ် (ZWSP + Consonant)
-            ic.deleteSurroundingText(2, 0)
-
-            // သူင်ႇ Consonant ၶိုၼ်း (ဢမ်ႇပႃး ZWSP) သေၸင်ႇသႂ်ႇ ASAT
-            ic.commitText(consonant + asat, 1)
-        } else {
-            // သင်ဢမ်ႇမီး ZWSP ဝႆႉၵေႃႈ သူင်ႇ ASAT ၵႂႃႇယူႇယူႇ
-            ic.commitText(asat, 1)
-        }
-    }
-
 }
