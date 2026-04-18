@@ -702,7 +702,7 @@ class ShanKeyboardService : InputMethodService() {
             layoutInflater = layoutInflater,
             onEmojiPressed = { emoji -> currentInputConnection?.commitText(emoji, 1) },
             onGoback = { updateKeyboardLayout() },
-            onDelete = { currentInputConnection?.deleteSurroundingText(1, 0) },
+            onDelete = { sendDelete() },
             onEnter = {
                 currentInputConnection?.sendKeyEvent(
                     KeyEvent(
