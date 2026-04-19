@@ -57,6 +57,8 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
         <item name="android:layout_height">@dimen/key_height</item>
+        <item name="android:minHeight">@dimen/key_height</item>
+        <item name="android:maxHeight">@dimen/key_height</item>
         <item name="android:textSize">@dimen/key_text_size</item>
         <item name="android:layout_margin">1.5dp</item>
         <item name="android:textColor">#FFFFFF</item>
