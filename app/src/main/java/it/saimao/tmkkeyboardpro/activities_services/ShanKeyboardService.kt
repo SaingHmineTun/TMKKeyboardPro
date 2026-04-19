@@ -50,6 +50,7 @@ import it.saimao.tmkkeyboardpro.logic.MyanmarKeyboard
 import it.saimao.tmkkeyboardpro.logic.ShanDictionaryManager
 import it.saimao.tmkkeyboardpro.logic.ShanKeyboard
 import it.saimao.tmkkeyboardpro.logic.TaiNueaDictionaryManager
+import it.saimao.tmkkeyboardpro.logic.ThaiDictionaryManager
 import it.saimao.tmkkeyboardpro.logic.ThemeManager.applyTheme
 import it.saimao.tmkkeyboardpro.utils.getPopupCharsFor
 import it.saimao.tmkkeyboardpro.utils.getSoundOnKeyPress
@@ -61,7 +62,7 @@ class ShanKeyboardService : InputMethodService() {
 
     private var lastShiftClickTime: Long = 0
     private val CAPS_LOCK_THRESHOLD = 500 // 500 milliseconds (0.5 sec)
-    private val languages = listOf("EN", "SHN", "MY", "TDD", "AHOM")
+    private val languages = listOf("EN", "SHN", "MY", "TH", "TDD", "AHOM")
     private var currentLanguageIndex = 0
 
     enum class SymbolState {
@@ -89,22 +90,21 @@ class ShanKeyboardService : InputMethodService() {
 
     // --- တွၼ်ႈတႃႇ Suggestion Logic ---
 
-    private lateinit var shanDictionary: DictionaryManager
-    private lateinit var myanmarDictionary: DictionaryManager
-    private lateinit var englishDictionary: DictionaryManager
-    private lateinit var tddDictionary: DictionaryManager
-    private lateinit var ahomDictionary: DictionaryManager
+    private val shanDictionary: DictionaryManager by lazy {
+        ShanDictionaryManager(this)
+    }
+    private val myanmarDictionary: DictionaryManager by lazy { MyanmarDictionaryManager(this) }
+    private val englishDictionary: DictionaryManager by lazy { EnglishDictionaryManager(this) }
+    private val tddDictionary: DictionaryManager by lazy { TaiNueaDictionaryManager(this) }
+    private val ahomDictionary: DictionaryManager by lazy { AhomDictionaryManager(this) }
+
+    private val thDictionary: DictionaryManager by lazy { ThaiDictionaryManager(this) }
 
     override fun onCreate() {
         super.onCreate()
         // Pre-cache layouts ၼင်ႇႁိုဝ်မိူဝ်ႈ User ၼိပ်ႉလႅၵ်ႈၽႃႇသႃႇ တေဢမ်ႇ Lag သေဢိတ်း
         layoutCache[R.layout.layout_en_normal] =
             layoutInflater.inflate(R.layout.layout_en_normal, null).also { registerKeys(it) }
-        shanDictionary = ShanDictionaryManager(this)
-        myanmarDictionary = MyanmarDictionaryManager(this)
-        englishDictionary = EnglishDictionaryManager(this)
-        tddDictionary = TaiNueaDictionaryManager(this)
-        ahomDictionary = AhomDictionaryManager(this)
         setupVoiceInput()
         setupClipboard()
     }
@@ -184,6 +184,7 @@ class ShanKeyboardService : InputMethodService() {
             "EN" -> englishDictionary.getSuggestions(currentWord)
             "TDD" -> tddDictionary.getSuggestions(currentWord)
             "AHOM" -> ahomDictionary.getSuggestions(currentWord)
+            "TH" -> thDictionary.getSuggestions(currentWord)
             else -> englishDictionary.getSuggestions(currentWord)
         }
 
@@ -644,6 +645,7 @@ class ShanKeyboardService : InputMethodService() {
                     "SHN" -> if (currentShiftState == ShiftState.OFF) R.layout.layout_shn_normal else R.layout.layout_shn_shifted
                     "TDD" -> if (currentShiftState == ShiftState.OFF) R.layout.layout_tdd_normal else R.layout.layout_tdd_shifted
                     "AHOM" -> if (currentShiftState == ShiftState.OFF) R.layout.layout_ahom_normal else R.layout.layout_ahom_shifted
+                    "TH" -> if (currentShiftState == ShiftState.OFF) R.layout.layout_th_normal else R.layout.layout_th_shifted
                     else -> R.layout.layout_en_normal
                 }
             }
@@ -701,7 +703,7 @@ class ShanKeyboardService : InputMethodService() {
     }
 
     fun toggleLanguage() {
-        // ပၼ်ႇ Index (EN 0 -> SHN 1 -> MY 2 -> TDD 3 -> AHOM 4 -> EN 0)
+        // ပၼ်ႇ Index (EN 0 -> SHN 1 -> MY 2 -> TH 3 -> TDD 4 -> AHOM 5 -> EN 0)
         currentLanguageIndex = (currentLanguageIndex + 1) % languages.size
 
         // Reset Shift State မိူဝ်ႈလႅၵ်ႈၽႃႇသႃႇ ၼင်ႇႁိုဝ်တေဢမ်ႇယုင်ႈ
@@ -825,6 +827,7 @@ class ShanKeyboardService : InputMethodService() {
             val langTag = when (currentLanguage) {
                 "MY" -> "my-MM"
                 "EN" -> "en-US"
+                "TH" -> "th-TH" // ထႅမ်သႂ်ႇတွၼ်ႈတႃႇလိၵ်ႈထႆး (Thai - Thailand)
                 else -> "en-US" // Shan ပႆႇမီး Speech Engine ႁင်းၵူၺ်း
             }
 

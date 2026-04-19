@@ -41,3 +41,5 @@ class MyanmarDictionaryManager(context: Context) : DictionaryManager(context, "m
 class TaiNueaDictionaryManager(context: Context) : DictionaryManager(context, "tdd_words.txt")
 
 class AhomDictionaryManager(context: Context) : DictionaryManager(context, "ahom_words.txt")
+
+class ThaiDictionaryManager(context: Context) : DictionaryManager(context, "th_words.txt")
