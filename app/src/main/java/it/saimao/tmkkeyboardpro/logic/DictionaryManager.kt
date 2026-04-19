@@ -37,3 +37,5 @@ open class DictionaryManager(context: Context, fileName: String) {
 class ShanDictionaryManager(context: Context) : DictionaryManager(context, "shn_words.txt")
 class EnglishDictionaryManager(context: Context) : DictionaryManager(context, "eng_words.txt")
 class MyanmarDictionaryManager(context: Context) : DictionaryManager(context, "mm_words.txt")
+
+class TaiNueaDictionaryManager(context: Context) : DictionaryManager(context, "tdd_words.txt")
