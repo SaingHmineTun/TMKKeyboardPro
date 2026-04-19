@@ -3,6 +3,7 @@ package it.saimao.tmkkeyboardpro.activities_services
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
@@ -28,6 +29,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputConnection
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.LinearLayout
@@ -282,6 +284,12 @@ class ShanKeyboardService : InputMethodService() {
                             }
                         } else if (child.id == R.id.key_emoji) {
                             showClipboardHistory()
+                            true
+                        } else if (child.id == R.id.key_space) {
+
+                            val imm =
+                                getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+                            imm.showInputMethodPicker()
                             true
                         } else {
                             false
