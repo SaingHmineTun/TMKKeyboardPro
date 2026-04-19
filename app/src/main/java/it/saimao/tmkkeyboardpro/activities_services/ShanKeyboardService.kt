@@ -40,6 +40,7 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.internal.FlowLayout
 import it.saimao.tmkkeyboardpro.R
+import it.saimao.tmkkeyboardpro.logic.AhomDictionaryManager
 import it.saimao.tmkkeyboardpro.logic.DictionaryManager
 import it.saimao.tmkkeyboardpro.logic.EmojiKeyboard
 import it.saimao.tmkkeyboardpro.logic.EnglishDictionaryManager
@@ -60,7 +61,7 @@ class ShanKeyboardService : InputMethodService() {
 
     private var lastShiftClickTime: Long = 0
     private val CAPS_LOCK_THRESHOLD = 500 // 500 milliseconds (0.5 sec)
-    private val languages = listOf("EN", "SHN", "MY", "TDD")
+    private val languages = listOf("EN", "SHN", "MY", "TDD", "AHOM")
     private var currentLanguageIndex = 0
 
     enum class SymbolState {
@@ -92,6 +93,7 @@ class ShanKeyboardService : InputMethodService() {
     private lateinit var myanmarDictionary: DictionaryManager
     private lateinit var englishDictionary: DictionaryManager
     private lateinit var tddDictionary: DictionaryManager
+    private lateinit var ahomDictionary: DictionaryManager
 
     override fun onCreate() {
         super.onCreate()
@@ -102,6 +104,7 @@ class ShanKeyboardService : InputMethodService() {
         myanmarDictionary = MyanmarDictionaryManager(this)
         englishDictionary = EnglishDictionaryManager(this)
         tddDictionary = TaiNueaDictionaryManager(this)
+        ahomDictionary = AhomDictionaryManager(this)
         setupVoiceInput()
         setupClipboard()
     }
@@ -180,6 +183,7 @@ class ShanKeyboardService : InputMethodService() {
             "MY" -> myanmarDictionary.getSuggestions(currentWord)
             "EN" -> englishDictionary.getSuggestions(currentWord)
             "TDD" -> tddDictionary.getSuggestions(currentWord)
+            "AHOM" -> ahomDictionary.getSuggestions(currentWord)
             else -> englishDictionary.getSuggestions(currentWord)
         }
 
@@ -303,10 +307,12 @@ class ShanKeyboardService : InputMethodService() {
                                             ShanKeyboard.getInstance(this)
                                                 .handleShanDelete(currentInputConnection)
                                         }
+
                                         "MY" -> {
                                             MyanmarKeyboard.getInstance(this)
                                                 .handleMyanmarDelete(currentInputConnection)
                                         }
+
                                         else -> {
                                             sendDelete()
                                         }
@@ -637,6 +643,7 @@ class ShanKeyboardService : InputMethodService() {
                     "MY" -> if (currentShiftState == ShiftState.OFF) R.layout.layout_my_normal else R.layout.layout_my_shifted
                     "SHN" -> if (currentShiftState == ShiftState.OFF) R.layout.layout_shn_normal else R.layout.layout_shn_shifted
                     "TDD" -> if (currentShiftState == ShiftState.OFF) R.layout.layout_tdd_normal else R.layout.layout_tdd_shifted
+                    "AHOM" -> if (currentShiftState == ShiftState.OFF) R.layout.layout_ahom_normal else R.layout.layout_ahom_shifted
                     else -> R.layout.layout_en_normal
                 }
             }
@@ -694,7 +701,7 @@ class ShanKeyboardService : InputMethodService() {
     }
 
     fun toggleLanguage() {
-        // ပၼ်ႇ Index (EN 0 -> SHN 1 -> MY 2 -> TDD 3 -> EN 0)
+        // ပၼ်ႇ Index (EN 0 -> SHN 1 -> MY 2 -> TDD 3 -> AHOM 4 -> EN 0)
         currentLanguageIndex = (currentLanguageIndex + 1) % languages.size
 
         // Reset Shift State မိူဝ်ႈလႅၵ်ႈၽႃႇသႃႇ ၼင်ႇႁိုဝ်တေဢမ်ႇယုင်ႈ

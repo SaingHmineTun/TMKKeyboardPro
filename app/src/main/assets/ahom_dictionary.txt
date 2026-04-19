@@ -1,0 +1,506 @@
+# Dictionary for Tai Ahom Word Suggestions
+AHM,SHN,ENG
+𑜒𑜑𑜨𑜛,ဢႁူမ်ႇ,Ahom
+𑜀𑜤𑜃𑜫,ၵူၼ်း,Person
+𑜑𑜨𑜛,ႁဝ်း,We/Our
+𑜉𑜧,မႂ်း,You
+𑜃𑜄𑜫,ၼမ်ႉ,Water
+𑜑𑜧,ၶဝ်ႈ,Rice/Food
+𑜀𑜤𑜃𑜫𑜑𑜤𑜛,ၵူၼ်းႁူႉ,Wise person
+𑜑𑜦𑜄𑜫,ႁဵတ်း,To do/Work
+𑜀𑜡,ၵႂႃႇ,To go
+𑜉𑜡,မႃး,To come
+𑜃𑜤𑜃𑜫,ၼွၼ်း,To sleep
+𑜀𑜤𑜃𑜫,ၵိၼ်,To eat
+𑜃𑜄𑜫𑜠𑜡,ၼမ်ႉတႃ,Tears
+𑜑𑜤𑜃𑜫,ႁိူၼ်း,House
+𑜉𑜢𑜤𑜂𑜫,မိူင်း,Country/City
+𑜄𑜩,တႆး,Tai
+𑜑𑜡𑜃𑜫,ႁၢၼ်,Brave
+𑜑𑜀𑜫,ႁၵ်ႉ,To love
+𑜃𑜩,ၼႆႉ,This
+𑜃𑜃𑜫,ၼၼ်ႉ,That
+𑜄𑜦𑜉𑜫,တႅမ်ႈ,To write
+𑜎𑜢𑜀𑜫,လိၵ်ႈ,Script/Book
+𑜀𑜤,ၵူႈ,Every
+𑜝𑜃𑜫,ဝၼ်း,Day/Sun
+𑜄𑜡,တႃ,Eye
+𑜉𑜤,မိုဝ်း,Hand
+𑜄𑜢𑜃𑜫,တႅၼ်,Foot
+𑜑𑜤,ႁူဝ်,Head
+𑜓𑜧,ၸႂ်,Heart/Mind
+𑜎𑜤𑜂𑜫,လူင်,Great/Big
+𑜑𑜡𑜂𑜫,ႁၢင်ႈ,Beautiful/Form
+𑜎𑜤𑜀𑜫,လုၵ်ႈ,Child
+𑜆𑜨,ပေႃႈ,Father
+𑜉𑜦,မႄႈ,Mother
+𑜆𑜤𑜃𑜫,ၽွင်း,Period/Time
+𑜐𑜡𑜉𑜫,ယၢမ်း,Time/Hour
+𑜒𑜡,ဢႃ,Uncle/Aunt
+𑜀𑜧,ၵဝ်,I/Me
+𑜑𑜦𑜃𑜫,ႁဵၼ်း,To learn
+𑜔𑜨𑜃𑜫,သွၼ်,To teach
+𑜃𑜤𑜂𑜫,ၼုင်ႈ,To wear
+𑜑𑜧𑜐𑜧,ၶဝ်ႈယဝ်ႉ,Finished eating
+𑜉𑜦𑜤𑜃𑜩,မိူဝ်ႈၼႆႉ,Today
+𑜉𑜦𑜤𑜆𑜤𑜀𑜫,မိူဝ်ႈၽုၵ်ႈ,Tomorrow
+𑜉𑜦𑜤𑜝𑜡,မိူဝ်ႈဝႃး,Yesterday
+𑜃𑜄𑜫𑜑𑜨,ၼမ်ႉႁွၼ်ႉ,Hot water
+𑜃𑜄𑜫𑜀𑜄𑜫,ၼမ်ႉၵတ်း,Cold water
+𑜑𑜡𑜀𑜫𑜃𑜡,ႁၵ်ႉၼႃႇ,Love so much
+𑜎𑜢𑜄𑜦,လီတႄႉ,Very good
+𑜄𑜡𑜝𑜃𑜫,တႃဝၼ်း,The Sun
+𑜒𑜤𑜃𑜫𑜎𑜢,ယိၼ်းလီ,Thank you/Welcome
+𑜉𑜧𑜑𑜤𑜂𑜫,မႂ်ႇသုင်,Hello
+𑜀𑜤𑜃𑜫𑜑𑜀𑜫,ၵူၼ်းႁၵ်ႉ,Lover
+𑜄𑜨𑜛𑜑𑜄𑜫,တူဝ်သတ်း,Animal
+𑜎𑜤𑜄𑜫𑜉𑜧,လူတ်ႉမႂ်ႇ,New car
+𑜑𑜢𑜤𑜐𑜫𑜕𑜧,ႁိူၼ်းယဝ်ႉ,Home/Household
+𑜑𑜡𑜐𑜫𑜓𑜧,သၢႆၸႂ်,Vitality/Life
+𑜀𑜤𑜑𑜃𑜫,ၵူဝ်ၼႃႇ,Very afraid
+𑜐𑜡𑜑𑜦𑜄𑜫,ယႃႇႁဵတ်း,Don't do it
+𑜉𑜡𑜎𑜦,မႃးလႄႈ,Please come
+𑜀𑜡𑜐𑜧,ၵႂႃႇယဝ်ႉ,Already gone
+𑜃𑜤𑜃𑜫𑜎𑜢,ၼွၼ်းလီ,Sleep well
+𑜑𑜡𑜂𑜫𑜎𑜢,ႁၢင်ႈလီ,Beautiful
+𑜓𑜨𑜉𑜫𑜀𑜃𑜫,ၸွမ်းၵၼ်,Together
+𑜃𑜉𑜫𑜄𑜦,ၼမ်တႄႉ,Many indeed
+𑜑𑜧𑜃𑜢𑜤,ၶဝ်ႈၼိူဝ်ႉ,Meat rice
+𑜀𑜦𑜂𑜫𑜕𑜀𑜫,ၵႅင်းၽၵ်း,Vegetable soup
+𑜃𑜄𑜫𑜑𑜦𑜛,ၼမ်ႉၶဵဝ်,River water
+𑜕𑜤𑜃𑜫𑜄𑜤𑜀𑜫,ၾူၼ်တူၵ်း,Raining
+𑜎𑜦𑜄𑜫𑜑𑜨,လႅတ်ႇႁွၼ်ႉ,Hot sunshine
+𑜝𑜃𑜫𑜎𑜢,ဝၼ်းလီ,Good day
+𑜎𑜢𑜤𑜃𑜫𑜎𑜦𑜂𑜫,လိူၼ်လႅင်,Red moon
+𑜆𑜢𑜉𑜧,ပီမႂ်ႇ,New year
+𑜝𑜡𑜄𑜨𑜛,လၢဝ်တူဝ်,Star
+𑜉𑜨𑜀𑜫𑜎𑜤𑜉𑜫,မွၵ်ႇလူမ်း,Mist/Wind
+𑜉𑜨𑜀𑜫𑜉𑜧,မွၵ်ႇမႂ်,Flower/Leaf
+𑜉𑜡𑜎𑜦𑜃𑜫,မႃႉလႅၼ်ႈ,Galloping horse
+𑜉𑜦𑜛𑜃𑜨𑜐𑜫,မႅဝ်းၼွႆႉ,Kitten
+𑜉𑜡𑜎𑜤𑜂𑜫,မႃလူင်,Big dog
+𑜀𑜩𑜑𑜩,ၵႆႇၶႆႇ,Hen/Egg
+𑜆𑜡𑜑𑜦𑜛,ပႃၶဵဝ်,Green fish
+𑜕𑜢𑜤𑜑𑜡𑜃𑜫,သိုဝ်းႁၢၼ်,Brave tiger
+𑜕𑜡𑜂𑜫𑜐𑜧,သၢင်ႉယႂ်ႇ,Big elephant
+𑜝𑜤𑜛𑜃𑜡,ဝူဝ်းၼႃး,Farm ox
+𑜑𑜩𑜃𑜄𑜫,ၵႂၢႆးၼမ်ႉ,Water buffalo
+𑜃𑜤𑜀𑜫𑜎𑜤𑜂𑜫,ၼၵ်ႉလူင်,Big bird
+𑜉𑜦𑜂𑜫𑜉𑜤𑜃𑜫,မႅင်းမုၼ်း,Insects
+𑜂𑜤𑜑𑜡𑜐𑜫,ငူႁၢႆႉ,Venomous snake
+𑜔𑜤𑜄𑜫𑜉𑜧,သိုဝ်ႉမႂ်ႇ,Buy new shirt
+𑜉𑜨𑜃𑜫𑜃𑜤𑜃𑜫,မွၼ်းၼွၼ်း,Sleeping pillow
+𑜕𑜦𑜃𑜫𑜎𑜢𑜃𑜫,လိၼ်ၽႅၼ်ႇ,Earthquake
+𑜕𑜡𑜄𑜫𑜉𑜨𑜃𑜫,သၢတ်ႇမွၼ်း,Sleeping mat
+𑜓𑜨𑜃𑜫𑜑𑜡𑜛,ၸွၼ်းၶၢဝ်,White spoon
+𑜗𑜤𑜛𑜎𑜤𑜂𑜫,ထူၺ်ႇလူင်,Big bowl
+𑜉𑜨𑜄𑜫𑜑𑜧,မေႃႈၶဝ်ႈ,Rice pot
+𑜉𑜢𑜄𑜫𑜎𑜦𑜛,မိတ်းလႅဝ်း,Knife/Sword
+𑜑𑜤𑜛𑜐𑜡𑜛,ၶူဝ်ယၢဝ်း,Long bridge
+𑜄𑜤𑜑𑜤𑜃𑜫,တူႁိူၼ်း,House door
+𑜃𑜡𑜎𑜢𑜎𑜢,ၼႃႇလိၵ်ႈ,Clock/Watch
+𑜕𑜦𑜂𑜫𑜎𑜦𑜄𑜫,သႅင်လႅတ်ႇ,Sunlight
+AHM,SHN,ENG
+𑜒𑜤𑜃𑜫𑜓𑜨𑜉𑜫,ယိၼ်းၸူမ်း,Congratulate/Happy
+𑜓𑜧𑜎𑜢,ၸႂ်လီ,Kind heart
+𑜓𑜧𑜑𑜡𑜐𑜫,ၸႂ်ႁၢႆႉ,Mean/Angry
+𑜑𑜦𑜄𑜫𑜀𑜡𑜃𑜫,ႁဵတ်းၵၢၼ်,To work
+𑜔𑜨𑜃𑜫𑜎𑜢𑜀𑜫,သွၼ်လိၵ်ႈ,To teach
+𑜑𑜦𑜃𑜫𑜎𑜢𑜀𑜫,ႁဵၼ်းလိၵ်ႈ,To study
+𑜉𑜦𑜤𑜑𑜧,မိူဝ်ႈၼႂ်,In the morning
+𑜉𑜦𑜤𑜑𑜀𑜫,မိူဝ်ႈၶမ်ႈ,In the evening
+𑜉𑜦𑜤𑜑𑜢𑜤𑜃𑜫,မိူဝ်ႈၶိုၼ်း,In the night
+𑜔𑜡𑜐𑜫𑜓𑜧,သၢႆၸႂ်,Vitality/Life
+𑜑𑜤𑜓𑜧,ႁူဝ်ၸႂ်,Heart (organ/emotion)
+𑜉𑜤𑜑𑜤,မိုဝ်းႁူဝ်,Hand and head
+𑜄𑜢𑜃𑜫𑜉𑜤,တႅၼ်မိုဝ်း,Hands and feet
+𑜀𑜤𑜃𑜫𑜉𑜡,ၵူၼ်းမႃး,Visitor
+𑜀𑜤𑜃𑜫𑜀𑜡,ၵူၼ်းၵႂႃႇ,Traveler
+𑜀𑜤𑜃𑜫𑜄𑜩,ၵူၼ်းတႆး,Tai person
+𑜑𑜤𑜃𑜫𑜉𑜧,ႁိူၼ်းမႂ်ႇ,New house
+𑜑𑜤𑜃𑜫𑜀𑜧,ႁိူၼ်းၵဝ်ႇ,Old house
+𑜉𑜢𑜤𑜂𑜫𑜄𑜩,မိူင်းတႆး,Shan State
+𑜉𑜢𑜤𑜂𑜫𑜎𑜤𑜂𑜫,မိူင်းလူင်,Great city/Empire
+𑜆𑜡𑜐𑜧,ပႃယႂ်ႇ,Big fish
+𑜀𑜩𑜐𑜧,ၵႆႇယႂ်ႇ,Big chicken
+𑜑𑜨𑜀𑜫𑜃𑜡,ႁွၼ်ႉၼႃႇ,Very hot
+𑜀𑜄𑜫𑜃𑜡,ၵတ်းၼႃႇ,Very cold
+𑜎𑜢𑜃𑜡,လီၼႃႇ,Very good
+𑜑𑜡𑜐𑜫𑜃𑜡,ႁၢႆႉၼႃႇ,Very bad/cruel
+𑜐𑜡𑜛𑜃𑜡,ယၢဝ်းၼႃႇ,Very long
+𑜄𑜤𑜃𑜫𑜃𑜡,တႅမ်ႇၼႃႇ,Very short/shallow
+𑜃𑜉𑜫𑜃𑜡,ၼမ်ၼႃႇ,Very many
+𑜃𑜨𑜐𑜫𑜃𑜡,ၼွႆႉၼႃႇ,Very few/small
+𑜐𑜧𑜃𑜡,ယႂ်ႇၼႃႇ,Very big
+𑜉𑜧𑜃𑜡,မႂ်ႇၼႃႇ,Very new
+𑜀𑜧𑜃𑜡,ၵဝ်ႇၼႃႇ,Very old
+𑜑𑜧𑜑𑜨𑜀𑜫,ၶဝ်ႈႁွၼ်ႉ,Hot rice
+𑜃𑜄𑜫𑜀𑜄𑜫,ၼမ်ႉၵတ်း,Cold water
+𑜀𑜦𑜂𑜫𑜃𑜢𑜤,ၵႅင်းၼိူဝ်ႉ,Meat curry
+𑜑𑜧𑜉𑜤𑜃𑜫,ၶဝ်ႈမုၼ်း,Snack/Cake
+𑜉𑜡𑜀𑜫𑜀𑜨𑜛,မၢၵ်ႇၵူၺ်ႈ,Banana
+𑜉𑜡𑜀𑜫𑜉𑜨𑜂𑜫,မၢၵ်ႇမူင်ႈ,Mango
+𑜉𑜡𑜀𑜫𑜆𑜦𑜄𑜫,မၢၵ်ႇၽိတ်း,Chili
+𑜆𑜤𑜃𑜫𑜃𑜩,ၽွင်းၼႆႉ,This period
+𑜆𑜤𑜃𑜫𑜃𑜃𑜫,ၽွင်းၼၼ်ႉ,That period
+𑜀𑜤𑜝𑜃𑜫,ၵူႈဝၼ်း,Every day
+𑜀𑜤𑜉𑜦𑜤,ၵူႈမိူဝ်ႈ,Every time
+𑜀𑜤𑜑𑜤𑜃𑜫,ၵူႈႁိူၼ်း,Every house
+𑜑𑜤𑜃𑜫𑜑𑜨𑜛,ႁိူၼ်းႁဝ်း,Our house
+𑜉𑜢𑜤𑜂𑜫𑜑𑜨𑜛,မိူင်းႁဝ်း,Our country
+𑜀𑜤𑜃𑜫𑜑𑜀𑜫𑜀𑜃𑜫,ၵူၼ်းႁၵ်ႉၵၼ်,Lovers
+𑜑𑜀𑜫𑜀𑜃𑜫,ႁၵ်ႉၵၼ်,To love each other
+𑜓𑜨𑜉𑜫𑜀𑜃𑜫,ၸွမ်းၵၼ်,Together
+𑜒𑜤𑜃𑜫𑜎𑜢𑜃𑜡,ယိၼ်းလီၼႃႇ,Thank you very much
+𑜑𑜤𑜂𑜫𑜑𑜤𑜂𑜫,သုင်သုင်,High/Tall
+𑜎𑜢𑜄𑜦𑜃𑜡,လီတႄႉၼႃႇ,Truly very good
+𑜑𑜀𑜫𑜃𑜡𑜄𑜦,ႁၵ်ႉၼႃႇတႄႉ,Truly love so much
+𑜀𑜡𑜐𑜧𑜑𑜡,ၵႂႃႇယဝ်ႉႁႃႉ,Gone already?
+𑜑𑜤𑜛𑜐𑜧𑜑𑜡,ႁူႉယဝ်ႉႁႃႉ,Know already?
+𑜉𑜦𑜃𑜫𑜐𑜧𑜑𑜡,မႅၼ်ႈယဝ်ႉႁႃႉ,Correct already?
+𑜔𑜤𑜄𑜫𑜑𑜨𑜂𑜫𑜎𑜢,သိုဝ်ႉၶွင်လီ,Buy good things
+𑜀𑜡𑜎𑜩𑜉𑜡,ၵႂႃႇလၢႆမႃး,Where have you been?
+𑜉𑜡𑜃𑜩𑜎𑜦,မႃးၼႆႉလႄႈ,Come here
+𑜄𑜦𑜉𑜫𑜎𑜢𑜀𑜫𑜎𑜢,တႅမ်ႈလိၵ်ႈလီ,Write well
+𑜑𑜦𑜄𑜫𑜀𑜡𑜃𑜫𑜎𑜢,ႁဵတ်းၵၢၼ်လီ,Work well
+𑜐𑜡𑜑𑜦𑜄𑜫𑜎𑜦,ယႃႇႁဵတ်းလႄႈ,Don't do it please
+𑜉𑜡𑜎𑜦𑜃𑜩,မႃးလႄႈၼႆႉ,Come on here
+𑜉𑜦𑜑𑜤𑜃𑜫𑜎𑜢,မႄႈႁိူၼ်းလီ,Good housewife
+𑜆𑜨𑜑𑜤𑜃𑜫𑜎𑜢,ပေႃႈႁိူၼ်းလီ,Good househusband
+𑜎𑜤𑜀𑜫𑜓𑜡𑜐𑜫𑜎𑜢,လုၵ်ႈၸၢႆးလီ,Good son
+𑜎𑜤𑜀𑜫𑜐𑜢𑜂𑜫𑜎𑜢,လုၵ်ႈယိင်းလီ,Good daughter
+𑜆𑜢𑜓𑜡𑜐𑜫𑜎𑜢,ပီႈၸၢႆးလီ,Good older brother
+𑜆𑜢𑜃𑜡𑜂𑜫𑜎𑜢,ပီႈၼၢင်းလီ,Good older sister
+𑜃𑜨𑜐𑜫𑜓𑜡𑜐𑜫𑜎𑜢,ၼွင်ႉၸၢႆးလီ,Good younger brother
+𑜃𑜨𑜐𑜫𑜐𑜢𑜂𑜫𑜎𑜢,ၼွင်ႉယိင်းလီ,Good younger sister
+𑜆𑜤𑜎𑜤𑜂𑜫𑜎𑜢,ပူႇလူင်လီ,Good grandfather
+𑜉𑜦𑜎𑜤𑜂𑜫𑜎𑜢,မႄႈလူင်လီ,Good grandmother
+𑜎𑜡𑜃𑜫𑜓𑜡𑜐𑜫𑜎𑜢,လၢၼ်ၸၢႆးလီ,Good grandson
+𑜎𑜡𑜃𑜫𑜐𑜢𑜂𑜫𑜎𑜢,လၢၼ်ယိင်းလီ,Good granddaughter
+𑜀𑜤𑜃𑜫𑜉𑜝𑜫,ၵူၼ်းမၢဝ်ႇ,Young man
+𑜀𑜤𑜃𑜫𑜔𑜡𑜛,ၵူၼ်းသၢဝ်,Young woman
+𑜀𑜤𑜃𑜫𑜀𑜦𑜲,ၵူၼ်းၵႄႇ,Elderly
+𑜀𑜤𑜃𑜫𑜆𑜦𑜄𑜫,ၵူၼ်းပႅတ်ႈ,Outcast
+𑜑𑜡𑜂𑜫𑜉𑜧,ႁၢင်ႈမႂ်ႇ,New format/form
+𑜝𑜃𑜫𑜎𑜢𑜎𑜢,ဝၼ်းလီလီ,Very good day
+𑜎𑜢𑜤𑜃𑜫𑜉𑜧,လိူၼ်မႂ်ႇ,New moon/month
+𑜆𑜢𑜀𑜧,ပီၵဝ်ႇ,Old year
+𑜐𑜡𑜉𑜫𑜎𑜢,ယၢမ်းလီ,Good time
+𑜑𑜦𑜄𑜫𑜎𑜢,ႁဵတ်းလီ,To do well
+𑜔𑜡𑜂𑜫𑜎𑜢,သၢင်ႈလီ,To build well
+𑜄𑜦𑜉𑜫𑜝𑜩,တႅမ်ႈဝႆး,To write fast
+𑜆𑜄𑜫𑜝𑜩,ၽတ်းဝႆး,To read fast
+𑜔𑜨𑜃𑜫𑜝𑜩,သွၼ်ဝႆး,To teach fast
+𑜑𑜦𑜃𑜫𑜝𑜩,ႁဵၼ်းဝႆး,To learn fast
+𑜉𑜡𑜀𑜃𑜫,မႃးၵၼ်,Come together
+𑜀𑜡𑜀𑜃𑜫,ၵႂႃႇၵၼ်,Go together
+𑜐𑜤𑜀𑜃𑜫,ယူႇၵၼ်,Live together
+𑜀𑜤𑜃𑜫𑜀𑜃𑜫,ၵိၼ်ၵၼ်,Eat together
+𑜓𑜧𑜑𑜀𑜫,ၸႂ်ႁၵ်ႉ,Loving heart
+𑜓𑜧𑜆𑜦𑜂𑜫,ၸႂ်ᥙᥦᥒᥰ,Caring heart
+𑜑𑜤𑜛𑜓𑜨𑜉𑜫,ႁူႉၸွမ်း,To be aware/Follow
+𑜑𑜃𑜫𑜓𑜨𑜉𑜫,ႁၼ်ၸွမ်း,To agree/See along
+𑜝𑜡𑜎𑜢,ဝႃႈလီ,To speak well
+AHM,SHN,ENG
+𑜄𑜢𑜲𑜃𑜩,တီႈၼႆႉ,Here/At this place
+𑜄𑜢𑜲𑜃𑜃𑜫,တီႈၼၼ်ႉ,There/At that place
+𑜉𑜢𑜤𑜂𑜫𑜐𑜧,မိူင်းယႂ်ႇ,Big country
+𑜉𑜢𑜤𑜂𑜫𑜃𑜨𑜐𑜫,မိူင်းၼွႆႉ,Small country
+𑜑𑜤𑜃𑜫𑜑𑜤𑜂𑜫,ႁိူၼ်းသုင်,High house
+𑜑𑜤𑜃𑜫𑜄𑜤𑜃𑜫,ႁိူၼ်းတႅမ်ႇ,Low house
+𑜀𑜤𑜃𑜫𑜎𑜢,ၵူၼ်းလီ,Good person
+𑜀𑜤𑜃𑜫𑜑𑜡𑜐𑜫,ၵူၼ်းႁၢႆႉ,Bad person
+𑜀𑜤𑜃𑜫𑜑𑜡𑜃𑜫,ၵူၼ်းႁၢၼ်,Brave person
+𑜀𑜤𑜃𑜫𑜀𑜦𑜲,ၵူၼ်းၵႄႇ,Old person
+𑜀𑜤𑜃𑜫𑜉𑜝𑜫,ၵူၼ်းမၢဝ်ႇ,Young man
+𑜀𑜤𑜃𑜫𑜔𑜡𑜛,ၵူၼ်းသၢဝ်,Young woman
+𑜀𑜤𑜃𑜫𑜑𑜦𑜄𑜫,ၵူၼ်းႁဵတ်း,Worker
+𑜀𑜤𑜃𑜫𑜑𑜤𑜛,ၵူၼ်းႁူႉ,Expert/Wise one
+𑜑𑜦𑜄𑜫𑜎𑜢,ႁဵတ်းလီ,Do well
+𑜑𑜦𑜄𑜫𑜝𑜩,ႁဵတ်းဝႆး,Do quickly
+𑜑𑜦𑜄𑜫𑜑𑜦𑜃𑜫,ႁဵတ်းႁဵၼ်း,To practice/Study
+𑜑𑜦𑜃𑜫𑜎𑜢,ႁဵၼ်းလီ,Study well
+𑜑𑜦𑜃𑜫𑜝𑜩,ႁဵၼ်းဝႆး,Learn quickly
+𑜔𑜨𑜃𑜫𑜎𑜢,သွၼ်လီ,Teach well
+𑜔𑜨𑜃𑜫𑜝𑜩,သွၼ်ဝႆး,Teach fast
+𑜀𑜤𑜃𑜫𑜑𑜧,ၵိၼ်ၶဝ်ႈ,To eat rice
+𑜀𑜤𑜃𑜫𑜃𑜄𑜫,ၵိၼ်ၼမ်ႉ,To drink water
+𑜀𑜤𑜃𑜫𑜐𑜡,ၵိၼ်ယႃ,To take medicine
+𑜀𑜤𑜃𑜫𑜉𑜡𑜀𑜫,ၵိၼ်မၢၵ်ႇ,To eat fruit
+𑜀𑜤𑜃𑜫𑜑𑜧𑜐𑜧,ၵိၼ်ၶဝ်ႈယဝ်ႉ,Already eaten
+𑜃𑜤𑜃𑜫𑜎𑜢,ၼွၼ်းလီ,Sleep well
+𑜃𑜤𑜃𑜫𑜝𑜩,ၼွၼ်းဝႆး,Go to sleep early
+𑜄𑜢𑜤𑜃𑜫𑜝𑜩,တိုၼ်ႇဝႆး,Wake up early
+𑜄𑜢𑜤𑜃𑜫𑜐𑜧,တိုၼ်ႇယဝ်ႉ,Already awake
+𑜑𑜡𑜂𑜫𑜎𑜢,ႁၢင်ႈလီ,Beautiful
+𑜑𑜡𑜂𑜫𑜑𑜡𑜐𑜫,ႁၢင်ႈႁၢႆႉ,Ugly/Bad appearance
+𑜑𑜡𑜂𑜫𑜉𑜧,ႁၢင်ႈမႂ်ႇ,New style
+𑜑𑜡𑜂𑜫𑜀𑜧,ႁၢင်ႈၵဝ်ႇ,Old style
+𑜑𑜀𑜫𑜀𑜃𑜫,ႁၵ်ႉၵၼ်,Love each other
+𑜆𑜦𑜂𑜫𑜀𑜃𑜫,ᥙᥦᥒᥰ ၵၼ်,Cherish each other
+𑜓𑜨𑜉𑜫𑜀𑜃𑜫,ၸူမ်းၵၼ်,Happy together
+𑜔𑜨𑜃𑜫𑜀𑜃𑜫,သွၼ်ၵၼ်,Teach each other
+𑜑𑜦𑜃𑜫𑜀𑜃𑜫,ႁဵၼ်းၵၼ်,Learn together
+𑜑𑜦𑜄𑜫𑜀𑜃𑜫,ႁဵတ်းၵၼ်,Do together
+𑜀𑜤𑜃𑜫𑜀𑜃𑜫,ၵိၼ်ၵၼ်,Eat together
+𑜉𑜡𑜓𑜨𑜉𑜫,မႃးၸွမ်း,Come along
+𑜀𑜡𑜓𑜨𑜉𑜫,ၵႂႃႇၸွမ်း,Go along
+𑜑𑜤𑜛𑜓𑜨𑜉𑜫,ႁူႉၸွမ်း,To understand/Follow
+𑜑𑜃𑜫𑜓𑜨𑜉𑜫,ႁၼ်ၸွမ်း,To agree
+𑜑𑜀𑜫𑜃𑜡,ႁၵ်ႉၼႃႇ,Love very much
+𑜆𑜦𑜂𑜫𑜃𑜡,ᥙᥦᥒᥰ ၼႃႇ,Cherish very much
+𑜓𑜨𑜉𑜫𑜃𑜡,ၸူမ်းၼႃႇ,Very happy
+𑜀𑜤𑜑𑜃𑜫,ၵူဝ်ၼႃႇ,Very afraid
+𑜑𑜨𑜀𑜫𑜃𑜡,ႁွၼ်ႉၼႃႇ,Very hot
+𑜀𑜄𑜫𑜃𑜡,ၵတ်းၼႃႇ,Very cold
+𑜎𑜢𑜄𑜦,လီတႄႉ,Really good
+𑜑𑜡𑜐𑜫𑜄𑜦,ႁၢႆႉတႄႉ,Really bad
+𑜐𑜧𑜄𑜦,ယႂ်ႇတႄႉ,Really big
+𑜃𑜨𑜐𑜫𑜄𑜦,ၼွႆႉတႄႉ,Really small
+𑜉𑜧𑜄𑜦,မႂ်ႇတႄႉ,Really new
+𑜀𑜧𑜄𑜦,ၵဝ်ႇတႄႉ,Really old
+𑜝𑜃𑜫𑜃𑜩,ဝၼ်းၼႆႉ,Today
+𑜝𑜃𑜫𑜃𑜃𑜫,ဝၼ်းၼၼ်ႉ,That day
+𑜝𑜃𑜫𑜎𑜢,ဝၼ်းလီ,Good day
+𑜝𑜃𑜫𑜑𑜡𑜐𑜫,ဝၼ်းႁၢႆႉ,Bad day
+𑜎𑜢𑜤𑜃𑜫𑜃𑜩,လိူၼ်ၼႆႉ,This month
+𑜎𑜢𑜤𑜃𑜫𑜉𑜧,လိူၼ်မႂ်ႇ,New moon
+𑜆𑜢𑜃𑜩,ပီၼႆႉ,This year
+𑜆𑜢𑜉𑜧,ပီမႂ်ႇ,New year
+𑜆𑜢𑜀𑜧,ပီၵဝ်ႇ,Old year
+𑜉𑜦𑜤𑜃𑜩,မိူဝ်ႈၼႆႉ,Today
+𑜉𑜦𑜤𑜆𑜤𑜀𑜫,မိူဝ်ႈၽုၵ်ႈ,Tomorrow
+𑜉𑜦𑜤𑜝𑜡,မိူဝ်ႈဝႃး,Yesterday
+𑜐𑜡𑜉𑜫𑜃𑜩,ယၢမ်းၼႆႉ,This time
+𑜐𑜡𑜉𑜫𑜎𑜢,ယၢမ်းလီ,Good time
+𑜐𑜡𑜉𑜫𑜑𑜡𑜐𑜫,ယၢမ်းႁၢႆႉ,Bad time
+𑜄𑜡𑜝𑜃𑜫,တႃဝၼ်း,The Sun
+𑜎𑜢𑜤𑜃𑜫𑜑𑜡𑜂𑜫,လိူၼ်ႁၢင်ႈ,Beautiful moon
+𑜝𑜡𑜄𑜨𑜛,လၢဝ်တူဝ်,Star
+𑜕𑜡𑜂𑜫𑜎𑜦𑜄𑜫,သႅင်လႅတ်ႇ,Sunlight
+𑜕𑜤𑜃𑜫𑜄𑜤𑜀𑜫,ၾူၼ်တူၵ်း,Raining
+𑜎𑜤𑜉𑜫𑜎𑜦𑜃𑜫,လူမ်းလႅၼ်ႈ,Strong wind
+𑜉𑜨𑜀𑜫𑜎𑜤𑜉𑜫,မွၵ်ႇလူမ်း,Mist
+𑜃𑜄𑜫𑜑𑜦𑜛,ၼမ်ႉၶဵဝ်,River
+𑜎𑜨𑜐𑜫𑜑𑜤𑜂𑜫,လွႆသုင်,High mountain
+𑜃𑜡𑜐𑜧,ၼႃးယႂ်ႇ,Big rice field
+𑜉𑜡𑜃𑜫𑜑𑜨𑜛,မၢၼ်ႇႁဝ်း,Our village
+𑜉𑜢𑜤𑜂𑜫𑜄𑜩,မိူင်းတႆး,Shan State
+𑜎𑜢𑜀𑜫𑜄𑜩,လိၵ်ႈတႆး,Tai script
+𑜑𑜡𑜉𑜫𑜄𑜩,ၶေႃႈၵႂၢမ်းတႆး,Tai words
+𑜃𑜤𑜀𑜫𑜑𑜡𑜂𑜫,ၼၵ်ႉႁၢင်ႈ,Beautiful bird
+𑜆𑜡𑜎𑜢,ပႃလီ,Good fish
+𑜉𑜦𑜛𑜃𑜨𑜐𑜫,မႅဝ်းၼွႆႉ,Kitten
+𑜉𑜡𑜎𑜤𑜂𑜫,မႃလူင်,Big dog
+𑜉𑜡𑜝𑜩,မႃႉဝႆး,Fast horse
+𑜕𑜡𑜂𑜫𑜐𑜧,သၢင်ႉယႂ်ႇ,Big elephant
+𑜝𑜤𑜛𑜃𑜡,ဝူဝ်းၼႃး,Farm ox
+𑜑𑜩𑜃𑜄𑜫,ၵႂၢႆးၼမ်ႉ,Water buffalo
+𑜔𑜤𑜄𑜫𑜉𑜧,သိုဝ်ႉမႂ်ႇ,New shirt
+𑜉𑜨𑜃𑜫𑜃𑜤𑜃𑜫,မွၼ်းၼွၼ်း,Pillow
+𑜕𑜡𑜄𑜫𑜎𑜢,သၢတ်ႇလီ,Good mat
+𑜓𑜨𑜃𑜫𑜑𑜡𑜛,ၸွၼ်းၶၢဝ်,White spoon
+𑜗𑜤𑜛𑜎𑜤𑜂𑜫,ထူၺ်ႇလူင်,Big bowl
+𑜉𑜨𑜄𑜫𑜑𑜧,မေႃႈၶဝ်ႈ,Rice pot
+AHM,SHN,ENG
+𑜒𑜑𑜨𑜛𑜎𑜢𑜀𑜫,လိၵ်ႈဢႁူမ်ႇ,Ahom script
+𑜄𑜩𑜉𑜢𑜤𑜂𑜫𑜑𑜨𑜛,တႆးမိူင်းႁဝ်း,Our Tai people
+𑜀𑜤𑜃𑜫𑜑𑜦𑜄𑜫𑜎𑜢,ၵူၼ်းႁဵတ်းလီ,Good worker
+𑜑𑜤𑜃𑜫𑜉𑜧𑜎𑜢,ႁိူၼ်းမႂ်ႇလီ,Good new house
+𑜉𑜢𑜤𑜂𑜫𑜄𑜩𑜎𑜢,မိူင်းတႆးလီ,Good Shan State
+𑜀𑜤𑜃𑜫𑜑𑜤𑜛𑜎𑜢,ၵူၼ်းႁူႉလီ,Very wise person
+𑜑𑜦𑜄𑜫𑜀𑜡𑜃𑜫𑜐𑜧,ႁဵတ်းၵၢၼ်ယဝ်ႉ,Finished work
+𑜄𑜦𑜉𑜫𑜎𑜢𑜀𑜫𑜐𑜧,တႅမ်ႈလိၵ်ႈယဝ်ႉ,Finished writing
+𑜆𑜄𑜫𑜎𑜢𑜀𑜫𑜐𑜧,ၽတ်းလိၵ်ႈယဝ်ႉ,Finished reading
+𑜑𑜦𑜃𑜫𑜎𑜢𑜀𑜫𑜐𑜧,ႁဵၼ်းလိၵ်ႈယဝ်ႉ,Finished studying
+𑜔𑜨𑜃𑜫𑜎𑜢𑜀𑜫𑜐𑜧,သွၼ်လိၵ်ႈယဝ်ႉ,Finished teaching
+𑜉𑜡𑜑𑜤𑜃𑜫𑜐𑜧,မႃးႁိူၼ်းယဝ်ႉ,Already came home
+𑜀𑜡𑜉𑜢𑜤𑜂𑜫𑜐𑜧,ၵႂႃႇမိူင်းယဝ်ႉ,Already went abroad
+𑜀𑜤𑜃𑜫𑜑𑜧𑜎𑜢,ၵိၼ်ၶဝ်ႈလီ,Eat well
+𑜀𑜤𑜃𑜫𑜃𑜄𑜫𑜎𑜢,ၵိၼ်ၼမ်ႉလီ,Drink good water
+𑜓𑜧𑜑𑜀𑜫𑜃𑜡,ၸႂ်ႁၵ်ႉၼႃႇ,Very loving heart
+𑜓𑜧𑜆𑜦𑜂𑜫𑜃𑜡,ၸႂ်ᥙᥦᥒᥰ ၼႃႇ,Very caring heart
+𑜓𑜧𑜎𑜢𑜃𑜡,ၸႂ်လီၼႃႇ,Very kind heart
+𑜓𑜧𑜑𑜡𑜐𑜫𑜃𑜡,ၸႂ်ႁၢႆႉၼႃႇ,Very mean heart
+𑜓𑜧𑜀𑜤𑜃𑜡,ၸႂ်ၵူဝ်ၼႃႇ,Very afraid heart
+𑜑𑜤𑜎𑜢𑜃𑜡,ႁူဝ်လီၼႃႇ,Very smart
+𑜄𑜡𑜎𑜢𑜃𑜡,တႃလီၼႃႇ,Very good eyes
+𑜉𑜤𑜎𑜢𑜃𑜡,မိုဝ်းလီၼႃႇ,Very good hands
+𑜄𑜢𑜃𑜫𑜝𑜩𑜃𑜡,တႅၼ်ဝႆးၼႃႇ,Very fast feet
+𑜑𑜡𑜂𑜫𑜎𑜢𑜃𑜡,ႁၢင်ႈလီၼႃႇ,Very beautiful
+𑜒𑜤𑜃𑜫𑜎𑜢𑜄𑜦,ယိၼ်းလီတႄႉ,Truly welcome
+𑜒𑜤𑜃𑜫𑜓𑜨𑜉𑜫𑜄𑜦,ယိၼ်းၸူမ်းတႄႉ,Truly happy
+𑜑𑜀𑜫𑜀𑜃𑜫𑜄𑜦,ႁၵ်ႉၵၼ်တႄႉ,Truly love each other
+𑜆𑜦𑜂𑜫𑜀𑜃𑜫𑜄𑜦,ᥙᥦᥒᥰ ၵၼ်တႄႉ,Truly care for each other
+𑜓𑜨𑜉𑜫𑜀𑜃𑜫𑜄𑜦,ၸူမ်းၵၼ်တႄႉ,Truly happy together
+𑜉𑜦𑜤𑜑𑜧𑜎𑜢,မိူဝ်ႈၼႂ်လီ,Good morning
+𑜉𑜦𑜤𑜝𑜃𑜫𑜎𑜢,မိူဝ်ႈဝၼ်းလီ,Good afternoon
+𑜉𑜦𑜤𑜑𑜀𑜫𑜎𑜢,မိူဝ်ႈၶမ်ႈလီ,Good evening
+𑜉𑜦𑜤𑜑𑜢𑜤𑜃𑜫𑜎𑜢,မိူဝ်ႈၶိုၼ်းလီ,Good night
+𑜀𑜤𑜝𑜃𑜫𑜎𑜢,ၵူႈဝၼ်းလီ,Every day is good
+𑜀𑜤𑜉𑜦𑜤𑜎𑜢,ၵူႈမိူဝ်ႈလီ,Always good
+𑜑𑜤𑜃𑜫𑜑𑜨𑜛𑜎𑜢,ႁိူၼ်းႁဝ်းလီ,Our house is good
+𑜉𑜢𑜤𑜂𑜫𑜑𑜨𑜛𑜎𑜢,မိူင်းႁဝ်းလီ,Our country is good
+𑜎𑜢𑜀𑜫𑜑𑜨𑜛𑜎𑜢,လိၵ်ႈႁဝ်းလီ,Our script is good
+𑜑𑜡𑜉𑜫𑜑𑜨𑜛𑜎𑜢,ၶေႃႈၵႂၢမ်းႁဝ်းလီ,Our language is good
+𑜃𑜄𑜫𑜑𑜦𑜛𑜎𑜢,ၼမ်ႉၶဵဝ်လီ,Good river
+𑜎𑜨𑜐𑜫𑜑𑜤𑜂𑜫𑜎𑜢,လွႆသုင်လီ,Good high mountain
+𑜃𑜡𑜐𑜧𑜎𑜢,ၼႃးယႂ်ႇလီ,Good big rice field
+𑜉𑜡𑜃𑜫𑜑𑜨𑜛𑜎𑜢,မၢၼ်ႇႁဝ်းလီ,Our village is good
+𑜝𑜃𑜫𑜎𑜢𑜐𑜧,ဝၼ်းလီယဝ်ႉ,It is a good day
+𑜆𑜢𑜉𑜧𑜎𑜢,ပီမႂ်ႇလီ,Good new year
+𑜎𑜢𑜤𑜃𑜫𑜉𑜧𑜎𑜢,လိူၼ်မႂ်ႇလီ,Good new moon
+𑜝𑜡𑜄𑜨𑜛𑜎𑜢,လၢဝ်တူဝ်လီ,Good star
+𑜕𑜡𑜂𑜫𑜎𑜦𑜄𑜫𑜎𑜢,သႅင်လႅတ်ႇလီ,Good sunlight
+𑜉𑜨𑜀𑜫𑜎𑜤𑜉𑜫𑜎𑜢,မွၵ်ႇလူမ်းလီ,Good breeze
+𑜉𑜡𑜎𑜦𑜃𑜫𑜝𑜩,မႃႉလႅၼ်ႈဝႆး,Fast horse
+𑜉𑜦𑜛𑜃𑜨𑜐𑜫𑜎𑜢,မႅဝ်းၼွႆႉလီ,Good kitten
+𑜉𑜡𑜎𑜤𑜂𑜫𑜎𑜢,မႃလူင်လီ,Good big dog
+𑜀𑜩𑜑𑜩𑜎𑜢,ၵႆႇၶႆႇလီ,Good hen/egg
+𑜆𑜡𑜐𑜧𑜎𑜢,ပႃယႂ်ႇလီ,Good big fish
+𑜕𑜢𑜤𑜑𑜡𑜃𑜫𑜎𑜢,သိုဝ်းႁၢၼ်လီ,Good brave tiger
+𑜕𑜡𑜂𑜫𑜐𑜧𑜎𑜢,သၢင်ႉယႂ်ႇလီ,Good big elephant
+𑜝𑜤𑜛𑜃𑜡𑜎𑜢,ဝူဝ်းၼႃးလီ,Good farm ox
+𑜑𑜩𑜃𑜄𑜫𑜎𑜢,ၵႂၢႆးၼမ်ႉလီ,Good water buffalo
+𑜃𑜤𑜀𑜫𑜑𑜨𑜂𑜫𑜎𑜢,ၼၵ်ႉႁွင်ႉလီ,Good singing bird
+𑜔𑜤𑜄𑜫𑜉𑜧𑜎𑜢,သိုဝ်ႉမႂ်ႇလီ,Good new shirt
+𑜉𑜨𑜃𑜫𑜃𑜤𑜃𑜫𑜎𑜢,မွၼ်းၼွၼ်းလီ,Good pillow
+𑜕𑜦𑜃𑜫𑜎𑜢𑜃𑜫𑜐𑜧,လိၼ်ၽႅၼ်ႇယႂ်ႇ,Big earthquake
+𑜕𑜡𑜄𑜫𑜃𑜤𑜃𑜫𑜎𑜢,သၢတ်ႇၼွၼ်းလီ,Good sleeping mat
+𑜓𑜨𑜃𑜫𑜀𑜤𑜃𑜫𑜑𑜧,ၸွၼ်းၵိၼ်ၶဝ်ႈ,Rice spoon
+𑜗𑜤𑜛𑜀𑜤𑜃𑜫𑜚𑜀𑜫,ထူၺ်ႇၵိၼ်ၽၵ်း,Vegetable bowl
+𑜉𑜨𑜄𑜫𑜄𑜨𑜉𑜫𑜑𑜧,မေႃႈတူမ်းၶဝ်ႈ,Rice cooking pot
+𑜉𑜢𑜄𑜫𑜑𑜨𑜉𑜫𑜃𑜡,မိတ်းၶူမ်ၼႃႇ,Very sharp knife
+𑜑𑜤𑜛𑜐𑜡𑜛𑜎𑜢,ၶူဝ်ယၢဝ်းလီ,Good long bridge
+𑜄𑜤𑜑𑜤𑜃𑜫𑜎𑜢,တူႁိူၼ်းလီ,Good house door
+𑜃𑜡𑜎𑜢𑜎𑜢𑜝𑜩,ၼႃႇလိၵ်ႈဝႆး,Clock is fast
+𑜑𑜦𑜃𑜫𑜎𑜢𑜀𑜫𑜎𑜢,ႁဵၼ်းလိၵ်ႈလီ,Study script well
+𑜔𑜨𑜃𑜫𑜎𑜢𑜀𑜫𑜎𑜢,သွၼ်လိၵ်ႈလီ,Teach script well
+𑜑𑜦𑜄𑜫𑜀𑜡𑜃𑜫𑜎𑜢,ႁဵတ်းၵၢၼ်လီ,Work well
+𑜔𑜡𑜂𑜫𑜑𑜤𑜃𑜫𑜎𑜢,သၢင်ႈႁိူၼ်းလီ,Build house well
+𑜔𑜤𑜄𑜫𑜑𑜧𑜎𑜢,သိုဝ်ႉၶဝ်ႈလီ,Buy good rice
+𑜑𑜡𑜐𑜫𑜚𑜀𑜫𑜎𑜢,ၶၢႆၽၵ်းလီ,Sell vegetables well
+𑜎𑜦𑜀𑜫𑜑𑜨𑜂𑜫𑜎𑜢,လႅၵ်ႈၶွင်လီ,Exchange things well
+𑜐𑜤𑜉𑜫𑜓𑜧𑜀𑜃𑜫,ယုမ်ႇၸႂ်ၵၼ်,Trust each other
+𑜑𑜀𑜫𑜀𑜃𑜫𑜃𑜡,ႁၵ်ႉၵၼ်ၼႃႇ,Love each other so much
+𑜆𑜦𑜂𑜫𑜀𑜃𑜫𑜃𑜡,ᥙᥦᥒᥰ ၵၼ်ၼႃႇ,Cherish each other so much
+𑜓𑜨𑜉𑜫𑜀𑜃𑜫𑜃𑜡,ၸူမ်းၵၼ်ၼႃႇ,Celebrate together so much
+𑜄𑜡𑜃𑜫𑜀𑜃𑜫𑜎𑜢,တၢၼ်းၵၼ်လီ,Speak together well
+𑜎𑜡𑜄𑜫𑜎𑜢𑜃𑜡,လၢတ်ႈလီၼႃႇ,Speak very kindly
+𑜑𑜨𑜂𑜫𑜎𑜢𑜀𑜫𑜎𑜢,ႁွင်ႉလိၵ်ႈလီ,Recite script well
+𑜒𑜤𑜃𑜫𑜕𑜦𑜂𑜫𑜎𑜢,ယိၼ်းသဵင်လီ,Hear good sound
+𑜑𑜃𑜫𑜃𑜡𑜎𑜢,ႁၼ်ၼႃႈလီ,See good face
+𑜑𑜤𑜛𑜓𑜧𑜎𑜢,ႁူႉၸႂ်လီ,Know mind well
+𑜉𑜦𑜃𑜫𑜓𑜧𑜎𑜢,မႅၼ်ႈၸႂ်လီ,Satisfied
+𑜕𑜢𑜄𑜫𑜓𑜧𑜎𑜢,ၽိတ်းၸႂ်လီ,Very sorry/offended
+𑜎𑜤𑜛𑜀𑜃𑜫𑜎𑜢,လူဝ်ႇၵၼ်လီ,Need each other well
+𑜐𑜧𑜀𑜡𑜐𑜧,ယဝ်ႉၵႂႃႇယဝ်ႉ,Already passed/finished
+𑜉𑜡𑜐𑜧𑜎𑜢,မႃးယဝ်ႉလီ,Already come well
+𑜀𑜡𑜐𑜧𑜎𑜢,ၵႂႃႇယဝ်ႉလီ,Already gone well
+𑜎𑜢𑜃𑜡𑜄𑜦,လီၼႃႇတႄႉ,Truly very good
+𑜑𑜡𑜐𑜫𑜃𑜡𑜄𑜦,ႁၢႆႉၼႃႇတႄႉ,Truly very bad
+𑜐𑜧𑜃𑜡𑜄𑜦,ယႂ်ႇၼႃႇတႄႉ,Truly very big
+𑜎𑜦𑜄𑜫𑜃𑜡𑜄𑜦,လႅၵ်ႈၼႃႇတႄႉ,Truly very small
+𑜑𑜤𑜂𑜫𑜃𑜡𑜄𑜦,သုင်ၼႃႇတႄႉ,Truly very high
+𑜄𑜛𑜉𑜫𑜃𑜡𑜄𑜦,တႅမ်ႇၼႃႇတႄႉ,Truly very low
+AHM,SHN,ENG
+𑜒𑜑𑜨𑜛𑜉𑜢𑜤𑜂𑜫,မိူင်းဢႁူမ်ႇ,Ahom country
+𑜀𑜤𑜃𑜫𑜑𑜀𑜫𑜉𑜧,ၵူၼ်းႁၵ်ႉမႂ်ႇ,New lover
+𑜑𑜤𑜃𑜫𑜑𑜨𑜛𑜐𑜧,ႁိူၼ်းႁဝ်းယဝ်ႉ,It is our house
+𑜉𑜢𑜤𑜂𑜫𑜄𑜩𑜐𑜧,မိူင်းတႆးယဝ်ႉ,It is Shan State
+𑜎𑜢𑜀𑜫𑜄𑜩𑜐𑜧,လိၵ်ႈတႆးယဝ်ႉ,It is Tai script
+𑜀𑜤𑜃𑜫𑜎𑜢𑜄𑜦,ၵူၼ်းလီတႄႉ,Truly good person
+𑜑𑜦𑜄𑜫𑜀𑜡𑜃𑜫𑜝𑜩,ႁဵတ်းၵၢၼ်ဝႆး,Work quickly
+𑜄𑜦𑜉𑜫𑜎𑜢𑜀𑜫𑜎𑜢,တႅမ်ႈလိၵ်ႈလီ,Write script well
+𑜆𑜄𑜫𑜎𑜢𑜀𑜫𑜎𑜢,ၽတ်းလိၵ်ႈလီ,Read script well
+𑜑𑜦𑜃𑜫𑜎𑜢𑜀𑜫𑜎𑜢,ႁဵၼ်းလိၵ်ႈလီ,Study script well
+𑜔𑜨𑜃𑜫𑜎𑜢𑜀𑜫𑜎𑜢,သွၼ်လိၵ်ႈလီ,Teach script well
+𑜉𑜡𑜑𑜤𑜃𑜫𑜝𑜩,မႃးႁိူၼ်းဝႆး,Come home early
+𑜀𑜡𑜉𑜢𑜤𑜂𑜫𑜝𑜩,ၵႂႃႇမိူင်းဝႆး,Go abroad quickly
+𑜀𑜤𑜃𑜫𑜑𑜧𑜝𑜩,ၵိၼ်ၶဝ်ႈဝႆး,Eat rice quickly
+𑜀𑜤𑜃𑜫𑜃𑜄𑜫𑜝𑜩,ၵိၼ်ၼမ်ႉဝႆး,Drink water quickly
+𑜓𑜧𑜑𑜀𑜫𑜄𑜦,ၸႂ်ႁၵ်ႉတႄႉ,Truly loving heart
+𑜓𑜧𑜆𑜦𑜂𑜫𑜄𑜦,ၸႂ်ᥙᥦᥒᥰ တႄႉ,Truly caring heart
+𑜓𑜧𑜎𑜢𑜄𑜦,ၸႂ်လီတႄႉ,Truly kind heart
+𑜓𑜧𑜑𑜡𑜐𑜫𑜄𑜦,ၸႂ်ႁၢႆႉတႄႉ,Truly mean heart
+𑜓𑜧𑜀𑜤𑜄𑜦,ၸႂ်ၵူဝ်တႄႉ,Truly afraid heart
+𑜑𑜤𑜎𑜢𑜄𑜦,ႁူဝ်လီတႄႉ,Truly smart
+𑜄𑜡𑜎𑜢𑜄𑜦,တႃလီတႄႉ,Truly good eyes
+𑜉𑜤𑜎𑜢𑜄𑜦,မိုဝ်းလီတႄႉ,Truly good hands
+𑜄𑜢𑜃𑜫𑜝𑜩𑜄𑜦,တႅၼ်ဝႆးတႄႉ,Truly fast feet
+𑜑𑜡𑜂𑜫𑜎𑜢𑜄𑜦,ႁၢင်ႈလီတႄႉ,Truly beautiful
+𑜒𑜤𑜃𑜫𑜎𑜢𑜐𑜧,ယိၼ်းလီယဝ်ႉ,Thank you already
+𑜒𑜤𑜃𑜫𑜓𑜨𑜉𑜫𑜐𑜧,ယိၼ်းၸူမ်းယဝ်ႉ,Happy already
+𑜑𑜀𑜫𑜀𑜃𑜫𑜐𑜧,ႁၵ်ႉၵၼ်ယဝ်ႉ,In love already
+𑜆𑜦𑜂𑜫𑜀𑜃𑜫𑜐𑜧,ᥙᥦᥒᥰ ၵၼ်ယဝ်ႉ,Caring already
+𑜓𑜨𑜉𑜫𑜀𑜃𑜫𑜐𑜧,ၸူမ်းၵၼ်ယဝ်ႉ,Happy together already
+𑜉𑜦𑜤𑜑𑜧𑜐𑜧,မိူဝ်ႈၼႂ်ယဝ်ႉ,It is already morning
+𑜉𑜦𑜤𑜝𑜃𑜫𑜐𑜧,မိူဝ်ႈဝၼ်းယဝ်ႉ,It is already daytime
+𑜉𑜦𑜤𑜑𑜀𑜫𑜐𑜧,မိူဝ်ႈၶမ်ႈယဝ်ႉ,It is already evening
+𑜉𑜦𑜤𑜑𑜢𑜤𑜃𑜫𑜐𑜧,မိူဝ်ႈၶိုၼ်းယဝ်ႉ,It is already night
+𑜀𑜤𑜝𑜃𑜫𑜐𑜧,ၵူႈဝၼ်းယဝ်ႉ,It is every day now
+𑜀𑜤𑜉𑜦𑜤𑜐𑜧,ၵူႈမိူဝ်ႈယဝ်ႉ,It is always now
+𑜑𑜤𑜃𑜫𑜑𑜨𑜛𑜐𑜧,ႁိူၼ်းႁဝ်းယဝ်ႉ,Already our house
+𑜉𑜢𑜤𑜂𑜫𑜑𑜨𑜛𑜐𑜧,မိူင်းႁဝ်းယဝ်ႉ,Already our country
+𑜎𑜢𑜀𑜫𑜑𑜨𑜛𑜐𑜧,လိၵ်ႈႁဝ်းယဝ်ႉ,Already our script
+𑜑𑜡𑜉𑜫𑜑𑜨𑜛𑜐𑜧,ၶေႃႈၵႂၢမ်းႁဝ်းယဝ်ႉ,Already our language
+𑜃𑜄𑜫𑜑𑜦𑜛𑜐𑜧,ၼမ်ႉၶဵဝ်ယဝ်ႉ,The river is full
+𑜎𑜨𑜐𑜫𑜑𑜤𑜂𑜫𑜐𑜧,လွႆသုင်ယဝ်ႉ,Already high mountain
+𑜃𑜡𑜐𑜧𑜐𑜧,ၼႃးယႂ်ႇယဝ်ႉ,Rice field is big already
+𑜉𑜡𑜃𑜫𑜑𑜨𑜛𑜐𑜧,မၢၼ်ႇႁဝ်းယဝ်ႉ,Already our village
+𑜝𑜃𑜫𑜎𑜢𑜐𑜧,ဝၼ်းလီယဝ်ႉ,A good day indeed
+𑜆𑜢𑜉𑜧𑜐𑜧,ပီမႂ်ႇယဝ်ႉ,It is New Year already
+𑜎𑜢𑜤𑜃𑜫𑜉𑜧𑜐𑜧,လိူၼ်မႂ်ႇယဝ်ႉ,New moon already
+𑜝𑜡𑜄𑜨𑜛𑜐𑜧,လၢဝ်တူဝ်ယဝ်ႉ,Stars are out
+𑜕𑜡𑜂𑜫𑜎𑜦𑜄𑜫𑜐𑜧,သႅင်လႅတ်ႇယဝ်ႉ,Sun is out already
+𑜉𑜨𑜀𑜫𑜎𑜤𑜉𑜫𑜐𑜧,မွၵ်ႇလူမ်းယဝ်ႉ,Misty already
+𑜉𑜡𑜎𑜦𑜃𑜫𑜄𑜦,မႃႉလႅၼ်ႈတႄႉ,Horse truly runs fast
+𑜉𑜦𑜛𑜃𑜨𑜐𑜫𑜄𑜦,မႅဝ်းၼွႆႉတႄႉ,Truly a small kitten
+𑜉𑜡𑜎𑜤𑜂𑜫𑜄𑜦,မႃလူင်တႄႉ,Truly a big dog
+𑜀𑜩𑜑𑜩𑜄𑜦,ၵႆႇၶႆႇတႄႉ,Truly a hen/egg
+𑜆𑜡𑜐𑜧𑜄𑜦,ပႃယႂ်ႇတႄႉ,Truly a big fish
+𑜕𑜢𑜤𑜑𑜡𑜃𑜫𑜄𑜦,သိုဝ်းႁၢၼ်တႄႉ,Truly a brave tiger
+𑜕𑜡𑜂𑜫𑜐𑜧𑜄𑜦,သၢင်ႉယႂ်ႇတႄႉ,Truly a big elephant
+𑜝𑜤𑜛𑜃𑜡𑜄𑜦,ဝူဝ်းၼႃးတႄႉ,Truly a farm ox
+𑜑𑜩𑜃𑜄𑜫𑜄𑜦,ၵႂၢႆးၼမ်ႉတႄႉ,Truly a water buffalo
+𑜃𑜤𑜀𑜫𑜑𑜨𑜂𑜫𑜄𑜦,ၼၵ်ႉႁွင်ႉတႄႉ,Truly a singing bird
+𑜔𑜤𑜄𑜫𑜉𑜧𑜄𑜦,သိုဝ်ႉမႂ်ႇတႄႉ,Truly bought new shirt
+𑜉𑜨𑜃𑜫𑜃𑜤𑜃𑜫𑜄𑜦,မွၼ်းၼွၼ်းတႄႉ,Truly a good pillow
+𑜕𑜦𑜃𑜫𑜎𑜢𑜃𑜫𑜄𑜦,လိၼ်ၽႅၼ်ႇတႄႉ,Truly an earthquake
+𑜕𑜡𑜄𑜫𑜃𑜤𑜃𑜫𑜄𑜦,သၢတ်ႇၼွၼ်းတႄႉ,Truly a good mat
+𑜓𑜨𑜃𑜫𑜀𑜤𑜃𑜫𑜑𑜧𑜄𑜦,ၸွၼ်းၵိၼ်ၶဝ်ႈတႄႉ,Truly a rice spoon
+𑜗𑜤𑜛𑜀𑜤𑜃𑜫𑜚𑜀𑜫𑜄𑜦,ထူၺ်ႇၵိၼ်ၽၵ်းတႄႉ,Truly a vegetable bowl
+𑜉𑜨𑜄𑜫𑜄𑜨𑜉𑜫𑜑𑜧𑜄𑜦,မေႃႈတူမ်းၶဝ်ႈတႄႉ,Truly a rice pot
+𑜉𑜢𑜄𑜫𑜑𑜨𑜉𑜫𑜄𑜦,မိတ်းၶူမ်တႄႉ,Truly sharp knife
+𑜑𑜤𑜛𑜐𑜡𑜛𑜄𑜦,ၶူဝ်ယၢဝ်းတႄႉ,Truly a long bridge
+𑜄𑜤𑜑𑜤𑜃𑜫𑜄𑜦,တူႁိူၼ်းတႄႉ,Truly a house door
+𑜃𑜡𑜎𑜢𑜎𑜢𑜐𑜧,ၼႃႇလိၵ်ႈယဝ်ႉ,Time is up
+𑜑𑜦𑜃𑜫𑜎𑜢𑜀𑜫𑜐𑜧,ႁဵၼ်းလိၵ်ႈယဝ်ႉ,Already finished study
+𑜔𑜨𑜃𑜫𑜎𑜢𑜀𑜫𑜐𑜧,သွၼ်လိၵ်ႈယဝ်ႉ,Already finished teaching
+𑜑𑜦𑜄𑜫𑜀𑜡𑜃𑜫𑜐𑜧,ႁဵတ်းၵၢၼ်ယဝ်ႉ,Already finished work
+𑜔𑜡𑜂𑜫𑜑𑜤𑜃𑜫𑜐𑜧,သၢင်ႈႁိူၼ်းယဝ်ႉ,Already finished building
+𑜔𑜤𑜄𑜫𑜑𑜧𑜐𑜧,သိုဝ်ႉၶဝ်ႈယဝ်ႉ,Already bought rice
+𑜑𑜡𑜐𑜫𑜚𑜀𑜫𑜐𑜧,ၶၢႆၽၵ်းယဝ်ႉ,Already sold vegetables
+𑜎𑜦𑜀𑜫𑜑𑜨𑜂𑜫𑜐𑜧,လႅၵ်ႈၶွင်ယဝ်ႉ,Already exchanged things
+𑜐𑜤𑜉𑜫𑜓𑜧𑜀𑜃𑜫𑜐𑜧,ယုမ်ႇၸႂ်ၵၼ်ယဝ်ႉ,Trust each other already
+𑜑𑜀𑜫𑜀𑜃𑜫𑜄𑜦,ႁၵ်ႉၵၼ်တႄႉ,Truly love each other
+𑜆𑜦𑜂𑜫𑜀𑜃𑜫𑜄𑜦,ᥙᥦᥒᥰ ၵၼ်တႄႉ,Truly care each other
+𑜓𑜨𑜉𑜫𑜀𑜃𑜫𑜄𑜦,ၸူမ်းၵၼ်တႄႉ,Truly happy together
+𑜄𑜡𑜃𑜫𑜀𑜃𑜫𑜄𑜦,တၢၼ်းၵၼ်တႄႉ,Truly speak together
+𑜎𑜡𑜄𑜫𑜎𑜢တႄႉ,လၢတ်ႈလီတႄႉ,Truly speak kindly
+𑜑𑜨𑜂𑜫𑜎𑜢𑜀𑜫တႄႉ,ႁွင်ႉလိၵ်ႈတႄႉ,Truly recite script
+𑜒𑜤𑜃𑜫𑜕𑜦𑜂𑜫တႄႉ,ယိၼ်းသဵင်တႄႉ,Truly hear the sound
+𑜑𑜃𑜫𑜃𑜡တႄႉ,ႁၼ်ၼႃႈတႄႉ,Truly see the face
+𑜑𑜤𑜛𑜓𑜧တႄႉ,ႁူႉၸႂ်တႄႉ,Truly know the mind
+𑜉𑜦𑜃𑜫𑜓𑜧တႄႉ,မႅၼ်ႈၸႂ်တႄႉ,Truly satisfied
+𑜕𑜢𑜄𑜫𑜓𑜧တႄႉ,ၽိတ်းၸႂ်တႄႉ,Truly sorry/offended
+𑜎𑜤𑜛𑜀𑜃𑜫တႄႉ,လူဝ်ႇၵၼ်တႄႉ,Truly need each other
+𑜐𑜧𑜀𑜡𑜄𑜦,ယဝ်ႉၵႂႃႇတႄႉ,Truly finished already
+𑜉𑜡𑜐𑜧တႄႉ,မႃးယဝ်ႉတႄႉ,Truly come already
+𑜀𑜡𑜐𑜧တႄႉ,ၵႂႃႇယဝ်ႉတႄႉ,Truly gone already
+𑜎𑜢တႄႉၼႃႇ,လီတႄႉၼႃႇ,Truly very good
+𑜑𑜡𑜐𑜫တႄႉၼႃႇ,ႁၢႆႉတႄႉၼႃႇ,Truly very bad
+𑜐𑜧တႄႉၼႃႇ,ယႂ်ႇတႄႉၼႃႇ,Truly very big
+𑜎𑜦𑜄𑜫တႄႉၼႃႇ,လႅၵ်ႈတႄႉၼႃႇ,Truly very small
+𑜑𑜤𑜂𑜫တႄႉၼႃႇ,သုင်တႄႉၼႃႇ,Truly very high
+𑜄𑜛𑜉𑜫တႄႉၼႃႇ,တႅမ်ႇတႄႉၼႃႇ,Truly very low

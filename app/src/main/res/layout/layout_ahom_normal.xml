@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="1dp">
+
+    <Button
+        android:id="@+id/key_ahom_1"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜱"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/key_ahom_2"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜲"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_1"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_3"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_1" />
+
+    <Button
+        android:id="@+id/key_ahom_3"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜳"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_2"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_4"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_1" />
+
+    <Button
+        android:id="@+id/key_ahom_4"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜴"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_3"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_5"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_1" />
+
+    <Button
+        android:id="@+id/key_ahom_5"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜵"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_4"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_6"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_1" />
+
+    <Button
+        android:id="@+id/key_ahom_6"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜶"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_5"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_7"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_1" />
+
+    <Button
+        android:id="@+id/key_ahom_7"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜷"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_6"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_8"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_1" />
+
+    <Button
+        android:id="@+id/key_ahom_8"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜸"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_7"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_9"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_1" />
+
+    <Button
+        android:id="@+id/key_ahom_9"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜹"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_8"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_0"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_1" />
+
+    <Button
+        android:id="@+id/key_ahom_0"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜰"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_9"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_1" />
+
+    <Button
+        android:id="@+id/key_ahom_row2_1"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜋"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row2_2"
+        app:layout_constraintTop_toBottomOf="@+id/key_ahom_1" />
+
+    <Button
+        android:id="@+id/key_ahom_row2_2"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜄"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_row2_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row2_1"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row2_3"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_row2_1" />
+
+    <Button
+        android:id="@+id/key_ahom_row2_3"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜃"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_row2_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row2_2"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row2_4"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_row2_1" />
+
+    <Button
+        android:id="@+id/key_ahom_row2_4"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜉"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_row2_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row2_3"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row2_5"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_row2_1" />
+
+    <Button
+        android:id="@+id/key_ahom_row2_5"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜒"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_row2_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row2_4"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row2_6"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_row2_1" />
+
+    <Button
+        android:id="@+id/key_ahom_row2_6"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜆"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_row2_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row2_5"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row2_7"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_row2_1" />
+
+    <Button
+        android:id="@+id/key_ahom_row2_7"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜀"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_row2_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row2_6"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row2_8"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_row2_1" />
+
+    <Button
+        android:id="@+id/key_ahom_row2_8"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜂"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_row2_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row2_7"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row2_9"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_row2_1" />
+
+    <Button
+        android:id="@+id/key_ahom_row2_9"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜈"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_row2_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row2_8"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row2_10"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_row2_1" />
+
+    <Button
+        android:id="@+id/key_ahom_row2_10"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜑"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_row2_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row2_9"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_row2_1" />
+
+    <Button
+        android:id="@+id/key_ahom_row3_1"
+        style="@style/TmkKeyStyle"
+
+        android:layout_marginStart="20dp"
+        android:text="𑜦"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row3_2"
+        app:layout_constraintTop_toBottomOf="@+id/key_ahom_row2_1" />
+
+    <Button
+        android:id="@+id/key_ahom_row3_2"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜢"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_row3_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row3_1"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row3_3"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_row3_1" />
+
+    <Button
+        android:id="@+id/key_ahom_row3_3"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜫"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_row3_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row3_2"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row3_4"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_row3_1" />
+
+    <Button
+        android:id="@+id/key_ahom_row3_4"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜧"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_row3_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row3_3"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row3_5"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_row3_1" />
+
+    <Button
+        android:id="@+id/key_ahom_row3_5"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜨"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_row3_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row3_4"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row3_6"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_row3_1" />
+
+    <Button
+        android:id="@+id/key_ahom_row3_6"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜪"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_row3_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row3_5"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row3_7"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_row3_1" />
+
+    <Button
+        android:id="@+id/key_ahom_row3_7"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜩"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_row3_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row3_6"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row3_8"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_row3_1" />
+
+    <Button
+        android:id="@+id/key_ahom_row3_8"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜤"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_row3_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row3_7"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row3_9"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_row3_1" />
+
+    <Button
+        android:id="@+id/key_ahom_row3_9"
+        style="@style/TmkKeyStyle"
+
+        android:layout_marginEnd="20dp"
+        android:text="𑜥"
+        app:layout_constraintBottom_toBottomOf="@id/key_ahom_row3_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row3_8"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/key_ahom_row3_1" />
+
+    <Button
+        android:id="@+id/key_shift"
+        style="@style/TmkKeyStyle"
+
+        android:text="⇧"
+        app:layout_constraintHorizontal_weight="1.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row4_1"
+        app:layout_constraintTop_toBottomOf="@+id/key_ahom_row3_1" />
+
+    <Button
+        android:id="@+id/key_ahom_row4_1"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜇"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_shift"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row4_2"
+        app:layout_constraintTop_toTopOf="@id/key_shift" />
+
+    <Button
+        android:id="@+id/key_ahom_row4_2"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜌"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row4_1"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row4_3"
+        app:layout_constraintTop_toTopOf="@id/key_shift" />
+
+    <Button
+        android:id="@+id/key_ahom_row4_3"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜁"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row4_2"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row4_4"
+        app:layout_constraintTop_toTopOf="@id/key_shift" />
+
+    <Button
+        android:id="@+id/key_ahom_row4_4"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜎"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row4_3"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row4_5"
+        app:layout_constraintTop_toTopOf="@id/key_shift" />
+
+    <Button
+        android:id="@+id/key_ahom_row4_5"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜊"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row4_4"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row4_6"
+        app:layout_constraintTop_toTopOf="@id/key_shift" />
+
+    <Button
+        android:id="@+id/key_ahom_row4_6"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜐"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row4_5"
+        app:layout_constraintRight_toLeftOf="@+id/key_ahom_row4_7"
+        app:layout_constraintTop_toTopOf="@id/key_shift" />
+
+    <Button
+        android:id="@+id/key_ahom_row4_7"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜡"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row4_6"
+        app:layout_constraintRight_toLeftOf="@+id/key_del"
+        app:layout_constraintTop_toTopOf="@id/key_shift" />
+
+    <Button
+        android:id="@+id/key_del"
+        style="@style/TmkKeyStyle"
+
+        android:text="⌫"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
+        app:layout_constraintHorizontal_weight="1.5"
+        app:layout_constraintLeft_toRightOf="@+id/key_ahom_row4_7"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/key_shift" />
+
+    <Button
+        android:id="@+id/key_lang"
+        style="@style/TmkKeyStyle"
+
+        android:text="🌐"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/key_emoji"
+        app:layout_constraintTop_toBottomOf="@+id/key_shift" />
+
+    <Button
+        android:id="@+id/key_emoji"
+        style="@style/TmkKeyStyle"
+
+        android:text="😊"
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lang"
+        app:layout_constraintRight_toLeftOf="@+id/key_123"
+        app:layout_constraintTop_toTopOf="@+id/key_lang" />
+
+    <Button
+        android:id="@+id/key_123"
+        style="@style/TmkKeyStyle"
+
+        android:text="123"
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
+        app:layout_constraintHorizontal_weight="1.25"
+        app:layout_constraintLeft_toRightOf="@+id/key_emoji"
+        app:layout_constraintRight_toLeftOf="@+id/key_space"
+        app:layout_constraintTop_toTopOf="@+id/key_lang" />
+
+    <Button
+        android:id="@+id/key_space"
+        style="@style/TmkKeyStyle"
+
+        android:text="Ahom"
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
+        app:layout_constraintHorizontal_weight="2.5"
+        app:layout_constraintLeft_toRightOf="@+id/key_123"
+        app:layout_constraintRight_toLeftOf="@+id/key_dot"
+        app:layout_constraintTop_toTopOf="@+id/key_lang" />
+
+
+    <Button
+        android:id="@+id/key_dot"
+        style="@style/TmkKeyStyle"
+
+        android:text="𑜽"
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_space"
+        app:layout_constraintRight_toLeftOf="@+id/key_enter"
+        app:layout_constraintTop_toTopOf="@+id/key_lang" />
+
+    <Button
+        android:id="@+id/key_enter"
+        style="@style/TmkKeyStyle"
+
+        android:text="⏎"
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
+        app:layout_constraintHorizontal_weight="1.25"
+        app:layout_constraintLeft_toRightOf="@+id/key_dot"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/key_lang" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

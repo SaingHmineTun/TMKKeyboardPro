@@ -1,0 +1,1036 @@
+# Dictionary for TDD (Tai Nuea) Word Suggestions
+TDD,SHN,ENG
+ᥘᥤᥐ,လိၵ်ႈ,Book/Script
+ᥖᥭᥰ,တႆး,Tai
+ᥞᥝᥰ,ႁဝ်း,We/Our
+ᥛᥬᥰ,မႂ်း,You
+ᥐᥧᥢᥰ,ၵူၼ်း,Person
+ᥘᥤ,လီ,Good
+ᥞᥐᥰ,ႁၵ်ႉ,Love
+ᥙᥦᥒᥰ,ᥙᥦᥒᥰ,Cherish
+ᥝᥢᥰ,ဝၼ်း,Day/Sun
+ᥛᥣᥰ,မႃး,Come
+ᥐᥣᥱ,ၵႂႃႇ,Go
+ᥐᥢ,ၵၼ်,Together
+ᥕᥧᥱ,ယူႇ,Live/Stay
+ᥐᥤᥢ,ၵိၼ်,Eat
+ᥢᥢᥳ,ၼၼ်ႉ,That
+ᥢᥭᥳ,ၼႆႉ,This
+ᥓᥬ,ၸႂ်,Heart/Mind
+ᥖᥦᥛᥲ,တႅမ်ႈ,Write
+ᥞᥧᥳ,ႁူႉ,Know
+ᥞᥢᥴ,ႁၼ်,See
+ᥝᥣ,ဝႃႈ,Say/That
+ᥘᥦᥲ,လႄႈ,And
+ᥛᥤᥰ,မီး,Have
+ᥖᥤᥲ,တီႈ,Place/At
+ᥘᥫᥴ,ၼိူဝ်,Above/North
+ᥢᥣᥱ,ၼႃႇ,Very
+ᥓႂᥳ,ၸႂ်ႉ,Use
+ᥘᥩᥒ,လွင်ႈ,Matter/Thing
+ᥐᥧ,ၵူႈ,Every
+ᥛᥫ,မိူဝ်ႈ,When/Time
+ᥕᥣᥛᥰ,ယၢမ်း,Time/Period
+ᥗᥭᥰ,တႆး,Tai/Free
+ᥞᥥᥢᥰ,ႁဵၼ်း,Learn
+ᥞᥥᥖᥰ,ႁဵတ်း,Do/Work
+ᥞᥫᥒᥰ,ႁိူင်း,Prosper
+ᥘᥦᥢᥰ,လႅၼ်,Region/Area
+ᥛᥫᥒᥰ,မိူင်း,City/Country
+ᥔᥝᥰ,သဝ်း,Stay/Live
+ᥘᥣᥭᥴ,လၢႆ,Many
+ᥖᥥᥴ,တေ,Will
+ᥞᥬᥲ,ႁႂ်ႈ,Give/Let
+ᥞᥣᥒᥴ,ႁၢင်ႈ,Form/Beautiful
+ᥖᥦᥳ,တႄႉ,True/Really
+ᥖᥣᥱ,တႃႇ,For
+ᥔᥥᥴ,သေ,And/Keep
+ᥞᥣᥳ,ႁႃႉ,Question particle
+ᥓᥩᥛᥰ,ၸွမ်း,With/Follow
+ᥢᥛᥴ,ၼမ်,Many/Much
+ᥘᥩᥭ,လွႆ,Mountain
+ᥢᥣᥛᥰ,ၼႃး,Field/Paddy
+ᥑᥝᥲ,ၶဝ်ႈ,Rice/Food
+ᥢᥛᥳ,ၼမ်ႉ,Water
+ᥖᥣᥢᥲ,တၢၼ်း,Speak
+ᥜᥣᥳ,ၾႃႉ,Sky
+ᥛᥩᥐ,မွၵ်ႇ,Cloud/Mist
+ᥔᥦᥢᥴ,သႅၼ်,Hundred thousand
+ᥞᥐᥰ,ႁၵ်ႉ,Love
+ᥞᥣᥢᥴ,ႁၢၼ်,Brave
+ᥘᥤᥢ,လိၼ်,Earth/Ground
+ᥘᥨᥛᥰ,ลม,Wind
+ᥔᥨᥝᥰ,သူဝ်း,Life/Vitality
+ᥛᥫᥴ,หมอ,Doctor/Expert
+ᥝᥭᥰ,ဝႆး,Fast/Quick
+ᥑᥭᥲ,ၶႂ်ႈ,Want/Wish
+ᥞᥦᥒᥰ,ႁႅင်း,Strength/Force
+ᥔᥣᥭᥴ,သၢႆ,Line/String
+ᥖᥣᥝᥰ,လၢဝ်,Star
+ᥘᥦᥒ,လႅင်,Red
+ᥑᥩᥢᥰ,ၶွၼ်း,Beat/Stick
+ᥑᥣᥝᥴ,ၶၢဝ်,White
+ᥢᥩᥭᥲ,ၼွႆႉ,Small/Few
+ᥕᥝᥳ,ယဝ်ႉ,Already/Finish
+ᥑᥫᥰ,ၶိူဝ်း,Lineage/Vine
+ᥖᥤᥖᥰ,တိတ်း,Stick/Attach
+ᥛᥦᥢ,မႅၼ်ႈ,Correct/True
+ᥚᥤᥖᥰ,ၽိတ်း,Wrong
+ᥕᥧᥛᥱ,ယုမ်ႇ,Believe
+ᥘᥨᥝᥴ,လူဝ်ႇ,Need
+ᥑᥣᥭᥰ,ၶၢႆႉ,Move
+ᥔᥪᥳ,သိုဝ်ႉ,Buy
+ᥞᥩᥭᥲ,ႁွႆႉ,Hang
+ᥘᥦᥐ,လႅၵ်ႈ,Exchange
+ᥛᥬᥱ,မႂ်ႇ,New
+ᥐᥝᥱ,ၵဝ်ႇ,Old
+ᥕᥣᥝᥰ,ယၢမ်း,Long
+ᥖᥨᥝ,တူဝ်,Body/Self
+ᥛᥤᥴ,မီႇ,Bear
+ᥐᥭᥴ,ၵႆ,Far
+ᥓᥛᥲ,ၸမ်,Near
+ᥞᥩᥢᥳ,ႁွၼ်ႉ,Hot
+ᥐᥖᥰ,ၵတ်း,Cold
+ᥘᥩᥢᥰ,ၼွၼ်း,Sleep
+ᥖᥪᥢᥱ,တိုၼ်ႇ,Wake up
+ᥘᥦᥢᥲ,လႅၼ်ႈ,Run
+ᥕᥣᥱ,ယႃႇ,Don't/Stop
+ᥛᥦᥢᥴ,ႁွမ်,Fragrant
+ᥑᥥᥴ,ၶဵဝ်,River
+ᥔᥦᥒᥴ,သႅင်,Light/Gem
+ᥛᥣᥢᥲ,မၢၼ်ႇ,Village
+ᥓᥝᥲ,ၸဝ်ႈ,Lord/Master
+ᥑᥧᥢᥴ,ၶုၼ်,Prince/Leader
+ᥛᥦᥝᥴ,မႅဝ်း,Cat
+TDD,SHN,ENG
+ᥘᥩᥭ,လွႆ,Mountain
+ᥢᥣᥛᥰ,ၼႃး,Rice field
+ᥑᥝᥲ,ၶဝ်ႈ,Rice/Food
+ᥢᥛᥳ,ၼမ်ႉ,Water
+ᥜᥣᥳ,ၾႃႉ,Sky
+ᥛᥩᥐ,မွၵ်ႇ,Cloud/Mist
+ᥔᥦᥢᥴ,သႅၼ်,Hundred thousand
+ᥞᥣᥢᥴ,ႁၢၼ်,Brave
+ᥘᥤᥢ,လိၼ်,Earth/Ground
+ᥘᥨᥛᥰ,ลม,Wind
+ᥔᥨᥝᥰ,သူဝ်း,Life/Vitality
+ᥛᥫᥴ,หมอ,Doctor/Expert
+ᥝᥭᥰ,ဝႆး,Fast/Quick
+ᥑᥭᥲ,ၶႂ်ႈ,Want/Wish
+ᥞᥦᥒᥰ,ႁႅင်း,Strength/Force
+ᥔᥣᥭᥴ,သၢႆ,Line/String
+ᥖᥣᥝᥰ,လၢဝ်,Star
+ᥘᥦᥒ,လႅင်,Red
+ᥑᥣᥝᥴ,ၶၢဝ်,White
+ᥢᥩᥭᥲ,ၼွႆႉ,Small/Few
+ᥕᥝᥳ,ယဝ်ႉ,Already/Finish
+ᥑᥫᥰ,ၶိူဝ်း,Lineage/Vine
+ᥖᥤᥖᥰ,တိတ်း,Stick/Attach
+ᥛᥦᥢ,မႅၼ်ႈ,Correct/True
+ᥚᥤᥖᥰ,ၽိတ်း,Wrong
+ᥕᥧᥛᥱ,ယုမ်ႇ,Believe
+ᥘᥨᥝᥴ,လူဝ်ႇ,Need
+ᥑᥣᥭᥰ,ၶၢႆႉ,Move
+ᥔᥪᥳ,သိုဝ်ႉ,Buy
+ᥞᥩᥭᥲ,ႁွႆႉ,Hang
+ᥘᥦᥐ,လႅၵ်ႈ,Exchange
+ᥛᥬᥱ,မႂ်ႇ,New
+ᥐᥝᥱ,ၵဝ်ႇ,Old
+ᥕᥣᥝᥰ,ယၢဝ်း,Long
+ᥖᥨᥝ,တူဝ်,Body/Self
+ᥛᥤᥴ,မီႇ,Bear
+ᥐᥭᥴ,ၵႆ,Far
+ᥓᥛᥲ,ၸမ်,Near
+ᥞᥩᥢᥳ,ႁွၼ်ႉ,Hot
+ᥐᥖᥰ,ၵတ်း,Cold
+ᥘᥩᥢᥰ,ၼွၼ်း,Sleep
+ᥖᥪᥢᥱ,တိုၼ်ႇ,Wake up
+ᥘᥦᥢᥲ,လႅၼ်ႈ,Run
+ᥕᥣᥱ,ယႃႇ,Don't/Stop
+ᥛᥦᥢᥴ,ႁွမ်,Fragrant
+ᥑᥥᥴ,ၶဵဝ်,River
+ᥔᥦᥒᥴ,သႅင်,Light/Gem
+ᥛᥣᥢᥲ,မၢၼ်ႇ,Village
+ᥓᥝᥲ,ၸဝ်ႈ,Lord/Master
+ᥑᥧᥢᥴ,ၶုၼ်,Prince/Leader
+ᥛᥦᥝᥴ,မႅဝ်း,Cat
+ᥛᥣᥳ,မႃႉ,Horse
+ᥘᥨᥖ,လုၵ်ႉ,Rise/Car (contextual)
+ᥑᥤᥲ,ၶီႈ,Excrement/Waste
+ᥕᥥᥢ,ယဵၼ်,Quiet/Calm
+ᥔᥥᥒ,သဵင်,Sound/Noise
+ᥘᥦᥝᥰ,လႅဝ်း,Sword/Sharp
+ᥐᥨᥢᥲ,ၵူၼ်ႈ,Bottom/Back
+ᥚᥐᥰ,ၽၵ်း,Vegetable
+ᥛᥢᥰ,မၼ်း,He/It/Oil
+ᥢᥣᥰ,ၼႃး,Field
+ᥖᥣᥢᥰ,တၢၼ်း,Speak/Offer
+ᥔᥩᥢᥴ,သေႃၼ်,Teach/Search
+ᥞᥦᥢᥰ,ႁႅၼ်း,Prepare/Arrange
+ᥘᥣᥖ,လၢတ်ႈ,Tell/Speak
+ᥑᥣᥛᥰ,ၶေႃႈၵႂၢမ်း,Word/Language
+ᥕᥤᥢ,ယိၼ်,Hear/Feel
+ᥓᥨᥛᥰ,ၸုမ်း,Group/Celebrate
+ᥑᥩᥢᥰ,ၶွၼ်း,Shake/Stick
+ᥖᥣᥝᥴ,လၢဝ်,Star/Fan
+ᥘᥤᥛᥰ,လိမ်း,Anoint/Smear
+ᥔᥤᥛᥰ,သိမ်း,Keep/Store
+ᥚᥥ,ၽႄ,Distribute/Split
+ᥘᥣᥢᥰ,လၢၼ်း,Threshing floor
+ᥛᥩᥢᥰ,မွၼ်း,Pillow/Excellent
+ᥔᥨᥢᥴ,သူၼ်,Garden/Orchard
+ᥑᥝᥴ,ၶဝ်,They/Them/Horn
+ᥐᥦၼ်ᥱ,ၵႅၼ်ႇ,Hard/Strong
+ᥔᥩᥭᥳ,သွႆႉ,Slice/Necklace
+ᥞᥩᥢᥴ,ႁွၼ်,Howl/Echo
+ᥘᥣᥛᥱ,လၢမ်း,Guess/Estimate
+ᥐᥣᥒ,ၵၢင်,Middle/Center
+ᥑᥣᥭᥴ,ၶၢႆ,Sell
+ᥖᥦᥢᥱ,တႅၼ်ႇ,Wasp/Represent
+ᥛᥣᥭᥴ,မၢႆ,Mark/Note
+ᥓᥩᥢᥰ,ၸွၼ်း,Spoon/Crawl
+ᥘᥣᥭᥰ,လၢႆး,Method/Pattern
+ᥔᥣᥢᥴ,သၢၼ်,Weave/Network
+ᥞᥩᥒᥳ,ႁွင်ႉ,Call/Sing
+ᥘᥨᥒᥴ,လူင်,Large/Great
+ᥑᥨᥝᥴ,ၶူဝ်,Bridge/Laugh
+ᥛᥨᥝᥴ,မေႃ,Know how/Doctor
+ᥓᥣᥢᥰ,ၸၢၼ်း,South/Platform
+ᥘᥣᥛᥰ,လၢမ်း,Spread/Shoulder
+ᥔᥤᥢᥰ,သိၼ်,Precept/Debt
+ᥛᥬ,မႂ်,Leaf
+ᥓᥥ,ၸေႈ,Paper
+ᥑᥭᥴ,ၶႆ,Egg/Unlock
+ᥖᥭᥱ,တႆႇ,Climb/Walk on
+TDD,SHN,ENG
+ᥐᥣᥢᥰ,ၵၢၼ်း,Crawl/Labor
+ᥑᥣᥢᥰ,ၶၢၼ်း,Lazy/Respond
+ᥖᥣᥢᥰ,တၢၼ်း,Offer/Alms
+ᥛᥣᥢᥰ,မၢၼ်း,Pregnancy/Proud
+ᥓᥣᥢᥰ,ၸၢၼ်း,Filter/South
+ᥘᥣᥢᥰ,လၢၼ်း,Threshing floor
+ᥔᥣᥢᥰ,သၢၼ်း,Nervous/Shiver
+ᥞᥣᥢᥰ,ႁၢၼ်း,Goose
+ᥐᥦᥛᥰ,ၵႅမ်း,Side/Pair
+ᥑᥦᥛᥰ,ၶႅမ်း,Excellent/Border
+ᥖᥦᥛᥰ,တႅမ်း,Fill/Replenish
+ᥛᥦᥛᥰ,မႅမ်း,Repair/Fix
+ᥓᥦᥛᥰ,ၸႅမ်း,Sample/Pattern
+ᥘᥦᥛᥰ,လႅမ်း,Sharp/Pointed
+ᥔᥦᥛᥰ,သႅမ်း,Insert/Addition
+ᥞᥦᥛᥰ,ႁႅမ်း,Watch over/Guard
+ᥐᥨᥛᥰ,ၵူမ်း,Group/Together
+ᥑᥨᥢᥰ,ၶူၼ်း,Stir/Mix
+ᥖᥨᥛᥰ,တူမ်း,Mouthful/Boil
+ᥛᥨᥢᥰ,မုၼ်း,Prosperous/Sacred
+ᥓᥨᥛᥰ,ၸုမ်း,Group/Team
+ᥘᥨᥛᥰ,လူမ်း,Wind/Air
+ᥔᥨᥛᥰ,သူမ်း,Sour/Pickle
+ᥞᥨᥛᥰ,ႁူမ်း,Together/Cover
+ᥐᥣᥭ,ၵၢႆ,Bridge/Cross over
+ᥑᥣᥭ,ၶၢႆ,Sell/Trade
+ᥖᥣᥭ,တၢႆ,Die
+ᥛᥣᥭ,မၢႆ,Mark/Sign
+ᥕᥣᥭ,ယၢႆး,Spread/Scatter
+ᥘᥣᥭ,လၢႆ,Many/Various
+ᥔᥣᥭ,သၢႆ,Line/String
+ᥞᥣᥭ,ႁၢႆ,Lost/Disappear
+ᥐᥦᥢ,ၵႅၼ်,Hard/Solid
+ᥑᥦᥢ,ၶႅၼ်,Arm/Rope
+ᥖᥦᥢ,တႅၼ်,Represent/Substitute
+ᥛᥦᥢ,မႅၼ်,Foul smell
+ᥕᥦᥢ,ယႅၼ်,Cool/Calm
+ᥘᥦᥢ,လႅၼ်,Border/Lie
+ᥔᥦᥢ,သႅၼ်,Hundred thousand
+ᥞᥦᥢ,ႁႅၼ်,Look up
+ᥐᥨᥢ,ၵူၼ်,Dig/Hollow
+ᥑᥨᥢ,ၶူၼ်,Hair/Fur
+ᥖᥨᥢ,တူၼ်,Unit/Stem
+ᥛᥨᥢ,မုၼ်,Merit/Sacred
+ᥕᥨᥢ,ယုၼ်,Machine/Airplane
+ᥘᥨᥢ,လူၼ်,Overflow
+ᥔᥨᥢ,သူၼ်,Garden
+ᥞᥨᥢ,ႁူၼ်,Withdraw/Retreat
+ᥐᥣᥛ,ၵၢမ်,Karma/Fate
+ᥑᥣᥛ,ၶၢမ်,Endure/Suffer
+ᥖᥣᥛ,တၢမ်း,Follow/Pursue
+ᥛᥣᥛ,မၢမ်း,Unripe fruit
+ᥕᥣᥛ,ယၢမ်း,Accustomed/Time
+ᥘᥣᥛ,လၢမ်း,Estimate/Guess
+ᥔᥣᥛ,သၢၼ်,Three
+ᥞᥣᥛ,ႁၢမ်,Carry/Lift
+ᥐᥦᥛ,ၵႅမ်,Assistant/Cheek
+ᥑᥦᥛ,ၶႅမ်,Excellent/Nice
+ᥖᥦᥛ,တႅမ်း,Short/Low
+ᥛᥦᥛ,မႅမ်,Repair/Patch
+ᥕᥦᥛ,ယႅမ်,Peep/Visit
+ᥘᥦᥛ,လႅမ်း,Pointed/Sharp
+ᥔᥦᥛ,သႅမ်း,Addition
+ᥞᥦᥛ,ႁႅမ်း,Guard/Watch
+ᥐᥨᥛ,ၵူမ်,Invert/Face down
+ᥑᥨᥛ,ၶူမ်,Bitter
+ᥖᥨᥛ,တူမ်း,Boil/Cook
+ᥛᥨᥛ,မုမ်း,Mouthful
+ᥕᥨᥛ,ယုမ်း,Smile
+ᥘᥨᥛ,လူမ်း,Breeze/Wind
+ᥔᥨᥛ,သူမ်း,Sour/Vinegar
+ᥞᥨᥛ,ႁူမ်,Cover/Blanket
+ᥐᥣᥝ,ၵၢဝ်,Glue/Spider web
+ᥑᥣᥝ,ၶၢဝ်,White/Duration
+ᥖᥣᥝ,လၢဝ်,Star
+ᥛᥣᥝ,မၢဝ်,Dizzy/Shallow
+ᥕᥣᥝ,ယၢဝ်,Long/Length
+ᥘᥣᥝ,လၢဝ်,News/Star
+ᥔᥣᥝ,သၢဝ်,Young woman
+ᥞᥣᥝ,ႁၢဝ်,Sky/Firmament
+ᥐᥦᥝ,ၵႅဝ်,Crystal/Gem
+ᥑᥦᥝ,ၶႅဝ်,Teeth/Green
+ᥖᥦᥝ,တႅဝ်း,Row/Queue
+ᥛᥦᥝ,မႅဝ်း,Cat
+ᥕᥦᥝ,ယႅဝ်း,Storehouse/Granary
+ᥘᥦᥝ,လႅဝ်,Sword/Destroy
+ᥔᥦᥝ,သႅဝ်,Acidic smell
+ᥞᥦᥝ,ႁႅဝ်,Hook/Net
+ᥐᥨᥝ,ၵူဝ်,Fear/Afraid
+ᥑᥨᥝ,ၶူဝ်,Bridge/Laugh
+ᥖᥨᥝ,တူဝ်,Body/Animal
+ᥛᥨᥝ,မေႃ,Doctor/Skilled
+ᥕᥨᥝ,ယူဝ်း,Simple/Plain
+ᥘᥨᥝ,လူဝ်,Empty/Need
+ᥔᥨᥝ,သူဝ်,Shout/Life
+ᥞᥨᥝ,ႁူဝ်,Head/Chief
+ᥐᥬ,ၵႂ်,Heart/Inner
+ᥑᥬ,ၶႂ်,Want/Desire
+ᥓᥬ,ၸႂ်,Mind/Heart
+ᥘᥬ,ၼႂ်,Inside/Morning
+TDD,SHN,ENG
+ᥐᥣᥲ,ၵႃႈ,Price/Value
+ᥑᥣᥲ,ၶႃႈ,I/Servant
+ᥖᥣᥲ,တႃႈ,Port/Landing
+ᥢᥣᥲ,ၼႃႈ,Face/Front
+ᥛᥣᥲ,မႃႈ,Horse (alternate)
+ᥘᥣᥲ,လႃႈ,Late/Last
+ᥔᥣᥲ,သႃႈ,Spread/Search
+ᥞᥣᥲ,ႁႃႈ,Five
+ᥐᥤᥲ,ၵီႈ,Bloom/Open
+ᥑᥤᥲ,ၶီႈ,Excrement/Dross
+ᥖᥤᥲ,တီႈ,Place/Location
+ᥢᥤᥲ,ၼီႈ,Debt
+ᥛᥤᥲ,မီး,Have (alternate)
+ᥘᥤᥲ,လီႈ,Free/Loose
+ᥔᥤᥲ,သီႈ,Four
+ᥞᥤᥲ,ႁီႈ,Shame/Modesty
+ᥐᥧᥲ,ၵူႈ,Every/Each
+ᥑᥧᥲ,ၶူႈ,Hole/Cavity
+ᥖᥧᥲ,တူႈ,Cabinet/Cupboard
+ᥢᥧᥲ,ၼူႈ,Small/Tiny
+ᥛᥧᥲ,မုႈ,Mist/Fog
+ᥘᥧᥲ,လူႉ,Destroyed/Damaged
+ᥔᥧᥲ,သူႈ,Fight/Resist
+ᥞᥧᥲ,ႁူႉ,Know/Understand
+ᥐᥥᥲ,ၵေႈ,Between/Gap
+ᥑᥥᥲ,ၶေႈ,Crocodile
+ᥖᥥᥲ,တေႈ,Foundation/Start
+ᥢᥥᥲ,ၼေႈ,Show/Point
+ᥛᥥᥲ,မေႈ,Mother (alternate)
+ᥘᥥᥲ,လေႈ,Wander/Roam
+ᥔᥥᥲ,သေႈ,Coin/Money
+ᥞᥥᥲ,ႁေႈ,Fence/Barricade
+ᥐᥦᥲ,ၵႅႈ,Old/Aged
+ᥑᥦᥲ,ၶႅႈ,Match/Rival
+ᥖᥦᥲ,တႅႈ,Short/Low
+ᥢᥦᥲ,ၼႅႈ,Firm/Sure
+ᥛᥦᥲ,မႅႈ,Tick/Insect
+ᥘᥦᥲ,လႄႈ,And/Also
+ᥔᥦᥲ,သႅႈ,Shuttle (weaving)
+ᥞᥦᥲ,ႁႅႈ,Sand/Gravel
+ᥐᥩᥲ,ၵေႃႉ,Person (classifier)
+ᥑᥩᥲ,ၶေႃႈ,Word/Joint
+ᥖᥩᥲ,တေႃႈ,But/Still
+ᥢᥩᥲ,ၼေႃႈ,Bamboo shoot
+ᥛᥩᥲ,မေႃႈ,Pot/Pan
+ᥘᥩᥲ,လွ်ႈ,Weak/Soft
+ᥔᥩᥲ,သေႃႉ,Search/Key
+ᥞᥩᥲ,ႁေႃႈ,Drive/Ride
+ᥐᥨᥝᥲ,ၵူဝ်ႈ,Afraid/Scared
+ᥑᥨᥝᥲ,ၶူဝ်ႈ,Frying pan/Handle
+ᥖᥨᥝᥲ,တူဝ်ႈ,Complete/Whole
+ᥢᥨᥝᥲ,ၼူဝ်ႈ,Brain/Marrow
+ᥛᥨᥝᥲ,မုဝ်ႈ,Purple/Blue
+ᥘᥨᥝᥲ,လူဝ်ႈ,Want/Need
+ᥔᥨᥝᥲ,သူဝ်ႈ,Chain/Pants
+ᥞᥨᥝᥲ,ႁူဝ်ႈ,Leak/Hole
+ᥐᥬᥲ,ၵႂ်ႈ,Swollen
+ᥑᥬᥲ,ၶႂ်ႈ,Want/Desire
+ᥓᥬᥲ,ၸႂ်ႉ,Use (alternate)
+ᥘᥬᥲ,ၼႂ်ႉ,Inside/Inner
+ᥔᥬᥲ,သႂ်ႉ,Clear/Pure
+ᥞᥬᥲ,ႁႂ်ႈ,Give/Allow
+ᥐᥣᥛᥲ,ၵၢမ်ႈ,Muscle
+ᥑᥣᥛᥲ,ၶၢမ်ႈ,Cross over
+ᥖᥣᥛᥲ,တၢမ်ႈ,Follow/Pursue
+ᥢᥣᥛᥲ,ၼၢမ်ႈ,Field (classifier)
+ᥛᥣᥛᥲ,မၢမ်ႈ,Unripe
+ᥘᥣᥛᥲ,လၢမ်ႈ,Spread/Flow
+ᥔᥣᥛᥲ,သၢမ်ႈ,Three (alternate)
+ᥞᥣᥛᥲ,ႁၢမ်ႈ,Forbid/Prevent
+ᥐᥦᥛᥲ,ၵႅမ်ႈ,Cheek
+ᥑᥦᥛᥲ,ၶႅမ်ႈ,Nice/Good
+ᥖᥦᥛᥲ,တႅမ်ႈ,Write
+ᥢᥦᥛᥲ,ၼႅမ်ႈ,Press/Push
+ᥛᥦᥛᥲ,မႅမ်ႈ,Correct (alternate)
+ᥘᥦᥛᥲ,လႅမ်ႈ,Pointed/Needle
+ᥔᥦᥛᥲ,သႅမ်ႈ,Insert/Side
+ᥞᥦᥛᥲ,ႁႅမ်ႈ,Sunburnt/Crisp
+ᥐᥨᥛᥲ,ၵူမ်ႈ,Bend down
+ᥑᥨᥛᥲ,ၶူမ်း,Bitter (alternate)
+ᥖᥨᥛᥲ,တူမ်း,Boiled
+ᥢᥨᥛᥲ,ၼုမ်း,Soft/Tender
+ᥛᥨᥛᥲ,မုမ်း,Mouthful
+ᥘᥨᥛᥲ,လူမ်ႈ,Collapse/Fall
+ᥔᥨᥛᥲ,သူမ်း,Sour
+ᥞᥨᥛᥲ,ႁူမ်ႈ,Umbrella/Cover
+ᥐᥣᥭᥲ,ၵၢႆႈ,Bored/Tired
+ᥑᥣᥭᥲ,ၶၢႆႉ,Move/Shift
+ᥖᥣᥭᥲ,တၢႆႈ,Under/Bottom
+ᥢᥣᥭᥲ,ၼၢႆႈ,Mist/Dew
+ᥛᥣᥭᥲ,မၢႆႈ,Widowed
+ᥘᥣᥭᥲ,လၢႆႈ,Obtain/Get
+ᥔᥣᥭᥲ,သၢႆႈ,Intestine/Guts
+ᥞᥣᥭᥲ,ႁၢႆ,Cruel/Bad
+ᥐᥦᥢᥲ,ၵႅၼ်ႇ,Hard/Tough
+ᥑᥦᥢᥲ,ၶႅၼ်ႈ,Boundary/Divide
+ᥖᥦᥢᥲ,တႅၼ်ႈ,Wasp/Bee
+ᥢᥦᥢᥲ,ၼႅၼ်ႈ,Firm/Tight
+ᥛᥦᥢᥲ,မႅၼ်ႈ,Correct/Right
+ᥘᥦᥢᥲ,လႅၼ်ႈ,Run
+TDD,SHN,ENG
+ᥛᥬᥱ ᥔᥧᥒᥴ,မႂ်ႇသုင်,Hello/Greetings
+ᥕᥤᥢ ᥘᥤ,ယိၼ်းလီ,Thank you/Welcome
+ᥐᥤᥢ ᥑᥝᥲ,ၵိၼ်ၶဝ်ႈ,Eat rice/Eating
+ᥢᥛᥳ ᥛᥢᥰ,ၼမ်ႉမၼ်း,Oil/Fuel
+ᥑᥝᥲ ᥛᥨᥢᥰ,ၶဝ်ႈမုၼ်း,Snack/Cake
+ᥛᥣᥢᥲ ᥞᥫᥢᥰ,မၢၼ်ႇႁိူၼ်း,Home/Village
+ᥐᥧᥢᥰ ᥢᥛᥴ,ၵူၼ်းၼမ်,Crowd/Many people
+ᥞᥐᥰ ᥢᥣᥱ,ႁၵ်ႉၼႃႇ,Love so much
+ᥘᥤ ᥖᥦᥳ,လီတႄႉ,Very good
+ᥞᥥᥖᥰ ᥐᥣᥢ,ႁဵတ်းၵၢၼ်,Work/To do work
+ᥖᥦᥛᥲ ᥘᥤᥐ,တႅမ်ႈလိၵ်ႈ,Write a letter
+ᥚᥖ ᥘᥤᥐ,ၽတ်းလိၵ်ႈ,Read a book
+ᥛᥫᥒᥰ ᥖᥭᥰ,မိူင်းတႆး,Shan State
+ᥘᥤᥐ ᥖᥭᥰ,လိၵ်ႈတႆး,Tai script
+ᥐᥣᥱ ᥘᥭᥴ,ၵႂႃႇလၢႆ,Where are you going?
+ᥛᥣᥰ ᥢᥭᥳ,မႃးၼႆႉ,Come here
+ᥓᥬ ᥘᥤ,ၸႂ်လီ,Kind heart
+ᥓᥬ ᥞᥣᥭᥳ,ၸႂ်ႁၢႆႉ,Angry/Mean
+ᥕᥤᥢ ᥓᥨᥛᥰ,ယိၼ်းၸူမ်း,Glad/Happy
+ᥢᥛᥳ ᥘᥩᥛᥰ,ၼမ်ႉၼုမ်း,Milk
+ᥛᥣᥐᥱ ᥛᥨᥝᥲ,မၢၵ်ႇမူင်ႈ,Mango
+ᥛᥣᥐᥱ ᥐᥥᥒᥰ,မၢၵ်ႇၵဵင်း,Orange
+ᥛᥣᥐᥱ ᥑᥫᥴ,မၢၵ်ႇၶိူဝ်း,Eggplant
+ᥚᥐᥰ ᥐᥣᥖ,ၽၵ်းၵၢတ်ႇ,Cabbage
+ᥔᥫᥴ ᥑᥨᥝᥴ,ၶူဝ်းၼုင်ႈ,Clothes
+ᥞᥫᥢᥰ ᥕᥝᥰ,ႁိူၼ်းယဝ်ႉ,Household/Home
+ᥔᥣᥭᥴ ᥘᥨᥛᥰ,သၢႆလူမ်း,Radio/Airwaves
+ᥘᥩᥭ ᥔᥧᥒᥴ,လွႆသုင်,High mountain
+ᥢᥣᥛᥰ ᥘᥨᥒᥴ,ၼႃးလူင်,Large field
+ᥑᥥᥴ ᥕᥣᥝᥰ,ၶဵဝ်ယၢဝ်း,Long river
+ᥛᥫ ᥢᥭᥳ,မိူဝ်ႈၼႆႉ,Today
+ᥛᥫ ᥚᥧᥐ,မိူဝ်ႈၽုၵ်ႈ,Tomorrow
+ᥛᥫ ᥝᥣ,မိူဝ်ႈဝႃး,Yesterday
+ᥕᥣᥛᥰ ᥘᥤ,ယၢမ်းလီ,Good time
+ᥐᥧᥢᥰ ᥞᥐᥰ,ၵူၼ်းႁၵ်ႉ,Lover
+ᥖᥨᥝ ᥔᥖᥰ,တူဝ်သတ်း,Animal
+ᥘᥨᥖ ᥑᥫᥒ,လူတ်ႉၶိူင်ႈ,Motorcycle
+ᥘᥨᥖ ᥕႂᥲ,လူတ်ႉယႂ်ႇ,Truck
+ᥔᥪᥳ ᥑᥩᥒᥴ,သိုဝ်ႉၶွင်,To shop/Buy things
+ᥑᥣᥭᥴ ᥑᥩᥒᥴ,ၶၢႆၶွင်,To sell things
+ᥞᥧᥳ ᥞᥢᥴ,ႁူႉႁၼ်,To witness
+ᥔᥩᥢᥴ ᥘᥤᥐ,သွၼ်လိၵ်ႈ,To teach
+ᥞᥥᥢᥰ ᥘᥤᥐ,ႁဵၼ်းလိၵ်ႈ,To study
+ᥓႂᥳ ᥐᥢ,ၸႂ်ႉၵၼ်,Help each other
+ᥔᥣᥭᥴ ᥓᥬ,သၢႆၸႂ်,Life/Vitality
+ᥐᥨᥝ ᥢᥣᥱ,ၵူဝ်ၼႃႇ,Very afraid
+ᥕᥣᥱ ᥞᥥᥖᥰ,ယႃႇႁဵတ်း,Don't do it
+ᥕᥣᥱ ᥐᥣᥱ,ယႃႇၵႂႃႇ,Don't go
+ᥛᥣᥰ ᥘᥦᥲ,မႃးလႄႈ,Come on
+ᥐᥣᥱ ᥕᥝᥳ,ၵႂႃႇယဝ်ႉ,Already gone
+ᥘᥩᥢᥰ ᥘᥤ,ၼွၼ်းလီ,Sleep well
+ᥖᥪᥢᥱ ᥕᥝᥳ,တိုၼ်ႇယဝ်ႉ,Already awake
+ᥞᥣᥒᥴ ᥘᥤ,ႁၢင်ႈလီ,Beautiful
+ᥖᥦᥳ ᥢᥭᥳ,တႄႉၼႆႉ,Truly
+ᥓᥩᥛᥰ ᥐᥢ,ၸွမ်းၵၼ်,Together
+ᥢᥛᥴ ᥖᥦᥳ,ၼမ်တႄႉ,Many indeed
+ᥑᥝᥲ ᥢᥫᥳ,ၶဝ်ႈၼိူဝ်ႉ,Meat curry
+ᥐᥦᥒ ᥚᥐᥰ,ၵႅင်းၽၵ်း,Vegetable soup
+ᥢᥛᥳ ᥑᥥᥴ,ၼမ်ႉၶဵဝ်,River water
+ᥜᥨᥢᥴ ᥖᥨᥐᥰ,ၾူၼ်တူၵ်း,Raining
+ᥘᥦᥖ ᥞᥩᥢᥳ,လႅတ်ႇႁွၼ်ႉ,Hot sun
+ᥝᥢᥰ ᥘᥤ,ဝၼ်းလီ,Good day
+ᥘᥫᥢ ᥘᥦᥒ,လိူၼ်လႅင်,Blood moon
+ᥙᥤ ᥛᥬᥱ,ပီမႂ်ႇ,New year
+ᥛᥫ ᥘᥭᥳ,မိူဝ်ႈလႂ်,When?
+ᥖᥣᥝᥰ ᥘᥦᥒ,လၢဝ်လႅင်,Red star
+ᥛᥩᥐ ᥘᥨᥛᥰ,မွၵ်ႇလူမ်း,Mist/Wind
+ᥘᥩᥐ ᥛᥬ,မွၵ်ႇမႂ်,Flowers/Leaves
+ᥛᥣᥳ ᥘᥦᥢᥲ,မႃႉလႅၼ်ႈ,Running horse
+ᥛᥦᥝᥴ ᥢᥩᥭᥲ,မႅဝ်းၼွႆႉ,Kitten
+ᥛᥣ ᥘᥨᥒᥴ,မႃလူင်,Big dog
+ᥐᥭᥱ ᥑᥭᥱ,ၵႆႇၶႆႇ,Hens/Eggs
+ᥙᥣ ᥑᥤᥴ,ပႃၶဵဝ်,Green fish
+ᥔᥫᥴ ᥞᥣᥢᥴ,သိုဝ်းႁၢၼ်,Brave tiger
+ᥔᥣᥢᥳ ᥕႂᥲ,သၢင်ႉယႂ်ႇ,Big elephant
+ᥝᥨᥝᥰ ᥢᥣᥛᥰ,ဝူဝ်းၼႃး,Farm ox
+ᥑᥝᥭᥴ ᥢᥛᥳ,ၵႂၢႆးၼမ်ႉ,Water buffalo
+ᥢᥨᥐ ᥘᥨᥒᥴ,ၼၵ်ႉလူင်,Big bird
+ᥛᥦᥒᥰ ᥛᥧᥢᥰ,မႅင်းမုၼ်း,Insects
+ᥒᥧᥴ ᥞᥣᥭᥳ,ငူႁၢႆႉ,Poisonous snake
+ᥘᥨᥖ ᥛᥬᥱ,လူတ်ႉမႂ်ႇ,New car
+ᥔᥪᥳ ᥛᥬᥱ,သိုဝ်ႉမႂ်ႇ,New shirt
+ᥛᥩᥢᥰ ᥘᥤ,မွၼ်းလီ,Good pillow
+ᥚᥦᥢᥱ ᥘᥤᥢ,လိၼ်ၽႅၼ်ႇ,Earthquake
+ᥔᥣᥖ ᥛᥩᥢᥰ,သၢတ်ႇမွၼ်း,Sleeping mat
+ᥓᥩᥢᥰ ᥑᥣᥝᥴ,ၸွၼ်းၶၢဝ်,White spoon
+ᥗᥨᥝᥱ ᥘᥨᥒᥴ,ထူၺ်ႇလူင်,Big bowl
+ᥛᥨᥝᥲ ᥑᥝᥲ,မေႃႈၶဝ်ႈ,Rice pot
+ᥛᥤᥖᥰ ᥘᥦᥝᥰ,မိတ်းလႅဝ်း,Knife/Sword
+ᥑᥨᥝᥴ ᥕᥣᥝᥰ,ၶူဝ်ယၢဝ်း,Long bridge
+ᥖᥧ ᥞᥫᥢᥰ,တူႁိူၼ်း,House door
+ᥢᥣᥱ ᥘᥤᥱ,ၼႃႇလိၵ်ႈ,Clock/Watch
+ᥔᥦᥒᥴ ᥘᥦᥖ,သႅင်လႅတ်ႇ,Sunlight
+ᥚᥨᥝᥱ ᥘᥤᥐ,ၽိုၼ်လိၵ်ႈ,Document/Paper
+ᥖᥒᥱ ᥔᥧᥒᥴ,တင်ႇသုင်,High chair
+ᥔᥩᥭᥳ ᥑᥩᥢᥰ,သွႆႉၶွၼ်း,Necklace
+ᥘᥦᥒ ᥓᥥᥖᥰ,လႅင်ၸႅတ်း,Bright red
+ᥑᥣᥝᥴ ᥓᥥᥖᥰ,ၶၢဝ်ၸႅတ်း,Pure white
+ᥘᥛᥴ ᥓᥥᥖᥰ,ၼမ်ႉၸႅတ်း,Pitch black
+ᥘᥫᥒ ᥓᥥᥖᥰ,လိူင်ၸႅတ်း,Bright yellow
+TDD,SHN,ENG
+ᥛᥣᥢᥲ ᥛᥫᥒᥰ,မၢၼ်ႇမိူင်း,Country/Nation
+ᥐᥧᥢᥰ ᥑᥣᥭᥴ,ၵူၼ်းၶၢႆ,Seller/Merchant
+ᥐᥧᥢᥰ ᥔᥪᥳ,ၵူၼ်းသိုဝ်ႉ,Buyer/Customer
+ᥑᥣᥛᥰ ᥖᥭᥰ,ၶေႃႈၵႂၢမ်းတႆး,Tai language
+ᥞᥥᥢᥰ ᥘᥤᥐ,ႁဵၼ်းလိၵ်ႈ,To study/Learn
+ᥔᥩᥢᥴ ᥘᥤᥐ,သွၼ်လိၵ်ႈ,To teach
+ᥘᥤᥐ ᥛᥣᥭᥴ,လိၵ်ႈမၢႆ,Record/Note
+ᥓᥬ ᥑᥭᥲ,ၸႂ်ၶႂ်ႈ,Desire/Wish
+ᥖᥣ ᥝᥢᥰ,တႃဝၼ်း,The Sun
+ᥘᥦᥖ ᥞᥩᥢᥳ,လႅတ်ႇႁွၼ်ႉ,Hot sunshine
+ᥜᥨᥢᥴ ᥖᥨᥐᥰ,ၾူၼ်တူၵ်း,Raining
+ᥘᥨᥛᥰ ᥘᥦᥢᥲ,လူမ်းလႅၼ်ႈ,Strong wind
+ᥢᥛᥳ ᥑᥥᥴ,ၼမ်ႉၶဵဝ်,River water
+ᥢᥛᥳ ᥛᥩᥢᥰ,ၼမ်ႉမွၼ်း,Juice/Nectar
+ᥢᥛᥳ ᥔᥨᥛᥲ,ၼမ်ႉသူမ်း,Vinegar
+ᥢᥛᥳ ᥝᥣᥢᥴ,ၼမ်ႉဝၢၼ်,Syrup/Sweet water
+ᥚᥐᥰ ᥐᥤᥢ,ၽၵ်းၵိၼ်,Side dish/Food
+ᥚᥐᥰ ᥔᥨᥛᥲ,ၽၵ်းသူမ်း,Pickled vegetables
+ᥑᥝᥲ ᥔᥨᥝᥰ,ၶဝ်ႈသူဝ်း,Steamed rice
+ᥑᥝᥲ ᥘᥨᥛᥰ,ၶဝ်ႈလူမ်း,Rice snack
+ᥖᥨᥝ ᥑᥤᥒᥰ,တူဝ်ၶိင်း,Body
+ᥞᥨᥝᥴ ᥓᥬ,ႁူဝ်ၸႂ်,Heart
+ᥔᥣᥭᥴ ᥓᥬ,သၢႆၸႂ်,Vitality/Life
+ᥛᥪᥴ ᥑᥣᥝᥴ,မိုဝ်းၶၢဝ်,White hand
+ᥖᥤᥢ ᥕᥣᥝᥰ,တႅၼ်ယၢဝ်း,Long foot
+ᥘᥣᥲ ᥘᥤ,ၼႃႈလီ,Good looking
+ᥙᥣᥐᥱ ᥝᥣᥢᥴ,ပၢၵ်ႇဝၢၼ်,Sweet talker
+ᥔᥥᥒᥴ ᥘᥤ,သဵင်လီ,Good voice
+ᥞᥧᥳ ᥘᥣᥭᥴ,ႁူႉလၢႆ,Knowledgeable
+ᥞᥢᥴ ᥘᥤ,ႁၼ်လီ,Approve/See well
+ᥛᥣᥳ ᥘᥦᥢᥲ,မႃႉလႅၼ်ႈ,Galloping horse
+ᥝᥨᥝᥰ ᥐᥣᥢᥰ,ဝူဝ်းၵၢၼ်း,Working ox
+ᥐᥭᥱ ᥑᥢᥴ,ၵႆႇၶၼ်,Crowing rooster
+ᥙᥣ ᥕႂᥲ,ပႃယႂ်ႇ,Big fish
+ᥢᥨᥐ ᥘᥤ,ၼၵ်ႉလီ,Beautiful bird
+ᥛᥦᥝᥴ ᥘᥨᥒᥴ,မႅဝ်းလူင်,Large cat
+ᥔᥫᥴ ᥞᥣᥭᥳ,သိုဝ်းႁၢႆႉ,Fierce tiger
+ᥘᥩᥐ ᥛᥬᥱ,မွၵ်ႇမႂ်ႇ,New flower
+ᥛᥬ ᥛᥩᥐ,မႂ်မွၵ်ႇ,Flower leaf
+ᥑᥫᥰ ᥘᥤ,ၶိူဝ်းလီ,Good lineage
+ᥞᥫᥢᥰ ᥛᥬᥱ,ႁိူၼ်းမႂ်ႇ,New house
+ᥘᥨᥖ ᥝᥭᥰ,လူတ်ႉဝႆး,Fast car
+ᥔᥪᥳ ᥛᥬᥱ,သိုဝ်ႉမႂ်ႇ,New clothes
+ᥚᥦᥢᥱ ᥘᥤ,ၽႅၼ်ႇလီ,Good fabric
+ᥔᥣᥖ ᥛᥬᥱ,သၢတ်ႇမႂ်ႇ,New mat
+ᥛᥩᥢᥰ ᥘᥤ,မွၼ်းလီ,Good pillow
+ᥓᥩᥢᥰ ᥔᥤᥢᥰ,ၸွၼ်းသိၼ်,Silver spoon
+ᥗᥨᥝᥱ ᥑᥣᥝᥴ,ထူၺ်ႇၶၢဝ်,White bowl
+ᥛᥨᥝᥲ ᥑᥝᥲ,မေႃႈၶဝ်ႈ,Cooking pot
+ᥛᥤᥖᥰ ᥑᥨᥛ,မိတ်းၶူမ်,Sharp knife
+ᥑᥨᥝᥴ ᥔᥧᥒᥴ,ၶူဝ်သုင်,High bridge
+ᥖᥧ ᥕႂᥲ,တူယႂ်ႇ,Big door
+ᥘᥦᥖ ᥔᥦᥒᥴ,လႅတ်ႇသႅင်,Bright sun
+ᥔᥩᥭᥳ ᥑᥦᥢᥴ,သွႆႉၶႅၼ်,Bracelet
+ᥛᥣᥭᥴ ᥘᥤᥐ,မၢႆလိၵ်ႈ,Bookmark/Note
+ᥔᥩᥢᥴ ᥐᥢ,သွၼ်ၵၼ်,To learn together
+ᥞᥐᥰ ᥐᥢ,ႁၵ်ႉၵၼ်,To love each other
+ᥙᥦᥒᥰ ᥐᥢ,ᥙᥦᥒᥰ ၵၼ်,To cherish each other
+ᥓᥨᥛᥰ ᥐᥢ,ၸူမ်းၵၼ်,To celebrate together
+ᥐᥣᥱ ᥛᥣᥰ,ၵႂႃႇမႃး,To go back and forth
+ᥞᥧᥳ ᥕᥝᥳ,ႁူႉယဝ်ႉ,Already know
+ᥞᥢᥴ ᥕᥝᥳ,ႁၼ်ယဝ်ႉ,Already seen
+ᥛᥦᥢ ᥖᥦᥳ,မႅၼ်ႈတႄႉ,Truly correct
+ᥚᥤᥖᥰ ᥕᥝᥳ,ၽိတ်းယဝ်ႉ,Made a mistake
+ᥕᥧᥛᥱ ᥓᥬ,ယုမ်ႇၸႂ်,To trust/Believe
+ᥘᥨᥝᥴ ᥢᥛᥴ,လူဝ်ႇၼမ်,Need many/much
+ᥑᥣᥭᥰ ᥕᥝᥳ,ၶၢႆႉယဝ်ႉ,Already moved
+ᥔᥪᥳ ᥕᥝᥳ,သိုဝ်ႉယဝ်ႉ,Already bought
+ᥑᥣᥭᥴ ᥕᥝᥳ,ၶၢႆယဝ်ႉ,Already sold
+ᥘᥦᥐ ᥐᥢ,လႅၵ်ႈၵၼ်,To exchange
+ᥛᥬᥱ ᥢᥭᥳ,မႂ်ႇၼႆႉ,This new one
+ᥐᥝᥱ ᥢᥢᥳ,ၵဝ်ႇၼၼ်ႉ,That old one
+ᥕᥣᥝᥰ ᥢᥣᥱ,ယၢဝ်းၼႃႇ,Very long
+ᥖᥨᥝ ᥘᥤ,တူဝ်လီ,Good health/Body
+ᥐᥭᥴ ᥢᥣᥱ,ၵႆၼႃႇ,Very far
+ᥓᥛᥲ ᥢᥭᥳ,ၸမ်ၼႆႉ,Near here
+ᥞᥩᥢᥳ ᥢᥣᥱ,ႁွၼ်ႉၼႃႇ,Very hot
+ᥐᥖᥰ ᥢᥣᥱ,ၵတ်းၼႃႇ,Very cold
+ᥘᥩᥢᥰ ᥘᥤ,ၼွၼ်းလီ,Sleep well
+ᥖᥪᥢᥱ ᥝᥭᥰ,တိုၼ်ႇဝႆး,Wake up early
+ᥘᥦᥢᥲ ᥝᥭᥰ,လႅၼ်ႈဝႆး,Run fast
+ᥕᥣᥱ ᥐᥣᥱ,ယႃႇၵႂႃႇ,Don't go
+ᥛᥦᥢᥴ ᥢᥣᥱ,ႁွမ်ၼႃႇ,Very fragrant
+ᥑᥥᥴ ᥘᥨᥒᥴ,ၶဵဝ်လူင်,Great river
+ᥔᥦᥒᥴ ᥘᥤ,သႅင်လီ,Good gem/Light
+ᥛᥣᥢᥲ ᥞᥝᥰ,ဝၢၼ်ႈႁဝ်း,Our village
+ᥓᥝᥲ ᥞᥫᥢᥰ,ၸဝ်ႈႁိူၼ်း,House owner
+ᥑᥧᥢᥴ ᥛᥫᥒᥰ,ၶုၼ်မိူင်း,Country leader
+ᥛᥦᥝᥴ ᥢᥩᥭᥲ,မႅဝ်းၼွႆႉ,Kitten
+ᥛᥣᥳ ᥘᥨᥒᥴ,မႃႉလူင်,Big horse
+ᥘᥨᥖ ᥛᥬᥱ,လူတ်ႉမႂ်ႇ,New car
+ᥑᥤᥲ ᥛᥧᥴ,ၶီႈမူး,Pig waste
+ᥕᥥᥢ ᥢᥣᥱ,ယဵၼ်ၼႃႇ,Very quiet
+ᥔᥥᥒ ᥘᥨᥒᥴ,သဵင်လူင်,Loud noise
+ᥘᥦᥝᥰ ᥑᥨᥛ,လႅဝ်းၶူမ်,Sharp sword
+ᥐᥨᥢᥲ ᥗᥨᥝᥱ,ၵူၼ်ႈထူၺ်ႇ,Bottom of bowl
+ᥚᥐᥰ ᥘᥤ,ၽၵ်းလီ,Good vegetable
+ᥛᥢᥰ ᥘᥤ,မၼ်းလီ,He/It is good
+ᥢᥣᥰ ᥕႂᥲ,ၼႃးယႂ်ႇ,Big rice field
+ᥖᥣᥢᥲ ᥘᥤ,တၢၼ်းလီ,Good speech
+TDD,SHN,ENG
+ᥛᥫ ᥢᥬᥲ,မိူဝ်ႈၼႂ်,In the morning
+ᥛᥫ ᥝᥢᥰ,မိူဝ်ႈဝၼ်း,In the daytime
+ᥛᥫ ᥑᥛᥲ,မိူဝ်ႈၶမ်ႈ,In the evening
+ᥛᥫ ᥑᥪᥢᥰ,မိူဝ်ႈၶိုၼ်း,In the night
+ᥚᥣᥭᥱ ᥢᥫᥴ,ၽၢႆႇၼိူဝ်,North side
+ᥚᥣᥭᥱ ᥖᥦᥢᥰ,ၽၢႆႇတႂ်ႈ,South side
+ᥚᥣᥭᥱ ᥟᥩᥐ,ၽၢႆႇဢွၵ်ႇ,East side
+ᥚᥣᥭᥱ ᥖᥨᥐᥰ,ၽၢႆႇတူၵ်း,West side
+ᥝᥢᥰ ᥓᥢ,ဝၼ်းၸၼ်,Monday
+ᥝᥢᥰ ᥟᥒ ᥐᥣᥢ,ဝၼ်းဢင်းၵၼ်း,Tuesday
+ᥝᥢᥰ ᥙᥧᥖ,ဝၼ်းပုၵ်ႉ,Wednesday
+ᥝᥢᥰ ᥚᥖ,ဝၼ်းၽတ်း,Thursday
+ᥝᥢᥰ ᥔᥧᥐ,ဝၼ်းသုၵ်း,Friday
+ᥝᥢᥰ ᥔᥝᥰ,ဝၼ်းသဝ်,Saturday
+ᥝᥢᥰ ᥟᥣ ᥖᥤᥖᥰ,ဝၼ်းဢႃးတိတ်ႉ,Sunday
+ᥐᥤᥢ ᥢᥛᥳ,ၵိၼ်ၼမ်ႉ,Drink water
+ᥐᥤᥢ ᥕᥣ,ၵိၼ်ယႃ,Take medicine
+ᥞᥥᥢᥰ ᥘᥤᥐ,ႁဵၼ်းလိၵ်ႈ,Study
+ᥔᥩᥢᥴ ᥘᥤᥐ,သွၼ်လိၵ်ႈ,Teach
+ᥘᥣᥭᥰ ᥛᥪᥴ,လၢႆးမိုဝ်း,Handwriting
+ᥓᥬ ᥔᥪᥢᥴ,ၸႂ်သိုဝ်ႈ,Honest heart
+ᥓᥬ ᥛᥦᥢ,ၸႂ်မႅၼ်ႈ,Righteous mind
+ᥓᥬ ᥔᥪᥢᥲ,ၸႂ်သိုၼ်ႇ,Happy heart
+ᥓᥬ ᥞᥦᥒᥰ,ၸႂ်ႁႅင်း,Strong will
+ᥕᥤᥢ ᥘᥤ,ယိၼ်းလီ,Glad/Welcome
+ᥕᥤᥢ ᥓᥨᥛᥰ,ယိၼ်းၸူမ်း,Congratulate
+ᥑᥣᥛᥰ ᥞᥐᥰ,ၶေႃႈၵႂၢမ်းႁၵ်ႉ,Love words
+ᥑᥣᥛᥰ ᥝᥣ,ၶေႃႈၵႂၢမ်းဝႃႈ,Saying/Proverb
+ᥘᥤᥐ ᥞᥩᥛᥰ,လိၵ်ႈႁွမ်,Poetry/Fragrant script
+ᥖᥣ ᥘᥤ,တႃလီ,Good eyes
+ᥛᥪᥴ ᥘᥤ,မိုဝ်းလီ,Good hand
+ᥖᥤᥢ ᥝᥭᥰ,တႅၼ်ဝႆး,Fast feet
+ᥞᥨᥝᥴ ᥘᥤ,ႁူဝ်လီ,Smart/Good head
+ᥐᥧᥢᥰ ᥓᥝᥲ,ၵူၼ်းၸဝ်ႈ,Holy person
+ᥐᥧᥢᥰ ᥞᥥᥖᥰ,ၵူၼ်းႁဵတ်း,Worker
+ᥐᥧᥢᥰ ᥞᥧᥳ,ၵူၼ်းႁူႉ,Wise person
+ᥐᥧᥢᥰ ᥛᥣᥰ,ၵူၼ်းမႃး,Visitor/The one who comes
+ᥛᥣᥢᥲ ᥐᥝᥱ,မၢၼ်ႇၵဝ်ႇ,Old village
+ᥛᥫᥒᥰ ᥛᥬᥱ,မိူင်းမႂ်ႇ,New country
+ᥑᥥᥴ ᥕႂᥲ,ၶဵဝ်ယႂ်ႇ,Big river
+ᥘᥩᥭ ᥔᥧᥒᥴ,လွႆသုင်,High mountain
+ᥜᥣᥳ ᥘᥦᥒ,ၾႃႉလႅင်,Red sky
+ᥘᥤᥢ ᥑᥣᥝᥴ,လိၼ်ၶၢဝ်,White soil
+ᥛᥩᥐ ᥘᥤ,မွၵ်ႇလီ,Beautiful flower
+ᥛᥣᥐᥱ ᥝᥣᥢᥴ,မၢၵ်ႇဝၢၼ်,Sweet fruit
+ᥑᥝᥲ ᥞᥩᥢᥳ,ၶဝ်ႈႁွၼ်ႉ,Hot rice
+ᥢᥛᥳ ᥐᥖᥰ,ၼမ်ႉၵတ်း,Cold water
+ᥚᥐᥰ ᥛᥬᥱ,ၽၵ်းမႂ်ႇ,Fresh vegetable
+ᥛᥦᥝᥴ ᥘᥤ,မႅဝ်းလီ,Good cat
+ᥛᥣ ᥞᥣᥢᥴ,မႃႁၢၼ်,Brave dog
+ᥛᥣᥳ ᥝᥭᥰ,မႃႉဝႆး,Fast horse
+ᥒᥫᥐᥰ ᥕႂᥲ,ငိူၵ်ႈယႂ်ႇ,Big dragon
+ᥔᥫᥴ ᥘᥨᥒᥴ,သိုဝ်းလူင်,Great tiger
+ᥘᥨᥖ ᥛᥬᥱ,လူတ်ႉမႂ်ႇ,New vehicle
+ᥞᥫᥢᥰ ᥕႂᥲ,ႁိူၼ်းယႂ်ႇ,Big house
+ᥔᥫᥴ ᥑᥝᥴ,ၶူဝ်းၶဝ်,Their clothes
+ᥔᥣᥭᥴ ᥑᥣᥝᥴ,သၢႆၶၢဝ်,White string
+ᥖᥣᥝᥰ ᥔᥦᥒᥴ,လၢဝ်သႅင်,Bright star
+ᥘᥦᥖ ᥔᥧᥒᥴ,လႅတ်ႇသုင်,High sun
+ᥜᥨᥢᥴ ᥘᥨᥒᥴ,ၾူၼ်လူင်,Heavy rain
+ᥘᥨᥛᥰ ᥘᥤ,လူမ်းလီ,Good breeze
+ᥕᥣᥛᥰ ᥢᥭᥳ,ယၢမ်းၼႆႉ,This time
+ᥛᥫ ᥢᥢᥳ,မိူဝ်ႈၼၼ်ႉ,At that time
+ᥐᥧ ᥝᥢᥰ,ၵူႈဝၼ်း,Every day
+ᥐᥧ ᥛᥫ,ၵူႈမိူဝ်ႈ,Every time
+ᥖᥦᥛᥲ ᥘᥤᥐ,တႅမ်ႈလိၵ်ႈ,To write
+ᥚᥖ ᥘᥤᥐ,ၽတ်းလိၵ်ႈ,To read
+ᥞᥥᥖᥰ ᥐᥣᥢ,ႁဵတ်းၵၢၼ်,To work
+ᥔᥣᥒᥲ ᥞᥫᥢᥰ,သၢင်ႈႁိူၼ်း,To build a house
+ᥔᥪᥳ ᥑᥝᥲ,သိုဝ်ႉၶဝ်ႈ,Buy rice
+ᥑᥣᥭᥴ ᥚᥐᥰ,ၶၢႆၽၵ်း,Sell vegetables
+ᥘᥦᥐ ᥑᥩᥒᥴ,လႅၵ်ႈၶွင်,Exchange things
+ᥕᥧᥛᥱ ᥐᥢ,ယုမ်ႇၵၼ်,Trust each other
+ᥞᥐᥰ ᥐᥢ,ႁၵ်ႉၵၼ်,Love each other
+ᥙᥦᥒᥰ ᥐᥢ,ᥙᥦᥒᥰ ၵၼ်,Cherish each other
+ᥓᥨᥛᥰ ᥐᥢ,ၸူမ်းၵၼ်,Celebrate together
+ᥖᥣᥢᥲ ᥐᥢ,တၢၼ်းၵၼ်,Speak together
+ᥘᥣᥖ ᥘᥤ,လၢတ်ႈလီ,Speak kindly
+ᥞᥩᥒᥳ ᥘᥤᥐ,ႁွင်ႉလိၵ်ႈ,Recite script
+ᥕᥤᥢ ᥔᥥᥒᥴ,ယိၼ်းသဵင်,Hear a sound
+ᥞᥢᥴ ᥘᥣᥲ,ႁၼ်ၼႃႈ,See the face
+ᥞᥧᥳ ᥓᥬ,ႁူႉၸႂ်,Know the mind
+ᥛᥦᥢ ᥓᥬ,မႅၼ်ႈၸႂ်,Satisfied
+ᥚᥤᥖᥰ ᥓᥬ,ၽိတ်းၸႂ်,Offended/Sad
+ᥘᥨᥝᥴ ᥐᥢ,လူဝ်ႇၵၼ်,Need each other
+ᥕᥝᥳ ᥐᥣᥱ,ယဝ်ႉၵႂႃႇ,Finished/Passed
+ᥛᥣᥰ ᥕᥝᥳ,မႃးယဝ်ႉ,Already come
+ᥐᥣᥱ ᥕᥝᥳ,ၵႂႃႇယဝ်ႉ,Already gone
+ᥘᥤ ᥢᥣᥱ,လီၼႃႇ,Very good
+ᥞᥣᥭᥳ ᥢᥣᥱ,ႁၢႆႉၼႃႇ,Very bad
+ᥕႂᥲ ᥢᥣᥱ,ယႂ်ႇၼႃႇ,Very big
+ᥘᥥᥐ ᥢᥣᥱ,လႅၵ်ႈၼႃႇ,Very small
+ᥔᥧᥒᥴ ᥢᥣᥱ,သုင်ၼႃႇ,Very high
+ᥖᥛᥱ ᥢᥣᥱ,တႅမ်ႇၼႃႇ,Very low
+ᥝᥭᥰ ᥢᥣᥱ,ဝႆးၼႃႇ,Very fast
+ᥘᥪᥖᥰ ᥢᥣᥱ,ၼိုၵ်းၼႃႇ,Very slow
+ᥞᥩᥢᥳ ᥢᥣᥱ,ႁွၼ်ႉၼႃႇ,Very hot
+ᥐᥖᥰ ᥢᥣᥱ,ၵတ်းၼႃႇ,Very cold
+ᥛᥬᥱ ᥢᥣᥱ,မႂ်ႇၼႃႇ,Very new
+ᥐᥝᥱ ᥢᥣᥱ,ၵဝ်ႇၼႃႇ,Very old
+TDD,SHN,ENG
+ᥛᥦ ᥞᥫᥢᥰ,မႄႈႁိူၼ်း,Housewife
+ᥙᥨᥝᥱ ᥞᥫᥢᥰ,ပေႃႈႁိူၼ်း,Househusband/Head of house
+ᥘᥧᥐ ᥓᥣᥭᥰ,လုၵ်ႈၸၢႆး,Son
+ᥘᥧᥐ ᥕᥤᥒᥰ,လုၵ်ႈယိင်း,Daughter
+ᥙᥤ ᥓᥣᥭᥰ,ပီႈၸၢႆး,Older brother
+ᥙᥤ ᥢᥣᥒᥰ,ပီႈၼၢင်း,Older sister
+ᥢᥩᥒᥳ ᥓᥣᥭᥰ,ၼွင်ႉၸၢႆး,Younger brother
+ᥢᥩᥒᥳ ᥕᥤᥒᥰ,ၼွင်ႉယိင်း,Younger sister
+ᥙᥨᥝᥱ ᥘᥨᥒᥴ,ပူႇလူင်,Grandfather
+ᥛᥦ ᥘᥨᥒᥴ,မႄႈလူင်,Grandmother
+ᥘᥣᥢᥴ ᥓᥣᥭᥰ,လၢၼ်ၸၢႆး,Grandson
+ᥘᥣᥢᥴ ᥕᥤᥒᥰ,လၢၼ်ယိင်း,Granddaughter
+ᥐᥧᥢᥰ ᥛᥝᥱ,ၵူၼ်းမၢဝ်ႇ,Young man
+ᥐᥧᥢᥰ ᥔᥣᥝ,ၵူၼ်းသၢဝ်,Young woman
+ᥐᥧᥢᥰ ᥐᥦᥲ,ၵူၼ်းၵႄႇ,Elder/Old person
+ᥐᥧᥢᥰ ᥙᥦᥖ,ၵူၼ်းပႅတ်ႈ,Outcast
+ᥑᥣᥛᥰ ᥔᥩᥢᥴ,ၶေႃႈသွၼ်,Teaching/Advice
+ᥑᥣᥛᥰ ᥛᥣᥭᥴ,ၶေႃႈမၢႆ,Promise/Note
+ᥘᥤᥐ ᥔᥣᥢᥴ,လိၵ်ႈသၢၼ်,Message/Letter
+ᥘᥤᥐ ᥞᥩᥛᥰ,လိၵ်ႈႁွမ်,Poem/Literature
+ᥓᥬ ᥐᥖᥰ,ၸႂ်ၵတ်း,Calm mind
+ᥓᥬ ᥞᥩᥢᥳ,ၸႂ်ႁွၼ်ႉ,Impatient/Hot-headed
+ᥓᥬ ᥑᥦၼ်ᥰ,ၸႂ်ၶႅၼ်း,Determined
+ᥓᥬ ᥔᥣᥭᥴ,ၸႂ်သၢႆ,Pure heart
+ᥢᥛᥳ ᥖᥣ,ၼမ်ႉတႃ,Tears
+ᥢᥛᥳ ᥘᥣᥭᥰ,ၼမ်ႉလၢႆး,Saliva
+ᥢᥛᥳ ᥚᥪᥒᥲ,ၼမ်ႉၽိုင်ႈ,Honey
+ᥢᥛᥳ ᥛᥩᥐ,ၼမ်ႉမွၵ်ႇ,Dew
+ᥚᥐᥰ ᥐᥣᥖ,ၽၵ်းၵၢတ်ႇ,Mustard green
+ᥚᥐᥰ ᥛᥤᥴ,ၽၵ်းမီႇ,Noodles/Garlic
+ᥑᥝᥲ ᥔᥣᥢᥴ,ၶဝ်ႈသၢၼ်,Raw rice
+ᥑᥝᥲ ᥔᥧᥐ,ၶဝ်ႈသုၵ်း,Cooked rice
+ᥛᥣᥐᥱ ᥐᥨᥝᥲ,မၢၵ်ႇၵူၺ်ႈ,Banana
+ᥛᥣᥐᥱ ᥚᥥᥖᥰ,မၢၵ်ႇၽိတ်း,Chili
+ᥖᥨᥝ ᥕႂᥲ,တူဝ်ယႂ်ႇ,Big body/Large size
+ᥖᥨᥝ ᥢᥩᥭᥲ,တူဝ်ၼွႆႉ,Small body/Small size
+ᥞᥨᥝᥴ ᥛᥪᥴ,ႁူဝ်မိုဝ်း,Thumb
+ᥞᥨᥝᥴ ᥖᥤᥢ,ႁူဝ်တႅၼ်,Toe
+ᥘᥩᥭ ᥑᥣᥝᥴ,လွႆၶၢဝ်,White mountain/Snowy peak
+ᥑᥥᥴ ᥘᥛᥴ,ၶဵဝ်ၼမ်,Deep river
+ᥛᥣᥢᥲ ᥢᥩᥭᥲ,မၢၼ်ႇၼွႆႉ,Small village
+ᥛᥫᥒᥰ ᥕႂᥲ,မိူင်းယႂ်ႇ,Big city/Great nation
+ᥜᥣᥳ ᥘᥨᥛᥰ,ၾႃႉလူမ်း,Windy sky
+ᥘᥤᥢ ᥛᥬᥱ,လိၼ်မႂ်ႇ,New land
+ᥝᥢᥰ ᥘᥤ,ဝၼ်းလီ,Auspicious day
+ᥘᥫᥢ ᥛᥬᥱ,လိူၼ်မႂ်ႇ,New moon
+ᥙᥤ ᥐᥝᥱ,ပီၵဝ်ႇ,Old year
+ᥕᥣᥛᥰ ᥑᥛᥲ,ယၢမ်းၶမ်ႈ,Evening time
+ᥕᥣᥛᥰ ᥢᥬᥲ,ယၢမ်းၼႂ်,Morning time
+ᥐᥧ ᥛᥫᥒᥰ,ၵူႈမိူင်း,Every country
+ᥐᥧ ᥞᥫᥢᥰ,ၵူႈႁိူၼ်း,Every house
+ᥞᥥᥖᥰ ᥘᥤ,ႁဵတ်းလီ,Do good
+ᥔᥣᥒᥲ ᥘᥤ,သၢင်ႈလီ,Build well
+ᥖᥦᥛᥲ ᥝᥭᥰ,တႅမ်ႈဝႆး,Write quickly
+ᥚᥖ ᥝᥭᥰ,ၽတ်းဝႆး,Read quickly
+ᥔᥩᥢᥴ ᥝᥭᥰ,သွၼ်ဝႆး,Teach quickly
+ᥞᥥᥢᥰ ᥝᥭᥰ,ႁဵၼ်းဝႆး,Learn quickly
+ᥛᥣᥰ ᥐᥢ,မႃးၵၼ်,Come together
+ᥐᥣᥱ ᥐᥢ,ၵႂႃႇၵၼ်,Go together
+ᥕᥧᥱ ᥐᥢ,ယူႇၵၼ်,Live together
+ᥐᥤᥢ ᥐᥢ,ၵိၼ်ၵၼ်,Eat together
+ᥢᥢᥳ ᥘᥦᥲ,ၼၼ်ႉလႄႈ,Therefore/Because of that
+ᥢᥭᥳ ᥘᥦᥲ,ၼႆႉလႄႈ,So/And this
+ᥓᥬ ᥞᥐᥰ,ၸႂ်ႁၵ်ႉ,Loving heart
+ᥓᥬ ᥙᥦᥒᥰ,ၸႂ်ᥙᥦᥒᥰ,Caring heart
+ᥞᥧᥳ ᥓᥩᥛᥰ,ႁူႉၸွမ်း,To follow/Be aware
+ᥞᥢᥴ ᥓᥩᥛᥰ,ႁၼ်ၸွမ်း,To agree/See along
+ᥝᥣ ᥘᥤ,ဝႃႈလီ,To speak well
+ᥖᥣᥢᥲ ᥘᥤ,တၢၼ်းလီ,To talk well
+ᥛᥤᥰ ᥢᥛᥴ,မီးၼမ်,Have many/much
+ᥛᥤᥰ ᥢᥩᥭᥲ,မီးၼွႆႉ,Have few/little
+ᥖᥤᥲ ᥢᥭᥳ,တီႈၼႆႉ,Here/At this place
+ᥖᥤᥲ ᥢᥢᥳ,တီႈၼၼ်ႉ,There/At that place
+ᥘᥫᥴ ᥞᥫᥢᥰ,ၼိူဝ်ႁိူၼ်း,Upstairs/On the house
+ᥖᥦᥢᥰ ᥞᥫᥢᥰ,တႂ်ႈႁိူၼ်း,Downstairs/Under the house
+ᥓႂᥳ ᥘᥤ,ၸႂ်ႉလီ,Useful/Good to use
+ᥘᥩᥒ ᥞᥐᥰ,လွင်ႈႁၵ်ႉ,About love
+ᥐᥧ ᥑᥣᥛᥰ,ၵူႈၶေႃႈ,Every word
+ᥛᥫ ᥐᥝᥱ,မိူဝ်ႈၵဝ်ႇ,In the past
+ᥛᥫ ᥛᥬᥱ,မိူဝ်ႈမႂ်ႇ,Recently/Modern time
+ᥕᥣᥛᥰ ᥘᥤᥐ,ယၢမ်းလိၵ်ႈ,Study time
+ᥞᥥᥖᥰ ᥐᥣᥢ,ႁဵတ်းၵၢၼ်,To work
+ᥔᥝᥰ ᥕᥧᥱ,သဝ်းယူႇ,Staying/Residing
+ᥘᥣᥭᥴ ᥖᥨᥝ,လၢႆတူဝ်,Many pieces/animals
+ᥖᥥᥴ ᥛᥣᥰ,တေမႃး,Will come
+ᥖᥥᥴ ᥐᥣᥱ,တေၵႂႃႇ,Will go
+ᥞᥬᥲ ᥛᥣᥰ,ႁႂ်ႈမႃး,Let (them) come
+ᥞᥬᥲ ᥐᥣᥱ,ႁႂ်ႈၵႂႃႇ,Let (them) go
+ᥞᥣᥒᥴ ᥛᥬᥱ,ႁၢင်ႈမႂ်ႇ,New look/format
+ᥖᥦᥳ ᥢᥣᥱ,တႄႉၼႃႇ,Truly/Very much
+ᥖᥣᥱ ᥞᥝᥰ,တႃႇႁဝ်း,For us
+ᥖᥣᥱ ᥛᥬᥰ,တႃႇမႂ်း,For you
+ᥔᥥᥴ ᥐᥣᥱ,သေၵႂႃႇ,And then go
+ᥞᥣᥳ ᥢᥭᥳ,ႁႃႉၼႆႉ,Is it this?
+ᥓᥩᥛᥰ ᥘᥤ,ၸွမ်းလီ,Follow well
+ᥢᥛᥴ ᥘᥣᥭᥴ,ၼမ်လၢႆ,Abundant/Many
+ᥘᥩᥭ ᥕႂᥲ,လွႆယႂ်ႇ,Big mountain
+ᥢᥣᥛᥰ ᥘᥤ,ၼႃးလီ,Good rice field
+ᥑᥝᥲ ᥝᥣᥢᥴ,ၶဝ်ႈဝၢၼ်,Delicious rice
+ᥢᥛᥳ ᥘᥤ,ၼမ်ႉလီ,Good water
+TDD,SHN,ENG
+ᥛᥬᥱ ᥔᥧᥒᥴ ᥑᥣᥳ,မႂ်ႇသုင်ၶႃႈ,Hello (polite)
+ᥕᥤᥢ ᥘᥤ ᥢᥣᥱ,ယိၼ်းလီၼႃႇ,Very welcome
+ᥐᥤᥢ ᥑᥝᥲ ᥕᥝᥳ,ၵိၼ်ၶဝ်ႈယဝ်ႉ,Finished eating
+ᥐᥣᥱ ᥘᥭᥴ ᥛᥣᥰ,ၵႂႃႇလၢႆမႃး,Where have you been?
+ᥞᥥᥖᥰ ᥔᥒᥴ ᥕᥧᥱ,ႁဵတ်းသၢင်ႇယူႇ,What are you doing?
+ᥛᥫ ᥚᥧᥐ ᥖᥥᥴ ᥐᥣᥱ,မိူဝ်ႈၽုၵ်ႈတေၵႂႃႇ,Will go tomorrow
+ᥞᥝᥰ ᥞᥐᥰ ᥐᥢ,ႁဝ်းႁၵ်ႉၵၼ်,We love each other
+ᥘᥤᥐ ᥖᥭᥰ ᥘᥫᥴ,လိၵ်ႈတႆးတႂ်း,Tai Nuea script
+ᥛᥫᥒᥰ ᥖᥭᥰ ᥞᥝᥰ,မိူင်းတႆးႁဝ်း,Our Shan State
+ᥐᥧᥢᥰ ᥛᥣᥢᥲ ᥞᥝᥰ,ၵူၼ်းမၢၼ်ႇႁဝ်း,Our villagers
+ᥞᥫᥢᥰ ᥕᥝᥰ ᥘᥤ,ႁိူၼ်းယဝ်ႉလီ,Good household
+ᥔᥩᥢᥴ ᥘᥤᥐ ᥖᥭᥰ,သွၼ်လိၵ်ႈတႆး,Teaching Tai script
+ᥞᥥᥢᥰ ᥘᥤᥐ ᥖᥭᥰ,ႁဵၼ်းလိၵ်ႈတႆး,Studying Tai script
+ᥢᥛᥳ ᥑᥥᥴ ᥘᥨᥒᥴ,ၼမ်ႉၶဵဝ်လူင်,Great river
+ᥘᥩᥭ ᥔᥧᥒᥴ ᥢᥣᥱ,လွႆသုင်ၼႃႇ,Very high mountain
+ᥝᥢᥰ ᥘᥤ ᥖᥦᥳ,ဝၼ်းလီတႄႉ,Truly a good day
+ᥕᥤᥢ ᥓᥨᥛᥰ ᥢᥣᥱ,ယိၼ်းၸူမ်းၼႃႇ,Very happy/glad
+ᥓᥬ ᥘᥤ ᥖᥦᥳ,ၸႂ်လီတႄႉ,Truly kind-hearted
+ᥛᥣᥰ ᥢᥭᥳ ᥘᥦᥲ,မႃးၼႆႉလႄႈ,Please come here
+ᥕᥣᥱ ᥐᥣᥱ ᥘᥦᥲ,ယႃႇၵႂႃႇလႄႈ,Please don't go
+ᥐᥤᥢ ᥑᥝᥲ ᥝᥣᥢᥴ,ၵိၼ်ၶဝ်ႈဝၢၼ်,Eat delicious rice
+ᥢᥛᥳ ᥛᥢᥰ ᥘᥨᥖ,ၼမ်ႉမၼ်းလူတ်ႉ,Car fuel/oil
+ᥚᥐᥰ ᥐᥣᥖ ᥘᥤ,ၽၵ်းၵၢတ်ႇလီ,Good cabbage
+ᥛᥣᥐᥱ ᥝᥣᥢᥴ ᥢᥣᥱ,မၢၵ်ႇဝၢၼ်ၼႃႇ,Very sweet fruit
+ᥞᥐᥰ ᥛᥬᥰ ᥢᥣᥱ,ႁၵ်ႉမႂ်းၼႃႇ,Love you so much
+ᥖᥦᥛᥲ ᥘᥤᥐ ᥞᥣᥳ,တႅမ်ႈလိၵ်ႈႁႃႉ,Writing a letter?
+ᥚᥖ ᥘᥤᥐ ᥘᥤ,ၽတ်းလိၵ်ႈလီ,Read well
+ᥕᥧᥛᥱ ᥓᥬ ᥐᥢ,ယုမ်ႇၸႂ်ၵၼ်,Trust each other
+ᥓᥩᥛᥰ ᥐᥢ ᥐᥣᥱ,ၸွမ်းၵၼ်ၵႂႃႇ,Go together
+ᥛᥣᥰ ᥓᥩᥛᥰ ᥐᥢ,မႃးၸွမ်းၵၼ်,Come together
+ᥘᥩᥢᥰ ᥘᥤ ᥞᥣᥳ,ၼွၼ်းလီႁႃႉ,Sleep well?
+ᥖᥪᥢᥱ ᥝᥭᥰ ᥖᥦᥳ,တိုၼ်ႇဝႆးတႄႉ,Wake up very early
+ᥞᥣᥒᥴ ᥘᥤ ᥢᥣᥱ,ႁၢင်ႈလီၼႃႇ,Very beautiful
+ᥛᥬᥱ ᥔᥧᥒᥴ ᥐᥧ ᥐᥩᥲ,မႂ်ႇသုင်ၵူႈၵေႃႉ,Hello everyone
+ᥕᥤᥢ ᥘᥤ ᥞᥨᥛᥰ ᥓᥨᥛᥰ,ယိၼ်းလီႁူမ်ၸူမ်း,Warm welcome
+ᥛᥫᥒᥰ ᥖᥭᥰ ᥘᥤ,မိူင်းတႆးလီ,Shan State is good
+ᥘᥤᥐ ᥖᥭᥰ ᥞᥝᥰ,လိၵ်ႈတႆးႁဝ်း,Our Tai script
+ᥐᥧᥢᥰ ᥖᥭᥰ ᥘᥫᥴ,ၵူၼ်းတႆးတႂ်း,Tai Nuea people
+ᥑᥣᥛᥰ ᥘᥣᥖ ᥘᥤ,ၶေႃႈလၢတ်ႈလီ,Kind words
+ᥞᥨᥝᥴ ᥓᥬ ᥞᥐᥰ,ႁူဝ်ၸႂ်ႁၵ်ႉ,Loving heart
+ᥔᥣᥭᥴ ᥓᥬ ᥕᥣᥝᥰ,သၢႆၸႂ်ယၢဝ်း,Long life
+ᥝᥢᥰ ᥘᥤ ᥕᥣᥛᥰ ᥘᥤ,ဝၼ်းလီယၢမ်းလီ,Good day and time
+ᥐᥤᥢ ᥑᥝᥲ ᥐᥢ,ၵိၼ်ၶဝ်ႈၵၼ်,Eat together
+ᥐᥣᥱ ᥞᥥᥢᥰ ᥘᥤᥐ,ၵႂႃႇႁဵၼ်းလိၵ်ႈ,Go to study
+ᥛᥣᥰ ᥞᥥᥖᥰ ᥐᥣᥢ,မႃးႁဵတ်းၵၢၼ်,Come to work
+ᥔᥪᥳ ᥑᥩᥒᥴ ᥛᥬᥱ,သိုဝ်ႉၶွင်မႂ်ႇ,Buy new things
+ᥑᥣᥭᥴ ᥑᥩᥒᥴ ᥘᥤ,ၶၢႆၶွင်လီ,Sell goods well
+ᥓᥬ ᥔᥪᥢᥴ ᥛᥦᥢ,ၸႂ်သိုဝ်ႈမႅၼ်ႈ,Honest and right
+ᥞᥐᥰ ᥙᥦᥒᥰ ᥐᥢ,ႁၵ်ႉᥙᥦᥒᥰ ၵၼ်,Cherish each other
+ᥕᥤᥢ ᥓᥨᥛᥰ ᥖᥦᥳ,ယိၼ်းၸူမ်းတႄႉ,Truly happy
+ᥛᥫ ᥢᥬᥲ ᥘᥤ,မိူဝ်ႈၼႂ်လီ,Good morning
+ᥛᥫ ᥑᥛᥲ ᥘᥤ,မိူဝ်ႈၶမ်ႈလီ,Good evening
+ᥛᥫ ᥑᥪᥢᥰ ᥘᥤ,မိူဝ်ႈၶိုၼ်းလီ,Good night
+ᥐᥧ ᥝᥢᥰ ᥘᥤ,ၵူႈဝၼ်းလီ,Every day is good
+ᥐᥧ ᥛᥫ ᥘᥤ,ၵူႈမိူဝ်ႈလီ,Always good
+ᥞᥫᥢᥰ ᥞᥝᥰ ᥘᥤ,ႁိူၼ်းႁဝ်းလီ,Our house is good
+ᥛᥣᥢᥲ ᥞᥝᥰ ᥘᥤ,မၢၼ်ႇႁဝ်းလီ,Our village is good
+ᥘᥨᥖ ᥛᥬᥱ ᥘᥤ,လူတ်ႉမႂ်ႇလီ,New car is good
+ᥔᥪᥳ ᥛᥬᥱ ᥘᥤ,သိုဝ်ႉမႂ်ႇလီ,New clothes are good
+ᥐᥤᥢ ᥢᥛᥳ ᥝᥣᥢᥴ,ၵိၼ်ၼမ်ႉဝၢၼ်,Drink sweet water
+ᥚᥐᥰ ᥐᥤᥢ ᥘᥤ,ၽၵ်းၵိၼ်လီ,Good food
+ᥛᥣᥐᥱ ᥐᥤᥢ ᥝᥣᥢᥴ,မၢၵ်ႇၵိၼ်ဝၢၼ်,Sweet fruit to eat
+ᥖᥣ ᥝᥢᥰ ᥟᥩᥐ,တႃဝၼ်းဢွၵ်ႇ,Sunrise/East
+ᥖᥣ ᥝᥢᥰ ᥖᥨᥐᥰ,တႃဝၼ်းတူၵ်း,Sunset/West
+ᥘᥫᥢ ᥘᥦᥒ ᥘᥤ,လိူၼ်လႅင်လီ,Beautiful red moon
+ᥙᥤ ᥛᥬᥱ ᥘᥤ,ပီမႂ်ႇလီ,Good new year
+ᥘᥩᥭ ᥔᥧᥒᥴ ᥘᥨᥒᥴ,လွႆသုင်လူင်,Great high mountain
+ᥑᥥᥴ ᥕᥣᥝᥰ ᥘᥨᥒᥴ,ၶဵဝ်ယၢဝ်းလူင်,Great long river
+ᥜᥨᥢᥴ ᥖᥨᥐᥰ ᥢᥛᥴ,ၾူၼ်တူၵ်းၼမ်,Heavy rain
+ᥘᥨᥛᥰ ᥘᥤ ᥢᥣᥱ,လူမ်းလီၼႃႇ,Very good breeze
+ᥖᥣᥝᥰ ᥘᥦᥒ ᥘᥤ,လၢဝ်လႅင်လီ,Beautiful red star
+ᥛᥩᥐ ᥘᥤ ᥖᥦᥳ,မွၵ်ႇလီတႄႉ,Truly beautiful flower
+ᥛᥣᥳ ᥘᥦᥢᥲ ᥝᥭᥰ,မႃႉလႅၼ်ႈဝႆး,Horse runs fast
+ᥛᥦᥝᥴ ᥢᥩᥭᥲ ᥘᥤ,မႅဝ်းၼွႆႉလီ,Good kitten
+ᥛᥣ ᥞᥣᥢᥴ ᥢᥣᥱ,မႃႁၢၼ်ၼႃႇ,Very brave dog
+ᥐᥭᥱ ᥑᥢᥴ ᥝᥭᥰ,ၵႆႇၶၼ်ဝႆး,Rooster crows early
+ᥙᥣ ᥕႂᥲ ᥢᥣᥱ,ပႃယႂ်ႇၼႃႇ,Very big fish
+ᥔᥫᥴ ᥞᥣᥭᥳ ᥘᥨᥒᥴ,သိုဝ်းႁၢႆႉလူင်,Great fierce tiger
+ᥔᥣᥒᥳ ᥕႂᥲ ᥘᥨᥒᥴ,သၢင်ႉယႂ်ႇလူင်,Great big elephant
+ᥝᥨᥝᥰ ᥐᥣᥢᥰ ᥘᥤ,ဝူဝ်းၵၢၼ်းလီ,Good working ox
+ᥑᥝᥭᥴ ᥢᥛᥳ ᥘᥤ,ၵႂၢႆးၼမ်ႉလီ,Good water buffalo
+ᥢᥨᥐ ᥞᥩᥒᥳ ᥘᥤ,ၼၵ်ႉႁွင်ႉလီ,Bird sings well
+ᥛᥦᥒᥰ ᥙᥧᥲ ᥢᥛᥴ,မႅင်းၽိုင်ႈၼမ်,Many bees
+ᥒᥧᥴ ᥞᥣᥭᥳ ᥢᥣᥱ,ငူႁၢႆႉၼႃႇ,Very poisonous snake
+ᥘᥧᥴ ᥢᥩᥭᥲ ᥝᥭᥰ,ၼူၼွႆႉဝႆး,Small fast rat
+ᥐᥣ ᥞᥩᥒᥳ ᥢᥛᥴ,ၵႃႁွင်ႉၼမ်,Crows calling a lot
+ᥙᥥᥖᥰ ᥘᥩᥢᥰ ᥘᥤ,ပဵတ်းၼွၼ်းလီ,Duck sleeps well
+ᥞᥫᥢᥰ ᥛᥬᥱ ᥘᥤ,ႁိူၼ်းမႂ်ႇလီ,New house is good
+ᥘᥨᥖ ᥛᥬᥱ ᥝᥭᥰ,လူတ်ႉမႂ်ႇဝႆး,New car is fast
+ᥔᥪᥳ ᥛᥬᥱ ᥘᥤ,သိုဝ်ႉမႂ်ႇလီ,New shirt is good
+ᥛᥩᥢᥰ ᥘᥩᥢᥰ ᥘᥤ,မွၼ်းၼွၼ်းလီ,Good sleeping pillow
+ᥚᥦᥢᥱ ᥘᥤᥢ ᥕႂᥲ,လိၼ်ၽႅၼ်ႇယႂ်ႇ,Big earthquake
+ᥔᥣᥖ ᥢᥩᥢᥰ ᥘᥤ,သၢတ်ႇၼွၼ်းလီ,Good sleeping mat
+ᥓᥩᥢᥰ ᥐᥤᥢ ᥑᥝᥲ,ၸွၼ်းၵိၼ်ၶဝ်ႈ,Rice eating spoon
+ᥗᥨᥝᥱ ᥐᥤᥢ ᥚᥐᥰ,ထူၺ်ႇၵိၼ်ၽၵ်း,Vegetable bowl
+ᥛᥨᥝᥲ ᥖᥨᥛᥰ ᥑᥝᥲ,မေႃႈတူမ်းၶဝ်ႈ,Rice cooking pot
+ᥛᥤᥖᥰ ᥑᥨᥛ ᥢᥣᥱ,မိတ်းၶူမ်ၼႃႇ,Very sharp knife
+ᥑᥨᥝᥴ ᥕᥣᥝᥰ ᥘᥤ,ၶူဝ်ယၢဝ်းလီ,Good long bridge
+ᥖᥧ ᥞᥫᥢᥰ ᥘᥤ,တူႁိူၼ်းလီ,Good house door
+ᥢᥣᥱ ᥘᥤᥱ ᥝᥭᥰ,ၼႃႇလိၵ်ႈဝႆး,Clock is fast
+ᥑᥦၼ်ᥴ ᥘᥤ ᥖᥦᥳ,ၵႅဝ်လီတႄႉ,Truly good gem
+ᥔᥦᥒᥴ ᥘᥦᥖ ᥞᥩᥢᥳ,သႅင်လႅတ်ႇႁွၼ်ႉ,Hot sunlight
+ᥚᥨᥝᥱ ᥘᥤᥐ ᥢᥛᥴ,ၽိုၼ်လိၵ်ႈၼမ်,Many documents
+ᥖᥒᥱ ᥔᥧᥒᥴ ᥘᥤ,တင်ႇသုင်လီ,Good high chair
+ᥔᥩᥭᥳ ᥑᥩᥢᥰ ᥘᥤ,သွႆႉၶွၼ်းလီ,Good necklace
+ᥘᥦᥒ ᥓᥥᥖᥰ ᥘᥤ,လႅင်ၸႅတ်းလီ,Beautiful bright red
+ᥑᥣᥝᥴ ᥓᥥᥖᥰ ᥘᥤ,ၶၢဝ်ၸႅတ်းလီ,Beautiful pure white
+ᥘᥛᥴ ᥓᥥᥖᥰ ᥘᥤ,ၼမ်ႉၸႅတ်းလီ,Beautiful pitch black
+ᥘᥫᥒ ᥓᥥᥖᥰ ᥘᥤ,လိူင်ၸႅတ်းလီ,Beautiful bright yellow
+ᥑᥥᥝᥴ ᥓᥥᥖᥰ ᥘᥤ,ၶဵဝ်ၸႅတ်းလီ,Beautiful bright green
+ᥛᥨᥝᥱ ᥓᥥᥖᥰ ᥘᥤ,မူင်ႈၸႅတ်းလီ,Beautiful bright purple
+ᥔᥥᥒᥴ ᥞᥩᥒᥳ ᥘᥤ,သဵင်ႁွင်ႉလီ,Beautiful singing voice
+ᥞᥩᥢᥳ ᥢᥣᥱ ᥖᥦᥳ,ႁွၼ်ႉၼႃႇတႄႉ,Truly very hot
+ᥐᥖᥰ ᥢᥣᥱ ᥖᥦᥳ,ၵတ်းၼႃႇတႄႉ,Truly very cold
+ᥘᥤ ᥢᥣᥱ ᥖᥦᥳ,လီၼႃႇတႄႉ,Truly very good
+ᥞᥣᥭᥳ ᥢᥣᥱ ᥖᥦᥳ,ႁၢႆႉၼႃႇတႄႉ,Truly very bad
+ᥛᥬᥱ ᥢᥣᥱ ᥖᥦᥳ,မႂ်ႇၼႃႇတႄႉ,Truly very new
+ᥐᥝᥱ ᥢᥣᥱ ᥖᥦᥳ,ၵဝ်ႇၼႃႇတႄႉ,Truly very old
+ᥕᥣᥝᥰ ᥢᥣᥱ ᥖᥦᥳ,ယၢဝ်းၼႃႇတႄႉ,Truly very long
+ᥖᥪᥢᥲ ᥢᥣᥱ ᥖᥦᥳ,တႅမ်ႇၼႃႇတႄႉ,Truly very short
+ᥘᥛᥴ ᥢᥣᥱ ᥖᥦᥳ,ၼမ်ၼႃႇတႄႉ,Truly very many
+ᥢᥩᥭᥲ ᥢᥣᥱ ᥖᥦᥳ,ၼွႆႉၼႃႇတႄႉ,Truly very few
+ᥕႂᥲ ᥢᥣᥱ ᥖᥦᥳ,ယႂ်ႇၼႃႇတႄႉ,Truly very big
+ᥔᥦၼ်ᥴ ᥘᥤ ᥖᥦᥳ,သႅၼ်လီတႄႉ,Truly a hundred thousand good
+ᥛᥦᥢ ᥢᥣᥱ ᥖᥦᥳ,မႅၼ်ႈၼႃႇတႄႉ,Truly very correct
+ᥘᥤᥐ ᥖᥭᥰ ᥘᥤ,လိၵ်ႈတႆးလီ,Tai script is good
+ᥑᥣᥛᥰ ᥖᥭᥰ ᥝᥣᥢᥴ,ၶေႃႈၵႂၢမ်းတႆးဝၢၼ်,Tai language is sweet
+ᥢᥫᥒ ᥔᥩᥒᥴ ᥔᥣᥛᥴ,ၼိုင်ႈသွင်သၢမ်,One two three
+ᥔᥤᥱ ᥣᥲ ᥞᥨᥐᥰ,သီႇႁႃႈႁုၵ်း,Four five six
+ᥓᥥᥖᥰ ᥙᥦᥖᥰ ᥐᥝᥲ,ၸႅတ်းแปတ်းၵဝ်ႇ,Seven eight nine
+ᥔᥤᥙ ᥟᥥᥖᥰ ᥔᥤᥙ ᥔᥩᥒᥴ,သိပ်းဢဵတ်းသိုပ်းသွင်,Eleven twelve
+ᥙᥣᥐᥱ ᥞᥥᥒᥴ ᥛᥫᥢᥱ,ပၢၵ်ႇႁဵᥒ်းမိုၼ်ႇ,Hundred thousand ten-thousand
+ᥔᥦၼ်ᥴ ᥘᥣᥢᥳ ᥐᥨᥝᥖᥰ,သႅၼ်လၢၼ်ႉၵူတ်ႉ,Hundred-thousand million ten-million
+ᥓᥧᥛᥰ ᥞᥝᥰ ᥘᥤ,ၸုမ်းႁဝ်းလီ,Our group is good
+ᥞᥐᥰ ᥢᥣᥱ ᥖᥦᥳ,ႁၵ်ႉၼႃႇတႄႉ,Truly love so much
+ᥙᥦᥒᥰ ᥢᥣᥱ ᥖᥦᥳ,ᥙᥦᥒᥰ ၼႃႇတႄႉ,Truly cherish so much
+ᥓᥨᥛᥰ ᥢᥣᥱ ᥖᥦᥳ,ၸူမ်းၼႃႇတႄႉ,Truly very happy
+ᥕᥤᥢ ᥘᥤ ᥢᥣᥱ,ယိၼ်းလီၼႃႇ,Very welcome
+ᥓᥬ ᥘᥤ ᥢᥣᥱ,ၸႂ်လီၼႃႇ,Very kind-hearted
+ᥓᥬ ᥞᥣᥭᥳ ᥢᥣᥱ,ၸႂ်ႁၢႆႉၼႃႇ,Very angry/mean
+ᥐᥨᥝ ᥢᥣᥱ ᥖᥦᥳ,ၵူဝ်ၼႃႇတႄႉ,Truly very afraid
+ᥑᥭᥲ ᥞᥨᥝᥴ ᥢᥛᥴ,ၶႂ်ႈႁူဝ်ၼမ်,Laugh a lot
+ᥞᥩᥒᥳ ᥞᥭᥲ ᥢᥛᥴ,ႁွင်ႉႁႆႈၼမ်,Cry a lot
+ᥕᥧᥛᥱ ᥓᥬ ᥢᥣᥱ,ယုမ်ႇၸႂ်ၼႃႇ,Very trustful
+ᥔᥩᥢᥱ ᥘᥤ ᥖᥦᥳ,သွၼ်ႇလီတႄႉ,Truly think well
+ᥞᥧᥳ ᥘᥤ ᥕᥝᥳ,ႁူႉလီယဝ်ႉ,Already know well
+ᥞᥢᥴ ᥘᥤ ᥕᥝᥳ,ႁၼ်လီယဝ်ႉ,Already seen well
+ᥛᥦᥢ ᥘᥤ ᥕᥝᥳ,မႅၼ်ႈလီယဝ်ႉ,Already correct
+ᥚᥤᥖᥰ ᥘᥤ ᥕᥝᥳ,ၽိတ်းလီယဝ်ႉ,Already made a mistake
+ᥘᥨᥝᥴ ᥢᥛᥴ ᥖᥦᥳ,လူဝ်ႇၼမ်တႄႉ,Truly need many
+ᥕᥝᥳ ᥘᥤ ᥖᥦᥳ,ယဝ်ႉလီတႄႉ,Truly finished well
+ᥢᥭᥳ ᥘᥤ ᥖᥦᥳ,ၼႆႉလီတႄႉ,This is truly good
+ᥢᥢᥳ ᥘᥤ ᥖᥦᥳ,ၼၼ်ႉလီတႄႉ,That is truly good
+ᥐᥧ ᥐᥩᥲ ᥘᥤ,ၵူႈၵေႃႉလီ,Everyone is good
+ᥛᥬᥱ ᥔᥧᥒᥴ ᥑᥣᥳ,မႂ်ႇသုင်ၶႃႈ,Hello (polite)
+ᥕᥤᥢ ᥘᥤ ᥑᥣᥳ,ယိၼ်းလီၶႃႈ,Thank you (polite)
+ᥐᥤᥢ ᥑᥝᥲ ᥞᥣᥳ,ၵိၼ်ၶဝ်ႈႁႃႉ,Have you eaten?
+ᥐᥣᥱ ᥘᥭᥴ ᥛᥣᥰ,ၵႂႃႇလၢႆမႃး,Where have you been?
+ᥛᥣᥰ ᥢᥭᥳ ᥘᥦᥲ,မႃးၼႆႉလႄႈ,Come here please
+ᥖᥦᥛᥲ ᥘᥤᥐ ᥘᥤ,တႅမ်ႈလိၵ်ႈလီ,Write well
+ᥞᥥᥖᥰ ᥐᥣᥢ ᥘᥤ,ႁဵတ်းၵၢၼ်လီ,Work well
+ᥘᥤ ᥖᥦᥳ ᥢᥣᥱ,လီတႄႉၼႃႇ,Truly very good
+ᥞᥐᥰ ᥢᥣᥱ ᥖᥦᥳ,ႁၵ်ႉၼႃႇတႄႉ,Truly love so much
+ᥕᥣᥱ ᥞᥥᥖᥰ ᥘᥦᥲ,ယႃႇႁဵတ်းလႄႈ,Please don't do it
+ᥛᥣᥰ ᥘᥦᥲ ᥢᥭᥳ,မႃးလႄႈၼႆႉ,Come on here
+ᥐᥣᥱ ᥕᥝᥳ ᥞᥣᥳ,ၵႂႃႇယဝ်ႉႁႃႉ,Gone already?
+ᥞᥧᥳ ᥕᥝᥳ ᥞᥣᥳ,ႁူႉယဝ်ႉႁႃႉ,Know already?
+ᥛᥦᥢ ᥕᥝᥳ ᥞᥣᥳ,မႅၼ်ႈယဝ်ႉႁႃႉ,Right already?
+ᥔᥪᥳ ᥑᥩᥒᥴ ᥘᥤ,သိုဝ်ႉၶွင်လီ,Buy good things
+ᥑᥣᥭᥴ ᥑᥩᥒᥴ ᥘᥤ,ၶၢႆၶွင်လီ,Sell good things
+ᥞᥫᥢᥰ ᥞᥝᥰ ᥘᥤ,ႁိူၼ်းႁဝ်းလီ,Our house is good
+ᥛᥫᥒᥰ ᥖᥭᥰ ᥘᥤ,မိူင်းတႆးလီ,Shan State is good
+ᥘᥤᥐ ᥖᥭᥰ ᥘᥤ,လိၵ်ႈတႆးလီ,Tai script is good
+ᥐᥧᥢᥰ ᥢᥛᥴ ᥖᥦᥳ,ၵူၼ်းၼမ်တႄႉ,Many people indeed
+ᥛᥦ ᥞᥫᥢᥰ ᥘᥤ,မႄႈႁိူၼ်းလီ,Good housewife
+ᥙᥨᥝᥱ ᥞᥫᥢᥰ ᥘᥤ,ပေႃႈႁိူၼ်းလီ,Good househusband
+ᥘᥧᥐ ᥓᥣᥭᥰ ᥘᥤ,လုၵ်ႈၸၢႆးလီ,Good son
+ᥘᥧᥐ ᥕᥤᥒᥰ ᥘᥤ,လုၵ်ႈယိင်းလီ,Good daughter
+ᥙᥤ ᥓᥣᥭᥰ ᥘᥤ,ပီႈၸၢႆးလီ,Good older brother
+ᥙᥤ ᥢᥣᥒᥰ ᥘᥤ,ပီႈၼၢင်းလီ,Good older sister
+ᥢᥩᥒᥳ ᥓᥣᥭᥰ ᥘᥤ,ၼွင်ႉၸၢႆးလီ,Good younger brother
+ᥢᥩᥒᥳ ᥕᥤᥒᥰ ᥘᥤ,ၼွင်ႉယိင်းလီ,Good younger sister
+ᥙᥨᥝᥱ ᥘᥨᥒᥴ ᥘᥤ,ပူႇလူင်လီ,Good grandfather
+ᥛᥦ ᥘᥨᥒᥴ ᥘᥤ,မႄႈလူင်လီ,Good grandmother
+ᥘᥣᥢᥴ ᥓᥣᥭᥰ ᥘᥤ,လၢၼ်ၸၢႆးလီ,Good grandson
+ᥘᥣᥢᥴ ᥕᥤᥒᥰ ᥘᥤ,လၢၼ်ယိင်းလီ,Good granddaughter
+ᥐᥧᥢᥰ ᥛᥝᥱ ᥘᥤ,ၵူၼ်းမၢဝ်ႇလီ,Good young man
+ᥐᥧᥢᥰ ᥔᥣᥝ ᥘᥤ,ၵူၼ်းသၢဝ်လီ,Good young woman
+ᥐᥧᥢᥰ ᥐᥦᥲ ᥘᥤ,ၵူၼ်းၵႄႇလီ,Good old person
+ᥐᥧᥢᥰ ᥙᥦᥖ ᥘᥤ,ၵူၼ်းပႅတ်ႈလီ,Good outcast
+ᥑᥣᥛᥰ ᥔᥩᥢᥴ ᥘᥤ,ၶေႃႈသွၼ်လီ,Good advice
+ᥑᥣᥛᥰ ᥛᥣᥭᥴ ᥘᥤ,ၶေႃႈမၢႆလီ,Good promise
+ᥘᥤᥐ ᥔᥣᥢᥴ ᥘᥤ,လိၵ်ႈသၢၼ်လီ,Good letter
+ᥘᥤᥐ ᥞᥩᥛᥰ ᥘᥤ,လိၵ်ႈႁွမ်လီ,Good poem
+ᥓᥬ ᥐᥖᥰ ᥘᥤ,ၸႂ်ၵတ်းလီ,Good calm heart
+ᥓᥬ ᥞᥩᥢᥳ ᥘᥤ,ၸႂ်ႁွၼ်ႉလီ,Good active heart
+ᥓᥬ ᥑᥦၼ်ᥰ ᥘᥤ,ၸႂ်ၶႅၼ်းလီ,Good determined heart
+ᥓᥬ ᥔᥣᥭᥴ ᥘᥤ,ၸႂ်သၢႆလီ,Good pure heart
+ᥢᥛᥳ ᥖᥣ ᥘᥤ,ၼမ်ႉတႃလီ,Good tears
+ᥢᥛᥳ ᥘᥣᥭᥰ ᥘᥤ,ၼမ်ႉလၢႆးလီ,Good saliva
+ᥢᥛᥳ ᥚᥪᥒᥲ ᥘᥤ,ၼမ်ႉၽိုင်ႈလီ,Good honey
+ᥢᥛᥳ ᥛᥩᥐ ᥘᥤ,ၼမ်ႉမွၵ်ႇလီ,Good dew
+ᥚᥐᥰ ᥐᥣᥖ ᥘᥤ,ၽၵ်းၵၢတ်ႇလီ,Good cabbage
+ᥚᥐᥰ ᥛᥤᥴ ᥘᥤ,ၽၵ်းမီႇလီ,Good garlic
+ᥑᥝᥲ ᥔᥣᥢᥴ ᥘᥤ,ၶဝ်ႈသၢၼ်လီ,Good raw rice
+ᥑᥝᥲ ᥔᥧᥐ ᥘᥤ,ၶဝ်ႈသုၵ်းလီ,Good cooked rice
+ᥛᥣᥐᥱ ᥐᥨᥝᥲ ᥘᥤ,မၢၵ်ႇၵူၺ်ႈလီ,Good banana
+ᥛᥣᥐᥱ ᥚᥥᥖᥰ ᥘᥤ,မၢၵ်ႇၽိတ်းလီ,Good chili
+ᥖᥨᥝ ᥕႂᥲ ᥘᥤ,တူဝ်ယႂ်ႇလီ,Good big size
+ᥖᥨᥝ ᥢᥩᥭᥲ ᥘᥤ,တူဝ်ၼွႆႉလီ,Good small size
+ᥞᥨᥝᥴ ᥛᥪᥴ ᥘᥤ,ႁူဝ်မိုဝ်းလီ,Good thumb
+ᥞᥨᥝᥴ ᥖᥤᥢ ᥘᥤ,ႁူဝ်တႅၼ်လီ,Good toe
+ᥘᥩᥭ ᥑᥣᥝᥴ ᥘᥤ,လွႆၶၢဝ်လီ,Good white mountain
+ᥑᥥᥴ ᥘᥛᥴ ᥘᥤ,ၶဵဝ်ၼမ်လီ,Good deep river
+ᥛᥣᥢᥲ ᥢᥩᥭᥲ ᥘᥤ,မၢၼ်ႇၼွႆႉလီ,Good small village
+ᥛᥫᥒᥰ ᥕႂᥲ ᥘᥤ,မိူင်းယႂ်ႇလီ,Good big city
+ᥜᥢᥰ ᥘᥨᥛᥰ ᥘᥤ,ၾႃႉလူမ်းလီ,Good windy sky
+ᥘᥤᥢ ᥛᥬᥱ ᥘᥤ,လိၼ်မႂ်ႇလီ,Good new land
+ᥝᥢᥰ ᥘᥤ ᥘᥤ,ဝၼ်းလီလီ,Very good day
+ᥘᥫᥢ ᥛᥬᥱ ᥘᥤ,လိူၼ်မႂ်ႇလီ,Good new moon
+ᥙᥤ ᥐᥝᥱ ᥘᥤ,ပီၵဝ်ႇလီ,Good old year
+ᥕᥣᥛᥰ ᥑᥛᥲ ᥘᥤ,ယၢမ်းၶမ်ႈလီ,Good evening time
+ᥕᥣᥛᥰ ᥢᥬᥲ ᥘᥤ,ယၢမ်းၼႂ်လီ,Good morning time
+ᥐᥧ ᥛᥫᥒᥰ ᥘᥤ,ၵူႈမိူင်းလီ,Every country is good
+ᥐᥧ ᥞᥫᥢᥰ ᥘᥤ,ၵူႈႁိူၼ်းလီ,Every house is good

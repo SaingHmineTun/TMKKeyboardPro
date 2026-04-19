@@ -39,3 +39,5 @@ class EnglishDictionaryManager(context: Context) : DictionaryManager(context, "e
 class MyanmarDictionaryManager(context: Context) : DictionaryManager(context, "mm_words.txt")
 
 class TaiNueaDictionaryManager(context: Context) : DictionaryManager(context, "tdd_words.txt")
+
+class AhomDictionaryManager(context: Context) : DictionaryManager(context, "ahom_words.txt")
