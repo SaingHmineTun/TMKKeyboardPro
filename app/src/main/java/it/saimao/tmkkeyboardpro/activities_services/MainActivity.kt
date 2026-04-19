@@ -1,7 +1,9 @@
 package it.saimao.tmkkeyboardpro.activities_services
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -27,6 +29,16 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        binding.mToolbar.setOnMenuItemClickListener {
+
+            if (it.itemId == R.id.mAbout) {
+                val it = Intent(this, AboutActivity::class.java)
+                startActivity(it)
+                true
+            }
+            false
+
+        }
     }
 
     // *** ၸႂ်ႉတူဝ်ၼႆႉ တႅၼ်း onResume ***
@@ -46,9 +58,11 @@ class MainActivity : AppCompatActivity() {
 
         if (isEnabled && isSelected) {
             // သင်ယဝ်ႉမူတ်းယဝ်ႉ -> ၼႄ Settings
+            binding.mToolbar.visibility = View.VISIBLE
             showFragment(SettingsFragment())
         } else {
             // သင်ပႆႇယဝ်ႉ -> ၼႄ Setup Wizard
+            binding.mToolbar.visibility = View.GONE
             showFragment(SetupFragment())
         }
     }

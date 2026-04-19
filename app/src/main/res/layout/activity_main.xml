@@ -5,7 +5,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".activities_services.MainActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/mToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/about_menu"
+        app:title="@string/app_name" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/main_container"
