@@ -3,6 +3,7 @@ package it.saimao.tmkkeyboardpro.utils
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.core.content.edit
+import it.saimao.tmkkeyboardpro.model.Language
 
 // 1. သႂ်ႇ Constants တွၼ်ႈတႃႇၸိုဝ်ႈ Prefs ၼင်ႇႁိုဝ်တေဢမ်ႇတႅမ်ႈၽိတ်း
 private const val PREFS_NAME = "TMK_PREFS"
@@ -71,7 +72,7 @@ fun saveHandWritingSystem(context: Context, handWritingSystem: Boolean) {
 }
 
 fun getHandWritingSystem(context: Context): Boolean {
-    return retrieve(context, "hand_writing_system", false)
+    return retrieve(context, "hand_writing_system", true)
 }
 
 fun saveAppLanguage(context: Context, language: String) {
@@ -88,4 +89,13 @@ fun saveKeyboardTheme(context: Context, theme: String) {
 
 fun getKeyboardTheme(context: Context): String {
     return retrieve(context, "keyboard_theme", "DARK")
+}
+
+fun saveKeyboardLanguageState(context: Context, langId: String, isChecked: Boolean) {
+    save(context, "lang_$langId", isChecked)
+}
+
+// လၢႆး Read ၶိုၼ်း (Default English = True)
+fun getKeyboardLanguageState(context: Context, langId: String): Boolean {
+    return retrieve(context, "lang_$langId", langId == Language.EN.name);
 }

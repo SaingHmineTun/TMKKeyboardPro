@@ -53,6 +53,8 @@ import it.saimao.tmkkeyboardpro.logic.ShanKeyboard
 import it.saimao.tmkkeyboardpro.logic.TaiNueaDictionaryManager
 import it.saimao.tmkkeyboardpro.logic.ThaiDictionaryManager
 import it.saimao.tmkkeyboardpro.logic.ThemeManager.applyTheme
+import it.saimao.tmkkeyboardpro.model.Language
+import it.saimao.tmkkeyboardpro.utils.getKeyboardLanguageState
 import it.saimao.tmkkeyboardpro.utils.getPopupCharsFor
 import it.saimao.tmkkeyboardpro.utils.getSoundOnKeyPress
 import it.saimao.tmkkeyboardpro.utils.getVibrateOnKeyPress
@@ -63,7 +65,7 @@ class ShanKeyboardService : InputMethodService() {
 
     private var lastShiftClickTime: Long = 0
     private val CAPS_LOCK_THRESHOLD = 500 // 500 milliseconds (0.5 sec)
-    private val languages = listOf("EN", "SHN", "MY", "TH", "LO", "TDD", "AHOM")
+    private val languages = Language.entries.map { it.name }
     private var currentLanguageIndex = 0
 
     enum class SymbolState {
@@ -412,7 +414,7 @@ class ShanKeyboardService : InputMethodService() {
                 handleVoiceKey()
             }
 
-            R.id.key_lang -> toggleLanguage()
+            R.id.key_lang -> switchKeyboardLanguage()
             R.id.key_enter -> sendKeyAction(KeyEvent.KEYCODE_ENTER)
             else -> {
                 if (viewId == R.id.key_unshift) {
@@ -707,9 +709,15 @@ class ShanKeyboardService : InputMethodService() {
         }
     }
 
-    fun toggleLanguage() {
-        // ပၼ်ႇ Index (EN 0 -> SHN 1 -> MY 2 -> TH 3 -> LO 3 -> TDD 5 -> AHOM 6 -> EN 0)
-        currentLanguageIndex = (currentLanguageIndex + 1) % languages.size
+    fun switchKeyboardLanguage() {
+        val enabledLanguages = languages.filter { getKeyboardLanguageState(this, it) }
+
+        // 3. သွၵ်ႈႁႃ Index ၶွင်ၽႃႇသႃႇဢၼ်တိုၵ်ႉၸႂ်ႉယူႇယၢမ်းလဵဝ်
+        val currentIndex = enabledLanguages.indexOf(currentLanguage)
+
+        // 4. ပိၼ်ႇၵႂႃႇၸူး Index ထႅပ်ႈဢၼ်ၼိုင်ႈ (သင်သုတ်းယဝ်ႉ ႁႂ်ႈမၼ်းၶိုၼ်းမႃးဢၼ်ၼိုင်ႈ)
+        currentLanguageIndex = (currentIndex + 1) % enabledLanguages.size
+
 
         // Reset Shift State မိူဝ်ႈလႅၵ်ႈၽႃႇသႃႇ ၼင်ႇႁိုဝ်တေဢမ်ႇယုင်ႈ
         currentShiftState = ShiftState.OFF
