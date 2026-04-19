@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="1dp">
+
+    <Button
+        android:id="@+id/key_lao_row1_1"
+        style="@style/TmkKeyStyle"
+        android:text="ຢ"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row1_2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/key_lao_row1_2"
+        style="@style/TmkKeyStyle"
+        android:text="ຟ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row1_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row1_1"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row1_3"
+        app:layout_constraintTop_toTopOf="@id/key_lao_row1_1" />
+
+    <Button
+        android:id="@+id/key_lao_row1_3"
+        style="@style/TmkKeyStyle"
+        android:text="ໂ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row1_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row1_2"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row1_4"
+        app:layout_constraintTop_toTopOf="@id/key_lao_row1_1" />
+
+    <Button
+        android:id="@+id/key_lao_row1_4"
+        style="@style/TmkKeyStyle"
+        android:text="ຖ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row1_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row1_3"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row1_5"
+        app:layout_constraintTop_toTopOf="@id/key_lao_row1_1" />
+
+    <Button
+        android:id="@+id/key_lao_row1_5"
+        style="@style/TmkKeyStyle"
+        android:text="ຸ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row1_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row1_4"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row1_6"
+        app:layout_constraintTop_toTopOf="@id/key_lao_row1_1" />
+
+    <Button
+        android:id="@+id/key_lao_row1_6"
+        style="@style/TmkKeyStyle"
+        android:text="ຶ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row1_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row1_5"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row1_7"
+        app:layout_constraintTop_toTopOf="@id/key_lao_row1_1" />
+
+    <Button
+        android:id="@+id/key_lao_row1_7"
+        style="@style/TmkKeyStyle"
+        android:text="ຄ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row1_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row1_6"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row1_8"
+        app:layout_constraintTop_toTopOf="@id/key_lao_row1_1" />
+
+    <Button
+        android:id="@+id/key_lao_row1_8"
+        style="@style/TmkKeyStyle"
+        android:text="ຕ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row1_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row1_7"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row1_9"
+        app:layout_constraintTop_toTopOf="@id/key_lao_row1_1" />
+
+    <Button
+        android:id="@+id/key_lao_row1_9"
+        style="@style/TmkKeyStyle"
+        android:text="ຈ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row1_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row1_8"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row1_10"
+        app:layout_constraintTop_toTopOf="@id/key_lao_row1_1" />
+
+    <Button
+        android:id="@+id/key_lao_row1_10"
+        style="@style/TmkKeyStyle"
+        android:text="ຂ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row1_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row1_9"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row1_11"
+        app:layout_constraintTop_toTopOf="@id/key_lao_row1_1" />
+
+    <Button
+        android:id="@+id/key_lao_row1_11"
+        style="@style/TmkKeyStyle"
+        android:text="ຊ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row1_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row1_10"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row1_12"
+        app:layout_constraintTop_toTopOf="@id/key_lao_row1_1" />
+
+    <Button
+        android:id="@+id/key_lao_row1_12"
+        style="@style/TmkKeyStyle"
+        android:text="ຣ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row1_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row1_11"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/key_lao_row1_1" />
+
+    <Button
+        android:id="@+id/key_lao_row2_1"
+        style="@style/TmkKeyStyle"
+        android:text="ົ"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row2_2"
+        app:layout_constraintTop_toBottomOf="@+id/key_lao_row1_1" />
+
+    <Button
+        android:id="@+id/key_lao_row2_2"
+        style="@style/TmkKeyStyle"
+        android:text="ໄ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row2_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row2_1"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row2_3"
+        app:layout_constraintTop_toTopOf="@+id/key_lao_row2_1" />
+
+    <Button
+        android:id="@+id/key_lao_row2_3"
+        style="@style/TmkKeyStyle"
+        android:text="ຳ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row2_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row2_2"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row2_4"
+        app:layout_constraintTop_toTopOf="@+id/key_lao_row2_1" />
+
+    <Button
+        android:id="@+id/key_lao_row2_4"
+        style="@style/TmkKeyStyle"
+        android:text="ພ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row2_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row2_3"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row2_5"
+        app:layout_constraintTop_toTopOf="@+id/key_lao_row2_1" />
+
+    <Button
+        android:id="@+id/key_lao_row2_5"
+        style="@style/TmkKeyStyle"
+        android:text="ະ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row2_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row2_4"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row2_6"
+        app:layout_constraintTop_toTopOf="@+id/key_lao_row2_1" />
+
+    <Button
+        android:id="@+id/key_lao_row2_6"
+        style="@style/TmkKeyStyle"
+        android:text="ັ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row2_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row2_5"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row2_7"
+        app:layout_constraintTop_toTopOf="@+id/key_lao_row2_1" />
+
+    <Button
+        android:id="@+id/key_lao_row2_7"
+        style="@style/TmkKeyStyle"
+        android:text="ີ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row2_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row2_6"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row2_8"
+        app:layout_constraintTop_toTopOf="@+id/key_lao_row2_1" />
+
+    <Button
+        android:id="@+id/key_lao_row2_8"
+        style="@style/TmkKeyStyle"
+        android:text="ຣ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row2_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row2_7"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row2_9"
+        app:layout_constraintTop_toTopOf="@+id/key_lao_row2_1" />
+
+    <Button
+        android:id="@+id/key_lao_row2_9"
+        style="@style/TmkKeyStyle"
+        android:text="ນ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row2_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row2_8"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row2_10"
+        app:layout_constraintTop_toTopOf="@+id/key_lao_row2_1" />
+
+    <Button
+        android:id="@+id/key_lao_row2_10"
+        style="@style/TmkKeyStyle"
+        android:text="ຍ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row2_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row2_9"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row2_11"
+        app:layout_constraintTop_toTopOf="@+id/key_lao_row2_1" />
+
+    <Button
+        android:id="@+id/key_lao_row2_11"
+        style="@style/TmkKeyStyle"
+        android:text="ບ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row2_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row2_10"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row2_12"
+        app:layout_constraintTop_toTopOf="@+id/key_lao_row2_1" />
+
+    <Button
+        android:id="@+id/key_lao_row2_12"
+        style="@style/TmkKeyStyle"
+        android:text="ລ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row2_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row2_11"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/key_lao_row2_1" />
+
+    <Button
+        android:id="@+id/key_lao_row3_1"
+        style="@style/TmkKeyStyle"
+        android:text="ຟ"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row3_2"
+        app:layout_constraintTop_toBottomOf="@+id/key_lao_row2_1" />
+
+    <Button
+        android:id="@+id/key_lao_row3_2"
+        style="@style/TmkKeyStyle"
+        android:text="ຫ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row3_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row3_1"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row3_3"
+        app:layout_constraintTop_toTopOf="@+id/key_lao_row3_1" />
+
+    <Button
+        android:id="@+id/key_lao_row3_3"
+        style="@style/TmkKeyStyle"
+        android:text="ກ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row3_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row3_2"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row3_4"
+        app:layout_constraintTop_toTopOf="@+id/key_lao_row3_1" />
+
+    <Button
+        android:id="@+id/key_lao_row3_4"
+        style="@style/TmkKeyStyle"
+        android:text="ດ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row3_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row3_3"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row3_5"
+        app:layout_constraintTop_toTopOf="@+id/key_lao_row3_1" />
+
+    <Button
+        android:id="@+id/key_lao_row3_5"
+        style="@style/TmkKeyStyle"
+        android:text="ເ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row3_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row3_4"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row3_6"
+        app:layout_constraintTop_toTopOf="@+id/key_lao_row3_1" />
+
+    <Button
+        android:id="@+id/key_lao_row3_6"
+        style="@style/TmkKeyStyle"
+        android:text="້"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row3_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row3_5"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row3_7"
+        app:layout_constraintTop_toTopOf="@+id/key_lao_row3_1" />
+
+    <Button
+        android:id="@+id/key_lao_row3_7"
+        style="@style/TmkKeyStyle"
+        android:text="່"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row3_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row3_6"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row3_8"
+        app:layout_constraintTop_toTopOf="@+id/key_lao_row3_1" />
+
+    <Button
+        android:id="@+id/key_lao_row3_8"
+        style="@style/TmkKeyStyle"
+        android:text="າ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row3_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row3_7"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row3_9"
+        app:layout_constraintTop_toTopOf="@+id/key_lao_row3_1" />
+
+    <Button
+        android:id="@+id/key_lao_row3_9"
+        style="@style/TmkKeyStyle"
+        android:text="ສ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row3_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row3_8"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row3_10"
+        app:layout_constraintTop_toTopOf="@+id/key_lao_row3_1" />
+
+    <Button
+        android:id="@+id/key_lao_row3_10"
+        style="@style/TmkKeyStyle"
+        android:text="ວ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row3_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row3_9"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row3_11"
+        app:layout_constraintTop_toTopOf="@+id/key_lao_row3_1" />
+
+    <Button
+        android:id="@+id/key_lao_row3_11"
+        style="@style/TmkKeyStyle"
+        android:text="ງ"
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row3_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row3_10"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row3_12"
+        app:layout_constraintTop_toTopOf="@+id/key_lao_row3_1" />
+
+    <Button
+        android:id="@+id/key_lao_row3_12"
+        style="@style/TmkKeyStyle"
+        android:text="."
+        app:layout_constraintBottom_toBottomOf="@id/key_lao_row3_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row3_11"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/key_lao_row3_1" />
+
+    <Button
+        android:id="@+id/key_shift"
+        style="@style/TmkKeyStyle"
+        android:text="⇧"
+        app:layout_constraintHorizontal_weight="1.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row4_1"
+        app:layout_constraintTop_toBottomOf="@+id/key_lao_row3_1" />
+
+    <Button
+        android:id="@+id/key_lao_row4_1"
+        style="@style/TmkKeyStyle"
+        android:text="ຜ"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_shift"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row4_2"
+        app:layout_constraintTop_toTopOf="@id/key_shift" />
+
+    <Button
+        android:id="@+id/key_lao_row4_2"
+        style="@style/TmkKeyStyle"
+        android:text="ປ"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row4_1"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row4_3"
+        app:layout_constraintTop_toTopOf="@id/key_shift" />
+
+    <Button
+        android:id="@+id/key_lao_row4_3"
+        style="@style/TmkKeyStyle"
+        android:text="ແ"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row4_2"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row4_4"
+        app:layout_constraintTop_toTopOf="@id/key_shift" />
+
+    <Button
+        android:id="@+id/key_lao_row4_4"
+        style="@style/TmkKeyStyle"
+        android:text="ອ"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row4_3"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row4_5"
+        app:layout_constraintTop_toTopOf="@id/key_shift" />
+
+    <Button
+        android:id="@+id/key_lao_row4_5"
+        style="@style/TmkKeyStyle"
+        android:text="ິ"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row4_4"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row4_6"
+        app:layout_constraintTop_toTopOf="@id/key_shift" />
+
+    <Button
+        android:id="@+id/key_lao_row4_6"
+        style="@style/TmkKeyStyle"
+        android:text="ື"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row4_5"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row4_7"
+        app:layout_constraintTop_toTopOf="@id/key_shift" />
+
+    <Button
+        android:id="@+id/key_lao_row4_7"
+        style="@style/TmkKeyStyle"
+        android:text="ທ"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row4_6"
+        app:layout_constraintRight_toLeftOf="@+id/key_lao_row4_8"
+        app:layout_constraintTop_toTopOf="@id/key_shift" />
+
+    <Button
+        android:id="@+id/key_lao_row4_8"
+        style="@style/TmkKeyStyle"
+        android:text="ມ"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row4_7"
+        app:layout_constraintRight_toLeftOf="@+id/key_del"
+        app:layout_constraintTop_toTopOf="@id/key_shift" />
+
+    <Button
+        android:id="@+id/key_del"
+        style="@style/TmkKeyStyle"
+        android:text="⌫"
+        app:layout_constraintBottom_toBottomOf="@id/key_shift"
+        app:layout_constraintHorizontal_weight="1.5"
+        app:layout_constraintLeft_toRightOf="@+id/key_lao_row4_8"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/key_shift" />
+
+    <Button
+        android:id="@+id/key_lang"
+        style="@style/TmkKeyStyle"
+        android:text="🌐"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/key_emoji"
+        app:layout_constraintTop_toBottomOf="@+id/key_shift" />
+
+    <Button
+        android:id="@+id/key_emoji"
+        style="@style/TmkKeyStyle"
+        android:text="😊"
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_lang"
+        app:layout_constraintRight_toLeftOf="@+id/key_123"
+        app:layout_constraintTop_toTopOf="@+id/key_lang" />
+
+    <Button
+        android:id="@+id/key_123"
+        style="@style/TmkKeyStyle"
+        android:text="123"
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
+        app:layout_constraintHorizontal_weight="1.25"
+        app:layout_constraintLeft_toRightOf="@+id/key_emoji"
+        app:layout_constraintRight_toLeftOf="@+id/key_space"
+        app:layout_constraintTop_toTopOf="@+id/key_lang" />
+
+    <Button
+        android:id="@+id/key_space"
+        style="@style/TmkKeyStyle"
+        android:text="Lao"
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
+        app:layout_constraintHorizontal_weight="2.5"
+        app:layout_constraintLeft_toRightOf="@+id/key_123"
+        app:layout_constraintRight_toLeftOf="@+id/key_dot"
+        app:layout_constraintTop_toTopOf="@+id/key_lang" />
+
+    <Button
+        android:id="@+id/key_dot"
+        style="@style/TmkKeyStyle"
+        android:text=","
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_space"
+        app:layout_constraintRight_toLeftOf="@+id/key_speech"
+        app:layout_constraintTop_toTopOf="@+id/key_lang" />
+
+    <Button
+        android:id="@+id/key_speech"
+        style="@style/TmkKeyStyle"
+        android:text="🎙️"
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/key_dot"
+        app:layout_constraintRight_toLeftOf="@+id/key_enter"
+        app:layout_constraintTop_toTopOf="@+id/key_lang" />
+
+    <Button
+        android:id="@+id/key_enter"
+        style="@style/TmkKeyStyle"
+        android:text="⏎"
+        app:layout_constraintBottom_toBottomOf="@id/key_lang"
+        app:layout_constraintHorizontal_weight="1.25"
+        app:layout_constraintLeft_toRightOf="@+id/key_speech"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/key_lang" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

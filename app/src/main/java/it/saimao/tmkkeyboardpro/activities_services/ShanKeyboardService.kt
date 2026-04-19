@@ -45,6 +45,7 @@ import it.saimao.tmkkeyboardpro.logic.DictionaryManager
 import it.saimao.tmkkeyboardpro.logic.EmojiKeyboard
 import it.saimao.tmkkeyboardpro.logic.EnglishDictionaryManager
 import it.saimao.tmkkeyboardpro.logic.FontManager
+import it.saimao.tmkkeyboardpro.logic.LaoDictionaryManager
 import it.saimao.tmkkeyboardpro.logic.MyanmarDictionaryManager
 import it.saimao.tmkkeyboardpro.logic.MyanmarKeyboard
 import it.saimao.tmkkeyboardpro.logic.ShanDictionaryManager
@@ -62,7 +63,7 @@ class ShanKeyboardService : InputMethodService() {
 
     private var lastShiftClickTime: Long = 0
     private val CAPS_LOCK_THRESHOLD = 500 // 500 milliseconds (0.5 sec)
-    private val languages = listOf("EN", "SHN", "MY", "TH", "TDD", "AHOM")
+    private val languages = listOf("EN", "SHN", "MY", "TH", "LO", "TDD", "AHOM")
     private var currentLanguageIndex = 0
 
     enum class SymbolState {
@@ -99,6 +100,8 @@ class ShanKeyboardService : InputMethodService() {
     private val ahomDictionary: DictionaryManager by lazy { AhomDictionaryManager(this) }
 
     private val thDictionary: DictionaryManager by lazy { ThaiDictionaryManager(this) }
+
+    private val loDictionary by lazy { LaoDictionaryManager(this) }
 
     override fun onCreate() {
         super.onCreate()
@@ -185,6 +188,7 @@ class ShanKeyboardService : InputMethodService() {
             "TDD" -> tddDictionary.getSuggestions(currentWord)
             "AHOM" -> ahomDictionary.getSuggestions(currentWord)
             "TH" -> thDictionary.getSuggestions(currentWord)
+            "LO" -> loDictionary.getSuggestions(currentWord)
             else -> englishDictionary.getSuggestions(currentWord)
         }
 
@@ -646,6 +650,7 @@ class ShanKeyboardService : InputMethodService() {
                     "TDD" -> if (currentShiftState == ShiftState.OFF) R.layout.layout_tdd_normal else R.layout.layout_tdd_shifted
                     "AHOM" -> if (currentShiftState == ShiftState.OFF) R.layout.layout_ahom_normal else R.layout.layout_ahom_shifted
                     "TH" -> if (currentShiftState == ShiftState.OFF) R.layout.layout_th_normal else R.layout.layout_th_shifted
+                    "LO" -> if (currentShiftState == ShiftState.OFF) R.layout.layout_lao_normal else R.layout.layout_lao_shifted
                     else -> R.layout.layout_en_normal
                 }
             }
@@ -703,7 +708,7 @@ class ShanKeyboardService : InputMethodService() {
     }
 
     fun toggleLanguage() {
-        // ပၼ်ႇ Index (EN 0 -> SHN 1 -> MY 2 -> TH 3 -> TDD 4 -> AHOM 5 -> EN 0)
+        // ပၼ်ႇ Index (EN 0 -> SHN 1 -> MY 2 -> TH 3 -> LO 3 -> TDD 5 -> AHOM 6 -> EN 0)
         currentLanguageIndex = (currentLanguageIndex + 1) % languages.size
 
         // Reset Shift State မိူဝ်ႈလႅၵ်ႈၽႃႇသႃႇ ၼင်ႇႁိုဝ်တေဢမ်ႇယုင်ႈ
@@ -828,6 +833,7 @@ class ShanKeyboardService : InputMethodService() {
                 "MY" -> "my-MM"
                 "EN" -> "en-US"
                 "TH" -> "th-TH" // ထႅမ်သႂ်ႇတွၼ်ႈတႃႇလိၵ်ႈထႆး (Thai - Thailand)
+                "LO" -> "lo-LA"
                 else -> "en-US" // Shan ပႆႇမီး Speech Engine ႁင်းၵူၺ်း
             }
 
