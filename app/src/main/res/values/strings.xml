@@ -8,5 +8,5 @@
     <string name="pref_font_mgmt">Shan Font Management</string>
     <string name="test_keyboard">Test Your Keyboard</string>
     <string name="select_language">Select App Language</string>
-    <string name="version">1.0.0</string>
+    <string name="version" translatable="false">Version 1.0.0</string>
 </resources>

@@ -74,4 +74,9 @@
         <item name="android:background">@drawable/key_action_background</item>
     </style>
 
+    <style name="RoundedCornerImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">40%</item>
+    </style>
+
 </resources>
