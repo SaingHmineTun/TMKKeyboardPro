@@ -544,8 +544,6 @@ class EmojiKeyboard(
                         emojiAdapter.notifyItemChanged(position)
                     }
 
-                    // --- လွင်ႈတၢင်းဢၼ်ၸဝ်ႈၵဝ်ႇၺႃးသီ Dark ၼၼ်ႉၵေႃႈ ၵႄႈလႆႈတီႈၼႆႉၸွမ်းၶႃႈ ---
-                    ThemeManager.applyTheme(context.applicationContext, emojiView)
                 }
             })
 

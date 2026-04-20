@@ -71,9 +71,6 @@ class ChooseThemeActivity : AppCompatActivity() {
     fun updatePreview() {
         // ၸႂ်ႉ ThemeManager ဢၼ် Optimize ဝႆႉၼၼ်ႉ တွၼ်ႈတႃႇ Apply သီ
         ThemeManager.applyTheme(this, previewContainer)
-
-        // Apply ၸူး Background ၶွင်ၼႃႈၼႆႉၸွမ်း ၼင်ႇႁိုဝ်တေတူၺ်းသၢင်ႇထုၵ်ႇ
-        ThemeManager.applySingleViewTheme(this, findViewById(R.id.main_layout))
     }
 
 

@@ -6,18 +6,14 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.PorterDuff
 import android.graphics.drawable.Drawable
-import android.net.Uri
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
-import androidx.core.graphics.alpha
 import androidx.core.graphics.blue
 import androidx.core.graphics.green
 import androidx.core.graphics.red
-import com.google.android.material.internal.FlowLayout
 import com.google.android.material.tabs.TabLayout
 import it.saimao.tmkkeyboardpro.R
 import it.saimao.tmkkeyboardpro.utils.getKeyboardTheme
@@ -173,7 +169,12 @@ object ThemeManager {
 
     // ၸဝ်ႈၵဝ်ႇၸၢင်ႈ Public Method ၼႆႉဝႆႉ သင်လူဝ်ႇ Apply ၵွၺ်း 1 View
     fun applySingleViewTheme(context: Context, view: View) {
-        val theme = themes[getTheme(context)] ?: themes["DARK"]!!
+        val themeText: String = getKeyboardTheme(context)
+        val theme: KeyboardTheme = if (themeText == "custom_theme") {
+            getCustomKeyboardTheme(context)
+        } else {
+            themes[getTheme(context)] ?: themes["DARK"]!!
+        }
         val typeface = FontManager.getActiveTypeface(context)
         applyToSingleView(view, theme, typeface)
     }
