@@ -416,14 +416,10 @@ class ShanKeyboardService : InputMethodService() {
 
             R.id.key_lang -> switchKeyboardLanguage()
             R.id.key_enter -> sendKeyAction(KeyEvent.KEYCODE_ENTER)
+            R.id.key_shift, R.id.key_unshift -> handleShift()
             else -> {
-                if (viewId == R.id.key_unshift) {
-                    handleShift()
-                } else if (viewId == R.id.key_shift) {
-                    handleShift()
 
-                } else {
-
+                if (cText.length == 1) {
                     if (currentLanguage == "SHN") {
 
                         val primaryCode = if (cText.isNotEmpty()) cText.first().code else -1
@@ -434,15 +430,17 @@ class ShanKeyboardService : InputMethodService() {
                         cText = MyanmarKeyboard.getInstance(this)
                             .handelMyanmarInputText(primaryCode, currentInputConnection)
                     }
-                    sendText(cText)
-
-
-                    // သင်ပဵၼ် Shift ON (ဢမ်ႇၸႂ်ႉ Caps Lock) ႁႂ်ႈပိၵ်ႉၶိုၼ်း မိူဝ်ႈတႅမ်ႈယဝ်ႉ 1 တူဝ်
-                    if (currentShiftState == ShiftState.ON) {
-                        currentShiftState = ShiftState.OFF
-                        updateKeyboardLayout()
-                    }
                 }
+
+                sendText(cText)
+
+
+                // သင်ပဵၼ် Shift ON (ဢမ်ႇၸႂ်ႉ Caps Lock) ႁႂ်ႈပိၵ်ႉၶိုၼ်း မိူဝ်ႈတႅမ်ႈယဝ်ႉ 1 တူဝ်
+                if (currentShiftState == ShiftState.ON) {
+                    currentShiftState = ShiftState.OFF
+                    updateKeyboardLayout()
+                }
+
 
                 // သႂ်ႇဝႆႉၽၢႆႇတႂ်ႈသုတ်း မိူဝ်ႈတႅမ်ႈတူဝ်လိၵ်ႈ
                 updateSuggestions()
