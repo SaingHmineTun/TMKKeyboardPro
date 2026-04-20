@@ -1,81 +1,100 @@
-package it.saimao.tmkkeyboardpro.activities_services;
+package it.saimao.tmkkeyboardpro.activities_services
 
-import static it.saimao.tmkkeyboardpro.utils.SharedPreferenceManagerKt.getKeyboardLanguageState;
+import android.os.Bundle
+import android.view.View
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.OnApplyWindowInsetsListener
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.appbar.MaterialToolbar
+import it.saimao.tmkkeyboardpro.R
+import it.saimao.tmkkeyboardpro.adapters.LanguageAdapter
+import it.saimao.tmkkeyboardpro.databinding.ActivityKeyboardLanguagesBinding
+import it.saimao.tmkkeyboardpro.model.KeyboardLanguage
+import it.saimao.tmkkeyboardpro.model.Language
+import it.saimao.tmkkeyboardpro.utils.getKeyboardLanguageState
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.os.Bundle;
+class KeyboardLanguagesActivity : AppCompatActivity() {
+    private lateinit var adapter: LanguageAdapter
+    private lateinit var languageList: List<KeyboardLanguage>
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+    private lateinit var binding: ActivityKeyboardLanguagesBinding
 
-import com.google.android.material.appbar.MaterialToolbar;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import it.saimao.tmkkeyboardpro.R;
-import it.saimao.tmkkeyboardpro.adapters.LanguageAdapter;
-import it.saimao.tmkkeyboardpro.model.KeyboardLanguage;
-import it.saimao.tmkkeyboardpro.model.Language;
-
-public class KeyboardLanguagesActivity extends AppCompatActivity {
-
-    private RecyclerView rvLanguages;
-    private LanguageAdapter adapter;
-    private List<KeyboardLanguage> languageList;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_keyboard_languages);
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        this.enableEdgeToEdge()
+        this.binding = ActivityKeyboardLanguagesBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // 1. Setup Toolbar & Back Button
-        MaterialToolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        val toolbar = findViewById<MaterialToolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar()!!.setDisplayHomeAsUpEnabled(true)
         }
-        toolbar.setNavigationOnClickListener(v -> onBackPressed());
+        toolbar.setNavigationOnClickListener { onBackPressed() }
 
         // 2. Window Insets (Edge-to-Edge)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        ViewCompat.setOnApplyWindowInsetsListener(
+            binding.root
+        ) { v: View?, insets: WindowInsetsCompat? ->
+            val systemBars = insets!!.getInsets(WindowInsetsCompat.Type.systemBars())
+            v!!.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
 
         // 3. Initialize Data & RecyclerView
-        initLanguageData();
-        setupRecyclerView();
+        initLanguageData()
+        setupRecyclerView()
     }
 
-    private void initLanguageData() {
-        languageList = new ArrayList<>();
+    private fun initLanguageData() {
+        languageList = listOf(
+            KeyboardLanguage(Language.EN, isEnabled = true, isDefault = true),
+            KeyboardLanguage(
+                Language.SHN,
+                getKeyboardLanguageState(this, Language.SHN.name),
+                false
+            ),
 
-        // ထႅမ်သႂ်ႇၽႃႇသႃႇတင်း 6 မဵဝ်း ၸွမ်းၼင်ႇ Keyboard ၸဝ်ႈၵဝ်ႇ
-        // English ပဵၼ် Default (isEnabled = true, isDefault = true)
-        languageList.add(new KeyboardLanguage(Language.EN, true, true));
+            KeyboardLanguage(
+                Language.TDD,
+                getKeyboardLanguageState(this, Language.TDD.name),
+                false
+            ),
 
-        // ၽႃႇသႃႇဢၼ်ၵိုတ်း လုၵ်ႉတီႈ SharedPreferences (Default = false)
-        languageList.add(new KeyboardLanguage(Language.SHN, getKeyboardLanguageState(this, Language.SHN.name()), false));
-        languageList.add(new KeyboardLanguage(Language.TDD, getKeyboardLanguageState(this, Language.TDD.name()), false));
-        languageList.add(new KeyboardLanguage(Language.TH, getKeyboardLanguageState(this, Language.TH.name()), false));
-        languageList.add(new KeyboardLanguage(Language.LO, getKeyboardLanguageState(this, Language.LO.name()), false));
-        languageList.add(new KeyboardLanguage(Language.MY, getKeyboardLanguageState(this, Language.MY.name()), false));
-        languageList.add(new KeyboardLanguage(Language.AHM, getKeyboardLanguageState(this, Language.AHM.name()), false));
+            KeyboardLanguage(
+                Language.TH,
+                getKeyboardLanguageState(this, Language.TH.name),
+                false
+            ),
+
+            KeyboardLanguage(
+                Language.LO,
+                getKeyboardLanguageState(this, Language.LO.name),
+                false
+            ),
+
+            KeyboardLanguage(
+                Language.MY,
+                getKeyboardLanguageState(this, Language.MY.name),
+                false
+            ),
+
+            KeyboardLanguage(
+                Language.AHM,
+                getKeyboardLanguageState(this, Language.AHM.name),
+                false
+            )
+        )
     }
 
-    private void setupRecyclerView() {
-        rvLanguages = findViewById(R.id.rv_languages);
-        adapter = new LanguageAdapter(languageList);
-        rvLanguages.setLayoutManager(new LinearLayoutManager(this));
-        rvLanguages.setAdapter(adapter);
+    private fun setupRecyclerView() {
+        adapter = LanguageAdapter(languageList)
+        binding.rvLanguages.setLayoutManager(LinearLayoutManager(this))
+        binding.rvLanguages.setAdapter(adapter)
     }
 }
