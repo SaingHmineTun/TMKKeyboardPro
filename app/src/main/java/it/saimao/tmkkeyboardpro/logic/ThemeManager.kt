@@ -3,11 +3,11 @@ package it.saimao.tmkkeyboardpro.logic
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.ColorStateList
-import android.graphics.Color
 import android.graphics.PorterDuff
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.TextView
 import com.google.android.material.internal.FlowLayout
 import com.google.android.material.tabs.TabLayout
@@ -15,6 +15,8 @@ import it.saimao.tmkkeyboardpro.R
 import it.saimao.tmkkeyboardpro.utils.getKeyboardTheme
 import it.saimao.tmkkeyboardpro.utils.saveKeyboardTheme
 import androidx.core.graphics.toColorInt
+import it.saimao.tmkkeyboardpro.utils.getCustomTheme
+import it.saimao.tmkkeyboardpro.utils.saveCustomTheme
 
 data class KeyboardTheme(
     val bg: String,        // Background
@@ -64,12 +66,18 @@ object ThemeManager {
         saveKeyboardTheme(context, selectedTheme)
 
     fun getTheme(context: Context): String = getKeyboardTheme(context)
+
     /**
      * Method လူင်တွၼ်ႈတႃႇ Apply Theme တင်း Layout (Recursive)
      */
     @SuppressLint("RestrictedApi")
     fun applyTheme(context: Context, view: View) {
-        val theme = themes[getTheme(context)] ?: themes["DARK"]!!
+        val getTheme: String = getKeyboardTheme(context)
+        val theme: KeyboardTheme = if (getTheme == "custom_theme") {
+            getCustomKeyboardTheme(context)
+        } else {
+            themes[getTheme(context)] ?: themes["DARK"]!!
+        }
         val typeface = FontManager.getActiveTypeface(context)
 
         // 1. Apply ၸူးတူဝ် View မၼ်းႁင်းၵူၺ်းဢွၼ်တၢင်း
@@ -88,14 +96,18 @@ object ThemeManager {
      * Helper Method တွၼ်ႈတႃႇ Apply Theme ၸူး View ၼိုင်ႈဢၼ် (Reduce Redundancy)
      */
     @SuppressLint("RestrictedApi")
-    private fun applyToSingleView(view: View, theme: KeyboardTheme, typeface: android.graphics.Typeface?) {
+    fun applyToSingleView(
+        view: View,
+        theme: KeyboardTheme,
+        typeface: android.graphics.Typeface?
+    ) {
         val bgColor = theme.bg.toColorInt()
         val textColor = theme.txt.toColorInt()
 
         when (view) {
             // Check Background Containers
             is ViewGroup -> {
-                if (view.id == R.id.keyboard_root || view.id == R.id.emoji_keyboard || view is FlowLayout) {
+                if (view.id == R.id.keyboard_root || view.id == R.id.emoji_keyboard || view is FlowLayout || view is FrameLayout) {
                     view.setBackgroundColor(bgColor)
                 }
                 // Special case for TabLayout (Emoji)
@@ -137,7 +149,13 @@ object ThemeManager {
         val typeface = FontManager.getActiveTypeface(context)
         applyToSingleView(view, theme, typeface)
     }
+
     private fun isSpecialKey(id: Int): Boolean {
         return id == R.id.key_del || id == R.id.key_shift || id == R.id.key_unshift || id == R.id.key_enter || id == R.id.key_lang || id == R.id.key_123 || id == R.id.key_emoji || id == R.id.key_speech || id == R.id.key_dot || id == R.id.key_switch_abc || id == R.id.key_1_2 || id == R.id.key_2_1 || id == R.id.key_comma || id == R.id.key_period || id == R.id.key_convert || id == R.id.key_back_to_kb || id == R.id.key_emoji_space
+    }
+
+    fun getCustomKeyboardTheme(requireContext: Context): KeyboardTheme = getCustomTheme(requireContext)
+    fun saveCustomKeyboardTheme(requireContext: Context, theme: KeyboardTheme) {
+        saveCustomTheme(requireContext, theme)
     }
 }

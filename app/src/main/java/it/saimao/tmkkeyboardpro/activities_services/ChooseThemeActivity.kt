@@ -16,19 +16,9 @@ import com.google.android.material.tabs.TabLayoutMediator
 import it.saimao.tmkkeyboardpro.R
 import it.saimao.tmkkeyboardpro.fragments.CustomThemeFragment
 import it.saimao.tmkkeyboardpro.fragments.PredefinedThemeFragment
+import it.saimao.tmkkeyboardpro.logic.KeyboardTheme
 import it.saimao.tmkkeyboardpro.logic.ThemeManager
 
-class ChooseThemePagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
-    override fun getItemCount(): Int = 2 // 2 Fragments
-
-    override fun createFragment(position: Int): Fragment {
-        return when (position) {
-            0 -> PredefinedThemeFragment() // ဢၼ်ပႃး RecyclerView တူဝ်ၵဝ်ႇ
-            1 -> CustomThemeFragment()     // ဢၼ်ပႃး Options မႄးသီႁင်းၵူၺ်း
-            else -> PredefinedThemeFragment()
-        }
-    }
-}
 
 class ChooseThemeActivity : AppCompatActivity() {
 
@@ -70,9 +60,29 @@ class ChooseThemeActivity : AppCompatActivity() {
 
     fun updatePreview() {
         // ၸႂ်ႉ ThemeManager ဢၼ် Optimize ဝႆႉၼၼ်ႉ တွၼ်ႈတႃႇ Apply သီ
-        ThemeManager.applyTheme(this, keyboardPreview)
+        ThemeManager.applyTheme(this, previewContainer)
 
         // Apply ၸူး Background ၶွင်ၼႃႈၼႆႉၸွမ်း ၼင်ႇႁိုဝ်တေတူၺ်းသၢင်ႇထုၵ်ႇ
         ThemeManager.applySingleViewTheme(this, findViewById(R.id.main_layout))
     }
+
+
+    inner class ChooseThemePagerAdapter(activity: AppCompatActivity) :
+        FragmentStateAdapter(activity) {
+        override fun getItemCount(): Int = 2 // 2 Fragments
+
+        override fun createFragment(position: Int): Fragment {
+            return when (position) {
+                0 -> PredefinedThemeFragment() // ဢၼ်ပႃး RecyclerView တူဝ်ၵဝ်ႇ
+                1 -> {
+
+                    ThemeManager.saveTheme(this@ChooseThemeActivity, "custom_theme")
+                    updatePreview()
+                    CustomThemeFragment()
+                }     // ဢၼ်ပႃး Options မႄးသီႁင်းၵူၺ်း
+                else -> PredefinedThemeFragment()
+            }
+        }
+    }
+
 }

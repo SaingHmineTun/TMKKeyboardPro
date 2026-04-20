@@ -3,6 +3,8 @@ package it.saimao.tmkkeyboardpro.utils
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.core.content.edit
+import com.google.gson.Gson
+import it.saimao.tmkkeyboardpro.logic.KeyboardTheme
 import it.saimao.tmkkeyboardpro.model.Language
 
 // 1. သႂ်ႇ Constants တွၼ်ႈတႃႇၸိုဝ်ႈ Prefs ၼင်ႇႁိုဝ်တေဢမ်ႇတႅမ်ႈၽိတ်း
@@ -98,4 +100,28 @@ fun saveKeyboardLanguageState(context: Context, langId: String, isChecked: Boole
 // လၢႆး Read ၶိုၼ်း (Default English = True)
 fun getKeyboardLanguageState(context: Context, langId: String): Boolean {
     return retrieve(context, "lang_$langId", langId == Language.EN.name);
+}
+
+// --- 1. သိမ်း Theme မႂ်ႇၶဝ်ႈၵႂႃႇ (Serialization) ---
+fun saveCustomTheme(context: Context, newTheme: KeyboardTheme) {
+    val gson = Gson()
+
+    val jsonString = gson.toJson(newTheme)
+    save(context, "custom_theme", jsonString)
+}
+
+fun getCustomTheme(context: Context): KeyboardTheme {
+    val jsonString = retrieve(context, "custom_theme", "")
+    return if (jsonString.isNotEmpty()) {
+        val gson = Gson()
+        gson.fromJson(jsonString, KeyboardTheme::class.java)
+    } else {
+        KeyboardTheme(
+            bg = "#121212",
+            key = "#333333",
+            pressed = "#555555",
+            txt = "#FFFFFF",
+            special = "#222222"
+        )
+    }
 }
