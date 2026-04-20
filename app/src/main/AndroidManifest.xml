@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TMKKeyboardPro">
         <activity
+            android:name=".activities_services.ChooseThemeActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities_services.AboutActivity"
             android:exported="false" />
         <activity
