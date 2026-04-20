@@ -12,6 +12,11 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.TextView
+import androidx.cardview.widget.CardView
+import androidx.core.graphics.alpha
+import androidx.core.graphics.blue
+import androidx.core.graphics.green
+import androidx.core.graphics.red
 import com.google.android.material.internal.FlowLayout
 import com.google.android.material.tabs.TabLayout
 import it.saimao.tmkkeyboardpro.R
@@ -111,7 +116,7 @@ object ThemeManager {
             // Check Background Containers
             is ViewGroup -> {
                 val themeBg = theme.bg
-                if (view.id == R.id.keyboard_root) {
+                if (view.id == R.id.keys_container || view.id == R.id.keyboard_preview_container) {
                     if (themeBg.startsWith("#")) {
                         view.setBackgroundColor(themeBg.toColorInt())
                     } else {
@@ -126,9 +131,15 @@ object ThemeManager {
                             view.setBackgroundColor(Color.BLACK)
                         }
                     }
-                }
-                // Special case for TabLayout (Emoji)
-                if (view is TabLayout) {
+                } else if (view is CardView) {
+                    val specialColor = theme.special.toColorInt()
+                    val cardBgColor = Color.rgb(
+                        Color.red(specialColor.red),
+                        Color.green(specialColor.green),
+                        Color.blue(specialColor.blue)
+                    )
+                    view.setCardBackgroundColor(cardBgColor)
+                } else if (view is TabLayout) {
 //                    view.setBackgroundColor(theme.bg.toColorInt())
                     view.setTabTextColors(textColor, textColor)
                     view.setSelectedTabIndicatorColor(textColor)
@@ -171,7 +182,9 @@ object ThemeManager {
         return id == R.id.key_del || id == R.id.key_shift || id == R.id.key_unshift || id == R.id.key_enter || id == R.id.key_lang || id == R.id.key_123 || id == R.id.key_emoji || id == R.id.key_speech || id == R.id.key_dot || id == R.id.key_switch_abc || id == R.id.key_1_2 || id == R.id.key_2_1 || id == R.id.key_comma || id == R.id.key_period || id == R.id.key_convert || id == R.id.key_back_to_kb || id == R.id.key_emoji_space
     }
 
-    fun getCustomKeyboardTheme(requireContext: Context): KeyboardTheme = getCustomTheme(requireContext)
+    fun getCustomKeyboardTheme(requireContext: Context): KeyboardTheme =
+        getCustomTheme(requireContext)
+
     fun saveCustomKeyboardTheme(requireContext: Context, theme: KeyboardTheme) {
         saveCustomTheme(requireContext, theme)
     }

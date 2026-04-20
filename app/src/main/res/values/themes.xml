@@ -55,7 +55,7 @@
 
     <style name="Theme.TMKKeyboardPro" parent="Base.Theme.TMKKeyboardPro" />
 
-    <style name="TmkKeyStyle" parent="Widget.MaterialComponents.Button">
+    <style name="TmkKeyStyle" parent="Widget.MaterialComponents.Button.UnelevatedButton">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
         <item name="android:layout_height">@dimen/key_height</item>

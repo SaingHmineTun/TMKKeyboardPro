@@ -44,17 +44,27 @@ class ChooseThemeActivity : AppCompatActivity() {
 
         // 4. Setup Themes List
         setupViewPager2()
+
     }
 
     private fun setupViewPager2() {
         val viewPager = findViewById<ViewPager2>(R.id.view_pager)
         val tabLayout = findViewById<TabLayout>(R.id.tab_layout)
 
-        viewPager.adapter = ChooseThemePagerAdapter(this)
+        // 1. Setup ViewPager & TabLayout မိူၼ်ၵဝ်ႇ
+        val adapter = ChooseThemePagerAdapter(this)
+        viewPager.adapter = adapter
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = if (position == 0) "Predefined" else "Custom"
         }.attach()
+
+        // 2. ၸႅတ်ႈတူၺ်းဝႃႈ Current Theme ပဵၼ် Custom ႁႃႉ?
+        val currentTheme = ThemeManager.getTheme(this)
+        if (currentTheme == "custom_theme") {
+            // ၼဵၵ်းလိူၵ်ႈ Tab ဢၼ်မီး Position 1 (Custom Fragment) ၵမ်းလဵဝ်
+            viewPager.setCurrentItem(1, false) // false = ဢမ်ႇလူဝ်ႇ Smooth Scroll မိူဝ်ႈတႄႇပိုတ်ႇ
+        }
     }
 
 

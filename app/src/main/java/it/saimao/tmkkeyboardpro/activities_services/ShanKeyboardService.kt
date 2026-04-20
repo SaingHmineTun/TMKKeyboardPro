@@ -452,7 +452,7 @@ class ShanKeyboardService : InputMethodService() {
 
     override fun onStartInputView(info: EditorInfo?, restarting: Boolean) {
         super.onStartInputView(info, restarting)
-        applyTheme(this, currentInputView)
+        applyTheme(this, keysContainer)
     }
 
     override fun onWindowShown() {
@@ -682,7 +682,7 @@ class ShanKeyboardService : InputMethodService() {
         keysContainer.addView(cachedView)
 
         // 4. မႄးသီ Theme (ဢၼ်ၼႆႉလူဝ်ႇမႄးတႃႇသေႇ ယွၼ်ႉ User ၸၢင်ႈလႅၵ်ႈ Theme)
-        applyTheme(this, cachedView)
+        applyTheme(this, keysContainer)
     }
 
 
