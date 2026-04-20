@@ -1,6 +1,9 @@
 package it.saimao.tmkkeyboardpro.fragments
 
+import android.app.Activity
+import android.graphics.Bitmap
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +15,10 @@ import it.saimao.tmkkeyboardpro.databinding.FragmentCustomThemeBinding
 import it.saimao.tmkkeyboardpro.logic.KeyboardTheme
 import it.saimao.tmkkeyboardpro.logic.ThemeManager
 import androidx.core.graphics.toColorInt
+import com.yalantis.ucrop.UCrop
+import com.yalantis.ucrop.model.AspectRatio
 import yuku.ambilwarna.AmbilWarnaDialog
+import java.io.File
 
 class CustomThemeFragment : Fragment() {
 
@@ -24,9 +30,24 @@ class CustomThemeFragment : Fragment() {
     private val imagePickerLauncher =
         registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
             uri?.let {
-                // လႅၵ်ႈ URI ပဵၼ် String သေသိမ်း (လူဝ်ႇ Take Persistable Permission သင်ပဵၼ် Service)
-                currentCustomTheme = currentCustomTheme.copy(bg = it.toString())
-                saveAndRefreshPreview()
+                // မိူဝ်ႈလိူၵ်ႈႁၢင်ႈယဝ်ႉ ပိုတ်ႇ uCrop
+                startCrop(uri)
+            }
+        }
+
+    // 2. Launcher တွၼ်ႈတႃႇႁပ်ႉ Result လုၵ်ႉတီႈ uCrop
+    private val cropLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val resultUri = UCrop.getOutput(result.data!!)
+                resultUri?.let { uri ->
+                    // *** တီႈၼႆႈ ၸဝ်ႈၵဝ်ႇလူဝ်ႇ Take Persistable Permission သင်ၸႂ်ႉ ImageURI ၼႂ်း Service ***
+                    currentCustomTheme = currentCustomTheme.copy(bg = uri.toString())
+                    saveAndRefreshPreview()
+                }
+            } else if (result.resultCode == UCrop.RESULT_ERROR) {
+                val cropError = UCrop.getError(result.data!!)
+                cropError?.printStackTrace()
             }
         }
 
@@ -50,6 +71,7 @@ class CustomThemeFragment : Fragment() {
     }
 
     private fun setupClickListeners() {
+        // မိူဝ်ႈတဵၵ်းလိူၵ်ႈ image Background
         binding.btnBgImage.setOnClickListener {
             imagePickerLauncher.launch("image/*")
         }
@@ -135,6 +157,36 @@ class CustomThemeFragment : Fragment() {
                 }
             })
         dialog.show()
+    }
+
+    // 3. Helper Function တွၼ်ႈတႃႇ Setup uCrop
+    private fun startCrop(sourceUri: Uri) {
+        val destinationFileName = "tmk_cropped_bg_${System.currentTimeMillis()}.jpg"
+        // သိမ်းႁၢင်ႈဢၼ်တတ်းယဝ်ႉဝႆႉၼႂ်း Cache Folder ၶွင် App ႁင်းၵူၺ်း
+        val destinationUri = Uri.fromFile(File(requireContext().cacheDir, destinationFileName))
+
+        // Setup uCrop Options
+        val options = UCrop.Options().apply {
+            setCompressionFormat(Bitmap.CompressFormat.JPEG) // သႂ်ႇ Format
+            setCompressionQuality(90) // လူတ်း Quality ၼင်ႇႁိုဝ် File တေဢမ်ႇယႂ်ႇ
+            // တတ်းပဵၼ်သီႇၸဵင်ႈပႅတ်ႈ (AspectRatio) တႅတ်ႈတေႃး (တွၼ်ႈတႃႇ Keyboard View)
+            setAspectRatioOptions(
+                0,
+                AspectRatio("Keyboard (16:9)", 16f, 9f), AspectRatio("Default", 0f, 0f)
+            )
+            setHideBottomControls(false) // ၼႄ controls တွၼ်ႈတႃႇ rotate/scale
+        }
+
+        val uCropIntent = UCrop.of(sourceUri, destinationUri)
+            .withOptions(options)
+            .withMaxResultSize(
+                1080,
+                1920
+            ) // *** လူတ်းယွမ်းတၢင်းယႂ်ႇ (Resize) ႁႂ်ႈမၼ်းဢမ်ႇပူၼ်ႉတီႈ ***
+            .getIntent(requireContext())
+
+        cropLauncher.launch(uCropIntent) // ပိုတ်ႇ uCrop Editor
+
     }
 
     private fun showSaveDialog() {

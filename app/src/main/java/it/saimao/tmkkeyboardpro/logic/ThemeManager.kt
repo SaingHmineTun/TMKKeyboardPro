@@ -3,7 +3,10 @@ package it.saimao.tmkkeyboardpro.logic
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.ColorStateList
+import android.graphics.Color
 import android.graphics.PorterDuff
+import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
@@ -17,6 +20,7 @@ import it.saimao.tmkkeyboardpro.utils.saveKeyboardTheme
 import androidx.core.graphics.toColorInt
 import it.saimao.tmkkeyboardpro.utils.getCustomTheme
 import it.saimao.tmkkeyboardpro.utils.saveCustomTheme
+import androidx.core.net.toUri
 
 data class KeyboardTheme(
     val bg: String,        // Background
@@ -101,18 +105,31 @@ object ThemeManager {
         theme: KeyboardTheme,
         typeface: android.graphics.Typeface?
     ) {
-        val bgColor = theme.bg.toColorInt()
         val textColor = theme.txt.toColorInt()
 
         when (view) {
             // Check Background Containers
             is ViewGroup -> {
-                if (view.id == R.id.keyboard_root || view.id == R.id.emoji_keyboard || view is FlowLayout || view is FrameLayout) {
-                    view.setBackgroundColor(bgColor)
+                val themeBg = theme.bg
+                if (view.id == R.id.keyboard_root) {
+                    if (themeBg.startsWith("#")) {
+                        view.setBackgroundColor(themeBg.toColorInt())
+                    } else {
+
+                        try {
+                            val uri = themeBg.toUri()
+                            val inputStream = view.context.contentResolver.openInputStream(uri)
+                            val drawable = Drawable.createFromStream(inputStream, themeBg)
+                            view.background = drawable
+                        } catch (e: Exception) {
+                            // သင်ပိုတ်ႇႁၢင်ႈဢမ်ႇလႆႈ ႁႂ်ႈသႂ်ႇသီလမ်ဝႆႉပဵၼ် Default
+                            view.setBackgroundColor(Color.BLACK)
+                        }
+                    }
                 }
                 // Special case for TabLayout (Emoji)
                 if (view is TabLayout) {
-                    view.setBackgroundColor(bgColor)
+//                    view.setBackgroundColor(theme.bg.toColorInt())
                     view.setTabTextColors(textColor, textColor)
                     view.setSelectedTabIndicatorColor(textColor)
                     view.tabIconTint = ColorStateList.valueOf(textColor)

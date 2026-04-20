@@ -1,14 +1,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/emoji_keyboard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/emoji_keyboard"
+    android:background="@android:color/transparent"
     android:orientation="vertical">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/emoji_tabs"
         android:layout_width="match_parent"
         android:layout_height="@dimen/key_height"
+        android:background="@android:color/transparent"
         app:tabMode="scrollable" />
 
     <androidx.viewpager2.widget.ViewPager2
@@ -24,43 +26,41 @@
 
         <Button
             android:id="@+id/key_back_to_kb"
-            android:text="ABC"
-            android:layout_marginEnd="4dp"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="@dimen/key_height"
-            />
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:text="ABC" />
 
         <Button
 
-            android:layout_marginEnd="4dp"
             android:id="@+id/key_emoji_space"
-
             android:layout_width="0dp"
-            android:layout_weight="2"
+
             android:layout_height="@dimen/key_height"
-            android:text="Space"
-            />
+            android:layout_marginEnd="4dp"
+            android:layout_weight="2"
+            android:text="Space" />
 
         <Button
 
-            android:layout_marginEnd="4dp"
             android:id="@+id/key_del"
-            android:text="⌫"
-
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="@dimen/key_height"
+
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:text="⌫"
 
             />
 
         <Button
             android:id="@+id/key_enter"
-            android:text="⏎"
-
             android:layout_width="0dp"
-            android:layout_weight="1"
+
             android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="⏎"
 
             />
     </LinearLayout>
