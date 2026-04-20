@@ -112,7 +112,7 @@ object ThemeManager {
             // Check Background Containers
             is ViewGroup -> {
                 val themeBg = theme.bg
-                if (view.id == R.id.keys_container || view.id == R.id.keyboard_preview_container) {
+                if (view.id == R.id.keyboard_container || view.id == R.id.keyboard_preview_container) {
                     if (themeBg.startsWith("#")) {
                         view.setBackgroundColor(themeBg.toColorInt())
                     } else {

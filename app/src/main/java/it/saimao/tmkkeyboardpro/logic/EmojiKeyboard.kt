@@ -3,16 +3,12 @@ package it.saimao.tmkkeyboardpro.logic
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.view.ContextThemeWrapper
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
-import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.FrameLayout
-import android.widget.GridView
-import android.widget.TextView
 import androidx.core.content.edit
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -486,7 +482,7 @@ class EmojiKeyboard(
             val themedInflater = layoutInflater.cloneInContext(contextThemeWrapper)
 
             // 3. Inflate Layout လူၺ်ႈၸႂ်ႉ themedInflater
-            emojiView = themedInflater.inflate(R.layout.emoji_picker, null)
+            emojiView = themedInflater.inflate(R.layout.layout_emoji, null)
 
             val viewPager = emojiView.findViewById<ViewPager2>(R.id.emoji_viewpager)
             val tabLayout = emojiView.findViewById<TabLayout>(R.id.emoji_tabs)
@@ -496,11 +492,11 @@ class EmojiKeyboard(
             val padding = context.resources.getDimensionPixelSize(R.dimen.keyboard_padding)
 
             // Total Height = (5 Rows * keyHeight) + (2 * Padding)
-            val totalHeight = (keyHeight * 5) + (padding * 2)
+            val totalHeight = (keyHeight * 5) + (padding * 4)
 
             // Force တၢင်းသုင် Layout ႁႂ်ႈမိူၼ် Keyboard တႅတ်ႈတေႃး
             emojiView.layoutParams = FrameLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
+                MATCH_PARENT,
                 totalHeight
             )
 

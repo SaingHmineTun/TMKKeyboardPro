@@ -172,7 +172,10 @@ class CustomThemeFragment : Fragment() {
             // တတ်းပဵၼ်သီႇၸဵင်ႈပႅတ်ႈ (AspectRatio) တႅတ်ႈတေႃး (တွၼ်ႈတႃႇ Keyboard View)
             setAspectRatioOptions(
                 0,
-                AspectRatio("Keyboard (16:9)", 16f, 9f), AspectRatio("Default", 0f, 0f)
+
+                AspectRatio("Keyboard (4:3)", 4f, 3f),
+                AspectRatio("Keyboard (3:2)", 3f, 2f),
+                AspectRatio("Keyboard (16:9)", 16f, 9f),
             )
             setHideBottomControls(false) // ၼႄ controls တွၼ်ႈတႃႇ rotate/scale
         }

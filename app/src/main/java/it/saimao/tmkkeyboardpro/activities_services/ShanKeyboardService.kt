@@ -146,55 +146,55 @@ class ShanKeyboardService : InputMethodService() {
     private fun setSuggestions(suggestions: List<String>) {
 
 
-        if (!::candidateContainer.isInitialized) return
-
-        // 3. ၼႄဢွၵ်ႇၼိူဝ် Candidate Bar
-        candidateContainer.removeAllViews()
-
-        if (suggestions.isNotEmpty()) {
-            for (word in suggestions) {
-                val tv = TextView(this).apply {
-                    text = word
-                    textSize = 18f
-                    setPadding(30, 0, 30, 0)
-                    gravity = Gravity.CENTER
-                    // *** တူဝ်ယႂ်ႇ: လူဝ်ႇသႂ်ႇ LayoutParams တႅတ်ႈတေႃး ***
-                    layoutParams = LinearLayout.LayoutParams(
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        ViewGroup.LayoutParams.MATCH_PARENT
-                    )
-                    typeface = FontManager.getActiveTypeface(this@ShanKeyboardService)
-
-                    setOnClickListener {
-                        // မိူဝ်ႈၼိပ်ႉလိၵ်ႈလႅတ်း ႁႂ်ႈတႅၼ်းတီႈၶေႃႈၵဝ်ႇ
-                        replaceCurrentWordWith(word)
-                        candidateContainer.removeAllViews()
-                    }
-                }
-                candidateContainer.addView(tv)
-            }
-        }
+//        if (!::candidateContainer.isInitialized) return
+//
+//        // 3. ၼႄဢွၵ်ႇၼိူဝ် Candidate Bar
+//        candidateContainer.removeAllViews()
+//
+//        if (suggestions.isNotEmpty()) {
+//            for (word in suggestions) {
+//                val tv = TextView(this).apply {
+//                    text = word
+//                    textSize = 18f
+//                    setPadding(30, 0, 30, 0)
+//                    gravity = Gravity.CENTER
+//                    // *** တူဝ်ယႂ်ႇ: လူဝ်ႇသႂ်ႇ LayoutParams တႅတ်ႈတေႃး ***
+//                    layoutParams = LinearLayout.LayoutParams(
+//                        ViewGroup.LayoutParams.WRAP_CONTENT,
+//                        ViewGroup.LayoutParams.MATCH_PARENT
+//                    )
+//                    typeface = FontManager.getActiveTypeface(this@ShanKeyboardService)
+//
+//                    setOnClickListener {
+//                        // မိူဝ်ႈၼိပ်ႉလိၵ်ႈလႅတ်း ႁႂ်ႈတႅၼ်းတီႈၶေႃႈၵဝ်ႇ
+//                        replaceCurrentWordWith(word)
+//                        candidateContainer.removeAllViews()
+//                    }
+//                }
+//                candidateContainer.addView(tv)
+//            }
+//        }
     }
 
     fun updateSuggestions() {
 
-        // 1. ဢဝ်ၶေႃႈၵႂၢမ်းဢၼ်တိုၵ်ႉတႅမ်ႈဝႆႉ (Current Word)
-        val currentWord = getCurrentWordBeforeCursor()
-
-
-        // 2. ႁႃၶေႃႈၵႂၢမ်းလႅတ်း လုၵ်ႉၼႂ်း Dictionary
-        val suggestions = when (currentLanguage) {
-            "SHN" -> shanDictionary.getSuggestions(currentWord)
-            "MY" -> myanmarDictionary.getSuggestions(currentWord)
-            "EN" -> englishDictionary.getSuggestions(currentWord)
-            "TDD" -> tddDictionary.getSuggestions(currentWord)
-            "AHOM" -> ahomDictionary.getSuggestions(currentWord)
-            "TH" -> thDictionary.getSuggestions(currentWord)
-            "LO" -> loDictionary.getSuggestions(currentWord)
-            else -> englishDictionary.getSuggestions(currentWord)
-        }
-
-        setSuggestions(suggestions)
+//        // 1. ဢဝ်ၶေႃႈၵႂၢမ်းဢၼ်တိုၵ်ႉတႅမ်ႈဝႆႉ (Current Word)
+//        val currentWord = getCurrentWordBeforeCursor()
+//
+//
+//        // 2. ႁႃၶေႃႈၵႂၢမ်းလႅတ်း လုၵ်ႉၼႂ်း Dictionary
+//        val suggestions = when (currentLanguage) {
+//            "SHN" -> shanDictionary.getSuggestions(currentWord)
+//            "MY" -> myanmarDictionary.getSuggestions(currentWord)
+//            "EN" -> englishDictionary.getSuggestions(currentWord)
+//            "TDD" -> tddDictionary.getSuggestions(currentWord)
+//            "AHOM" -> ahomDictionary.getSuggestions(currentWord)
+//            "TH" -> thDictionary.getSuggestions(currentWord)
+//            "LO" -> loDictionary.getSuggestions(currentWord)
+//            else -> englishDictionary.getSuggestions(currentWord)
+//        }
+//
+//        setSuggestions(suggestions)
     }
 
     // Function တႃႇဢဝ် Word တူဝ်သုတ်းၽၢႆႇၼႃႈ Cursor
@@ -239,6 +239,7 @@ class ShanKeyboardService : InputMethodService() {
         ic?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_DPAD_RIGHT))
     }
 
+    // For continuous deletion
     private val deleteHandler = Handler(Looper.getMainLooper())
     private var deleteRunnable: Runnable? = null
     private val INITIAL_DELAY = 500L // ပႂ်ႉ 0.5 Sec ၵွၼ်ႇတေတႄႇ Repeat
@@ -382,11 +383,11 @@ class ShanKeyboardService : InputMethodService() {
         triggerVibration(view)
         playClickSound()
 
-        when (val viewId = view.id) {
+        when (view.id) {
 
             R.id.key_space -> {
                 sendText(" ")
-                candidateContainer.removeAllViews() // လၢင်ႉ Bar မိူဝ်ႈၼိပ်ႉ Space
+                candidateContainer.removeAllViews() // လၢင်ႉ SuggestionBar မိူဝ်ႈၼိပ်ႉ Space
             }
 
             R.id.key_emoji -> switchToEmoji()
@@ -450,7 +451,7 @@ class ShanKeyboardService : InputMethodService() {
 
     override fun onStartInputView(info: EditorInfo?, restarting: Boolean) {
         super.onStartInputView(info, restarting)
-        applyTheme(this, keysContainer)
+        applyTheme(this, currentInputView)
     }
 
     override fun onWindowShown() {
@@ -680,7 +681,7 @@ class ShanKeyboardService : InputMethodService() {
         keysContainer.addView(cachedView)
 
         // 4. မႄးသီ Theme (ဢၼ်ၼႆႉလူဝ်ႇမႄးတႃႇသေႇ ယွၼ်ႉ User ၸၢင်ႈလႅၵ်ႈ Theme)
-        applyTheme(this, keysContainer)
+        applyTheme(this, currentInputView)
     }
 
 
