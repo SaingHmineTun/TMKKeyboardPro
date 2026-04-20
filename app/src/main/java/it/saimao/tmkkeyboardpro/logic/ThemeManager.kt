@@ -14,6 +14,7 @@ import com.google.android.material.tabs.TabLayout
 import it.saimao.tmkkeyboardpro.R
 import it.saimao.tmkkeyboardpro.utils.getKeyboardTheme
 import it.saimao.tmkkeyboardpro.utils.saveKeyboardTheme
+import androidx.core.graphics.toColorInt
 
 data class KeyboardTheme(
     val bg: String,        // Background
@@ -63,93 +64,79 @@ object ThemeManager {
         saveKeyboardTheme(context, selectedTheme)
 
     fun getTheme(context: Context): String = getKeyboardTheme(context)
-
+    /**
+     * Method လူင်တွၼ်ႈတႃႇ Apply Theme တင်း Layout (Recursive)
+     */
     @SuppressLint("RestrictedApi")
     fun applyTheme(context: Context, view: View) {
-        val themeName = getTheme(context)
-        val theme = themes[themeName] ?: themes["DARK"]!! // Default to GOLD
-
-        val bgColor = Color.parseColor(theme.bg)
-        val keyColor = Color.parseColor(theme.key)
-        val pressedColor = Color.parseColor(theme.pressed)
-        val textColor = Color.parseColor(theme.txt)
-        val specialColor = Color.parseColor(theme.special)
-
-        // 1. Set Background for Containers
-        if (view.id == R.id.keyboard_root || view.id == R.id.emoji_keyboard || view is FlowLayout) {
-            view.setBackgroundColor(bgColor)
-        }
-
+        val theme = themes[getTheme(context)] ?: themes["DARK"]!!
         val typeface = FontManager.getActiveTypeface(context)
 
-        // 2. Recursive Loop to apply to all Children
+        // 1. Apply ၸူးတူဝ် View မၼ်းႁင်းၵူၺ်းဢွၼ်တၢင်း
+        applyToSingleView(view, theme, typeface)
+
+        // 2. သင်ပဵၼ် ViewGroup ႁႂ်ႈ Loop ၸူးတူဝ်လုၵ်ႈမၼ်းတင်းမူတ်း
         if (view is ViewGroup) {
             for (i in 0 until view.childCount) {
-                when (val child = view.getChildAt(i)) {
-                    is TabLayout -> {
-                        // Apply Theme ၸူး TabLayout (Emoji Categories)
-                        child.setBackgroundColor(bgColor)
-                        child.setTabTextColors(textColor, textColor)
-                        child.setSelectedTabIndicatorColor(textColor)
-                        child.tabIconTint = ColorStateList.valueOf(textColor)
-                    }
-
-                    is Button -> {
-                        val isSpecial = isSpecialKey(child.id)
-                        val normalColor = if (isSpecial) specialColor else keyColor
-
-                        val states = arrayOf(intArrayOf(android.R.attr.state_pressed), intArrayOf())
-                        val colors = intArrayOf(pressedColor, normalColor)
-
-                        child.backgroundTintList = ColorStateList(states, colors)
-                        child.backgroundTintMode = PorterDuff.Mode.SRC_IN
-                        child.foregroundTintList = ColorStateList.valueOf(textColor) // For Icons
-
-                        child.setTextColor(textColor)
-                        if (typeface != null) child.typeface = typeface
-                    }
-
-                    is ViewGroup -> {
-                        applyTheme(context, child)
-                    }
-                }
+                val child = view.getChildAt(i)
+                applyTheme(context, child) // Recursive call
             }
         }
     }
 
-    // The optimized method without looping!!!
-    fun applySingleViewTheme(context: Context, view: View) {
+    /**
+     * Helper Method တွၼ်ႈတႃႇ Apply Theme ၸူး View ၼိုင်ႈဢၼ် (Reduce Redundancy)
+     */
+    @SuppressLint("RestrictedApi")
+    private fun applyToSingleView(view: View, theme: KeyboardTheme, typeface: android.graphics.Typeface?) {
+        val bgColor = theme.bg.toColorInt()
+        val textColor = theme.txt.toColorInt()
 
+        when (view) {
+            // Check Background Containers
+            is ViewGroup -> {
+                if (view.id == R.id.keyboard_root || view.id == R.id.emoji_keyboard || view is FlowLayout) {
+                    view.setBackgroundColor(bgColor)
+                }
+                // Special case for TabLayout (Emoji)
+                if (view is TabLayout) {
+                    view.setBackgroundColor(bgColor)
+                    view.setTabTextColors(textColor, textColor)
+                    view.setSelectedTabIndicatorColor(textColor)
+                    view.tabIconTint = ColorStateList.valueOf(textColor)
+                }
+            }
 
-        val themeName = getTheme(context)
-        val theme = themes[themeName] ?: themes["DARK"]!! // Default to GOLD
+            // Check Buttons
+            is Button -> {
+                val isSpecial = isSpecialKey(view.id)
+                val normalColor = (if (isSpecial) theme.special else theme.key).toColorInt()
+                val pressedColor = theme.pressed.toColorInt()
 
-        val bgColor = Color.parseColor(theme.bg)
-        val keyColor = Color.parseColor(theme.key)
-        val pressedColor = Color.parseColor(theme.pressed)
-        val textColor = Color.parseColor(theme.txt)
-        val specialColor = Color.parseColor(theme.special)
+                val states = arrayOf(intArrayOf(android.R.attr.state_pressed), intArrayOf())
+                val colors = intArrayOf(pressedColor, normalColor)
 
-        val typeface = FontManager.getActiveTypeface(context)
+                view.backgroundTintList = ColorStateList(states, colors)
+                view.backgroundTintMode = PorterDuff.Mode.SRC_IN
+                view.foregroundTintList = ColorStateList.valueOf(textColor) // For Icons
+                view.setTextColor(textColor)
+                if (typeface != null) view.typeface = typeface
+            }
 
-        if (view is Button) {
-
-            val isSpecial = isSpecialKey(view.id)
-            val normalColor = if (isSpecial) specialColor else keyColor
-
-            val states = arrayOf(intArrayOf(android.R.attr.state_pressed), intArrayOf())
-            val colors = intArrayOf(pressedColor, normalColor)
-
-            view.backgroundTintList = ColorStateList(states, colors)
-            view.backgroundTintMode = PorterDuff.Mode.SRC_IN
-            view.foregroundTintList = ColorStateList.valueOf(textColor) // For Icons
-
-            view.setTextColor(textColor)
-            if (typeface != null) view.typeface = typeface
+            // Check TextPreviews or Labels
+            is TextView -> {
+                view.setTextColor(textColor)
+                if (typeface != null) view.typeface = typeface
+            }
         }
-
     }
 
+    // ၸဝ်ႈၵဝ်ႇၸၢင်ႈ Public Method ၼႆႉဝႆႉ သင်လူဝ်ႇ Apply ၵွၺ်း 1 View
+    fun applySingleViewTheme(context: Context, view: View) {
+        val theme = themes[getTheme(context)] ?: themes["DARK"]!!
+        val typeface = FontManager.getActiveTypeface(context)
+        applyToSingleView(view, theme, typeface)
+    }
     private fun isSpecialKey(id: Int): Boolean {
         return id == R.id.key_del || id == R.id.key_shift || id == R.id.key_unshift || id == R.id.key_enter || id == R.id.key_lang || id == R.id.key_123 || id == R.id.key_emoji || id == R.id.key_speech || id == R.id.key_dot || id == R.id.key_switch_abc || id == R.id.key_1_2 || id == R.id.key_2_1 || id == R.id.key_comma || id == R.id.key_period || id == R.id.key_convert || id == R.id.key_back_to_kb || id == R.id.key_emoji_space
     }
