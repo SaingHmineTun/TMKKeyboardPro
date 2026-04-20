@@ -5,11 +5,30 @@ import android.os.Bundle
 import android.view.View
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import it.saimao.tmkkeyboardpro.R
+import it.saimao.tmkkeyboardpro.fragments.CustomThemeFragment
+import it.saimao.tmkkeyboardpro.fragments.PredefinedThemeFragment
 import it.saimao.tmkkeyboardpro.logic.ThemeManager
+
+class ChooseThemePagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
+    override fun getItemCount(): Int = 2 // 2 Fragments
+
+    override fun createFragment(position: Int): Fragment {
+        return when (position) {
+            0 -> PredefinedThemeFragment() // ဢၼ်ပႃး RecyclerView တူဝ်ၵဝ်ႇ
+            1 -> CustomThemeFragment()     // ဢၼ်ပႃး Options မႄးသီႁင်းၵူၺ်း
+            else -> PredefinedThemeFragment()
+        }
+    }
+}
 
 class ChooseThemeActivity : AppCompatActivity() {
 
@@ -34,22 +53,22 @@ class ChooseThemeActivity : AppCompatActivity() {
         updatePreview()
 
         // 4. Setup Themes List
-        setupRecyclerView()
+        setupViewPager2()
     }
 
-    private fun setupRecyclerView() {
-        val rvThemes = findViewById<RecyclerView>(R.id.rv_themes)
-        val themeNames = ThemeManager.themes.keys.toList()
+    private fun setupViewPager2() {
+        val viewPager = findViewById<ViewPager2>(R.id.view_pager)
+        val tabLayout = findViewById<TabLayout>(R.id.tab_layout)
 
-        rvThemes.layoutManager = GridLayoutManager(this, 2) // ၼႄ 2 ၶွၼ် (Columns)
-        rvThemes.adapter = ThemeAdapter(themeNames) { selectedTheme ->
-            // မိူဝ်ႈ User တိၵ်းလိူၵ်ႈသီ
-            ThemeManager.saveTheme(this, selectedTheme)
-            updatePreview()
-        }
+        viewPager.adapter = ChooseThemePagerAdapter(this)
+
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            tab.text = if (position == 0) "Predefined" else "Custom"
+        }.attach()
     }
 
-    private fun updatePreview() {
+
+    fun updatePreview() {
         // ၸႂ်ႉ ThemeManager ဢၼ် Optimize ဝႆႉၼၼ်ႉ တွၼ်ႈတႃႇ Apply သီ
         ThemeManager.applyTheme(this, keyboardPreview)
 
