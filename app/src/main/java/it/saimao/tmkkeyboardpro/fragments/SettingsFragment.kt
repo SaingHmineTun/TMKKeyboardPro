@@ -12,6 +12,7 @@ import androidx.core.os.LocaleListCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import it.saimao.tmkkeyboardpro.R
+import it.saimao.tmkkeyboardpro.activities_services.ChooseThemeActivity
 import it.saimao.tmkkeyboardpro.activities_services.KeyboardLanguagesActivity
 import it.saimao.tmkkeyboardpro.activities_services.MainActivity
 import it.saimao.tmkkeyboardpro.databinding.FragmentSettingsBinding
@@ -62,8 +63,16 @@ class SettingsFragment : Fragment() {
             saveHandWritingSystem(requireContext(), isChecked)
         }
 
+
+        binding.btnKeyboardLanguages.setOnClickListener {
+            val intent = Intent(requireContext(), KeyboardLanguagesActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnSelectTheme.setOnClickListener {
-            showThemeSelector()
+            val intent = Intent(requireContext(), ChooseThemeActivity::class.java)
+            startActivity(intent)
+
         }
 
         binding.btnSelectLanguage.setOnClickListener {
@@ -106,10 +115,6 @@ class SettingsFragment : Fragment() {
             else -> "Shan (တႆး)"
         }
 
-        binding.btnKeyboardLanguages.setOnClickListener {
-            val intent = Intent(requireContext(), KeyboardLanguagesActivity::class.java)
-            startActivity(intent)
-        }
 
         // လူတ်ႇ State ၶွင် Switch
         binding.switchVibration.isChecked = getVibrateOnKeyPress(requireContext())
