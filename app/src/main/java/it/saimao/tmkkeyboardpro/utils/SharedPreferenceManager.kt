@@ -102,6 +102,15 @@ fun getKeyboardLanguageState(context: Context, langId: String): Boolean {
     return retrieve(context, "lang_$langId", langId == Language.EN.name);
 }
 
+fun enableSuggestion(context: Context, enable: Boolean) {
+    save(context, "enable_suggestion", enable)
+}
+
+fun isEnabledSuggestion(context: Context): Boolean {
+    return retrieve(context, "enable_suggestion", false)
+}
+
+
 // --- 1. သိမ်း Theme မႂ်ႇၶဝ်ႈၵႂႃႇ (Serialization) ---
 fun saveCustomTheme(context: Context, newTheme: KeyboardTheme) {
     val gson = Gson()

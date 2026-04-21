@@ -19,12 +19,14 @@ import it.saimao.tmkkeyboardpro.databinding.FragmentSettingsBinding
 import it.saimao.tmkkeyboardpro.logic.FontManager
 import it.saimao.tmkkeyboardpro.logic.ThemeManager
 import it.saimao.tmkkeyboardpro.logic.ThemeManager.themes
+import it.saimao.tmkkeyboardpro.utils.enableSuggestion
 
 import it.saimao.tmkkeyboardpro.utils.getAppLanguage
 import it.saimao.tmkkeyboardpro.utils.getHandWritingSystem
 import it.saimao.tmkkeyboardpro.utils.getKeyboardTheme
 import it.saimao.tmkkeyboardpro.utils.getSoundOnKeyPress
 import it.saimao.tmkkeyboardpro.utils.getVibrateOnKeyPress
+import it.saimao.tmkkeyboardpro.utils.isEnabledSuggestion
 
 import it.saimao.tmkkeyboardpro.utils.saveAppLanguage
 import it.saimao.tmkkeyboardpro.utils.saveHandWritingSystem
@@ -61,6 +63,10 @@ class SettingsFragment : Fragment() {
 
         binding.switchHandWriting.setOnCheckedChangeListener { _, isChecked ->
             saveHandWritingSystem(requireContext(), isChecked)
+        }
+
+        binding.switchSuggestions.setOnCheckedChangeListener { _, isChecked ->
+            enableSuggestion(requireContext(), isChecked)
         }
 
 
@@ -120,6 +126,7 @@ class SettingsFragment : Fragment() {
         binding.switchVibration.isChecked = getVibrateOnKeyPress(requireContext())
         binding.switchSound.isChecked = getSoundOnKeyPress(requireContext())
         binding.switchHandWriting.isChecked = getHandWritingSystem(requireContext())
+        binding.switchSuggestions.isChecked = isEnabledSuggestion(requireContext())
     }
 
     private fun showThemeSelector() {

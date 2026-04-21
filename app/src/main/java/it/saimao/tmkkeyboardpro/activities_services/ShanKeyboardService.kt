@@ -58,7 +58,9 @@ import it.saimao.tmkkeyboardpro.utils.getKeyboardLanguageState
 import it.saimao.tmkkeyboardpro.utils.getPopupCharsFor
 import it.saimao.tmkkeyboardpro.utils.getSoundOnKeyPress
 import it.saimao.tmkkeyboardpro.utils.getVibrateOnKeyPress
+import it.saimao.tmkkeyboardpro.utils.isEnabledSuggestion
 import kotlin.math.abs
+import kotlin.properties.Delegates
 
 class ShanKeyboardService : InputMethodService() {
 
@@ -145,56 +147,55 @@ class ShanKeyboardService : InputMethodService() {
 
     private fun setSuggestions(suggestions: List<String>) {
 
+        if (suggestionEnabled) {
 
-//        if (!::candidateContainer.isInitialized) return
-//
-//        // 3. ၼႄဢွၵ်ႇၼိူဝ် Candidate Bar
-//        candidateContainer.removeAllViews()
-//
-//        if (suggestions.isNotEmpty()) {
-//            for (word in suggestions) {
-//                val tv = TextView(this).apply {
-//                    text = word
-//                    textSize = 18f
-//                    setPadding(30, 0, 30, 0)
-//                    gravity = Gravity.CENTER
-//                    // *** တူဝ်ယႂ်ႇ: လူဝ်ႇသႂ်ႇ LayoutParams တႅတ်ႈတေႃး ***
-//                    layoutParams = LinearLayout.LayoutParams(
-//                        ViewGroup.LayoutParams.WRAP_CONTENT,
-//                        ViewGroup.LayoutParams.MATCH_PARENT
-//                    )
-//                    typeface = FontManager.getActiveTypeface(this@ShanKeyboardService)
-//
-//                    setOnClickListener {
-//                        // မိူဝ်ႈၼိပ်ႉလိၵ်ႈလႅတ်း ႁႂ်ႈတႅၼ်းတီႈၶေႃႈၵဝ်ႇ
-//                        replaceCurrentWordWith(word)
-//                        candidateContainer.removeAllViews()
-//                    }
-//                }
-//                candidateContainer.addView(tv)
-//            }
-//        }
+            if (!::candidateContainer.isInitialized) return
+
+            // 3. ၼႄဢွၵ်ႇၼိူဝ် Candidate Bar
+            candidateContainer.removeAllViews()
+
+            if (suggestions.isNotEmpty()) {
+                for (word in suggestions) {
+                    val tv = TextView(this).apply {
+                        text = word
+                        textSize = 18f
+                        setPadding(30, 0, 30, 0)
+                        gravity = Gravity.CENTER
+                        // *** တူဝ်ယႂ်ႇ: လူဝ်ႇသႂ်ႇ LayoutParams တႅတ်ႈတေႃး ***
+                        layoutParams = LinearLayout.LayoutParams(
+                            ViewGroup.LayoutParams.WRAP_CONTENT,
+                            ViewGroup.LayoutParams.MATCH_PARENT
+                        )
+                        typeface = FontManager.getActiveTypeface(this@ShanKeyboardService)
+
+                        setOnClickListener {
+                            // မိူဝ်ႈၼိပ်ႉလိၵ်ႈလႅတ်း ႁႂ်ႈတႅၼ်းတီႈၶေႃႈၵဝ်ႇ
+                            replaceCurrentWordWith(word)
+                            candidateContainer.removeAllViews()
+                        }
+                    }
+                    candidateContainer.addView(tv)
+                }
+            }
+        }
+
     }
 
     fun updateSuggestions() {
-
-//        // 1. ဢဝ်ၶေႃႈၵႂၢမ်းဢၼ်တိုၵ်ႉတႅမ်ႈဝႆႉ (Current Word)
-//        val currentWord = getCurrentWordBeforeCursor()
-//
-//
-//        // 2. ႁႃၶေႃႈၵႂၢမ်းလႅတ်း လုၵ်ႉၼႂ်း Dictionary
-//        val suggestions = when (currentLanguage) {
-//            "SHN" -> shanDictionary.getSuggestions(currentWord)
-//            "MY" -> myanmarDictionary.getSuggestions(currentWord)
-//            "EN" -> englishDictionary.getSuggestions(currentWord)
-//            "TDD" -> tddDictionary.getSuggestions(currentWord)
-//            "AHOM" -> ahomDictionary.getSuggestions(currentWord)
-//            "TH" -> thDictionary.getSuggestions(currentWord)
-//            "LO" -> loDictionary.getSuggestions(currentWord)
-//            else -> englishDictionary.getSuggestions(currentWord)
-//        }
-//
-//        setSuggestions(suggestions)
+        if (suggestionEnabled) {
+            val currentWord = getCurrentWordBeforeCursor()
+            val suggestions = when (currentLanguage) {
+                "SHN" -> shanDictionary.getSuggestions(currentWord)
+                "MY" -> myanmarDictionary.getSuggestions(currentWord)
+                "EN" -> englishDictionary.getSuggestions(currentWord)
+                "TDD" -> tddDictionary.getSuggestions(currentWord)
+                "AHOM" -> ahomDictionary.getSuggestions(currentWord)
+                "TH" -> thDictionary.getSuggestions(currentWord)
+                "LO" -> loDictionary.getSuggestions(currentWord)
+                else -> englishDictionary.getSuggestions(currentWord)
+            }
+            setSuggestions(suggestions)
+        }
     }
 
     // Function တႃႇဢဝ် Word တူဝ်သုတ်းၽၢႆႇၼႃႈ Cursor
@@ -449,9 +450,15 @@ class ShanKeyboardService : InputMethodService() {
         }
     }
 
+    private var suggestionEnabled = true
+
     override fun onStartInputView(info: EditorInfo?, restarting: Boolean) {
         super.onStartInputView(info, restarting)
+        suggestionEnabled = isEnabledSuggestion(this)
+        suggestionBarContainer.visibility = if (suggestionEnabled) View.VISIBLE else View.GONE
+
         applyTheme(this, currentInputView)
+
     }
 
     override fun onWindowShown() {
@@ -816,7 +823,6 @@ class ShanKeyboardService : InputMethodService() {
                 val matches =
                     partialResults?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
                 if (!matches.isNullOrEmpty()) {
-                    // ၼႄလိၵ်ႈလႅတ်း (Suggestion Bar) ၸွမ်းၼင်ႇသဵင်ဢၼ်ထွမ်ႇလႆႈၵမ်းလဵဝ်
                     val partialText = matches[0]
                     setSuggestions(listOf(partialText))
                 }
