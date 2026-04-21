@@ -12,9 +12,15 @@
 * **English QWERTY:** Standard professional layout for daily use.
 
 ### 🎨 Pro Visuals & Customization
-* **Dynamic Theming:** Seamlessly switch between **Sapphire Blue** and **Luxury Gold** palettes without restarting the keyboard.
+* **Dynamic Theming:** Seamlessly switch between **Sapphire Blue** and **Luxury Gold** palettes or create your own custom themes without restarting the keyboard.
+* **Custom Theme Creation:** Design your own keyboard themes with:
+  * Background color or image selection
+  * Custom key colors for normal, pressed, and special states
+  * Text color customization
+  * Image background cropping with uCrop library
+* **Advanced Theme Management:** Custom themes are persisted using SharedPreferences with Gson serialization
 * **Pro Key Shapes:** Advanced `StateListDrawables` featuring subtle shadows, rounded corners, and tactile visual feedback.
-* **Responsive Design:** Optimized for diverse screen sizes, including tablets and foldables, using `Resource Qualifiers`.
+* **Responsive Design:** Optimized for diverse screen sizes, including tablets and foldables, using `Resource Qualifiers`
 
 ### 🚀 Advanced Interaction Logic
 * **Slide & Release Popups:** Long-press a key to see hidden characters (e.g., ၷ, ၻ, ၿ) and simply slide your finger and release to commit.
@@ -32,16 +38,17 @@
 
 ## 📸 Screenshots
 
-| Keyboard Layout | Theme Selection | Settings |
-|---------------|----------------|----------|
-| ![Shan Keyboard](file:///D:/AndroidProjects/TMKKeyboardPro/screenshots/shan_keyboard.png) | ![Theme Picker](file:///D:/AndroidProjects/TMKKeyboardPro/screenshots/theme_picker.png) | ![Settings Screen](file:///D:/AndroidProjects/TMKKeyboardPro/screenshots/settings_screen.png) |
+| Keyboard Layout | Theme Selection | Custom Theme | Settings |
+|---------------|----------------|--------------|----------|
+| ![Shan Keyboard](file:///D:/AndroidProjects/TMKKeyboardPro/screenshots/shan_keyboard.png) | ![Theme Picker](file:///D:/AndroidProjects/TMKKeyboardPro/screenshots/theme_picker.png) | ![Custom Theme](file:///D:/AndroidProjects/TMKKeyboardPro/screenshots/custom_theme.png) | ![Settings Screen](file:///D:/AndroidProjects/TMKKeyboardPro/screenshots/settings_screen.png) |
 
 ## 🛠 Tech Stack
 * **Language:** Kotlin
 * **Core API:** `InputMethodService`
 * **Layout Engine:** `ConstraintLayout` (Chains and Weights for precise scaling)
 * **Interactions:** `TouchListeners`, `GestureDetectors`, and `PopupWindow`
-* **Persistence:** `SharedPreferences` for user settings and themes
+* **Theme Management:** Custom theme engine with color pickers, image backgrounds, and state persistence
+* **Persistence:** `SharedPreferences` for user settings and themes with Gson serialization for complex objects
 * **Build System:** Gradle with AndroidX libraries
 
 ## 🤝 Contributing
