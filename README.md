@@ -10,6 +10,9 @@
 * **Shan Layout:** Full Unicode support with `normal` and `shifted` states.
 * **Myanmar Layout:** Optimized for speed and character placement.
 * **English QWERTY:** Standard professional layout for daily use.
+* **Lao (Lo) Layout:** Comprehensive support for Lao language input.
+* **Thai Layout:** Full support for Thai language input.
+* **Tai Nuea:** Specialized layouts for Tai Nuea scripts embedding with (Shan <=> Tai Nuea Converter).
 
 ### 🎨 Pro Visuals & Customization
 * **Dynamic Theming:** Seamlessly switch between **Sapphire Blue** and **Luxury Gold** palettes or create your own custom themes without restarting the keyboard.
